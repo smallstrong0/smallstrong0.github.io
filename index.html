@@ -84,15 +84,15 @@
 
 
 
-<meta name="description" content="大舅二舅都是他舅">
+<meta name="description" content="么把你搞死的都会使你变得更强">
 <meta property="og:type" content="website">
 <meta property="og:title" content="small strong 的博客">
 <meta property="og:url" content="https://github.com/smallstrong0/index.html">
 <meta property="og:site_name" content="small strong 的博客">
-<meta property="og:description" content="大舅二舅都是他舅">
+<meta property="og:description" content="么把你搞死的都会使你变得更强">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="small strong 的博客">
-<meta name="twitter:description" content="大舅二舅都是他舅">
+<meta name="twitter:description" content="么把你搞死的都会使你变得更强">
 
 
 
@@ -186,6 +186,16 @@
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
           </a>
         </li>
       
@@ -288,8 +298,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/09/02/t/" itemprop="url">
-                  t
+                <a class="post-title-link" href="/2016/09/06/ProgressBar/" itemprop="url">
+                  progress
                 </a>
               
             
@@ -302,19 +312,38 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-02T15:13:10+08:00" content="2016-09-02">
-              2016-09-02
+            <time itemprop="dateCreated" datetime="2016-09-06T15:22:15+08:00" content="2016-09-06">
+              2016-09-06
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/09/02/t/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/02/t/" itemprop="commentsCount"></span>
+                <a href="/2016/09/06/ProgressBar/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/06/ProgressBar/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -339,7 +368,46 @@
       
         
           
-            
+            <p>#Android优雅实现渐变色的进度条</p>
+<p>###布局文件</p>
+<pre><code>&lt;android.support.v4.widget.ContentLoadingProgressBar
+            android:id=&quot;@+id/pb&quot;
+            style=&quot;?android:attr/progressBarStyleHorizontal&quot;
+            android:layout_width=&quot;match_parent&quot;
+            android:layout_height=&quot;6dp&quot;
+            android:layout_marginBottom=&quot;5dp&quot;
+            android:layout_marginLeft=&quot;16dp&quot;
+            android:layout_marginRight=&quot;16dp&quot;
+            android:max=&quot;10000&quot;
+            android:progressDrawable=&quot;@drawable/progress_red&quot;/&gt;
+</code></pre><p>###progress_red.xml</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;layer-list xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
+&lt;item android:id=&quot;@android:id/background&quot;&gt;
+    &lt;shape&gt;
+        &lt;corners android:radius=&quot;5dip&quot; /&gt;
+        &lt;gradient
+            android:angle=&quot;270&quot;
+            android:centerColor=&quot;@color/gray_bit&quot;
+            android:centerY=&quot;0.75&quot;
+            android:endColor=&quot;@color/gray_bit&quot;
+            android:startColor=&quot;@color/gray_bit&quot; /&gt;
+    &lt;/shape&gt;
+&lt;/item&gt;
+
+&lt;item android:id=&quot;@android:id/progress&quot;&gt;
+    &lt;clip&gt;
+        &lt;shape&gt;
+            &lt;corners android:radius=&quot;5dip&quot; /&gt;
+            &lt;gradient
+                android:endColor=&quot;@color/yellow_deep&quot;
+                android:centerColor=&quot;@color/yellow_middle&quot;
+                android:startColor=&quot;@color/yellow_little&quot; /&gt;
+        &lt;/shape&gt;
+    &lt;/clip&gt;
+&lt;/item&gt;
+&lt;/layer-list&gt;            
+</code></pre>
           
         
       
@@ -403,7 +471,7 @@
                src="/images/avatar.png"
                alt="small strong" />
           <p class="site-author-name" itemprop="name">small strong</p>
-          <p class="site-description motion-element" itemprop="description">大舅二舅都是他舅</p>
+          <p class="site-description motion-element" itemprop="description">么把你搞死的都会使你变得更强</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
@@ -414,7 +482,21 @@
           </div>
 
           
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
 
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
           
 
         </nav>

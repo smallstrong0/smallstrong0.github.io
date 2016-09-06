@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Android,view,tips," />
 
 
 
@@ -84,16 +84,28 @@
 
 
 
-<meta name="description" content="大舅二舅都是他舅">
+<meta name="description" content="#Android优雅实现渐变色的进度条
+###布局文件
+&amp;lt;android.support.v4.widget.ContentLoadingProgressBar
+            android:id=&amp;quot;@+id/pb&amp;quot;
+            style=&amp;quot;?android:attr/progressBarStyleHorizontal&amp;quot;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="t">
-<meta property="og:url" content="https://github.com/smallstrong0/2016/09/02/t/index.html">
+<meta property="og:title" content="progress">
+<meta property="og:url" content="https://github.com/smallstrong0/2016/09/06/ProgressBar/index.html">
 <meta property="og:site_name" content="small strong 的博客">
-<meta property="og:description" content="大舅二舅都是他舅">
-<meta property="og:updated_time" content="2016-09-02T07:13:10.000Z">
+<meta property="og:description" content="#Android优雅实现渐变色的进度条
+###布局文件
+&amp;lt;android.support.v4.widget.ContentLoadingProgressBar
+            android:id=&amp;quot;@+id/pb&amp;quot;
+            style=&amp;quot;?android:attr/progressBarStyleHorizontal&amp;quot;">
+<meta property="og:updated_time" content="2016-09-06T07:53:51.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="t">
-<meta name="twitter:description" content="大舅二舅都是他舅">
+<meta name="twitter:title" content="progress">
+<meta name="twitter:description" content="#Android优雅实现渐变色的进度条
+###布局文件
+&amp;lt;android.support.v4.widget.ContentLoadingProgressBar
+            android:id=&amp;quot;@+id/pb&amp;quot;
+            style=&amp;quot;?android:attr/progressBarStyleHorizontal&amp;quot;">
 
 
 
@@ -114,9 +126,9 @@
 
 
 
-  <link rel="canonical" href="https://github.com/smallstrong0/2016/09/02/t/"/>
+  <link rel="canonical" href="https://github.com/smallstrong0/2016/09/06/ProgressBar/"/>
 
-  <title> t | small strong 的博客 </title>
+  <title> progress | small strong 的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -185,6 +197,16 @@
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
           </a>
         </li>
       
@@ -286,7 +308,7 @@
             
             
               
-                t
+                progress
               
             
           </h1>
@@ -298,19 +320,38 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-02T15:13:10+08:00" content="2016-09-02">
-              2016-09-02
+            <time itemprop="dateCreated" datetime="2016-09-06T15:22:15+08:00" content="2016-09-06">
+              2016-09-06
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/09/02/t/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/02/t/" itemprop="commentsCount"></span>
+                <a href="/2016/09/06/ProgressBar/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/06/ProgressBar/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -333,7 +374,46 @@
       
 
       
-        
+        <p>#Android优雅实现渐变色的进度条</p>
+<p>###布局文件</p>
+<pre><code>&lt;android.support.v4.widget.ContentLoadingProgressBar
+            android:id=&quot;@+id/pb&quot;
+            style=&quot;?android:attr/progressBarStyleHorizontal&quot;
+            android:layout_width=&quot;match_parent&quot;
+            android:layout_height=&quot;6dp&quot;
+            android:layout_marginBottom=&quot;5dp&quot;
+            android:layout_marginLeft=&quot;16dp&quot;
+            android:layout_marginRight=&quot;16dp&quot;
+            android:max=&quot;10000&quot;
+            android:progressDrawable=&quot;@drawable/progress_red&quot;/&gt;
+</code></pre><p>###progress_red.xml</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;layer-list xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
+&lt;item android:id=&quot;@android:id/background&quot;&gt;
+    &lt;shape&gt;
+        &lt;corners android:radius=&quot;5dip&quot; /&gt;
+        &lt;gradient
+            android:angle=&quot;270&quot;
+            android:centerColor=&quot;@color/gray_bit&quot;
+            android:centerY=&quot;0.75&quot;
+            android:endColor=&quot;@color/gray_bit&quot;
+            android:startColor=&quot;@color/gray_bit&quot; /&gt;
+    &lt;/shape&gt;
+&lt;/item&gt;
+
+&lt;item android:id=&quot;@android:id/progress&quot;&gt;
+    &lt;clip&gt;
+        &lt;shape&gt;
+            &lt;corners android:radius=&quot;5dip&quot; /&gt;
+            &lt;gradient
+                android:endColor=&quot;@color/yellow_deep&quot;
+                android:centerColor=&quot;@color/yellow_middle&quot;
+                android:startColor=&quot;@color/yellow_little&quot; /&gt;
+        &lt;/shape&gt;
+    &lt;/clip&gt;
+&lt;/item&gt;
+&lt;/layer-list&gt;            
+</code></pre>
       
     </div>
 
@@ -352,6 +432,16 @@
     </div>
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag">#Android</a>
+          
+            <a href="/tags/view/" rel="tag">#view</a>
+          
+            <a href="/tags/tips/" rel="tag">#tips</a>
+          
+        </div>
       
 
       
@@ -376,8 +466,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/09/02/t/"
-           data-title="t" data-url="https://github.com/smallstrong0/2016/09/02/t/">
+      <div class="ds-thread" data-thread-key="2016/09/06/ProgressBar/"
+           data-title="progress" data-url="https://github.com/smallstrong0/2016/09/06/ProgressBar/">
       </div>
     
   </div>
@@ -417,7 +507,7 @@
                src="/images/avatar.png"
                alt="small strong" />
           <p class="site-author-name" itemprop="name">small strong</p>
-          <p class="site-description motion-element" itemprop="description">大舅二舅都是他舅</p>
+          <p class="site-description motion-element" itemprop="description">么把你搞死的都会使你变得更强</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
@@ -428,7 +518,21 @@
           </div>
 
           
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
 
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
           
 
         </nav>
