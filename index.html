@@ -349,14 +349,10 @@
       
         
           
-            <p>#Android 64K限制</p>
-<p>有一天被这么一个懵逼的错误搞了个半死，在4.4一下版本的时候都不能正常运行，原因是他</p>
+            <h1 id="Android-64K限制"><a href="#Android-64K限制" class="headerlink" title="Android 64K限制"></a>Android 64K限制</h1><p>有一天被这么一个懵逼的错误搞了个半死，在4.4一下版本的时候都不能正常运行，原因是他</p>
 <pre><code>java.lang.NoClassDefFoundError
 </code></pre><p>解析去几步骤一步都别少：</p>
-<p>###1 multiDexEnabled true</p>
-<p>###2 android.support.multidex</p>
-<p>###3 继承MultiDexApplication</p>
-<p>在下就是死在第三部么有加，简直欲仙欲死</p>
+<h3 id="1-multiDexEnabled-true"><a href="#1-multiDexEnabled-true" class="headerlink" title="1 multiDexEnabled true"></a>1 multiDexEnabled true</h3><h3 id="2-android-support-multidex"><a href="#2-android-support-multidex" class="headerlink" title="2 android.support.multidex"></a>2 android.support.multidex</h3><h3 id="3-继承MultiDexApplication"><a href="#3-继承MultiDexApplication" class="headerlink" title="3 继承MultiDexApplication"></a>3 继承MultiDexApplication</h3><p>在下就是死在第三部么有加，简直欲仙欲死</p>
 
           
         
