@@ -5,20 +5,20 @@
     
     <entry>
       <title><![CDATA[Android 屏幕适配之图片适配]]></title>
-      <url>https://github.com/smallstrong0/2016/09/22/Android-%E5%B1%8F%E5%B9%95%E9%80%82%E9%85%8D%E4%B9%8B%E5%9B%BE%E7%89%87%E9%80%82%E9%85%8D/</url>
+      <url>http://www.smallstrong.wang/2016/09/22/Android-%E5%B1%8F%E5%B9%95%E9%80%82%E9%85%8D%E4%B9%8B%E5%9B%BE%E7%89%87%E9%80%82%E9%85%8D/</url>
       <content type="html"><![CDATA[<h1 id="Android-屏幕适配之图片适配"><a href="#Android-屏幕适配之图片适配" class="headerlink" title="Android 屏幕适配之图片适配"></a>Android 屏幕适配之图片适配</h1><p>基于750*1334分辨率 一倍 一点五倍两套图可以适配</p>
 ]]></content>
     </entry>
     
     <entry>
       <title><![CDATA[android 数据加密]]></title>
-      <url>https://github.com/smallstrong0/2016/09/08/android-%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/</url>
+      <url>http://www.smallstrong.wang/2016/09/08/android-%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/</url>
       <content type="html"></content>
     </entry>
     
     <entry>
       <title><![CDATA[Android 64K]]></title>
-      <url>https://github.com/smallstrong0/2016/09/06/Android-64K/</url>
+      <url>http://www.smallstrong.wang/2016/09/06/Android-64K/</url>
       <content type="html"><![CDATA[<h1 id="Android-64K限制"><a href="#Android-64K限制" class="headerlink" title="Android 64K限制"></a>Android 64K限制</h1><p>有一天被这么一个懵逼的错误搞了个半死，在4.4一下版本的时候都不能正常运行，原因是他</p>
 <pre><code>java.lang.NoClassDefFoundError
 </code></pre><p>解析去几步骤一步都别少：</p>
@@ -28,7 +28,7 @@
     
     <entry>
       <title><![CDATA[progress]]></title>
-      <url>https://github.com/smallstrong0/2016/09/06/ProgressBar/</url>
+      <url>http://www.smallstrong.wang/2016/09/06/ProgressBar/</url>
       <content type="html"><![CDATA[<h1 id="Android优雅实现渐变色的进度条"><a href="#Android优雅实现渐变色的进度条" class="headerlink" title="Android优雅实现渐变色的进度条"></a>Android优雅实现渐变色的进度条</h1><p><img src="/images/progress.png" alt="progress.png"></p>
 <h2 id="布局文件"><a href="#布局文件" class="headerlink" title="布局文件"></a>布局文件</h2><pre><code>&lt;android.support.v4.widget.ContentLoadingProgressBar
             android:id=&quot;@+id/pb&quot;
