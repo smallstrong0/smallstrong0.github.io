@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+    
+    <entry>
+      <title><![CDATA[Android 屏幕适配之图片适配]]></title>
+      <url>https://github.com/smallstrong0/2016/09/22/Android-%E5%B1%8F%E5%B9%95%E9%80%82%E9%85%8D%E4%B9%8B%E5%9B%BE%E7%89%87%E9%80%82%E9%85%8D/</url>
+      <content type="html"><![CDATA[<h1 id="Android-屏幕适配之图片适配"><a href="#Android-屏幕适配之图片适配" class="headerlink" title="Android 屏幕适配之图片适配"></a>Android 屏幕适配之图片适配</h1><p>基于750*1334分辨率 一倍 一点五倍两套图可以适配</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[android 数据加密]]></title>
+      <url>https://github.com/smallstrong0/2016/09/08/android-%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/</url>
+      <content type="html"></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Android 64K]]></title>
+      <url>https://github.com/smallstrong0/2016/09/06/Android-64K/</url>
+      <content type="html"><![CDATA[<h1 id="Android-64K限制"><a href="#Android-64K限制" class="headerlink" title="Android 64K限制"></a>Android 64K限制</h1><p>有一天被这么一个懵逼的错误搞了个半死，在4.4一下版本的时候都不能正常运行，原因是他</p>
+<pre><code>java.lang.NoClassDefFoundError
+</code></pre><p>解析去几步骤一步都别少：</p>
+<h3 id="1-multiDexEnabled-true"><a href="#1-multiDexEnabled-true" class="headerlink" title="1 multiDexEnabled true"></a>1 multiDexEnabled true</h3><h3 id="2-android-support-multidex"><a href="#2-android-support-multidex" class="headerlink" title="2 android.support.multidex"></a>2 android.support.multidex</h3><h3 id="3-继承MultiDexApplication"><a href="#3-继承MultiDexApplication" class="headerlink" title="3 继承MultiDexApplication"></a>3 继承MultiDexApplication</h3><p>在下就是死在第三部么有加，简直欲仙欲死</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[progress]]></title>
+      <url>https://github.com/smallstrong0/2016/09/06/ProgressBar/</url>
+      <content type="html"><![CDATA[<h1 id="Android优雅实现渐变色的进度条"><a href="#Android优雅实现渐变色的进度条" class="headerlink" title="Android优雅实现渐变色的进度条"></a>Android优雅实现渐变色的进度条</h1><p><img src="/images/progress.png" alt="progress.png"></p>
+<h2 id="布局文件"><a href="#布局文件" class="headerlink" title="布局文件"></a>布局文件</h2><pre><code>&lt;android.support.v4.widget.ContentLoadingProgressBar
+            android:id=&quot;@+id/pb&quot;
+            style=&quot;?android:attr/progressBarStyleHorizontal&quot;
+            android:layout_width=&quot;match_parent&quot;
+            android:layout_height=&quot;6dp&quot;
+            android:layout_marginBottom=&quot;5dp&quot;
+            android:layout_marginLeft=&quot;16dp&quot;
+            android:layout_marginRight=&quot;16dp&quot;
+            android:max=&quot;10000&quot;
+            android:progressDrawable=&quot;@drawable/progress_red&quot;/&gt;
+</code></pre><h2 id="progress-red-xml"><a href="#progress-red-xml" class="headerlink" title="progress_red.xml"></a>progress_red.xml</h2><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;layer-list xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
+&lt;item android:id=&quot;@android:id/background&quot;&gt;
+    &lt;shape&gt;
+        &lt;corners android:radius=&quot;5dip&quot; /&gt;
+        &lt;gradient
+            android:angle=&quot;270&quot;
+            android:centerColor=&quot;@color/gray_bit&quot;
+            android:centerY=&quot;0.75&quot;
+            android:endColor=&quot;@color/gray_bit&quot;
+            android:startColor=&quot;@color/gray_bit&quot; /&gt;
+    &lt;/shape&gt;
+&lt;/item&gt;
+
+&lt;item android:id=&quot;@android:id/progress&quot;&gt;
+    &lt;clip&gt;
+        &lt;shape&gt;
+            &lt;corners android:radius=&quot;5dip&quot; /&gt;
+            &lt;gradient
+                android:endColor=&quot;@color/yellow_deep&quot;
+                android:centerColor=&quot;@color/yellow_middle&quot;
+                android:startColor=&quot;@color/yellow_little&quot; /&gt;
+        &lt;/shape&gt;
+    &lt;/clip&gt;
+&lt;/item&gt;
+&lt;/layer-list&gt;            
+</code></pre>]]></content>
+    </entry>
+    
+  
+  
+</search>
