@@ -4,9 +4,17 @@
   
     
     <entry>
+      <title><![CDATA[Android百度地图]]></title>
+      <url>http://www.smallstrong.wang/2016/09/26/Android%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE/</url>
+      <content type="html"></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[Android 屏幕适配不完全梳理]]></title>
       <url>http://www.smallstrong.wang/2016/09/25/Android-%E5%B1%8F%E5%B9%95%E9%80%82%E9%85%8D%E4%B8%8D%E5%AE%8C%E5%85%A8%E6%A2%B3%E7%90%86/</url>
-      <content type="html"><![CDATA[<blockquote>
+      <content type="html"><![CDATA[<p>date: 2016-09-25 14:11:05<br>categories: [Android]<br>tags: [屏幕适配]</p>
+<hr>
+<blockquote>
 <p>Android系统由于其开源性质，碎片化问题一直被人诟病。今天想梳理一下自己这些日子下来总结的屏幕适配的经验。恩，开始了。</p>
 </blockquote>
 <ul>
