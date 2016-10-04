@@ -12,8 +12,7 @@
     <entry>
       <title><![CDATA[Android 屏幕适配不完全梳理]]></title>
       <url>http://www.smallstrong.wang/2016/09/25/Android-%E5%B1%8F%E5%B9%95%E9%80%82%E9%85%8D%E4%B8%8D%E5%AE%8C%E5%85%A8%E6%A2%B3%E7%90%86/</url>
-      <content type="html"><![CDATA[<p>date: 2016-09-25 14:11:05<br>categories: [Android]<br>tags: [屏幕适配]</p>
-<hr>
+      <content type="html"><![CDATA[<p><center>本文介绍Android屏幕适配的一些心得(坑)</center><br><a id="more"></a></p>
 <blockquote>
 <p>Android系统由于其开源性质，碎片化问题一直被人诟病。今天想梳理一下自己这些日子下来总结的屏幕适配的经验。恩，开始了。</p>
 </blockquote>
@@ -83,17 +82,31 @@
     <entry>
       <title><![CDATA[Android 64K]]></title>
       <url>http://www.smallstrong.wang/2016/09/06/Android-64K/</url>
-      <content type="html"><![CDATA[<h1 id="Android-64K限制"><a href="#Android-64K限制" class="headerlink" title="Android 64K限制"></a>Android 64K限制</h1><p>有一天被这么一个懵逼的错误搞了个半死，在4.4一下版本的时候都不能正常运行，原因是他</p>
+      <content type="html"><![CDATA[<p><center>64K限制引发的血案</center><br><a id="more"></a></p>
+<h1 id="Android-64K限制"><a href="#Android-64K限制" class="headerlink" title="Android 64K限制"></a>Android 64K限制</h1><p>有一天被这么一个懵逼的错误搞了个半死，在4.4一下版本的时候都不能正常运行，原因是他</p>
 <pre><code>java.lang.NoClassDefFoundError
-</code></pre><p>解析去几步骤一步都别少：</p>
-<h3 id="1-multiDexEnabled-true"><a href="#1-multiDexEnabled-true" class="headerlink" title="1 multiDexEnabled true"></a>1 multiDexEnabled true</h3><h3 id="2-android-support-multidex"><a href="#2-android-support-multidex" class="headerlink" title="2 android.support.multidex"></a>2 android.support.multidex</h3><h3 id="3-继承MultiDexApplication"><a href="#3-继承MultiDexApplication" class="headerlink" title="3 继承MultiDexApplication"></a>3 继承MultiDexApplication</h3><p>在下就是死在第三部么有加，简直欲仙欲死</p>
+</code></pre><p>一开始我一直纠结是gradle是 buildToolsVersion 的问题，于是我尝试修改版本号，无济于事。我Google了很久终于在stackoverflow上找到了答案。</p>
+<p>打包自己的工程项目，改后缀.zip，解压之后你会发现classes.dex和classes2.dex，两家伙！！！</p>
+<blockquote>
+<p>Android平台的Java虚拟机Dalvik执行Dex程序时，使用的是short类型来索引DEX文件中的方法。这就意味着单个Dex文件可被引用的方法总数被限制为64x1024, 即65536。简单的说就是Dalvik虚拟机只能加载一个字节码classed.dex，而    ART虚拟机支持从apk中加载多个dex文件，这就是为什么我在5.1系统的三星手机上运行ok，而在4.4.2的oppo手机上程序闪奔的原因！</p>
+</blockquote>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>接下去去几步骤一步都别少：</p>
+<h3 id="1-在build-gradle中配置了multiDexEnabled-true"><a href="#1-在build-gradle中配置了multiDexEnabled-true" class="headerlink" title="1.在build.gradle中配置了multiDexEnabled true"></a>1.在build.gradle中配置了multiDexEnabled true</h3><p><img src="/images/适配01.png" alt="适配01"></p>
+<h3 id="2-android-support-multidex"><a href="#2-android-support-multidex" class="headerlink" title="2.android.support.multidex"></a>2.android.support.multidex</h3><p><img src="/images/适配02.png" alt="适配02"></p>
+<h3 id="3-继承MultiDexApplication"><a href="#3-继承MultiDexApplication" class="headerlink" title="3.继承MultiDexApplication"></a>3.继承MultiDexApplication</h3><blockquote>
+<p>(如果你的应用入口直接就是Application,那你直接在Manifest里面直接改成MultiDexApplication作为程序入口就over了)</p>
+</blockquote>
+<p><img src="/images/适配03.png" alt="适配03"></p>
+<h3 id="4-重写attachBaseContext方法"><a href="#4-重写attachBaseContext方法" class="headerlink" title="4.重写attachBaseContext方法"></a>4.重写attachBaseContext方法</h3><p><img src="/images/适配04.png" alt="适配04"></p>
+<p>在下就是死在第三部么有加，简直欲仙欲死。由此我抽空去了解了一下Android的类加载机制，然后又顺势了解了热部署。还算是赚到了不少哈哈！这波不亏~</p>
 ]]></content>
     </entry>
     
     <entry>
-      <title><![CDATA[progress]]></title>
+      <title><![CDATA[Android优雅实现渐变色的进度条]]></title>
       <url>http://www.smallstrong.wang/2016/09/06/ProgressBar/</url>
-      <content type="html"><![CDATA[<h1 id="Android优雅实现渐变色的进度条"><a href="#Android优雅实现渐变色的进度条" class="headerlink" title="Android优雅实现渐变色的进度条"></a>Android优雅实现渐变色的进度条</h1><p><img src="/images/progress.png" alt="progress.png"></p>
+      <content type="html"><![CDATA[<p><center>本文介绍在使用progress如何实现渐变色的进度条</center><br><a id="more"></a></p>
+<h1 id="Android优雅实现渐变色的进度条"><a href="#Android优雅实现渐变色的进度条" class="headerlink" title="Android优雅实现渐变色的进度条"></a>Android优雅实现渐变色的进度条</h1><p><img src="/images/progress.png" alt="progress.png"></p>
 <h2 id="布局文件"><a href="#布局文件" class="headerlink" title="布局文件"></a>布局文件</h2><pre><code>&lt;android.support.v4.widget.ContentLoadingProgressBar
             android:id=&quot;@+id/pb&quot;
             style=&quot;?android:attr/progressBarStyleHorizontal&quot;

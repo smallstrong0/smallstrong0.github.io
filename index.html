@@ -401,6 +401,25 @@
           </span>
 
           
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
 
           
             
@@ -431,68 +450,12 @@
 
       
         
-          
-            <p>date: 2016-09-25 14:11:05<br>categories: [Android]<br>tags: [屏幕适配]</p>
-<hr>
-<blockquote>
-<p>Android系统由于其开源性质，碎片化问题一直被人诟病。今天想梳理一下自己这些日子下来总结的屏幕适配的经验。恩，开始了。</p>
-</blockquote>
-<ul>
-<li>屏幕尺寸，分辨率</li>
-<li>基本概念（dp,dip,sp,px,dpi）</li>
-<li>图片放入mdpi,hdpi,xhdpi,xxhdpi,xxxdpi文件夹的正确姿势</li>
-<li>书写布局文件时候需要注意什么</li>
-<li>开源的屏幕适配解决方案</li>
-</ul>
-<h2 id="屏幕尺寸，分辨率"><a href="#屏幕尺寸，分辨率" class="headerlink" title="屏幕尺寸，分辨率"></a>屏幕尺寸，分辨率</h2><p>我们先来看一张图（数据来自友盟2016年8月）</p>
-<p><img src="/images/分辨率.png" alt="分辨率.png"></p>
-<p>图中我们看到，排名前六的机型分辨率占到了九成以上的市场，因此适配他们基本就可以了。分别是：</p>
-<ol>
-<li>1280 x 720</li>
-<li>1920 X 1080</li>
-<li>854 x 480 </li>
-<li>960 x 540</li>
-<li>800 x 480</li>
-<li>1184 x 720</li>
-</ol>
-<p>随着时间的推移，屏幕分辨率会越来越高，低分辨率屏手机市场份额会逐年递减。</p>
-<p>屏幕尺寸：指屏幕对角线的长度。单位是英寸，1英寸=2.54厘米。平时我们说的几寸屏就是对角线的长度。</p>
-<h2 id="基本概念（dp-dip-sp-px-dpi）"><a href="#基本概念（dp-dip-sp-px-dpi）" class="headerlink" title="基本概念（dp,dip,sp,px,dpi）"></a>基本概念（dp,dip,sp,px,dpi）</h2><p>这边我把他们分成三类</p>
-<ol>
-<li>px</li>
-<li>dpi</li>
-<li>dp,dip,sp</li>
-</ol>
-<p>px:1个像素点，我们平常说这个手机分辨率1280 x 720，就是屏幕上有1280 乘以 720个像素点。</p>
-<p>dpi:屏幕像素密度的单位。上面说到一英尺是2.52cm对吧，dpi的概念就是一英尺就这个2.54cm里面包含多少个像素点。</p>
-<p>dp == dip<br>dip全拼：Density Independent Pixels（密度无关像素）的缩写。</p>
-<p>他们之间的关系可以用这个公式表示：px = dp * (dpi / 160)</p>
-<p>sp:Google推荐些字体大小的时候用sp，概念和dp完全一样。（Android设置里面可以改字体大小，你用了sp就会有效果）</p>
-<h2 id="图片放入mdpi-hdpi-xhdpi-xxhdpi-xxxdpi文件夹的正确姿势"><a href="#图片放入mdpi-hdpi-xhdpi-xxhdpi-xxxdpi文件夹的正确姿势" class="headerlink" title="图片放入mdpi,hdpi,xhdpi,xxhdpi,xxxdpi文件夹的正确姿势"></a>图片放入mdpi,hdpi,xhdpi,xxhdpi,xxxdpi文件夹的正确姿势</h2><p>一般公司都会给两套图来做图片适配。然后我们公司UI妹子给的两套图就是适配ios那边的两套图。原型图是iPhone5的1136x640分辨率的。之后生成的一倍图与两倍图，然后丢了过来。然后我就斯巴达了，因为图片如果用wrap_content的话，要么太大要么太小，然后我每次就估摸着自己摸索是多少dp,也还算能凑合过去。一次写底部导航栏的时候，radiobutton在xml里面是不能设置图片大小的只能在代码中改。我其实当时内心是哟欧草泥马奔腾的。为了让这些个草泥马不奔腾，我觉得去找UI妹子要图。</p>
-<p>先看张图</p>
-<p><img src="/images/dpi.png" alt="dpi.png"></p>
-<p>手机的像素密度不同就会去加载对应文件夹下面的图片。那要是没有怎么办，放心他会自动去找最相近文件夹下面的同名图片，不过会有那么一点变化，不是加载其图片真实大小，而是经过一定比例的缩放，我们来看一下这个比例是多少：</p>
-<p>mdpi：hdpi：xhdpi：xxhdpi：xxxhdpi=2：3：4：6：8 的尺寸比例进行缩放。</p>
-<p>假设我的手机是1280 x 720分辨率,经过计算我应该去xhdpi文件夹下面找图片资源，丫的没有，去xxhdpi里面一找，发现有了。是一张120px x 120px的图片，那么好我们换算一下 120 x（2/3）= 80 px，也就是我其实加载到内存里面是进行2/3倍的缩放的，同理放大也是一样的。不过这边提到一点，低分辨率图片放大会失真，建议放正确分辨率的图片到高分辨图片文件夹中，这样会避免失真的烦恼。</p>
-<p>总结（根据主流分辨率）：</p>
-<p>hdpi   对应 854 x 480  960 x 540 800 x 480<br>xhdpi  对应 1280 x 720 1184 x 720<br>xxhdpi 对应 1920 X 1080</p>
-<p>基本上我要的两套图我就丢 xhdoi xxhdpi里面。</p>
-<p>接着上面那个梗，最后和ui妹子给出了个方案原型图是750*1334，输出三套图，一倍，一点五倍，两倍。我就要一倍和一点五倍的这两个。虽然不是最理想的（最理想就是1280 x 720就给我这个机型切出来的大小，但是一个公司就一个UI妹子，所以折中了一下），不过相差不是很大了，能接受了。这边提供一个链接，说的挺不错。</p>
-<p><a href="http://www.sketchs.cn/tutorials/detail/257.html" target="_blank" rel="external">点我，切图就要这么切</a></p>
-<h2 id="书写布局文件时候需要注意什么"><a href="#书写布局文件时候需要注意什么" class="headerlink" title="书写布局文件时候需要注意什么"></a>书写布局文件时候需要注意什么</h2><p>使用wrap_content、match_parent、weight，dp，sp这是官方给出的方案，的确有道理。我写布局就是尽量用权重，其实原来就是百分比布局。</p>
-<p>不过还是有一些坑的，例如：</p>
-<ol>
-<li>dp写布局要小心一点，因为在同分辨率不同尺寸下的手机里面出来效果是不一样的，Android机子还真有这种情况。</li>
-<li>关于sp，说实话从内心来讲我是拒绝的，因为啊，在设置中改变字体大小，调最大，我了个去，你会发现自己写的好好的布局显现出来超级难看，不忍直视。虽然官方是推荐sp，但是我内心还是向往dp的（项目中还是sp,习惯了，毕竟少有闲人去调整字体大小，真改了，我呵呵）</li>
-<li>在你的UI给你一些不那么正常图的时候（分辨率乱来），wrap_content写imageview控件就有那么点风险了。</li>
-</ol>
-<h2 id="开源的屏幕适配解决方案"><a href="#开源的屏幕适配解决方案" class="headerlink" title="开源的屏幕适配解决方案"></a>开源的屏幕适配解决方案</h2><p>屏幕适配终结者，百分比适配。</p>
-<p><a href="https://github.com/hongyangAndroid/AndroidAutoLayout" target="_blank" rel="external">鸿洋的解决方案，直接接入</a></p>
-<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="http://blog.csdn.net/zhaokaiqiang1992/article/details/45419023#使用非密度制约像素" target="_blank" rel="external">凯子哥</a></p>
-<p><a href="http://blog.csdn.net/lmj623565791/article/details/46695347" target="_blank" rel="external">鸿洋</a></p>
-<p><a href="http://stormzhang.com/android/2014/05/16/android-screen-adaptation/" target="_blank" rel="external">stormzhang</a></p>
-
-          
+          <p><center>本文介绍Android屏幕适配的一些心得(坑)</center><br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/25/Android-屏幕适配不完全梳理/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -690,13 +653,12 @@
 
       
         
-          
-            <h1 id="Android-64K限制"><a href="#Android-64K限制" class="headerlink" title="Android 64K限制"></a>Android 64K限制</h1><p>有一天被这么一个懵逼的错误搞了个半死，在4.4一下版本的时候都不能正常运行，原因是他</p>
-<pre><code>java.lang.NoClassDefFoundError
-</code></pre><p>解析去几步骤一步都别少：</p>
-<h3 id="1-multiDexEnabled-true"><a href="#1-multiDexEnabled-true" class="headerlink" title="1 multiDexEnabled true"></a>1 multiDexEnabled true</h3><h3 id="2-android-support-multidex"><a href="#2-android-support-multidex" class="headerlink" title="2 android.support.multidex"></a>2 android.support.multidex</h3><h3 id="3-继承MultiDexApplication"><a href="#3-继承MultiDexApplication" class="headerlink" title="3 继承MultiDexApplication"></a>3 继承MultiDexApplication</h3><p>在下就是死在第三部么有加，简直欲仙欲死</p>
-
-          
+          <p><center>64K限制引发的血案</center><br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/06/Android-64K/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -745,7 +707,7 @@
               
                 
                 <a class="post-title-link" href="/2016/09/06/ProgressBar/" itemprop="url">
-                  progress
+                  Android优雅实现渐变色的进度条
                 </a>
               
             
@@ -813,46 +775,12 @@
 
       
         
-          
-            <h1 id="Android优雅实现渐变色的进度条"><a href="#Android优雅实现渐变色的进度条" class="headerlink" title="Android优雅实现渐变色的进度条"></a>Android优雅实现渐变色的进度条</h1><p><img src="/images/progress.png" alt="progress.png"></p>
-<h2 id="布局文件"><a href="#布局文件" class="headerlink" title="布局文件"></a>布局文件</h2><pre><code>&lt;android.support.v4.widget.ContentLoadingProgressBar
-            android:id=&quot;@+id/pb&quot;
-            style=&quot;?android:attr/progressBarStyleHorizontal&quot;
-            android:layout_width=&quot;match_parent&quot;
-            android:layout_height=&quot;6dp&quot;
-            android:layout_marginBottom=&quot;5dp&quot;
-            android:layout_marginLeft=&quot;16dp&quot;
-            android:layout_marginRight=&quot;16dp&quot;
-            android:max=&quot;10000&quot;
-            android:progressDrawable=&quot;@drawable/progress_red&quot;/&gt;
-</code></pre><h2 id="progress-red-xml"><a href="#progress-red-xml" class="headerlink" title="progress_red.xml"></a>progress_red.xml</h2><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-&lt;layer-list xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
-&lt;item android:id=&quot;@android:id/background&quot;&gt;
-    &lt;shape&gt;
-        &lt;corners android:radius=&quot;5dip&quot; /&gt;
-        &lt;gradient
-            android:angle=&quot;270&quot;
-            android:centerColor=&quot;@color/gray_bit&quot;
-            android:centerY=&quot;0.75&quot;
-            android:endColor=&quot;@color/gray_bit&quot;
-            android:startColor=&quot;@color/gray_bit&quot; /&gt;
-    &lt;/shape&gt;
-&lt;/item&gt;
-
-&lt;item android:id=&quot;@android:id/progress&quot;&gt;
-    &lt;clip&gt;
-        &lt;shape&gt;
-            &lt;corners android:radius=&quot;5dip&quot; /&gt;
-            &lt;gradient
-                android:endColor=&quot;@color/yellow_deep&quot;
-                android:centerColor=&quot;@color/yellow_middle&quot;
-                android:startColor=&quot;@color/yellow_little&quot; /&gt;
-        &lt;/shape&gt;
-    &lt;/clip&gt;
-&lt;/item&gt;
-&lt;/layer-list&gt;            
-</code></pre>
-          
+          <p><center>本文介绍在使用progress如何实现渐变色的进度条</center><br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/06/ProgressBar/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -937,7 +865,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
