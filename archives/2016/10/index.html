@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="tips," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -84,21 +84,15 @@
 
 
 
-<meta name="description" content="64K限制引发的血案">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Android 64K">
-<meta property="og:url" content="http://www.smallstrong.wang/2016/09/06/Android-64K/index.html">
+<meta name="description" content="学无止境">
+<meta property="og:type" content="website">
+<meta property="og:title" content="small strong 的博客">
+<meta property="og:url" content="http://www.smallstrong.wang/archives/2016/10/index.html">
 <meta property="og:site_name" content="small strong 的博客">
-<meta property="og:description" content="64K限制引发的血案">
-<meta property="og:image" content="http://www.smallstrong.wang/images/适配01.png">
-<meta property="og:image" content="http://www.smallstrong.wang/images/适配02.png">
-<meta property="og:image" content="http://www.smallstrong.wang/images/适配03.png">
-<meta property="og:image" content="http://www.smallstrong.wang/images/适配04.png">
-<meta property="og:updated_time" content="2016-09-30T06:01:44.000Z">
+<meta property="og:description" content="学无止境">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android 64K">
-<meta name="twitter:description" content="64K限制引发的血案">
-<meta name="twitter:image" content="http://www.smallstrong.wang/images/适配01.png">
+<meta name="twitter:title" content="small strong 的博客">
+<meta name="twitter:description" content="学无止境">
 
 
 
@@ -119,9 +113,9 @@
 
 
 
-  <link rel="canonical" href="http://www.smallstrong.wang/2016/09/06/Android-64K/"/>
+  <link rel="canonical" href="http://www.smallstrong.wang/archives/2016/10/"/>
 
-  <title> Android 64K | small strong 的博客 </title>
+  <title> 归档 | small strong 的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -142,7 +136,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
+  <div class="container one-collumn sidebar-position-left  page-archive  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -263,154 +257,103 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
+  <section id="posts" class="posts-collapse">
+    <span class="archive-move-on"></span>
+
+    <span class="archive-page-counter">
+      
+      
+      
+        
+      
+      嗯..! 目前共计 5 篇日志。 继续努力。
+    </span>
+
     
 
-  
-  
+      
+      
+      
 
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
+      
         
+        <div class="collection-title">
+          <h2 class="archive-year motion-element" id="archive-year-2016">2016</h2>
+        </div>
+      
+      
+
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h1 class="post-title">
         
-          <h1 class="post-title" itemprop="name headline">
-            
-            
+            <a class="post-title-link" href="/2016/10/09/pyhton-day02/" itemprop="url">
               
-                Android 64K
+                <span itemprop="name">pyhton-day02</span>
               
-            
-          </h1>
+            </a>
         
+      </h1>
 
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-06T17:18:24+08:00" content="2016-09-06">
-              2016-09-06
-            </time>
-          </span>
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2016-10-09T09:12:29+08:00"
+              content="2016-10-09" >
+          10-09
+        </time>
+      </div>
 
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/09/06/Android-64K/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/06/Android-64K/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-              &nbsp; | &nbsp;
-              <span class="page-pv"><i class="fa fa-file-o"></i>
-              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
-              </span>
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <p><center>64K限制引发的血案</center><br><a id="more"></a></p>
-<h1 id="Android-64K限制"><a href="#Android-64K限制" class="headerlink" title="Android 64K限制"></a>Android 64K限制</h1><p>有一天被这么一个懵逼的错误搞了个半死，在4.4一下版本的时候都不能正常运行，原因是他</p>
-<pre><code>java.lang.NoClassDefFoundError
-</code></pre><p>一开始我一直纠结是gradle是 buildToolsVersion 的问题，于是我尝试修改版本号，无济于事。我Google了很久终于在stackoverflow上找到了答案。</p>
-<p>打包自己的工程项目，改后缀.zip，解压之后你会发现classes.dex和classes2.dex，两家伙！！！</p>
-<blockquote>
-<p>Android平台的Java虚拟机Dalvik执行Dex程序时，使用的是short类型来索引DEX文件中的方法。这就意味着单个Dex文件可被引用的方法总数被限制为64x1024, 即65536。简单的说就是Dalvik虚拟机只能加载一个字节码classed.dex，而    ART虚拟机支持从apk中加载多个dex文件，这就是为什么我在5.1系统的三星手机上运行ok，而在4.4.2的oppo手机上程序闪奔的原因！</p>
-</blockquote>
-<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>接下去去几步骤一步都别少：</p>
-<h3 id="1-在build-gradle中配置了multiDexEnabled-true"><a href="#1-在build-gradle中配置了multiDexEnabled-true" class="headerlink" title="1.在build.gradle中配置了multiDexEnabled true"></a>1.在build.gradle中配置了multiDexEnabled true</h3><p><img src="/images/适配01.png" alt="适配01"></p>
-<h3 id="2-android-support-multidex"><a href="#2-android-support-multidex" class="headerlink" title="2.android.support.multidex"></a>2.android.support.multidex</h3><p><img src="/images/适配02.png" alt="适配02"></p>
-<h3 id="3-继承MultiDexApplication"><a href="#3-继承MultiDexApplication" class="headerlink" title="3.继承MultiDexApplication"></a>3.继承MultiDexApplication</h3><blockquote>
-<p>(如果你的应用入口直接就是Application,那你直接在Manifest里面直接改成MultiDexApplication作为程序入口就over了)</p>
-</blockquote>
-<p><img src="/images/适配03.png" alt="适配03"></p>
-<h3 id="4-重写attachBaseContext方法"><a href="#4-重写attachBaseContext方法" class="headerlink" title="4.重写attachBaseContext方法"></a>4.重写attachBaseContext方法</h3><p><img src="/images/适配04.png" alt="适配04"></p>
-<p>在下就是死在第三部么有加，简直欲仙欲死。由此我抽空去了解了一下Android的类加载机制，然后又顺势了解了热部署。还算是赚到了不少哈哈！这波不亏~</p>
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/tips/" rel="tag">#tips</a>
-          
-        </div>
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2016/09/06/ProgressBar/" rel="next" title="Android优雅实现渐变色的进度条">
-                <i class="fa fa-chevron-left"></i> Android优雅实现渐变色的进度条
-              </a>
-            
-          </div>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/09/25/Android-屏幕适配不完全梳理/" rel="prev" title="Android 屏幕适配不完全梳理">
-                Android 屏幕适配不完全梳理 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
+    </header>
   </article>
 
 
 
-    <div class="post-spread">
+    
+
       
-    </div>
-  </div>
+      
+      
+
+      
+      
+
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h1 class="post-title">
+        
+            <a class="post-title-link" href="/2016/10/08/python-day01/" itemprop="url">
+              
+                <span itemprop="name">python day01</span>
+              
+            </a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2016-10-08T16:09:40+08:00"
+              content="2016-10-08" >
+          10-08
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+
+    
+
+  </section>
+
+  
+
 
 
           </div>
@@ -418,14 +361,6 @@
 
 
           
-  <div class="comments" id="comments">
-    
-      <div class="ds-thread" data-thread-key="2016/09/06/Android-64K/"
-           data-title="Android 64K" data-url="http://www.smallstrong.wang/2016/09/06/Android-64K/">
-      </div>
-    
-  </div>
-
 
         </div>
         
@@ -445,17 +380,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel ">
+      <section class="site-overview sidebar-panel  sidebar-panel-active ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.png"
@@ -505,17 +431,6 @@
 
       </section>
 
-      
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-            
-              
-            
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Android-64K限制"><span class="nav-number">1.</span> <span class="nav-text">Android 64K限制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解决方案"><span class="nav-number">1.1.</span> <span class="nav-text">解决方案</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-在build-gradle中配置了multiDexEnabled-true"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.在build.gradle中配置了multiDexEnabled true</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-android-support-multidex"><span class="nav-number">1.1.2.</span> <span class="nav-text">2.android.support.multidex</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-继承MultiDexApplication"><span class="nav-number">1.1.3.</span> <span class="nav-text">3.继承MultiDexApplication</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-重写attachBaseContext方法"><span class="nav-number">1.1.4.</span> <span class="nav-text">4.重写attachBaseContext方法</span></a></li></ol></li></ol></li></ol></div>
-            
-          </div>
-        </section>
       
 
     </div>
@@ -635,9 +550,11 @@
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
-
+  
+    <script type="text/javascript" id="motion.page.archive">
+      $('.archive-year').velocity('transition.slideLeftIn');
+    </script>
+  
 
 
   
