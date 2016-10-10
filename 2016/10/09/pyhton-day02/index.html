@@ -90,7 +90,7 @@
 <meta property="og:url" content="http://www.smallstrong.wang/2016/10/09/pyhton-day02/index.html">
 <meta property="og:site_name" content="small strong 的博客">
 <meta property="og:description" content="记录Python学习第二天">
-<meta property="og:updated_time" content="2016-10-09T01:33:15.000Z">
+<meta property="og:updated_time" content="2016-10-09T05:56:49.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="pyhton-day02">
 <meta name="twitter:description" content="记录Python学习第二天">
@@ -354,6 +354,26 @@
 <blockquote>
 <p>python学习记录 day02</p>
 </blockquote>
+<h1 id="高阶函数"><a href="#高阶函数" class="headerlink" title="高阶函数"></a>高阶函数</h1><blockquote>
+<p>变量可以指向函数</p>
+</blockquote>
+<pre><code>f = abs
+ f（-10）
+ 10
+</code></pre><p>说明变量f现在已经指向了abs函数本身。直接调用abs()函数和调用变量f()完全相同。</p>
+<blockquote>
+<p>既然变量可以指向函数，函数的参数能接收变量，那么一个函数就可以接收另一个函数作为参数，这种函数就称之为高阶函数。</p>
+</blockquote>
+<pre><code>def add(x, y, f):
+    return f(x) + f(y)
+add(-5, 6, abs)    
+11
+</code></pre><h1 id="map-reduce"><a href="#map-reduce" class="headerlink" title="map/reduce"></a>map/reduce</h1><blockquote>
+<p>把这个list所有数字转为字符串：</p>
+</blockquote>
+<pre><code>list(map(str, [1, 2, 3, 4, 5, 6, 7, 8, 9]))
+[&apos;1&apos;, &apos;2&apos;, &apos;3&apos;, &apos;4&apos;, &apos;5&apos;, &apos;6&apos;, &apos;7&apos;, &apos;8&apos;, &apos;9&apos;]
+</code></pre><p>#返回函数<br>    def lazy_sum(*args):<br>    def sum():<br>        ax = 0<br>        for n in args:<br>            ax = ax + n<br>        return ax<br>    return sum</p>
 
       
     </div>
@@ -392,6 +412,10 @@
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/10/10/python-day03/" rel="prev" title="python-day03">
+                python-day03 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -463,7 +487,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-count">6</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -480,7 +504,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -509,7 +533,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#高阶函数"><span class="nav-number">1.</span> <span class="nav-text">高阶函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#map-reduce"><span class="nav-number">2.</span> <span class="nav-text">map/reduce</span></a></li></ol></div>
             
           </div>
         </section>

@@ -4,12 +4,50 @@
   
     
     <entry>
+      <title><![CDATA[python-day03]]></title>
+      <url>http://www.smallstrong.wang/2016/10/10/python-day03/</url>
+      <content type="html"><![CDATA[<p><center>记录Python学习第三天</center><br><a id="more"></a></p>
+<blockquote>
+<p>python学习记录 day03</p>
+</blockquote>
+<h1 id="使用模块"><a href="#使用模块" class="headerlink" title="使用模块"></a>使用模块</h1><blockquote>
+<p>引入sys系统模块</p>
+</blockquote>
+<pre><code>import  sys
+</code></pre><h2 id="添加第三方库（pycharm）"><a href="#添加第三方库（pycharm）" class="headerlink" title="添加第三方库（pycharm）"></a>添加第三方库（pycharm）</h2><p>打开setting里面找到 project：(你的工程名字)里面点绿色加号之后查询到自己想要添加的库就行了。</p>
+<h1 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h1><blockquote>
+<p>类似<strong>xxx</strong>这样的变量是特殊变量，可以被直接引用,一般文档注释用<br>类似_xxx和<strong>xxx这样的函数或变量就是非公开的（private），不应该被直接引用，比如_abc，</strong>abc等；</p>
+</blockquote>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[pyhton-day02]]></title>
       <url>http://www.smallstrong.wang/2016/10/09/pyhton-day02/</url>
       <content type="html"><![CDATA[<p><center>记录Python学习第二天</center><br><a id="more"></a></p>
 <blockquote>
 <p>python学习记录 day02</p>
 </blockquote>
+<h1 id="高阶函数"><a href="#高阶函数" class="headerlink" title="高阶函数"></a>高阶函数</h1><blockquote>
+<p>变量可以指向函数</p>
+</blockquote>
+<pre><code>f = abs
+ f（-10）
+ 10
+</code></pre><p>说明变量f现在已经指向了abs函数本身。直接调用abs()函数和调用变量f()完全相同。</p>
+<blockquote>
+<p>既然变量可以指向函数，函数的参数能接收变量，那么一个函数就可以接收另一个函数作为参数，这种函数就称之为高阶函数。</p>
+</blockquote>
+<pre><code>def add(x, y, f):
+    return f(x) + f(y)
+add(-5, 6, abs)    
+11
+</code></pre><h1 id="map-reduce"><a href="#map-reduce" class="headerlink" title="map/reduce"></a>map/reduce</h1><blockquote>
+<p>把这个list所有数字转为字符串：</p>
+</blockquote>
+<pre><code>list(map(str, [1, 2, 3, 4, 5, 6, 7, 8, 9]))
+[&apos;1&apos;, &apos;2&apos;, &apos;3&apos;, &apos;4&apos;, &apos;5&apos;, &apos;6&apos;, &apos;7&apos;, &apos;8&apos;, &apos;9&apos;]
+</code></pre><p>#返回函数<br>    def lazy_sum(*args):<br>    def sum():<br>        ax = 0<br>        for n in args:<br>            ax = ax + n<br>        return ax<br>    return sum</p>
 ]]></content>
     </entry>
     
