@@ -4,6 +4,40 @@
   
     
     <entry>
+      <title><![CDATA[五分钟教你在VPS上搭建VPN]]></title>
+      <url>http://www.smallstrong.wang/2016/10/11/%E4%BA%94%E5%88%86%E9%92%9F%E6%95%99%E4%BD%A0%E5%9C%A8VPS%E4%B8%8A%E6%90%AD%E5%BB%BAVPN/</url>
+      <content type="html"><![CDATA[<p><center>老司机带你去墙外看看，来开车了坐稳！</center><br><a id="more"></a></p>
+<blockquote>
+<p>翻墙的正确姿势，你掌握了多少？</p>
+</blockquote>
+<h1 id="购买VPS主机（服务端）"><a href="#购买VPS主机（服务端）" class="headerlink" title="购买VPS主机（服务端）"></a>购买VPS主机（服务端）</h1><p>推荐性价比较高的VPS 搬瓦工<a href="https://bandwagonhost.com/" target="_blank" rel="external">https://bandwagonhost.com/</a></p>
+<blockquote>
+<p>上面的链接如果你打不开可以用下面这个</p>
+</blockquote>
+<p><a href="https://bwh1.net/index.php" target="_blank" rel="external">https://bwh1.net/index.php</a></p>
+<h2 id="进入到主界面的时候，请你先注册账户密码"><a href="#进入到主界面的时候，请你先注册账户密码" class="headerlink" title="进入到主界面的时候，请你先注册账户密码"></a>进入到主界面的时候，请你先注册账户密码</h2><p>信息请认真填写哦~<br><img src="/images/register.png" alt="register.png"></p>
+<h2 id="账户登录之后购买vps虚拟专用服务器啦"><a href="#账户登录之后购买vps虚拟专用服务器啦" class="headerlink" title="账户登录之后购买vps虚拟专用服务器啦"></a>账户登录之后购买vps虚拟专用服务器啦</h2><p>根据你的财力，在首页选择你的套餐，有月付季付半年付和年付四种方式。这个VPS支持支付宝支付。这个过程就跟你逛某宝买东西一样的流程，相信大家不会遇到问题。</p>
+<h2 id="买好VPS之后，他会给你发一个邮件，里面有你的虚拟服务器IP地址以及端口号。自己注意保存啊，亲。"><a href="#买好VPS之后，他会给你发一个邮件，里面有你的虚拟服务器IP地址以及端口号。自己注意保存啊，亲。" class="headerlink" title="买好VPS之后，他会给你发一个邮件，里面有你的虚拟服务器IP地址以及端口号。自己注意保存啊，亲。"></a>买好VPS之后，他会给你发一个邮件，里面有你的虚拟服务器IP地址以及端口号。自己注意保存啊，亲。</h2><h2 id="管理你的VPS"><a href="#管理你的VPS" class="headerlink" title="管理你的VPS"></a>管理你的VPS</h2><p>首页点击VPS HOsting菜单，就会下方看到Services菜单，点击之后选择 My Services如下图<br><img src="/images/manage.png" alt="manage.png"><br>点击KiwiVM Control Panel<br>你会发现VPS预装了Centos 6 x86_64 </p>
+<h2 id="安装Shadowsocks-Server"><a href="#安装Shadowsocks-Server" class="headerlink" title="安装Shadowsocks Server"></a>安装Shadowsocks Server</h2><p><img src="/images/ss.png" alt="ss.png"><br>直接安装就好了，搬瓦工现阶段支持Centos6。而上面预装的系统就是Centos 6 x86_64 。安装完毕之后看到Shadowsocks server controls窗口，从上到下一共三个参数：</p>
+<ol>
+<li>加密方式</li>
+<li>ss端口号</li>
+<li>连接ss的密码</li>
+</ol>
+<p>这些你都可以自由修改。但请你记住他们，我是把这些参数和购买vps之后的给我的IP地址和端口号都用记事本记录了，你也可以这么做，方便今后copy.</p>
+<blockquote>
+<p>好了到现在为止，服务端就已经OK啦，是不是肥肠简单啊。<br>偷偷告诉你，客户端配置更加简单，哈哈。</p>
+</blockquote>
+<h1 id="iOS-Android-Mac-Win-Linus安装ss客户端"><a href="#iOS-Android-Mac-Win-Linus安装ss客户端" class="headerlink" title="iOS,Android,Mac,Win,Linus安装ss客户端"></a>iOS,Android,Mac,Win,Linus安装ss客户端</h1><p><a href="https://shadowsocks.com/client.html" target="_blank" rel="external">https://shadowsocks.com/client.html</a><br>对应下载自己需要的客户端，然后对应在客户端中写入服务器设置。这边我简单介绍一下mac，以及iPhone上的ss客户端。</p>
+<h2 id="Mac"><a href="#Mac" class="headerlink" title="Mac"></a>Mac</h2><p>安装好小飞机之后，点开下拉菜单-&gt;服务器–&gt;服务器设置–&gt;添加<br>填写你IP地址，后面的端口号是你设置SS服务器的时候填的端口号一般默认443.对应选择好之前在ss服务器设置时候选择的加密方式，（别选错）。密码也是SS服务器设置时候提供的一串密码，然后选择你自己创建的这个服务区就OK了。</p>
+<h2 id="iPhone"><a href="#iPhone" class="headerlink" title="iPhone"></a>iPhone</h2><p>先去APP Store下载SS客户端 Wingy （不收费），和上面Mac设置一样，对应填写IP 端口（默认443）密码 以及加密方式。保存搞定。</p>
+<blockquote>
+<p>科学上网，你值得拥有!</p>
+</blockquote>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[python-day03]]></title>
       <url>http://www.smallstrong.wang/2016/10/10/python-day03/</url>
       <content type="html"><![CDATA[<p><center>记录Python学习第三天</center><br><a id="more"></a></p>

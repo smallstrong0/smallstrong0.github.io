@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="屏幕适配," />
+  <meta name="keywords" content="tips," />
 
 
 
@@ -84,19 +84,20 @@
 
 
 
-<meta name="description" content="本文介绍Android屏幕适配的一些心得(坑)">
+<meta name="description" content="老司机带你去墙外看看，来开车了坐稳！">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android 屏幕适配不完全梳理">
-<meta property="og:url" content="http://www.smallstrong.wang/2016/09/25/Android-屏幕适配不完全梳理/index.html">
+<meta property="og:title" content="五分钟教你在VPS上搭建VPN">
+<meta property="og:url" content="http://www.smallstrong.wang/2016/10/11/五分钟教你在VPS上搭建VPN/index.html">
 <meta property="og:site_name" content="small strong 的博客">
-<meta property="og:description" content="本文介绍Android屏幕适配的一些心得(坑)">
-<meta property="og:image" content="http://www.smallstrong.wang/images/分辨率.png">
-<meta property="og:image" content="http://www.smallstrong.wang/images/dpi.png">
-<meta property="og:updated_time" content="2016-09-30T03:59:00.000Z">
+<meta property="og:description" content="老司机带你去墙外看看，来开车了坐稳！">
+<meta property="og:image" content="http://www.smallstrong.wang/images/register.png">
+<meta property="og:image" content="http://www.smallstrong.wang/images/manage.png">
+<meta property="og:image" content="http://www.smallstrong.wang/images/ss.png">
+<meta property="og:updated_time" content="2016-10-11T02:38:37.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android 屏幕适配不完全梳理">
-<meta name="twitter:description" content="本文介绍Android屏幕适配的一些心得(坑)">
-<meta name="twitter:image" content="http://www.smallstrong.wang/images/分辨率.png">
+<meta name="twitter:title" content="五分钟教你在VPS上搭建VPN">
+<meta name="twitter:description" content="老司机带你去墙外看看，来开车了坐稳！">
+<meta name="twitter:image" content="http://www.smallstrong.wang/images/register.png">
 
 
 
@@ -117,9 +118,9 @@
 
 
 
-  <link rel="canonical" href="http://www.smallstrong.wang/2016/09/25/Android-屏幕适配不完全梳理/"/>
+  <link rel="canonical" href="http://www.smallstrong.wang/2016/10/11/五分钟教你在VPS上搭建VPN/"/>
 
-  <title> Android 屏幕适配不完全梳理 | small strong 的博客 </title>
+  <title> 五分钟教你在VPS上搭建VPN | small strong 的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -282,7 +283,7 @@
             
             
               
-                Android 屏幕适配不完全梳理
+                五分钟教你在VPS上搭建VPN
               
             
           </h1>
@@ -294,8 +295,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-25T14:11:05+08:00" content="2016-09-25">
-              2016-09-25
+            <time itemprop="dateCreated" datetime="2016-10-11T09:18:47+08:00" content="2016-10-11">
+              2016-10-11
             </time>
           </span>
 
@@ -308,8 +309,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
+                  <a href="/categories/科学上网/" itemprop="url" rel="index">
+                    <span itemprop="name">科学上网</span>
                   </a>
                 </span>
 
@@ -324,8 +325,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/09/25/Android-屏幕适配不完全梳理/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/25/Android-屏幕适配不完全梳理/" itemprop="commentsCount"></span>
+                <a href="/2016/10/11/五分钟教你在VPS上搭建VPN/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/11/五分钟教你在VPS上搭建VPN/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -353,64 +354,34 @@
       
 
       
-        <p><center>本文介绍Android屏幕适配的一些心得(坑)</center><br><a id="more"></a></p>
+        <p><center>老司机带你去墙外看看，来开车了坐稳！</center><br><a id="more"></a></p>
 <blockquote>
-<p>Android系统由于其开源性质，碎片化问题一直被人诟病。今天想梳理一下自己这些日子下来总结的屏幕适配的经验。恩，开始了。</p>
+<p>翻墙的正确姿势，你掌握了多少？</p>
 </blockquote>
-<ul>
-<li>屏幕尺寸，分辨率</li>
-<li>基本概念（dp,dip,sp,px,dpi）</li>
-<li>图片放入mdpi,hdpi,xhdpi,xxhdpi,xxxdpi文件夹的正确姿势</li>
-<li>书写布局文件时候需要注意什么</li>
-<li>开源的屏幕适配解决方案</li>
-</ul>
-<h2 id="屏幕尺寸，分辨率"><a href="#屏幕尺寸，分辨率" class="headerlink" title="屏幕尺寸，分辨率"></a>屏幕尺寸，分辨率</h2><p>我们先来看一张图（数据来自友盟2016年8月）</p>
-<p><img src="/images/分辨率.png" alt="分辨率.png"></p>
-<p>图中我们看到，排名前六的机型分辨率占到了九成以上的市场，因此适配他们基本就可以了。分别是：</p>
+<h1 id="购买VPS主机（服务端）"><a href="#购买VPS主机（服务端）" class="headerlink" title="购买VPS主机（服务端）"></a>购买VPS主机（服务端）</h1><p>推荐性价比较高的VPS 搬瓦工<a href="https://bandwagonhost.com/" target="_blank" rel="external">https://bandwagonhost.com/</a></p>
+<blockquote>
+<p>上面的链接如果你打不开可以用下面这个</p>
+</blockquote>
+<p><a href="https://bwh1.net/index.php" target="_blank" rel="external">https://bwh1.net/index.php</a></p>
+<h2 id="进入到主界面的时候，请你先注册账户密码"><a href="#进入到主界面的时候，请你先注册账户密码" class="headerlink" title="进入到主界面的时候，请你先注册账户密码"></a>进入到主界面的时候，请你先注册账户密码</h2><p>信息请认真填写哦~<br><img src="/images/register.png" alt="register.png"></p>
+<h2 id="账户登录之后购买vps虚拟专用服务器啦"><a href="#账户登录之后购买vps虚拟专用服务器啦" class="headerlink" title="账户登录之后购买vps虚拟专用服务器啦"></a>账户登录之后购买vps虚拟专用服务器啦</h2><p>根据你的财力，在首页选择你的套餐，有月付季付半年付和年付四种方式。这个VPS支持支付宝支付。这个过程就跟你逛某宝买东西一样的流程，相信大家不会遇到问题。</p>
+<h2 id="买好VPS之后，他会给你发一个邮件，里面有你的虚拟服务器IP地址以及端口号。自己注意保存啊，亲。"><a href="#买好VPS之后，他会给你发一个邮件，里面有你的虚拟服务器IP地址以及端口号。自己注意保存啊，亲。" class="headerlink" title="买好VPS之后，他会给你发一个邮件，里面有你的虚拟服务器IP地址以及端口号。自己注意保存啊，亲。"></a>买好VPS之后，他会给你发一个邮件，里面有你的虚拟服务器IP地址以及端口号。自己注意保存啊，亲。</h2><h2 id="管理你的VPS"><a href="#管理你的VPS" class="headerlink" title="管理你的VPS"></a>管理你的VPS</h2><p>首页点击VPS HOsting菜单，就会下方看到Services菜单，点击之后选择 My Services如下图<br><img src="/images/manage.png" alt="manage.png"><br>点击KiwiVM Control Panel<br>你会发现VPS预装了Centos 6 x86_64 </p>
+<h2 id="安装Shadowsocks-Server"><a href="#安装Shadowsocks-Server" class="headerlink" title="安装Shadowsocks Server"></a>安装Shadowsocks Server</h2><p><img src="/images/ss.png" alt="ss.png"><br>直接安装就好了，搬瓦工现阶段支持Centos6。而上面预装的系统就是Centos 6 x86_64 。安装完毕之后看到Shadowsocks server controls窗口，从上到下一共三个参数：</p>
 <ol>
-<li>1280 x 720</li>
-<li>1920 X 1080</li>
-<li>854 x 480 </li>
-<li>960 x 540</li>
-<li>800 x 480</li>
-<li>1184 x 720</li>
+<li>加密方式</li>
+<li>ss端口号</li>
+<li>连接ss的密码</li>
 </ol>
-<p>随着时间的推移，屏幕分辨率会越来越高，低分辨率屏手机市场份额会逐年递减。</p>
-<p>屏幕尺寸：指屏幕对角线的长度。单位是英寸，1英寸=2.54厘米。平时我们说的几寸屏就是对角线的长度。</p>
-<h2 id="基本概念（dp-dip-sp-px-dpi）"><a href="#基本概念（dp-dip-sp-px-dpi）" class="headerlink" title="基本概念（dp,dip,sp,px,dpi）"></a>基本概念（dp,dip,sp,px,dpi）</h2><p>这边我把他们分成三类</p>
-<ol>
-<li>px</li>
-<li>dpi</li>
-<li>dp,dip,sp</li>
-</ol>
-<p>px:1个像素点，我们平常说这个手机分辨率1280 x 720，就是屏幕上有1280 乘以 720个像素点。</p>
-<p>dpi:屏幕像素密度的单位。上面说到一英尺是2.52cm对吧，dpi的概念就是一英尺就这个2.54cm里面包含多少个像素点。</p>
-<p>dp == dip<br>dip全拼：Density Independent Pixels（密度无关像素）的缩写。</p>
-<p>他们之间的关系可以用这个公式表示：px = dp * (dpi / 160)</p>
-<p>sp:Google推荐些字体大小的时候用sp，概念和dp完全一样。（Android设置里面可以改字体大小，你用了sp就会有效果）</p>
-<h2 id="图片放入mdpi-hdpi-xhdpi-xxhdpi-xxxdpi文件夹的正确姿势"><a href="#图片放入mdpi-hdpi-xhdpi-xxhdpi-xxxdpi文件夹的正确姿势" class="headerlink" title="图片放入mdpi,hdpi,xhdpi,xxhdpi,xxxdpi文件夹的正确姿势"></a>图片放入mdpi,hdpi,xhdpi,xxhdpi,xxxdpi文件夹的正确姿势</h2><p>一般公司都会给两套图来做图片适配。然后我们公司UI妹子给的两套图就是适配ios那边的两套图。原型图是iPhone5的1136x640分辨率的。之后生成的一倍图与两倍图，然后丢了过来。然后我就斯巴达了，因为图片如果用wrap_content的话，要么太大要么太小，然后我每次就估摸着自己摸索是多少dp,也还算能凑合过去。一次写底部导航栏的时候，radiobutton在xml里面是不能设置图片大小的只能在代码中改。我其实当时内心是哟欧草泥马奔腾的。为了让这些个草泥马不奔腾，我觉得去找UI妹子要图。</p>
-<p>先看张图</p>
-<p><img src="/images/dpi.png" alt="dpi.png"></p>
-<p>手机的像素密度不同就会去加载对应文件夹下面的图片。那要是没有怎么办，放心他会自动去找最相近文件夹下面的同名图片，不过会有那么一点变化，不是加载其图片真实大小，而是经过一定比例的缩放，我们来看一下这个比例是多少：</p>
-<p>mdpi：hdpi：xhdpi：xxhdpi：xxxhdpi=2：3：4：6：8 的尺寸比例进行缩放。</p>
-<p>假设我的手机是1280 x 720分辨率,经过计算我应该去xhdpi文件夹下面找图片资源，丫的没有，去xxhdpi里面一找，发现有了。是一张120px x 120px的图片，那么好我们换算一下 120 x（2/3）= 80 px，也就是我其实加载到内存里面是进行2/3倍的缩放的，同理放大也是一样的。不过这边提到一点，低分辨率图片放大会失真，建议放正确分辨率的图片到高分辨图片文件夹中，这样会避免失真的烦恼。</p>
-<p>总结（根据主流分辨率）：</p>
-<p>hdpi   对应 854 x 480  960 x 540 800 x 480<br>xhdpi  对应 1280 x 720 1184 x 720<br>xxhdpi 对应 1920 X 1080</p>
-<p>基本上我要的两套图我就丢 xhdoi xxhdpi里面。</p>
-<p>接着上面那个梗，最后和ui妹子给出了个方案原型图是750*1334，输出三套图，一倍，一点五倍，两倍。我就要一倍和一点五倍的这两个。虽然不是最理想的（最理想就是1280 x 720就给我这个机型切出来的大小，但是一个公司就一个UI妹子，所以折中了一下），不过相差不是很大了，能接受了。这边提供一个链接，说的挺不错。</p>
-<p><a href="http://www.sketchs.cn/tutorials/detail/257.html" target="_blank" rel="external">点我，切图就要这么切</a></p>
-<h2 id="书写布局文件时候需要注意什么"><a href="#书写布局文件时候需要注意什么" class="headerlink" title="书写布局文件时候需要注意什么"></a>书写布局文件时候需要注意什么</h2><p>使用wrap_content、match_parent、weight，dp，sp这是官方给出的方案，的确有道理。我写布局就是尽量用权重，其实原来就是百分比布局。</p>
-<p>不过还是有一些坑的，例如：</p>
-<ol>
-<li>dp写布局要小心一点，因为在同分辨率不同尺寸下的手机里面出来效果是不一样的，Android机子还真有这种情况。</li>
-<li>关于sp，说实话从内心来讲我是拒绝的，因为啊，在设置中改变字体大小，调最大，我了个去，你会发现自己写的好好的布局显现出来超级难看，不忍直视。虽然官方是推荐sp，但是我内心还是向往dp的（项目中还是sp,习惯了，毕竟少有闲人去调整字体大小，真改了，我呵呵）</li>
-<li>在你的UI给你一些不那么正常图的时候（分辨率乱来），wrap_content写imageview控件就有那么点风险了。</li>
-</ol>
-<h2 id="开源的屏幕适配解决方案"><a href="#开源的屏幕适配解决方案" class="headerlink" title="开源的屏幕适配解决方案"></a>开源的屏幕适配解决方案</h2><p>屏幕适配终结者，百分比适配。</p>
-<p><a href="https://github.com/hongyangAndroid/AndroidAutoLayout" target="_blank" rel="external">鸿洋的解决方案，直接接入</a></p>
-<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="http://blog.csdn.net/zhaokaiqiang1992/article/details/45419023#使用非密度制约像素" target="_blank" rel="external">凯子哥</a></p>
-<p><a href="http://blog.csdn.net/lmj623565791/article/details/46695347" target="_blank" rel="external">鸿洋</a></p>
-<p><a href="http://stormzhang.com/android/2014/05/16/android-screen-adaptation/" target="_blank" rel="external">stormzhang</a></p>
+<p>这些你都可以自由修改。但请你记住他们，我是把这些参数和购买vps之后的给我的IP地址和端口号都用记事本记录了，你也可以这么做，方便今后copy.</p>
+<blockquote>
+<p>好了到现在为止，服务端就已经OK啦，是不是肥肠简单啊。<br>偷偷告诉你，客户端配置更加简单，哈哈。</p>
+</blockquote>
+<h1 id="iOS-Android-Mac-Win-Linus安装ss客户端"><a href="#iOS-Android-Mac-Win-Linus安装ss客户端" class="headerlink" title="iOS,Android,Mac,Win,Linus安装ss客户端"></a>iOS,Android,Mac,Win,Linus安装ss客户端</h1><p><a href="https://shadowsocks.com/client.html" target="_blank" rel="external">https://shadowsocks.com/client.html</a><br>对应下载自己需要的客户端，然后对应在客户端中写入服务器设置。这边我简单介绍一下mac，以及iPhone上的ss客户端。</p>
+<h2 id="Mac"><a href="#Mac" class="headerlink" title="Mac"></a>Mac</h2><p>安装好小飞机之后，点开下拉菜单-&gt;服务器–&gt;服务器设置–&gt;添加<br>填写你IP地址，后面的端口号是你设置SS服务器的时候填的端口号一般默认443.对应选择好之前在ss服务器设置时候选择的加密方式，（别选错）。密码也是SS服务器设置时候提供的一串密码，然后选择你自己创建的这个服务区就OK了。</p>
+<h2 id="iPhone"><a href="#iPhone" class="headerlink" title="iPhone"></a>iPhone</h2><p>先去APP Store下载SS客户端 Wingy （不收费），和上面Mac设置一样，对应填写IP 端口（默认443）密码 以及加密方式。保存搞定。</p>
+<blockquote>
+<p>科学上网，你值得拥有!</p>
+</blockquote>
 
       
     </div>
@@ -433,7 +404,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/屏幕适配/" rel="tag">#屏幕适配</a>
+            <a href="/tags/tips/" rel="tag">#tips</a>
           
         </div>
       
@@ -442,17 +413,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/09/06/Android-64K/" rel="next" title="Android 64K">
-                <i class="fa fa-chevron-left"></i> Android 64K
+              <a href="/2016/10/10/python-day03/" rel="next" title="python-day03">
+                <i class="fa fa-chevron-left"></i> python-day03
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/10/08/python-day01/" rel="prev" title="python day01">
-                python day01 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -478,8 +445,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/09/25/Android-屏幕适配不完全梳理/"
-           data-title="Android 屏幕适配不完全梳理" data-url="http://www.smallstrong.wang/2016/09/25/Android-屏幕适配不完全梳理/">
+      <div class="ds-thread" data-thread-key="2016/10/11/五分钟教你在VPS上搭建VPN/"
+           data-title="五分钟教你在VPS上搭建VPN" data-url="http://www.smallstrong.wang/2016/10/11/五分钟教你在VPS上搭建VPN/">
       </div>
     
   </div>
@@ -570,7 +537,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#屏幕尺寸，分辨率"><span class="nav-number">1.</span> <span class="nav-text">屏幕尺寸，分辨率</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本概念（dp-dip-sp-px-dpi）"><span class="nav-number">2.</span> <span class="nav-text">基本概念（dp,dip,sp,px,dpi）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图片放入mdpi-hdpi-xhdpi-xxhdpi-xxxdpi文件夹的正确姿势"><span class="nav-number">3.</span> <span class="nav-text">图片放入mdpi,hdpi,xhdpi,xxhdpi,xxxdpi文件夹的正确姿势</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#书写布局文件时候需要注意什么"><span class="nav-number">4.</span> <span class="nav-text">书写布局文件时候需要注意什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开源的屏幕适配解决方案"><span class="nav-number">5.</span> <span class="nav-text">开源的屏幕适配解决方案</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#参考"><span class="nav-number">5.1.</span> <span class="nav-text">参考</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#购买VPS主机（服务端）"><span class="nav-number">1.</span> <span class="nav-text">购买VPS主机（服务端）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#进入到主界面的时候，请你先注册账户密码"><span class="nav-number">1.1.</span> <span class="nav-text">进入到主界面的时候，请你先注册账户密码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#账户登录之后购买vps虚拟专用服务器啦"><span class="nav-number">1.2.</span> <span class="nav-text">账户登录之后购买vps虚拟专用服务器啦</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#买好VPS之后，他会给你发一个邮件，里面有你的虚拟服务器IP地址以及端口号。自己注意保存啊，亲。"><span class="nav-number">1.3.</span> <span class="nav-text">买好VPS之后，他会给你发一个邮件，里面有你的虚拟服务器IP地址以及端口号。自己注意保存啊，亲。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#管理你的VPS"><span class="nav-number">1.4.</span> <span class="nav-text">管理你的VPS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Shadowsocks-Server"><span class="nav-number">1.5.</span> <span class="nav-text">安装Shadowsocks Server</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#iOS-Android-Mac-Win-Linus安装ss客户端"><span class="nav-number">2.</span> <span class="nav-text">iOS,Android,Mac,Win,Linus安装ss客户端</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Mac"><span class="nav-number">2.1.</span> <span class="nav-text">Mac</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#iPhone"><span class="nav-number">2.2.</span> <span class="nav-text">iPhone</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
