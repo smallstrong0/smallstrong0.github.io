@@ -84,21 +84,16 @@
 
 
 
-<meta name="description" content="64K限制引发的血案">
+<meta name="description" content="vim一些快捷键笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android 64K">
-<meta property="og:url" content="http://www.smallstrong.wang/2016/09/06/Android-64K/index.html">
+<meta property="og:title" content="vim快捷键笔记">
+<meta property="og:url" content="http://www.smallstrong.wang/2016/10/12/vim快捷键笔记/index.html">
 <meta property="og:site_name" content="small strong 的博客">
-<meta property="og:description" content="64K限制引发的血案">
-<meta property="og:image" content="http://www.smallstrong.wang/images/适配01.png">
-<meta property="og:image" content="http://www.smallstrong.wang/images/适配02.png">
-<meta property="og:image" content="http://www.smallstrong.wang/images/适配03.png">
-<meta property="og:image" content="http://www.smallstrong.wang/images/适配04.png">
-<meta property="og:updated_time" content="2016-10-11T06:33:20.000Z">
+<meta property="og:description" content="vim一些快捷键笔记">
+<meta property="og:updated_time" content="2016-10-12T03:55:57.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android 64K">
-<meta name="twitter:description" content="64K限制引发的血案">
-<meta name="twitter:image" content="http://www.smallstrong.wang/images/适配01.png">
+<meta name="twitter:title" content="vim快捷键笔记">
+<meta name="twitter:description" content="vim一些快捷键笔记">
 
 
 
@@ -119,9 +114,9 @@
 
 
 
-  <link rel="canonical" href="http://www.smallstrong.wang/2016/09/06/Android-64K/"/>
+  <link rel="canonical" href="http://www.smallstrong.wang/2016/10/12/vim快捷键笔记/"/>
 
-  <title> Android 64K | small strong 的博客 </title>
+  <title> vim快捷键笔记 | small strong 的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -284,7 +279,7 @@
             
             
               
-                Android 64K
+                vim快捷键笔记
               
             
           </h1>
@@ -296,8 +291,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-06T17:18:24+08:00" content="2016-09-06">
-              2016-09-06
+            <time itemprop="dateCreated" datetime="2016-10-12T11:51:47+08:00" content="2016-10-12">
+              2016-10-12
             </time>
           </span>
 
@@ -307,8 +302,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/09/06/Android-64K/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/06/Android-64K/" itemprop="commentsCount"></span>
+                <a href="/2016/10/12/vim快捷键笔记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/12/vim快捷键笔记/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -336,23 +331,15 @@
       
 
       
-        <p><center>64K限制引发的血案</center><br><a id="more"></a></p>
-<h1 id="Android-64K限制"><a href="#Android-64K限制" class="headerlink" title="Android 64K限制"></a>Android 64K限制</h1><p>有一天被这么一个懵逼的错误搞了个半死，在4.4一下版本的时候都不能正常运行，原因是他</p>
-<pre><code>java.lang.NoClassDefFoundError
-</code></pre><p>一开始我一直纠结是gradle是 buildToolsVersion 的问题，于是我尝试修改版本号，无济于事。我Google了很久终于在stackoverflow上找到了答案。</p>
-<p>打包自己的工程项目，改后缀.zip，解压之后你会发现classes.dex和classes2.dex，两家伙！！！</p>
-<blockquote>
-<p>Android平台的Java虚拟机Dalvik执行Dex程序时，使用的是short类型来索引DEX文件中的方法。这就意味着单个Dex文件可被引用的方法总数被限制为64x1024, 即65536。简单的说就是Dalvik虚拟机只能加载一个字节码classed.dex，而    ART虚拟机支持从apk中加载多个dex文件，这就是为什么我在5.1系统的三星手机上运行ok，而在4.4.2的oppo手机上程序闪奔的原因！</p>
-</blockquote>
-<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>接下去去几步骤一步都别少：</p>
-<h3 id="1-在build-gradle中配置了multiDexEnabled-true"><a href="#1-在build-gradle中配置了multiDexEnabled-true" class="headerlink" title="1.在build.gradle中配置了multiDexEnabled true"></a>1.在build.gradle中配置了multiDexEnabled true</h3><p><img src="/images/适配01.png" alt="适配01"></p>
-<h3 id="2-android-support-multidex"><a href="#2-android-support-multidex" class="headerlink" title="2.android.support.multidex"></a>2.android.support.multidex</h3><p><img src="/images/适配02.png" alt="适配02"></p>
-<h3 id="3-继承MultiDexApplication"><a href="#3-继承MultiDexApplication" class="headerlink" title="3.继承MultiDexApplication"></a>3.继承MultiDexApplication</h3><blockquote>
-<p>(如果你的应用入口直接就是Application,那你直接在Manifest里面直接改成MultiDexApplication作为程序入口就over了)</p>
-</blockquote>
-<p><img src="/images/适配03.png" alt="适配03"></p>
-<h3 id="4-重写attachBaseContext方法"><a href="#4-重写attachBaseContext方法" class="headerlink" title="4.重写attachBaseContext方法"></a>4.重写attachBaseContext方法</h3><p><img src="/images/适配04.png" alt="适配04"></p>
-<p>在下就是死在第三部么有加，简直欲仙欲死。由此我抽空去了解了一下Android的类加载机制，然后又顺势了解了热部署。还算是赚到了不少哈哈！这波不亏~</p>
+        <p><center>vim一些快捷键笔记</center><br><a id="more"></a></p>
+<p>normal模式下<br>$  移至光标那行末尾</p>
+<p>^  移至光标那行开头</p>
+<p>gg 来到文档的第一行</p>
+<p>dd 删除光标那行</p>
+<p>yy 复制当前行</p>
+<p>p  粘贴</p>
+<p>u 撤销上一步操作</p>
+<p>ctrl+r 回复上一步操作</p>
 
       
     </div>
@@ -384,16 +371,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/09/06/ProgressBar/" rel="next" title="Android优雅实现渐变色的进度条">
-                <i class="fa fa-chevron-left"></i> Android优雅实现渐变色的进度条
+              <a href="/2016/10/11/python-day04/" rel="next" title="python-day04">
+                <i class="fa fa-chevron-left"></i> python-day04
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/09/25/Android-屏幕适配不完全梳理/" rel="prev" title="Android 屏幕适配不完全梳理">
-                Android 屏幕适配不完全梳理 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/10/12/算法之路-day01/" rel="prev" title="算法之路-day01">
+                算法之路-day01 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -420,8 +407,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/09/06/Android-64K/"
-           data-title="Android 64K" data-url="http://www.smallstrong.wang/2016/09/06/Android-64K/">
+      <div class="ds-thread" data-thread-key="2016/10/12/vim快捷键笔记/"
+           data-title="vim快捷键笔记" data-url="http://www.smallstrong.wang/2016/10/12/vim快捷键笔记/">
       </div>
     
   </div>
@@ -512,7 +499,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Android-64K限制"><span class="nav-number">1.</span> <span class="nav-text">Android 64K限制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解决方案"><span class="nav-number">1.1.</span> <span class="nav-text">解决方案</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-在build-gradle中配置了multiDexEnabled-true"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.在build.gradle中配置了multiDexEnabled true</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-android-support-multidex"><span class="nav-number">1.1.2.</span> <span class="nav-text">2.android.support.multidex</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-继承MultiDexApplication"><span class="nav-number">1.1.3.</span> <span class="nav-text">3.继承MultiDexApplication</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-重写attachBaseContext方法"><span class="nav-number">1.1.4.</span> <span class="nav-text">4.重写attachBaseContext方法</span></a></li></ol></li></ol></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
         </section>
