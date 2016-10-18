@@ -4,6 +4,256 @@
   
     
     <entry>
+      <title><![CDATA[排序]]></title>
+      <url>http://www.smallstrong.wang/2016/10/13/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E9%9B%86%E9%94%A6/</url>
+      <content type="html"><![CDATA[<p><center>8大经典排序</center><br><a id="more"></a></p>
+<h1 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h1><blockquote>
+<p>一共n个数排序就需要大循环n-1次，每大循环一次就是为了让这一次最大的数滚到序列最后。例如第二次大循环的时候，是为了让第一个数 到 倒数第二个数之间的这么多数里面的 最大数 滚到倒数第二个坑位里面，下面依次类推。</p>
+</blockquote>
+<pre><code>public class bubbleSort {  
+public  bubbleSort(){  
+int a[] = {4,12,64,5,4,62,99,98,54,56,17,18,23,34,15,3}; 
+int temp=0;  
+for(int i=0;i&lt;a.length-1;i++){  
+    for(int j=0;j&lt;a.length-1-i;j++){  
+        if(a[j]&gt;a[j+1]){  
+        temp=a[j];  
+        a[j]=a[j+1];  
+        a[j+1]=temp;  
+        }  
+    }  
+}  
+for(int i=0;i&lt;a.length;i++)  
+    System.out.println(a[i]);     
+}  
+}
+</code></pre><h1 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h1><blockquote>
+<p>选最右边的数最为基数，大于等于这个基数的所有数排在这个基数右边，小于这个基数的数排在这个基数左边，那么好，这个基数的这个坑位就是他的了，没有人能和他抢这个坑位了。接着以刚刚那个基数左边的序列作为源序列，再这么来一次，刚刚左边序列的末尾的那个数字就会找到属于自己的坑位，当然右边序列也一样。这个一直递归找坑位下去，直到左右序列都只有一个数的时候坑位就找完了，排序就这样愉快的解决了。</p>
+</blockquote>
+<pre><code>public static void quickSort(int[] arer){
+qsort(arr, 0, arr.length-1);
+}
+private static void qsort(int[] arr, int low, int high){
+if (low &lt; high){
+    int pivot=partition(arr, low, high);        //将数组分为两部分
+    qsort(arr, low, pivot-1);                   //递归排序左子数组
+    qsort(arr, pivot+1, high);                  //递归排序右子数组
+}
+}
+private static int partition(int[] arr, int low, int high){
+int pivot = arr[low];     //枢轴记录
+while (low&lt;high){
+    while (low&lt;high &amp;&amp; arr[high]&gt;=pivot) --high;
+    arr[low]=arr[high];             //交换比枢轴小的记录到左端
+    while (low&lt;high &amp;&amp; arr[low]&lt;=pivot) ++low;
+    arr[high] = arr[low];           //交换比枢轴小的记录到右端
+}
+//扫描完成，枢轴到位
+arr[low] = pivot;
+//返回的是枢轴的位置
+return low;
+}
+</code></pre><h1 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h1><blockquote>
+<p>一个数一个数插进去。一次大循环这个数组里面就多一个数。</p>
+</blockquote>
+<pre><code>public static void insertion_sort( int[] arr ) {
+for( int i=0; i&lt;arr.length-1; i++ ) {    
+    for( int j=i+1; j&gt;0; j-- ) {
+        if( arr[j-1] &lt;= arr[j] )
+            break;
+        int temp = arr[j];
+        arr[j] = arr[j-1];
+        arr[j-1] = temp;
+    }
+}
+}
+</code></pre><h1 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h1><blockquote>
+<p>将一组数列等分成较多列，然后取出每一列的对应元素将其进行插入排序。接着将这个数列等分成比上次更少的列数，对每一列再进行插入排序。重复上述步骤，最后就是变成一列进行插入排序，over。</p>
+</blockquote>
+<p><a href="https://zh.wikipedia.org/wiki/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F" target="_blank" rel="external">维基百科是这么说的</a></p>
+<pre><code>public static void shell_sort(int[] arr) {
+    int gap = 1, i, j, len = arr.length;
+    int temp;
+    while (gap &lt; len / 3)
+        gap = gap * 3 + 1; // &lt;O(n^(3/2)) by Knuth,1973&gt;: 1, 4, 13, 40, 121, ...
+    for (; gap &gt; 0; gap /= 3)
+        for (i = gap; i &lt; len; i++) {
+            temp = arr[i];
+            for (j = i - gap; j &gt;= 0 &amp;&amp; arr[j] &gt; temp; j -= gap)
+                arr[j + gap] = arr[j];
+            arr[j + gap] = temp;
+        }
+}
+</code></pre><h1 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h1><blockquote>
+<p> 重头排到尾，先在整个数组中找出最小的排在序列的首位，再重剩下的数组中找最小的，找到了放在排好序的序列后面跟着，一直找到排序完成。</p>
+</blockquote>
+<pre><code>public static void selection_sort(int[] arr) {
+    int i, j, min, temp, len = arr.length;
+    for (i = 0; i &lt; len - 1; i++) {
+        min = i;
+        for (j = i + 1; j &lt; len; j++)
+            if (arr[min] &gt; arr[j])
+                min = j;
+        temp = arr[min];
+        arr[min] = arr[i];
+        arr[i] = temp;
+    }
+}    
+</code></pre><h1 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h1><blockquote>
+<p>先有堆再排序。堆化数组，将堆的末端子节点作调整，使得子节点永远大于父节点。那么最小的数就是根节点了，干掉根节点，把最最下面子节点的数字放到这个根节点的位置，再对这个对进行对条件调整。干掉现在的根节点。重复上述步骤。</p>
+</blockquote>
+<pre><code>public class HeapSort {
+private static int[] sort = new int[]{1,0,10,20,3,5,6,4,9,8,12,17,34,11};
+public static void main(String[] args) {
+    buildMaxHeapify(sort);
+    heapSort(sort);
+    print(sort);
+}
+
+private static void buildMaxHeapify(int[] data){
+    //没有子节点的才需要创建最大堆，从最后一个的父节点开始
+    int startIndex = getParentIndex(data.length - 1);
+    //从尾端开始创建最大堆，每次都是正确的堆
+    for (int i = startIndex; i &gt;= 0; i--) {
+        maxHeapify(data, data.length, i);
+    }
+}
+
+/**
+ * 创建最大堆
+ * @param data
+ * @param heapSize需要创建最大堆的大小，一般在sort的时候用到，因为最多值放在末尾，末尾就不再归入最大堆了
+ * @param index当前需要创建最大堆的位置
+ */
+private static void maxHeapify(int[] data, int heapSize, int index){
+    // 当前点与左右子节点比较
+    int left = getChildLeftIndex(index);
+    int right = getChildRightIndex(index);
+
+    int largest = index;
+    if (left &lt; heapSize &amp;&amp; data[index] &lt; data[left]) {
+        largest = left;
+    }
+    if (right &lt; heapSize &amp;&amp; data[largest] &lt; data[right]) {
+        largest = right;
+    }
+    //得到最大值后可能需要交换，如果交换了，其子节点可能就不是最大堆了，需要重新调整
+    if (largest != index) {
+        int temp = data[index];
+        data[index] = data[largest];
+        data[largest] = temp;
+        maxHeapify(data, heapSize, largest);
+    }
+}
+
+/**
+ * 排序，最大值放在末尾，data虽然是最大堆，在排序后就成了递增的
+ * @param data
+ */
+private static void heapSort(int[] data) {
+    //末尾与头交换，交换后调整最大堆
+    for (int i = data.length - 1; i &gt; 0; i--) {
+        int temp = data[0];
+        data[0] = data[i];
+        data[i] = temp;
+        maxHeapify(data, i, 0);
+    }
+}
+
+/**
+ * 父节点位置
+ * @param current
+ * @return
+ */
+private static int getParentIndex(int current){
+    return (current - 1) &gt;&gt; 1;
+}
+
+/**
+ * 左子节点position注意括号，加法优先级更高
+ * @param current
+ * @return
+ */
+private static int getChildLeftIndex(int current){
+    return (current &lt;&lt; 1) + 1;
+}
+
+/**
+ * 右子节点position
+ * @param current
+ * @return
+ */
+private static int getChildRightIndex(int current){
+    return (current &lt;&lt; 1) + 2;
+}
+
+private static void print(int[] data){
+    int pre = -2;
+    for (int i = 0; i &lt; data.length; i++) {
+        if (pre &lt; (int)getLog(i+1)) {
+            pre = (int)getLog(i+1);
+            System.out.println();
+        } 
+        System.out.print(data[i] + &quot; |&quot;);
+    }
+}
+
+/**
+ * 以2为底的对数
+ * @param param
+ * @return
+ */
+private static double getLog(double param){
+    return Math.log(param)/Math.log(2);
+}
+}
+</code></pre><h1 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h1><blockquote>
+<p>两个已经排好序的序列进行排序，各自第一个拿来比比，小的作为新的序列的第一个，这样比较到合二并一。也是典型的分而治之的思想。</p>
+</blockquote>
+<pre><code>static void merge_sort_recursive(int[] arr, int[] result, int start, int end) {
+    if (start &gt;= end)
+        return;
+    int len = end - start, mid = (len &gt;&gt; 1) + start;
+    int start1 = start, end1 = mid;
+    int start2 = mid + 1, end2 = end;
+    merge_sort_recursive(arr, result, start1, end1);
+    merge_sort_recursive(arr, result, start2, end2);
+    int k = start;
+    while (start1 &lt;= end1 &amp;&amp; start2 &lt;= end2)
+        result[k++] = arr[start1] &lt; arr[start2] ? arr[start1++] : arr[start2++];
+    while (start1 &lt;= end1)
+        result[k++] = arr[start1++];
+    while (start2 &lt;= end2)
+        result[k++] = arr[start2++];
+    for (k = start; k &lt;= end; k++)
+        arr[k] = result[k];
+}
+public static void merge_sort(int[] arr) {
+    int len = arr.length;
+    int[] result = new int[len];
+    merge_sort_recursive(arr, result, 0, len - 1);
+}    
+</code></pre><h1 id="基数排序"><a href="#基数排序" class="headerlink" title="基数排序"></a>基数排序</h1><blockquote>
+<pre><code>对整数进行排序。把所有数字搞成长度都一样，最高位开始比较，必到最后就是一个有序序列。
+</code></pre></blockquote>
+<pre><code>#!/usr/bin/env python
+#encoding=utf-8
+import math
+def sort(a, radix=10):
+    &quot;&quot;&quot;a为整数列表， radix为基数&quot;&quot;&quot;
+    K = int(math.ceil(math.log(max(a), radix))) # 用K位数可表示任意整数
+    bucket = [[] for i in range(radix)] # 不能用 [[]]*radix
+    for i in range(1, K+1): # K次循环
+        for val in a:
+            bucket[val%(radix**i)/(radix**(i-1))].append(val) # 析取整数第K位数字 （从低到高）
+        del a[:]
+        for each in bucket:
+            a.extend(each) # 桶合并
+        bucket = [[] for i in range(radix)]
+</code></pre>]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[时间复杂度理解]]></title>
       <url>http://www.smallstrong.wang/2016/10/13/%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E7%90%86%E8%A7%A3/</url>
       <content type="html"><![CDATA[<p><center>时间复杂度</center><br><a id="more"></a></p>
@@ -27,7 +277,7 @@ while(i &lt; n){
     <entry>
       <title><![CDATA[算法之路-day01]]></title>
       <url>http://www.smallstrong.wang/2016/10/12/%E7%AE%97%E6%B3%95%E4%B9%8B%E8%B7%AF-day01/</url>
-      <content type="html"><![CDATA[<p><center>算法之路day01</center><br><a id="more"></a></p>
+      <content type="html"><![CDATA[<p><center>斐波那契数列</center><br><a id="more"></a></p>
 <h2 id="斐波那契数列"><a href="#斐波那契数列" class="headerlink" title="斐波那契数列"></a>斐波那契数列</h2><pre><code>public int getTheNum(int n){
     if(n &lt;= 0){
         return 0;
