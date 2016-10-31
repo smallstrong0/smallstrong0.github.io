@@ -4,6 +4,21 @@
   
     
     <entry>
+      <title><![CDATA[mac 合并分区的时候失败，你可以尝试下这个]]></title>
+      <url>http://www.smallstrong.wang/2016/10/31/mac-%E5%90%88%E5%B9%B6%E5%88%86%E5%8C%BA%E7%9A%84%E6%97%B6%E5%80%99%E5%A4%B1%E8%B4%A5%EF%BC%8C%E4%BD%A0%E5%8F%AF%E4%BB%A5%E5%B0%9D%E8%AF%95%E4%B8%8B%E8%BF%99%E4%B8%AA/</url>
+      <content type="html"><![CDATA[<p><center>mac分区小记</center><br><a id="more"></a></p>
+<h1 id="mac分区合并"><a href="#mac分区合并" class="headerlink" title="mac分区合并"></a>mac分区合并</h1><blockquote>
+<p>如果哪天你心血来潮，用bootcamp装了双系统，然后今后的某天又不想要了，然后你打开了分区助手，一顿瞎搞，最终发现那块分区回不去了，呀，还我空间，人家片么地方放了。。。</p>
+</blockquote>
+<ol>
+<li>打开你的终端输入diskutil list,看到了你硬盘里面所有的分区，分别以disk0s(1,2,3,4)命名。</li>
+<li>找到那块自己不想要想合并的区域了吧，来输入这条指令sudo diskutil eraseVolume JHFS+ deleteme /dev/disk0s3（disk0s3只是例子，看准了删，删错别找我。这里会让你输入密码）</li>
+<li>打开分区工具，来还我空间，over.</li>
+</ol>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[排序]]></title>
       <url>http://www.smallstrong.wang/2016/10/13/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E9%9B%86%E9%94%A6/</url>
       <content type="html"><![CDATA[<p><center>8大经典排序</center><br><a id="more"></a></p>
@@ -479,7 +494,7 @@ d[&apos;Michael&apos;]
 <p>总结（根据主流分辨率）：</p>
 <p>hdpi   对应 854 x 480  960 x 540 800 x 480<br>xhdpi  对应 1280 x 720 1184 x 720<br>xxhdpi 对应 1920 X 1080</p>
 <p>基本上我要的两套图我就丢 xhdoi xxhdpi里面。</p>
-<p>接着上面那个梗，最后和ui妹子给出了个方案原型图是750*1334，输出三套图，一倍，一点五倍，两倍。我就要一倍和一点五倍的这两个。虽然不是最理想的（最理想就是1280 x 720就给我这个机型切出来的大小，但是一个公司就一个UI妹子，所以折中了一下），不过相差不是很大了，能接受了。这边提供一个链接，说的挺不错。</p>
+<p>接着上面那个梗，最后和ui妹子给出了个方案原型图是750*1334，输出两套图，两倍于三倍图。虽然不是最理想的（最理想就是720 x 1280就给我这个机型切出来的大小，但是一个公司就一个UI妹子，所以折中了一下），不过相差不是很大了，能接受了。这边提供一个链接，说的挺不错。</p>
 <p><a href="http://www.sketchs.cn/tutorials/detail/257.html" target="_blank" rel="external">点我，切图就要这么切</a></p>
 <h2 id="书写布局文件时候需要注意什么"><a href="#书写布局文件时候需要注意什么" class="headerlink" title="书写布局文件时候需要注意什么"></a>书写布局文件时候需要注意什么</h2><p>使用wrap_content、match_parent、weight，dp，sp这是官方给出的方案，的确有道理。我写布局就是尽量用权重，其实原来就是百分比布局。</p>
 <p>不过还是有一些坑的，例如：</p>

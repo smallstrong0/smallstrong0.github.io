@@ -92,7 +92,7 @@
 <meta property="og:description" content="本文介绍Android屏幕适配的一些心得(坑)">
 <meta property="og:image" content="http://www.smallstrong.wang/images/分辨率.png">
 <meta property="og:image" content="http://www.smallstrong.wang/images/dpi.png">
-<meta property="og:updated_time" content="2016-09-30T03:59:00.000Z">
+<meta property="og:updated_time" content="2016-10-24T03:31:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android 屏幕适配不完全梳理">
 <meta name="twitter:description" content="本文介绍Android屏幕适配的一些心得(坑)">
@@ -397,7 +397,7 @@
 <p>总结（根据主流分辨率）：</p>
 <p>hdpi   对应 854 x 480  960 x 540 800 x 480<br>xhdpi  对应 1280 x 720 1184 x 720<br>xxhdpi 对应 1920 X 1080</p>
 <p>基本上我要的两套图我就丢 xhdoi xxhdpi里面。</p>
-<p>接着上面那个梗，最后和ui妹子给出了个方案原型图是750*1334，输出三套图，一倍，一点五倍，两倍。我就要一倍和一点五倍的这两个。虽然不是最理想的（最理想就是1280 x 720就给我这个机型切出来的大小，但是一个公司就一个UI妹子，所以折中了一下），不过相差不是很大了，能接受了。这边提供一个链接，说的挺不错。</p>
+<p>接着上面那个梗，最后和ui妹子给出了个方案原型图是750*1334，输出两套图，两倍于三倍图。虽然不是最理想的（最理想就是720 x 1280就给我这个机型切出来的大小，但是一个公司就一个UI妹子，所以折中了一下），不过相差不是很大了，能接受了。这边提供一个链接，说的挺不错。</p>
 <p><a href="http://www.sketchs.cn/tutorials/detail/257.html" target="_blank" rel="external">点我，切图就要这么切</a></p>
 <h2 id="书写布局文件时候需要注意什么"><a href="#书写布局文件时候需要注意什么" class="headerlink" title="书写布局文件时候需要注意什么"></a>书写布局文件时候需要注意什么</h2><p>使用wrap_content、match_parent、weight，dp，sp这是官方给出的方案，的确有道理。我写布局就是尽量用权重，其实原来就是百分比布局。</p>
 <p>不过还是有一些坑的，例如：</p>
@@ -524,7 +524,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">13</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
