@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="tips," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -84,16 +84,15 @@
 
 
 
-<meta name="description" content="mac分区小记">
-<meta property="og:type" content="article">
-<meta property="og:title" content="mac 合并分区的时候失败，你可以尝试下这个">
-<meta property="og:url" content="http://www.smallstrong.wang/2016/10/31/mac-合并分区的时候失败，你可以尝试下这个/index.html">
+<meta name="description" content="学无止境">
+<meta property="og:type" content="website">
+<meta property="og:title" content="small strong 的博客">
+<meta property="og:url" content="http://www.smallstrong.wang/archives/2016/11/index.html">
 <meta property="og:site_name" content="small strong 的博客">
-<meta property="og:description" content="mac分区小记">
-<meta property="og:updated_time" content="2016-10-31T01:38:50.000Z">
+<meta property="og:description" content="学无止境">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="mac 合并分区的时候失败，你可以尝试下这个">
-<meta name="twitter:description" content="mac分区小记">
+<meta name="twitter:title" content="small strong 的博客">
+<meta name="twitter:description" content="学无止境">
 
 
 
@@ -114,9 +113,9 @@
 
 
 
-  <link rel="canonical" href="http://www.smallstrong.wang/2016/10/31/mac-合并分区的时候失败，你可以尝试下这个/"/>
+  <link rel="canonical" href="http://www.smallstrong.wang/archives/2016/11/"/>
 
-  <title> mac 合并分区的时候失败，你可以尝试下这个 | small strong 的博客 </title>
+  <title> 归档 | small strong 的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -137,7 +136,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
+  <div class="container one-collumn sidebar-position-left  page-archive  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -258,146 +257,66 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
+  <section id="posts" class="posts-collapse">
+    <span class="archive-move-on"></span>
+
+    <span class="archive-page-counter">
+      
+      
+      
+        
+      
+      嗯..! 目前共计 14 篇日志。 继续努力。
+    </span>
+
     
 
-  
-  
+      
+      
+      
 
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
+      
         
+        <div class="collection-title">
+          <h2 class="archive-year motion-element" id="archive-year-2016">2016</h2>
+        </div>
+      
+      
+
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h1 class="post-title">
         
-          <h1 class="post-title" itemprop="name headline">
-            
-            
+            <a class="post-title-link" href="/2016/11/08/雏鹰起飞day01/" itemprop="url">
               
-                mac 合并分区的时候失败，你可以尝试下这个
+                <span itemprop="name">雏鹰起飞day01</span>
               
-            
-          </h1>
+            </a>
         
+      </h1>
 
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-31T09:27:14+08:00" content="2016-10-31">
-              2016-10-31
-            </time>
-          </span>
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2016-11-08T22:44:37+08:00"
+              content="2016-11-08" >
+          11-08
+        </time>
+      </div>
 
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/10/31/mac-合并分区的时候失败，你可以尝试下这个/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/31/mac-合并分区的时候失败，你可以尝试下这个/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-              &nbsp; | &nbsp;
-              <span class="page-pv"><i class="fa fa-file-o"></i>
-              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
-              </span>
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <p><center>mac分区小记</center><br><a id="more"></a></p>
-<h1 id="mac分区合并"><a href="#mac分区合并" class="headerlink" title="mac分区合并"></a>mac分区合并</h1><blockquote>
-<p>如果哪天你心血来潮，用bootcamp装了双系统，然后今后的某天又不想要了，然后你打开了分区助手，一顿瞎搞，最终发现那块分区回不去了，呀，还我空间，人家片么地方放了。。。</p>
-</blockquote>
-<ol>
-<li>打开你的终端输入diskutil list,看到了你硬盘里面所有的分区，分别以disk0s(1,2,3,4)命名。</li>
-<li>找到那块自己不想要想合并的区域了吧，来输入这条指令sudo diskutil eraseVolume JHFS+ deleteme /dev/disk0s3（disk0s3只是例子，看准了删，删错别找我。这里会让你输入密码）</li>
-<li>打开分区工具，来还我空间，over.</li>
-</ol>
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/tips/" rel="tag">#tips</a>
-          
-        </div>
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2016/10/13/排序算法集锦/" rel="next" title="排序">
-                <i class="fa fa-chevron-left"></i> 排序
-              </a>
-            
-          </div>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/11/08/雏鹰起飞day01/" rel="prev" title="雏鹰起飞day01">
-                雏鹰起飞day01 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
+    </header>
   </article>
 
 
 
-    <div class="post-spread">
-      
-    </div>
-  </div>
+    
+
+  </section>
+
+  
+
 
 
           </div>
@@ -405,14 +324,6 @@
 
 
           
-  <div class="comments" id="comments">
-    
-      <div class="ds-thread" data-thread-key="2016/10/31/mac-合并分区的时候失败，你可以尝试下这个/"
-           data-title="mac 合并分区的时候失败，你可以尝试下这个" data-url="http://www.smallstrong.wang/2016/10/31/mac-合并分区的时候失败，你可以尝试下这个/">
-      </div>
-    
-  </div>
-
 
         </div>
         
@@ -432,17 +343,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel ">
+      <section class="site-overview sidebar-panel  sidebar-panel-active ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.png"
@@ -492,17 +394,6 @@
 
       </section>
 
-      
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-            
-              
-            
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#mac分区合并"><span class="nav-number">1.</span> <span class="nav-text">mac分区合并</span></a></li></ol></div>
-            
-          </div>
-        </section>
       
 
     </div>
@@ -622,9 +513,11 @@
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
-
+  
+    <script type="text/javascript" id="motion.page.archive">
+      $('.archive-year').velocity('transition.slideLeftIn');
+    </script>
+  
 
 
   
