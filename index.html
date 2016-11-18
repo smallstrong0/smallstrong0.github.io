@@ -281,6 +281,150 @@
             
               
                 
+                <a class="post-title-link" href="/2016/11/18/一个Textview控件里包含不同样式的字体/" itemprop="url">
+                   一个Textview控件里包含不同样式的字体
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-11-18T17:40:47+08:00" content="2016-11-18">
+              2016-11-18
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/11/18/一个Textview控件里包含不同样式的字体/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/18/一个Textview控件里包含不同样式的字体/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <center>Textview小技巧</center>
+
+<blockquote>
+<p>一个textview表示价格的时候，¥符号要小一些，好吧，就按照下面这代码搞就行了。</p>
+</blockquote>
+<pre><code>String text = new String(&quot;￥&quot; + &quot;2000&quot;);
+           Log.i(&quot;cdscvdscdscsd&quot;, text);
+           SpannableString spannableString = new SpannableString(text);
+           int size = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 11, getResources()
+                   .getDisplayMetrics());
+
+           spannableString.setSpan(new AbsoluteSizeSpan(size), 0, 1, Spanned
+                   .SPAN_EXCLUSIVE_EXCLUSIVE);//设置字体大小
+           spannableString.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.green)), 0, 1,
+                   Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);//设置字体颜色
+
+           int size2 = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 16, getResources
+                   ().getDisplayMetrics());
+
+           spannableString.setSpan(new AbsoluteSizeSpan(size2), text.length() - 1, text.length(),
+                   Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);//设置字体大小
+           spannableString.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.green)), text.length
+                   () - 1, text.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);//设置字体颜色
+
+                   tv_title_name.setText(spannableString);
+</code></pre>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/11/08/雏鹰起飞day01/" itemprop="url">
                   雏鹰起飞day01
                 </a>
@@ -1320,128 +1464,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/10/09/pyhton-day02/" itemprop="url">
-                  pyhton-day02
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-09T09:12:29+08:00" content="2016-10-09">
-              2016-10-09
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/10/09/pyhton-day02/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/09/pyhton-day02/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><center>记录Python学习第二天</center><br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/10/09/pyhton-day02/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1487,7 +1509,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">14</span>
+              <span class="site-state-item-count">15</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

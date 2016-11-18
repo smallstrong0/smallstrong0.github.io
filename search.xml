@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title><![CDATA[ 一个Textview控件里包含不同样式的字体]]></title>
+      <url>http://www.smallstrong.wang/2016/11/18/%E4%B8%80%E4%B8%AATextview%E6%8E%A7%E4%BB%B6%E9%87%8C%E5%8C%85%E5%90%AB%E4%B8%8D%E5%90%8C%E6%A0%B7%E5%BC%8F%E7%9A%84%E5%AD%97%E4%BD%93/</url>
+      <content type="html"><![CDATA[<center>Textview小技巧</center>
+
+<blockquote>
+<p>一个textview表示价格的时候，¥符号要小一些，好吧，就按照下面这代码搞就行了。</p>
+</blockquote>
+<pre><code>String text = new String(&quot;￥&quot; + &quot;2000&quot;);
+           Log.i(&quot;cdscvdscdscsd&quot;, text);
+           SpannableString spannableString = new SpannableString(text);
+           int size = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 11, getResources()
+                   .getDisplayMetrics());
+
+           spannableString.setSpan(new AbsoluteSizeSpan(size), 0, 1, Spanned
+                   .SPAN_EXCLUSIVE_EXCLUSIVE);//设置字体大小
+           spannableString.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.green)), 0, 1,
+                   Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);//设置字体颜色
+
+           int size2 = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 16, getResources
+                   ().getDisplayMetrics());
+
+           spannableString.setSpan(new AbsoluteSizeSpan(size2), text.length() - 1, text.length(),
+                   Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);//设置字体大小
+           spannableString.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.green)), text.length
+                   () - 1, text.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);//设置字体颜色
+
+                   tv_title_name.setText(spannableString);
+</code></pre>]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[雏鹰起飞day01]]></title>
       <url>http://www.smallstrong.wang/2016/11/08/%E9%9B%8F%E9%B9%B0%E8%B5%B7%E9%A3%9Eday01/</url>
       <content type="html"><![CDATA[<p><center>创业园区租卡桌，明天上班</center><br><a id="more"></a></p>
