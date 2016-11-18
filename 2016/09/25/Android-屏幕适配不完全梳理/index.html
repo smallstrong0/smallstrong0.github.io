@@ -1,0 +1,877 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="屏幕适配," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="本文介绍Android屏幕适配的一些心得(坑)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android 屏幕适配不完全梳理">
+<meta property="og:url" content="http://www.smallstrong.wang/2016/09/25/Android-屏幕适配不完全梳理/index.html">
+<meta property="og:site_name" content="small strong 的博客">
+<meta property="og:description" content="本文介绍Android屏幕适配的一些心得(坑)">
+<meta property="og:image" content="http://www.smallstrong.wang/images/分辨率.png">
+<meta property="og:image" content="http://www.smallstrong.wang/images/dpi.png">
+<meta property="og:updated_time" content="2016-10-24T03:31:40.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android 屏幕适配不完全梳理">
+<meta name="twitter:description" content="本文介绍Android屏幕适配的一些心得(坑)">
+<meta name="twitter:image" content="http://www.smallstrong.wang/images/分辨率.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://www.smallstrong.wang/2016/09/25/Android-屏幕适配不完全梳理/"/>
+
+  <title> Android 屏幕适配不完全梳理 | small strong 的博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">small strong 的博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Android 屏幕适配不完全梳理
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-25T14:11:05+08:00" content="2016-09-25">
+              2016-09-25
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/25/Android-屏幕适配不完全梳理/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/25/Android-屏幕适配不完全梳理/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv"><i class="fa fa-file-o"></i>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><center>本文介绍Android屏幕适配的一些心得(坑)</center><br><a id="more"></a></p>
+<blockquote>
+<p>Android系统由于其开源性质，碎片化问题一直被人诟病。今天想梳理一下自己这些日子下来总结的屏幕适配的经验。恩，开始了。</p>
+</blockquote>
+<ul>
+<li>屏幕尺寸，分辨率</li>
+<li>基本概念（dp,dip,sp,px,dpi）</li>
+<li>图片放入mdpi,hdpi,xhdpi,xxhdpi,xxxdpi文件夹的正确姿势</li>
+<li>书写布局文件时候需要注意什么</li>
+<li>开源的屏幕适配解决方案</li>
+</ul>
+<h2 id="屏幕尺寸，分辨率"><a href="#屏幕尺寸，分辨率" class="headerlink" title="屏幕尺寸，分辨率"></a>屏幕尺寸，分辨率</h2><p>我们先来看一张图（数据来自友盟2016年8月）</p>
+<p><img src="/images/分辨率.png" alt="分辨率.png"></p>
+<p>图中我们看到，排名前六的机型分辨率占到了九成以上的市场，因此适配他们基本就可以了。分别是：</p>
+<ol>
+<li>1280 x 720</li>
+<li>1920 X 1080</li>
+<li>854 x 480 </li>
+<li>960 x 540</li>
+<li>800 x 480</li>
+<li>1184 x 720</li>
+</ol>
+<p>随着时间的推移，屏幕分辨率会越来越高，低分辨率屏手机市场份额会逐年递减。</p>
+<p>屏幕尺寸：指屏幕对角线的长度。单位是英寸，1英寸=2.54厘米。平时我们说的几寸屏就是对角线的长度。</p>
+<h2 id="基本概念（dp-dip-sp-px-dpi）"><a href="#基本概念（dp-dip-sp-px-dpi）" class="headerlink" title="基本概念（dp,dip,sp,px,dpi）"></a>基本概念（dp,dip,sp,px,dpi）</h2><p>这边我把他们分成三类</p>
+<ol>
+<li>px</li>
+<li>dpi</li>
+<li>dp,dip,sp</li>
+</ol>
+<p>px:1个像素点，我们平常说这个手机分辨率1280 x 720，就是屏幕上有1280 乘以 720个像素点。</p>
+<p>dpi:屏幕像素密度的单位。上面说到一英尺是2.52cm对吧，dpi的概念就是一英尺就这个2.54cm里面包含多少个像素点。</p>
+<p>dp == dip<br>dip全拼：Density Independent Pixels（密度无关像素）的缩写。</p>
+<p>他们之间的关系可以用这个公式表示：px = dp * (dpi / 160)</p>
+<p>sp:Google推荐些字体大小的时候用sp，概念和dp完全一样。（Android设置里面可以改字体大小，你用了sp就会有效果）</p>
+<h2 id="图片放入mdpi-hdpi-xhdpi-xxhdpi-xxxdpi文件夹的正确姿势"><a href="#图片放入mdpi-hdpi-xhdpi-xxhdpi-xxxdpi文件夹的正确姿势" class="headerlink" title="图片放入mdpi,hdpi,xhdpi,xxhdpi,xxxdpi文件夹的正确姿势"></a>图片放入mdpi,hdpi,xhdpi,xxhdpi,xxxdpi文件夹的正确姿势</h2><p>一般公司都会给两套图来做图片适配。然后我们公司UI妹子给的两套图就是适配ios那边的两套图。原型图是iPhone5的1136x640分辨率的。之后生成的一倍图与两倍图，然后丢了过来。然后我就斯巴达了，因为图片如果用wrap_content的话，要么太大要么太小，然后我每次就估摸着自己摸索是多少dp,也还算能凑合过去。一次写底部导航栏的时候，radiobutton在xml里面是不能设置图片大小的只能在代码中改。我其实当时内心是哟欧草泥马奔腾的。为了让这些个草泥马不奔腾，我觉得去找UI妹子要图。</p>
+<p>先看张图</p>
+<p><img src="/images/dpi.png" alt="dpi.png"></p>
+<p>手机的像素密度不同就会去加载对应文件夹下面的图片。那要是没有怎么办，放心他会自动去找最相近文件夹下面的同名图片，不过会有那么一点变化，不是加载其图片真实大小，而是经过一定比例的缩放，我们来看一下这个比例是多少：</p>
+<p>mdpi：hdpi：xhdpi：xxhdpi：xxxhdpi=2：3：4：6：8 的尺寸比例进行缩放。</p>
+<p>假设我的手机是1280 x 720分辨率,经过计算我应该去xhdpi文件夹下面找图片资源，丫的没有，去xxhdpi里面一找，发现有了。是一张120px x 120px的图片，那么好我们换算一下 120 x（2/3）= 80 px，也就是我其实加载到内存里面是进行2/3倍的缩放的，同理放大也是一样的。不过这边提到一点，低分辨率图片放大会失真，建议放正确分辨率的图片到高分辨图片文件夹中，这样会避免失真的烦恼。</p>
+<p>总结（根据主流分辨率）：</p>
+<p>hdpi   对应 854 x 480  960 x 540 800 x 480<br>xhdpi  对应 1280 x 720 1184 x 720<br>xxhdpi 对应 1920 X 1080</p>
+<p>基本上我要的两套图我就丢 xhdoi xxhdpi里面。</p>
+<p>接着上面那个梗，最后和ui妹子给出了个方案原型图是750*1334，输出两套图，两倍于三倍图。虽然不是最理想的（最理想就是720 x 1280就给我这个机型切出来的大小，但是一个公司就一个UI妹子，所以折中了一下），不过相差不是很大了，能接受了。这边提供一个链接，说的挺不错。</p>
+<p><a href="http://www.sketchs.cn/tutorials/detail/257.html" target="_blank" rel="external">点我，切图就要这么切</a></p>
+<h2 id="书写布局文件时候需要注意什么"><a href="#书写布局文件时候需要注意什么" class="headerlink" title="书写布局文件时候需要注意什么"></a>书写布局文件时候需要注意什么</h2><p>使用wrap_content、match_parent、weight，dp，sp这是官方给出的方案，的确有道理。我写布局就是尽量用权重，其实原来就是百分比布局。</p>
+<p>不过还是有一些坑的，例如：</p>
+<ol>
+<li>dp写布局要小心一点，因为在同分辨率不同尺寸下的手机里面出来效果是不一样的，Android机子还真有这种情况。</li>
+<li>关于sp，说实话从内心来讲我是拒绝的，因为啊，在设置中改变字体大小，调最大，我了个去，你会发现自己写的好好的布局显现出来超级难看，不忍直视。虽然官方是推荐sp，但是我内心还是向往dp的（项目中还是sp,习惯了，毕竟少有闲人去调整字体大小，真改了，我呵呵）</li>
+<li>在你的UI给你一些不那么正常图的时候（分辨率乱来），wrap_content写imageview控件就有那么点风险了。</li>
+</ol>
+<h2 id="开源的屏幕适配解决方案"><a href="#开源的屏幕适配解决方案" class="headerlink" title="开源的屏幕适配解决方案"></a>开源的屏幕适配解决方案</h2><p>屏幕适配终结者，百分比适配。</p>
+<p><a href="https://github.com/hongyangAndroid/AndroidAutoLayout" target="_blank" rel="external">鸿洋的解决方案，直接接入</a></p>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="http://blog.csdn.net/zhaokaiqiang1992/article/details/45419023#使用非密度制约像素" target="_blank" rel="external">凯子哥</a></p>
+<p><a href="http://blog.csdn.net/lmj623565791/article/details/46695347" target="_blank" rel="external">鸿洋</a></p>
+<p><a href="http://stormzhang.com/android/2014/05/16/android-screen-adaptation/" target="_blank" rel="external">stormzhang</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/屏幕适配/" rel="tag">#屏幕适配</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/09/06/Android-64K/" rel="next" title="Android 64K">
+                <i class="fa fa-chevron-left"></i> Android 64K
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/10/08/python-day01/" rel="prev" title="python day01">
+                python day01 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/09/25/Android-屏幕适配不完全梳理/"
+           data-title="Android 屏幕适配不完全梳理" data-url="http://www.smallstrong.wang/2016/09/25/Android-屏幕适配不完全梳理/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="small strong" />
+          <p class="site-author-name" itemprop="name">small strong</p>
+          <p class="site-description motion-element" itemprop="description">学无止境</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">14</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#屏幕尺寸，分辨率"><span class="nav-number">1.</span> <span class="nav-text">屏幕尺寸，分辨率</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本概念（dp-dip-sp-px-dpi）"><span class="nav-number">2.</span> <span class="nav-text">基本概念（dp,dip,sp,px,dpi）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图片放入mdpi-hdpi-xhdpi-xxhdpi-xxxdpi文件夹的正确姿势"><span class="nav-number">3.</span> <span class="nav-text">图片放入mdpi,hdpi,xhdpi,xxhdpi,xxxdpi文件夹的正确姿势</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#书写布局文件时候需要注意什么"><span class="nav-number">4.</span> <span class="nav-text">书写布局文件时候需要注意什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开源的屏幕适配解决方案"><span class="nav-number">5.</span> <span class="nav-text">开源的屏幕适配解决方案</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#参考"><span class="nav-number">5.1.</span> <span class="nav-text">参考</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">small strong</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"smallstrongwang"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
