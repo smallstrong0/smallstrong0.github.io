@@ -4,7 +4,7 @@
     <!-- Title -->
     
     <title>
-        pyhton-day02 | hello world
+        易舍居 | hello world
     </title>
     
     <!-- Favicons -->
@@ -40,7 +40,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://www.smallstrong.wang">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="pyhton-day02 | hello world">
+    <meta property="og:title" content="易舍居 | hello world">
     <meta property="og:description" content="null">
     
      <!--[if lte IE 9]>
@@ -213,7 +213,7 @@
 	<ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
 		for="post-toc-trigger-btn">
 			
-			<ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#高阶函数"><span class="post-toc-number">1.</span> <span class="post-toc-text">高阶函数</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#map-reduce"><span class="post-toc-number">2.</span> <span class="post-toc-text">map/reduce</span></a></li></ol>
+			<ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#租卡桌"><span class="post-toc-number">1.</span> <span class="post-toc-text">租卡桌</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#交流"><span class="post-toc-number">2.</span> <span class="post-toc-text">交流</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#当下"><span class="post-toc-number">3.</span> <span class="post-toc-text">当下</span></a></li></ol>
 		
 <!--			<li class="mdl-menu__item">Some Action</li>-->
 	</ul>
@@ -246,7 +246,7 @@
 		
 	
         <p class="article-headline-p">
-            pyhton-day02
+            易舍居
         </p>
     </div>
 
@@ -264,7 +264,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Small Strong</strong>
-        <span>10月 09, 2016</span>
+        <span>11月 08, 2016</span>
     </div>
     
     <div class="section-spacer"></div>
@@ -284,7 +284,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/python学习/">python学习</a>
+        
     </ul>
     
     <!-- Share -->
@@ -299,21 +299,21 @@
     
     
     <!-- Share Twitter -->
-    <a class="post_share-link" href="https://twitter.com/intent/tweet?text=pyhton-day02&url=http://www.smallstrong.wang//2016/10/09/pyhton-day02/index.html&via=Small Strong" target="_blank">
+    <a class="post_share-link" href="https://twitter.com/intent/tweet?text=易舍居&url=http://www.smallstrong.wang//2016/11/08/易舍居--first/index.html&via=Small Strong" target="_blank">
         <li class="mdl-menu__item">
             分享到 Twitter
         </li>
     </a>
     
     <!-- Share Google+ -->
-    <a class="post_share-link" href="https://plus.google.com/share?url=http://www.smallstrong.wang//2016/10/09/pyhton-day02/index.html" target="_blank">
+    <a class="post_share-link" href="https://plus.google.com/share?url=http://www.smallstrong.wang//2016/11/08/易舍居--first/index.html" target="_blank">
         <li class="mdl-menu__item">
             分享到 Google+
         </li>
     </a>
     
     <!-- Share Weibo -->
-    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=pyhton-day02&url=http://www.smallstrong.wang//2016/10/09/pyhton-day02/index.html&pic=&searchPic=false&style=simple" target="_blank">
+    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=易舍居&url=http://www.smallstrong.wang//2016/11/08/易舍居--first/index.html&pic=&searchPic=false&style=simple" target="_blank">
         <li class="mdl-menu__item">
             分享到微博
         </li>
@@ -325,31 +325,17 @@
                 <!-- Post Content -->
                 <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
 	
-		<p><center>记录Python学习第二天</center><br><a id="more"></a></p>
+		<p><center>创业园区租卡桌，明天上班</center><br><a id="more"></a></p>
 <blockquote>
-<p>python学习记录 day02</p>
+<p>四号离职紧接着回了一趟家，安顿了下父母的情绪，去了趟建行拿着一纸薄薄的贷款协议，这么轻又那么重，再次回松江，体会了一把无业游民的乐趣。</p>
+<p>这条路注定很难走，所以我希望在我还有精力的时候记录下来，不论成败都是收货。</p>
 </blockquote>
-<h1 id="高阶函数"><a href="#高阶函数" class="headerlink" title="高阶函数"></a>高阶函数</h1><blockquote>
-<p>变量可以指向函数</p>
-</blockquote>
-<pre><code>f = abs
- f（-10）
- 10
-</code></pre><p>说明变量f现在已经指向了abs函数本身。直接调用abs()函数和调用变量f()完全相同。</p>
-<blockquote>
-<p>既然变量可以指向函数，函数的参数能接收变量，那么一个函数就可以接收另一个函数作为参数，这种函数就称之为高阶函数。</p>
-</blockquote>
-<pre><code>def add(x, y, f):
-    return f(x) + f(y)
-add(-5, 6, abs)    
-11
-</code></pre><h1 id="map-reduce"><a href="#map-reduce" class="headerlink" title="map/reduce"></a>map/reduce</h1><blockquote>
-<p>把这个list所有数字转为字符串：</p>
-</blockquote>
-<pre><code>list(map(str, [1, 2, 3, 4, 5, 6, 7, 8, 9]))
-[&apos;1&apos;, &apos;2&apos;, &apos;3&apos;, &apos;4&apos;, &apos;5&apos;, &apos;6&apos;, &apos;7&apos;, &apos;8&apos;, &apos;9&apos;]
-</code></pre><p>#返回函数<br>    def lazy_sum(*args):<br>    def sum():<br>        ax = 0<br>        for n in args:<br>            ax = ax + n<br>        return ax<br>    return sum</p>
-
+<h2 id="租卡桌"><a href="#租卡桌" class="headerlink" title="租卡桌"></a>租卡桌</h2><p>今天去看漕河泾的创客空间，的确氛围不错，800一人一月的价格在漕河泾也的确是到底了。</p>
+<h2 id="交流"><a href="#交流" class="headerlink" title="交流"></a>交流</h2><p>今天和赞赞交流了一下想法，的确填补了一些空白。交流的魅力在于互相学习借鉴成长，的确帮助很大。人毕竟就一个脑袋，考虑问题角度方式都不尽相同，所以之后有机会要多多认识更多人，然后去学习去交谈。</p>
+<h2 id="当下"><a href="#当下" class="headerlink" title="当下"></a>当下</h2><p>做好手上的事情，专心做。</p>
+<hr>
+<pre><code>2016 11 8
+</code></pre>
 	
 	
 	
@@ -369,7 +355,7 @@ add(-5, 6, abs)
     
     <!-- Prev Nav -->
     
-        <a href="/2016/10/10/python-day03/" id="post_nav-newer" class="prev-content">
+        <a href="/2016/11/18/一个Textview控件里包含不同样式的字体/" id="post_nav-newer" class="prev-content">
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                 <i class="material-icons">arrow_back</i>
             </button>
@@ -383,7 +369,7 @@ add(-5, 6, abs)
 
     <!-- Next Nav -->
     
-        <a href="/2016/10/08/python-day01/" id="post_nav-older" class="next-content">
+        <a href="/2016/10/31/mac-合并分区的时候失败，你可以尝试下这个/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
