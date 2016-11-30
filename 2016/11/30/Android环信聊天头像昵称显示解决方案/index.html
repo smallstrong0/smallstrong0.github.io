@@ -4,7 +4,7 @@
     <!-- Title -->
     
     <title>
-        Android图片压缩并上传七牛服务器 | hello world
+        Android环信聊天头像昵称显示解决方案 | hello world
     </title>
     
     <!-- Favicons -->
@@ -40,7 +40,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://www.smallstrong.wang">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Android图片压缩并上传七牛服务器 | hello world">
+    <meta property="og:title" content="Android环信聊天头像昵称显示解决方案 | hello world">
     <meta property="og:description" content="null">
     
      <!--[if lte IE 9]>
@@ -213,7 +213,7 @@
 	<ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
 		for="post-toc-trigger-btn">
 			
-			<ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#tips"><span class="post-toc-number">1.</span> <span class="post-toc-text">tips</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#贴代码（图片压缩部分，七牛工具类就不贴了）"><span class="post-toc-number">2.</span> <span class="post-toc-text">贴代码（图片压缩部分，七牛工具类就不贴了）</span></a></li></ol>
+			<ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#用到的地方"><span class="post-toc-number">1.</span> <span class="post-toc-text">用到的地方</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#步骤"><span class="post-toc-number">2.</span> <span class="post-toc-text">步骤</span></a></li></ol>
 		
 <!--			<li class="mdl-menu__item">Some Action</li>-->
 	</ul>
@@ -246,7 +246,7 @@
 		
 	
         <p class="article-headline-p">
-            Android图片压缩并上传七牛服务器
+            Android环信聊天头像昵称显示解决方案
         </p>
     </div>
 
@@ -299,21 +299,21 @@
     
     
     <!-- Share Twitter -->
-    <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Android图片压缩并上传七牛服务器&url=http://www.smallstrong.wang//2016/11/30/Android图片压缩并上传七牛服务器/index.html&via=Small Strong" target="_blank">
+    <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Android环信聊天头像昵称显示解决方案&url=http://www.smallstrong.wang//2016/11/30/Android环信聊天头像昵称显示解决方案/index.html&via=Small Strong" target="_blank">
         <li class="mdl-menu__item">
             分享到 Twitter
         </li>
     </a>
     
     <!-- Share Google+ -->
-    <a class="post_share-link" href="https://plus.google.com/share?url=http://www.smallstrong.wang//2016/11/30/Android图片压缩并上传七牛服务器/index.html" target="_blank">
+    <a class="post_share-link" href="https://plus.google.com/share?url=http://www.smallstrong.wang//2016/11/30/Android环信聊天头像昵称显示解决方案/index.html" target="_blank">
         <li class="mdl-menu__item">
             分享到 Google+
         </li>
     </a>
     
     <!-- Share Weibo -->
-    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Android图片压缩并上传七牛服务器&url=http://www.smallstrong.wang//2016/11/30/Android图片压缩并上传七牛服务器/index.html&pic=&searchPic=false&style=simple" target="_blank">
+    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Android环信聊天头像昵称显示解决方案&url=http://www.smallstrong.wang//2016/11/30/Android环信聊天头像昵称显示解决方案/index.html&pic=&searchPic=false&style=simple" target="_blank">
         <li class="mdl-menu__item">
             分享到微博
         </li>
@@ -325,71 +325,99 @@
                 <!-- Post Content -->
                 <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
 	
-		<p><center>多图片压缩并上传七牛服务器</center><br><a id="more"></a></p>
+		<p><center>解决环信头像昵称显示问题</center><br><a id="more"></a></p>
 <blockquote>
-<p>获取手机本地图片地址，先进行尺寸压缩之后加载到内存，进行循环质量压缩，图片控制在200k大小（个人建议），将数据流以byte数组的形式直接丢给七牛,返回图片下载网址。</p>
+<p>在做环信聊天的时候，大家很有可能就把环信整个demo丢进自家工程里面了，的确是个非常省事的方法。但是呢，接下去看环信写的代码就要你花点时间了。本篇主要介绍了如何花最短的时间来解决头像以及昵称的问题。前提是你已经将工程导入项目，并接入了聊天界面以及会话列表。</p>
 </blockquote>
-<h4 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h4><ol>
-<li>选好照片之后返回的多张本地图片地址，开一个异步线程去循环压缩，这边用一个map集合，key是本地图片地址，value来存储byte数组。（单线程在压缩九张2M大小图片，耗时在10多秒左右，如果用多线程去解决循环压缩，会遇到几个潜在问题：瞬间的内存大量占用以及线程安全问题）。</li>
-<li>bitmap是非常吃内存的一个家伙，能确定不用到的时候请干翻他。</li>
-<li>七牛提供本地资源地址上传于byte数组上传，个人建议用后者。比较读取本地资源会消耗更多资源且耗时。</li>
-<li>当你选照片的时候一般都会有两个途径，一个是手机拍，另一个是直接选已有图片。为方便操作，手机拍好的图片之后保存到本地图库，再刷一遍本地相册，方便统一解决。</li>
+<hr>
+<blockquote>
+<p>方案就四个字：消息扩展（扩展字段，iOS &amp; Android请保持一致，不然么法玩）</p>
+</blockquote>
+<h3 id="用到的地方"><a href="#用到的地方" class="headerlink" title="用到的地方"></a>用到的地方</h3><ol>
+<li>聊天界面里。</li>
+<li>会话列表。</li>
 </ol>
-<h4 id="贴代码（图片压缩部分，七牛工具类就不贴了）"><a href="#贴代码（图片压缩部分，七牛工具类就不贴了）" class="headerlink" title="贴代码（图片压缩部分，七牛工具类就不贴了）"></a>贴代码（图片压缩部分，七牛工具类就不贴了）</h4><pre><code>//尺寸压缩。当本地图片加载进内存的时候先压到接近屏幕大小。直接读取小心OOM
-  public static Bitmap getScaleBitmap(Context ctx, String filePath) {
-    BitmapFactory.Options opt = new BitmapFactory.Options();
-    opt.inJustDecodeBounds = true;
-    Bitmap bmp = BitmapFactory.decodeFile(filePath, opt);
+<h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><blockquote>
+<p>聊天列表点击进去把扩展信息传到聊天界面去</p>
+</blockquote>
+<p>1.ConversationListFragment文件中找到setUpView方法，聊天列表的点击事件中加入以下代码</p>
+<pre><code>conversationListView.setOnItemClickListener(new OnItemClickListener() {
+    @Override
+    public void onItemClick(AdapterView&lt;?&gt; parent, View view, int position, long id) {
+        EMConversation conversation = conversationListView.getItem(position);
+        String username = conversation.getUserName();
+        if (username.equals(EMClient.getInstance().getCurrentUser()))
+            Toast.makeText(getActivity(), R.string.Cant_chat_with_yourself, Toast.LENGTH_SHORT).show();
+        else {
+            // start chat acitivity
+            Intent intent = new Intent(getActivity(), ChatActivity.class);
+            if (conversation.isGroup()) {
+                if (conversation.getType() == EMConversationType.ChatRoom) {
+                    // it&apos;s group chat
+                    intent.putExtra(Constant.EXTRA_CHAT_TYPE, Constant.CHATTYPE_CHATROOM);
+                } else {
+                    intent.putExtra(Constant.EXTRA_CHAT_TYPE, Constant.CHATTYPE_GROUP);
+                }
 
-    int bmpWidth = opt.outWidth;
-    int bmpHeght = opt.outHeight;
-
-    WindowManager windowManager = (WindowManager) ctx.getSystemService(Context.WINDOW_SERVICE);
-    Display display = windowManager.getDefaultDisplay();
-    int screenWidth = display.getWidth();
-    int screenHeight = display.getHeight();
-
-    opt.inSampleSize = 1;
-    if (bmpWidth &gt; bmpHeght) {
-        if (bmpWidth &gt; screenWidth)
-            opt.inSampleSize = bmpWidth / screenWidth;
-    } else {
-        if (bmpHeght &gt; screenHeight)
-            opt.inSampleSize = bmpHeght / screenHeight;
-    }
-
-    opt.inJustDecodeBounds = false;
-    opt.inPreferredConfig = Bitmap.Config.RGB_565;
-    opt.inPurgeable = true;// 同时设置才会有效
-    opt.inInputShareable = true;
-    bmp = BitmapFactory.decodeFile(filePath, opt);
-
-    return bmp;
-}
-
-
-----------------------------------------------------------------
-
-
- // 循环质量压缩，压到200K放出来，以byte数组方式返回
-    public static byte[] getBytes(Bitmap mBitmap, Context context) {
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        mBitmap.compress(Bitmap.CompressFormat.JPEG, 80, baos);
-        int options = 80;
-        while (baos.toByteArray().length / 1024 &gt; 200) {
-            Log.i(&quot;骑牛返回&quot;, baos.toByteArray().length + &quot;&quot;);
-            baos.reset();
-            //每次都减少10
-            options -= 10;
-            //这里压缩options%，把压缩后的数据存放到baos中
-            mBitmap.compress(Bitmap.CompressFormat.JPEG, options, baos);
+            }
+            // it&apos;s single chat
+            intent.putExtra(Constant.EXTRA_USER_ID, username);
+            //这个人和你聊天的最后一条消息里面看是谁发的。判断方法就是取出这条消息发的人的环信id与你自己本地存储的环信id做匹配。是你发的与不是你发的，传入的值正好相反。
+            if (!conversation.getLastMessage().getFrom().equals(SPUtil.getHuanxinid(getContext()))) {
+                intent.putExtra(&quot;to_headportrait&quot;, conversation.getLastMessage().getStringAttribute(&quot;from_headportrait&quot;, &quot;&quot;));
+                intent.putExtra(&quot;to_username&quot;, conversation.getLastMessage().getStringAttribute(&quot;from_username&quot;, &quot;&quot;));
+                intent.putExtra(&quot;to_user_id&quot;, conversation.getLastMessage().getStringAttribute(&quot;from_user_id&quot;, &quot;&quot;));
+            } else {
+                intent.putExtra(&quot;to_headportrait&quot;, conversation.getLastMessage().getStringAttribute(&quot;to_headportrait&quot;, &quot;&quot;));
+                intent.putExtra(&quot;to_username&quot;, conversation.getLastMessage().getStringAttribute(&quot;to_username&quot;, &quot;&quot;));
+                intent.putExtra(&quot;to_user_id&quot;, conversation.getLastMessage().getStringAttribute(&quot;to_user_id&quot;, &quot;&quot;));
+            }
+            startActivity(intent);
         }
-        Log.i(&quot;骑牛返回&quot;,&quot;ok ahahah&quot;);
-        mBitmap.recycle();
-        System.gc();
-        return baos.toByteArray();
-    }    
-</code></pre>
+    }
+});      
+</code></pre><blockquote>
+<p>将扩展信息加入进消息中。</p>
+</blockquote>
+<p>2.全局搜onSetMessageAttributes方法，(在ChatFragment文件中)添加以下代码</p>
+<pre><code>try {
+    //我的信息，一般本地自己取出来
+    message.setAttribute(&quot;from_user_id&quot;, SPUtil.getUser(getContext()).getUser_id());
+    message.setAttribute(&quot;from_headportrait&quot;, SPUtil.getUser(getContext()).getHeadportrait());
+    message.setAttribute(&quot;from_username&quot;, SPUtil.getUser(getContext()).getUsername());
+    //对方的信息，一般上个界面传值传过来
+    message.setAttribute(&quot;to_user_id&quot;, getArguments().getString(&quot;to_user_id&quot;, &quot;&quot;));
+    message.setAttribute(&quot;to_headportrait&quot;, getArguments().getString(&quot;to_headportrait&quot;, &quot;&quot;));
+    message.setAttribute(&quot;to_username&quot;, getArguments().getString(&quot;to_username&quot;, &quot;&quot;));
+} catch (Exception e) {
+
+}
+</code></pre><blockquote>
+<p>聊天列表的item项中根据消息中携带的信息来改变头像昵称</p>
+</blockquote>
+<p>3.EaseConversationAdapter这个文件，找到 EaseUserUtils.setUserAvatar(getContext(), username, holder.avatar); EaseUserUtils.setUserNick(username, holder.name);，把这两行干掉，添加以下代码。还是根据这条消息是谁发的来做判断具体要加的图片与头像。</p>
+<pre><code>if (conversation.getLastMessage().getFrom().equals(SPUtil.getUser(getContext()).getHuanxinid())) {
+       Glide.with(getContext()).load(conversation.getLastMessage().getStringAttribute(&quot;to_headportrait&quot;, &quot;&quot;)).placeholder(R.mipmap.zwf_one).transform(new GlideCircleTransform(getContext())).into(holder.avatar);
+       holder.name.setText(conversation.getLastMessage().getStringAttribute(&quot;to_username&quot;, &quot;&quot;));
+   } else {
+       Glide.with(getContext()).load(conversation.getLastMessage().getStringAttribute(&quot;from_headportrait&quot;, &quot;&quot;)).placeholder(R.mipmap.zwf_one).transform(new GlideCircleTransform(getContext())).into(holder.avatar);
+       holder.name.setText(conversation.getLastMessage().getStringAttribute(&quot;from_username&quot;, &quot;&quot;));
+   }
+</code></pre><blockquote>
+<p>聊天界面的头像也要处理一下  </p>
+</blockquote>
+<p>4.EaseChatRow这个文件，setUpBaseView方法里面找到以下代码，覆盖之。</p>
+<pre><code>//set nickname and avatar
+if(message.direct() == Direct.SEND){
+    Glide.with(context).load(SPUtil.getHeadportrait(context)).centerCrop().transform(new GlideCircleTransform(getContext())).placeholder(R.mipmap.zwf_one).into(userAvatarView);
+}else{
+    Glide.with(context).load(message.getStringAttribute(&quot;from_headportrait&quot;,&quot;&quot;)).centerCrop().transform(new GlideCircleTransform(getContext())).placeholder(R.mipmap.zwf_one).into(userAvatarView);
+    usernickView.setText(message.getStringAttribute(&quot;from_username&quot;,&quot;&quot;));
+}           
+</code></pre><blockquote>
+<p>到此，基本的显示头像昵称就应该可以了。这边图片加载用了Glide，头像是圆的，如果你项目中是其他图片加载框架自行替换吧。恩，五黑去了！</p>
+</blockquote>
+
 	
 	
 	
@@ -409,21 +437,13 @@
     
     <!-- Prev Nav -->
     
-        <a href="/2016/11/30/Android环信聊天头像昵称显示解决方案/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2016/11/25/易舍居软文/" id="post_nav-older" class="next-content">
+        <a href="/2016/11/30/Android图片压缩并上传七牛服务器/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
