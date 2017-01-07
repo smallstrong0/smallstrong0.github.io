@@ -4,7 +4,7 @@
     <!-- Title -->
     
     <title>
-        Android图片压缩并上传七牛服务器 | smallstrong&#39;s blog
+        项目freeline接入 | smallstrong&#39;s blog
     </title>
     
     <!-- Favicons -->
@@ -40,7 +40,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://www.smallstrong.wang">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Android图片压缩并上传七牛服务器 | smallstrong&#39;s blog">
+    <meta property="og:title" content="项目freeline接入 | smallstrong&#39;s blog">
     <meta property="og:description" content="null">
     
      <!--[if lte IE 9]>
@@ -213,7 +213,7 @@
 	<ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
 		for="post-toc-trigger-btn">
 			
-			<ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#tips"><span class="post-toc-number">1.</span> <span class="post-toc-text">tips</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#贴代码（图片压缩部分，七牛工具类就不贴了）"><span class="post-toc-number">2.</span> <span class="post-toc-text">贴代码（图片压缩部分，七牛工具类就不贴了）</span></a></li></ol>
+			
 		
 <!--			<li class="mdl-menu__item">Some Action</li>-->
 	</ul>
@@ -246,7 +246,7 @@
 		
 	
         <p class="article-headline-p">
-            Android图片压缩并上传七牛服务器
+            项目freeline接入
         </p>
     </div>
 
@@ -264,7 +264,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Small Strong</strong>
-        <span>11月 30, 2016</span>
+        <span>1月 07, 2017</span>
     </div>
     
     <div class="section-spacer"></div>
@@ -284,7 +284,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        
+        <a class="post_tag-link" href="/tags/Android/">Android</a>
     </ul>
     
     <!-- Share -->
@@ -299,21 +299,21 @@
     
     
     <!-- Share Twitter -->
-    <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Android图片压缩并上传七牛服务器&url=http://www.smallstrong.wang//2016/11/30/Android图片压缩并上传七牛服务器/index.html&via=Small Strong" target="_blank">
+    <a class="post_share-link" href="https://twitter.com/intent/tweet?text=项目freeline接入&url=http://www.smallstrong.wang//2017/01/07/项目freeline接入/index.html&via=Small Strong" target="_blank">
         <li class="mdl-menu__item">
             分享到 Twitter
         </li>
     </a>
     
     <!-- Share Google+ -->
-    <a class="post_share-link" href="https://plus.google.com/share?url=http://www.smallstrong.wang//2016/11/30/Android图片压缩并上传七牛服务器/index.html" target="_blank">
+    <a class="post_share-link" href="https://plus.google.com/share?url=http://www.smallstrong.wang//2017/01/07/项目freeline接入/index.html" target="_blank">
         <li class="mdl-menu__item">
             分享到 Google+
         </li>
     </a>
     
     <!-- Share Weibo -->
-    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Android图片压缩并上传七牛服务器&url=http://www.smallstrong.wang//2016/11/30/Android图片压缩并上传七牛服务器/index.html&pic=&searchPic=false&style=simple" target="_blank">
+    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=项目freeline接入&url=http://www.smallstrong.wang//2017/01/07/项目freeline接入/index.html&pic=&searchPic=false&style=simple" target="_blank">
         <li class="mdl-menu__item">
             分享到微博
         </li>
@@ -325,71 +325,25 @@
                 <!-- Post Content -->
                 <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
 	
-		<p><center>多图片压缩并上传七牛服务器</center><br><a id="more"></a></p>
+		<center>记录引入freeline遇到的一些小问题</center>
+
 <blockquote>
-<p>获取手机本地图片地址，先进行尺寸压缩之后加载到内存，进行循环质量压缩，图片控制在200k大小（个人建议），将数据流以byte数组的形式直接丢给七牛,返回图片下载网址。</p>
+<p>按照官方的指示，只要几部就能顺利接入。可惜这个是要有前提的：</p>
 </blockquote>
-<h4 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h4><ol>
-<li>选好照片之后返回的多张本地图片地址，开一个异步线程去循环压缩，这边用一个map集合，key是本地图片地址，value来存储byte数组。（单线程在压缩九张2M大小图片，耗时在10多秒左右，如果用多线程去解决循环压缩，会遇到几个潜在问题：瞬间的内存大量占用以及线程安全问题）。</li>
-<li>bitmap是非常吃内存的一个家伙，能确定不用到的时候请干翻他。</li>
-<li>七牛提供本地资源地址上传于byte数组上传，个人建议用后者。比较读取本地资源会消耗更多资源且耗时。</li>
-<li>当你选照片的时候一般都会有两个途径，一个是手机拍，另一个是直接选已有图片。为方便操作，手机拍好的图片之后保存到本地图库，再刷一遍本地相册，方便统一解决。</li>
+<ol>
+<li>freeline要求gradle版本至少大于2.14.1</li>
+<li>Python环境</li>
+<li>freeline.zip下载感人</li>
 </ol>
-<h4 id="贴代码（图片压缩部分，七牛工具类就不贴了）"><a href="#贴代码（图片压缩部分，七牛工具类就不贴了）" class="headerlink" title="贴代码（图片压缩部分，七牛工具类就不贴了）"></a>贴代码（图片压缩部分，七牛工具类就不贴了）</h4><pre><code>//尺寸压缩。当本地图片加载进内存的时候先压到接近屏幕大小。直接读取小心OOM
-  public static Bitmap getScaleBitmap(Context ctx, String filePath) {
-    BitmapFactory.Options opt = new BitmapFactory.Options();
-    opt.inJustDecodeBounds = true;
-    Bitmap bmp = BitmapFactory.decodeFile(filePath, opt);
+<blockquote>
+<p>第一个问题：我的gradle路径，这个8bnwg5hd3w55iofp58khbp6yv文件夹下应该有四个文件，才算你gradle2.14.1是完整的。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/Users/smallstrong/.gradle/wrapper/dists/gradle-2.14.1-all/8bnwg5hd3w55iofp58khbp6yv</div></pre></td></tr></table></figure>
+<blockquote>
+<p>第二个问题：因为是mac，所以自动跳过这个问题，win自行解决。</p>
+<p>第三个问题：自行收到下载freeline.zip,解压copy到项目根路径<br><a href="static.freelinebuild.com/freeline/0.8.4/all/freeline.zip">static.freelinebuild.com/freeline/0.8.4/all/freeline.zip</a></p>
+</blockquote>
 
-    int bmpWidth = opt.outWidth;
-    int bmpHeght = opt.outHeight;
-
-    WindowManager windowManager = (WindowManager) ctx.getSystemService(Context.WINDOW_SERVICE);
-    Display display = windowManager.getDefaultDisplay();
-    int screenWidth = display.getWidth();
-    int screenHeight = display.getHeight();
-
-    opt.inSampleSize = 1;
-    if (bmpWidth &gt; bmpHeght) {
-        if (bmpWidth &gt; screenWidth)
-            opt.inSampleSize = bmpWidth / screenWidth;
-    } else {
-        if (bmpHeght &gt; screenHeight)
-            opt.inSampleSize = bmpHeght / screenHeight;
-    }
-
-    opt.inJustDecodeBounds = false;
-    opt.inPreferredConfig = Bitmap.Config.RGB_565;
-    opt.inPurgeable = true;// 同时设置才会有效
-    opt.inInputShareable = true;
-    bmp = BitmapFactory.decodeFile(filePath, opt);
-
-    return bmp;
-}
-
-
-----------------------------------------------------------------
-
-
- // 循环质量压缩，压到200K放出来，以byte数组方式返回
-    public static byte[] getBytes(Bitmap mBitmap, Context context) {
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        mBitmap.compress(Bitmap.CompressFormat.JPEG, 80, baos);
-        int options = 80;
-        while (baos.toByteArray().length / 1024 &gt; 200) {
-            Log.i(&quot;骑牛返回&quot;, baos.toByteArray().length + &quot;&quot;);
-            baos.reset();
-            //每次都减少10
-            options -= 10;
-            //这里压缩options%，把压缩后的数据存放到baos中
-            mBitmap.compress(Bitmap.CompressFormat.JPEG, options, baos);
-        }
-        Log.i(&quot;骑牛返回&quot;,&quot;ok ahahah&quot;);
-        mBitmap.recycle();
-        System.gc();
-        return baos.toByteArray();
-    }    
-</code></pre>
 	
 	
 	
@@ -409,21 +363,13 @@
     
     <!-- Prev Nav -->
     
-        <a href="/2016/11/30/Android环信聊天头像昵称显示解决方案/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2016/11/23/那些你可能不知道的app推广渠道/" id="post_nav-older" class="next-content">
+        <a href="/2016/12/17/学习Java中的一些笔记/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
