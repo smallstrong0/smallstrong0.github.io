@@ -325,7 +325,58 @@
                 <!-- Post Content -->
                 <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
 	
-		
+		<center>简单工厂模式</center>
+
+
+<blockquote>
+<p>简单工厂模式</p>
+</blockquote>
+<p><img src="/images/简单工厂UML.png" alt="简单工厂UML.png"></p>
+<pre><code>interface Shoe{
+    public void wear();
+}
+</code></pre><p>定义鞋类接口，定义公共方法穿鞋子。    </p>
+<pre><code>class LeatherShoe implements Shoe{
+    public LeatherShoe(){
+
+    }
+
+    public void wear(){
+        //穿皮鞋
+    }
+}
+</code></pre><p>皮鞋实体类</p>
+<pre><code>class ClothShoe implements Shoe{
+    public ClothShoe(){
+
+    }
+
+    public void wear(){
+        //穿布鞋
+    }
+}    
+</code></pre><p>布鞋实体类    </p>
+<pre><code>class ShoeFactory{
+    public static Shoe getShoe(String type){
+        Shoe mShoe = null;
+        if(type.equals(&quot;皮鞋&quot;)){
+            mShoe = new LeatherShoe();
+        }else if(type.equals(&quot;布鞋&quot;)){
+            mShoe = new ClothShoe();
+        }
+        return mShoe;
+    }
+}
+</code></pre><p>鞋子工厂类</p>
+<pre><code>class Client{
+    public static void main(String args[]){
+        Shoe mShoe;
+        mShoe = ShoeFactory.getShoe(&quot;皮鞋&quot;);
+        mShoe.wear();
+    }
+}    
+</code></pre><p>客户端获取鞋类工厂，根据传入type为皮鞋，获取皮鞋对象，之后运行穿皮鞋方法。</p>
+
 	
 	
 	
