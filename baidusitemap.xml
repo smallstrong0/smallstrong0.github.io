@@ -4,12 +4,12 @@
 
     
   <url>
-    <loc>http://www.smallstrong.wang/2017/01/07/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</loc>
-    <lastmod>2017-04-07T07:43:39.000Z</lastmod>
+    <loc>http://www.smallstrong.wang/2017/04/07/Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%9C%8B%E6%87%82UML%E7%B1%BB%E5%9B%BE/</loc>
+    <lastmod>2017-04-11T02:38:09.000Z</lastmod>
     <data>
         <display>
-        <title>设计模式之单例模式</title>
-        <pubTime>2017-01-07T09:46:42.000Z</pubTime>
+        <title>Java设计模式之看懂UML类图</title>
+        <pubTime>2017-04-07T06:34:08.000Z</pubTime>
         
          
            
@@ -22,15 +22,33 @@
 
     
   <url>
-    <loc>http://www.smallstrong.wang/2017/04/07/Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%9C%8B%E6%87%82UML%E7%B1%BB%E5%9B%BE/</loc>
-    <lastmod>2017-04-07T06:34:08.000Z</lastmod>
+    <loc>http://www.smallstrong.wang/2017/04/11/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</loc>
+    <lastmod>2017-04-11T02:12:38.000Z</lastmod>
     <data>
         <display>
-        <title>Java设计模式之看懂UML类图</title>
-        <pubTime>2017-04-07T06:34:08.000Z</pubTime>
+        <title>设计模式之简单工厂模式</title>
+        <pubTime>2017-04-11T02:12:38.000Z</pubTime>
         
          
            
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.smallstrong.wang/2017/01/07/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</loc>
+    <lastmod>2017-04-07T07:43:39.000Z</lastmod>
+    <data>
+        <display>
+        <title>设计模式之单例模式</title>
+        <pubTime>2017-01-07T09:46:42.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="设计模式" url="http://www.smallstrong.wang/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+          
         </display>
     </data>
     </url>
@@ -251,23 +269,6 @@
 
     
   <url>
-    <loc>http://www.smallstrong.wang/2016/09/06/Android-64K/</loc>
-    <lastmod>2016-10-11T06:33:20.000Z</lastmod>
-    <data>
-        <display>
-        <title>Android 64K</title>
-        <pubTime>2016-09-06T09:18:24.000Z</pubTime>
-        
-        <tag>tips</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://www.smallstrong.wang/2016/10/11/%E4%BA%94%E5%88%86%E9%92%9F%E6%95%99%E4%BD%A0%E5%9C%A8VPS%E4%B8%8A%E6%90%AD%E5%BB%BAVPN/</loc>
     <lastmod>2016-10-11T06:33:20.000Z</lastmod>
     <data>
@@ -282,6 +283,23 @@
              
               <breadCrumb title="科学上网" url="http://www.smallstrong.wang/categories/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/"/>
           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.smallstrong.wang/2016/09/06/Android-64K/</loc>
+    <lastmod>2016-10-11T06:33:20.000Z</lastmod>
+    <data>
+        <display>
+        <title>Android 64K</title>
+        <pubTime>2016-09-06T09:18:24.000Z</pubTime>
+        
+        <tag>tips</tag>
+         
+         
+           
         </display>
     </data>
     </url>
