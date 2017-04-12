@@ -4,7 +4,7 @@
     <!-- Title -->
     
     <title>
-        项目freeline接入 | smallstrong&#39;s blog
+        设计模式之工厂模式 | smallstrong&#39;s blog
     </title>
     
     <!-- Favicons -->
@@ -40,7 +40,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://www.smallstrong.wang">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="项目freeline接入 | smallstrong&#39;s blog">
+    <meta property="og:title" content="设计模式之工厂模式 | smallstrong&#39;s blog">
     <meta property="og:description" content="null">
     
      <!--[if lte IE 9]>
@@ -213,7 +213,7 @@
 	<ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
 		for="post-toc-trigger-btn">
 			
-			
+			<ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#优点"><span class="post-toc-number">1.</span> <span class="post-toc-text">优点</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#缺点"><span class="post-toc-number">2.</span> <span class="post-toc-text">缺点</span></a></li></ol>
 		
 <!--			<li class="mdl-menu__item">Some Action</li>-->
 	</ul>
@@ -246,7 +246,7 @@
 		
 	
         <p class="article-headline-p">
-            项目freeline接入
+            设计模式之工厂模式
         </p>
     </div>
 
@@ -264,7 +264,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Small Strong</strong>
-        <span>1月 07, 2017</span>
+        <span>4月 12, 2017</span>
     </div>
     
     <div class="section-spacer"></div>
@@ -284,7 +284,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/Android/">Android</a>
+        
     </ul>
     
     <!-- Share -->
@@ -299,21 +299,21 @@
     
     
     <!-- Share Twitter -->
-    <a class="post_share-link" href="https://twitter.com/intent/tweet?text=项目freeline接入&url=http://www.smallstrong.wang//2017/01/07/项目freeline接入/index.html&via=Small Strong" target="_blank">
+    <a class="post_share-link" href="https://twitter.com/intent/tweet?text=设计模式之工厂模式&url=http://www.smallstrong.wang//2017/04/12/设计模式之工厂模式/index.html&via=Small Strong" target="_blank">
         <li class="mdl-menu__item">
             分享到 Twitter
         </li>
     </a>
     
     <!-- Share Google+ -->
-    <a class="post_share-link" href="https://plus.google.com/share?url=http://www.smallstrong.wang//2017/01/07/项目freeline接入/index.html" target="_blank">
+    <a class="post_share-link" href="https://plus.google.com/share?url=http://www.smallstrong.wang//2017/04/12/设计模式之工厂模式/index.html" target="_blank">
         <li class="mdl-menu__item">
             分享到 Google+
         </li>
     </a>
     
     <!-- Share Weibo -->
-    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=项目freeline接入&url=http://www.smallstrong.wang//2017/01/07/项目freeline接入/index.html&pic=&searchPic=false&style=simple" target="_blank">
+    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=设计模式之工厂模式&url=http://www.smallstrong.wang//2017/04/12/设计模式之工厂模式/index.html&pic=&searchPic=false&style=simple" target="_blank">
         <li class="mdl-menu__item">
             分享到微博
         </li>
@@ -325,24 +325,74 @@
                 <!-- Post Content -->
                 <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
 	
-		<center>记录引入freeline遇到的一些小问题</center>
+		<center>简单工厂模式</center>
+
 
 <blockquote>
-<p>按照官方的指示，只要几部就能顺利接入。可惜这个是要有前提的：</p>
+<p>工厂模式</p>
 </blockquote>
-<ol>
-<li>freeline要求gradle版本至少大于2.14.1</li>
-<li>Python环境</li>
-<li>freeline.zip下载感人</li>
+<p><img src="/images/工厂UML.png" alt="工厂UML.png"></p>
+<pre><code>interface Shoe{
+    void wear();
+}
+</code></pre><p>定义鞋类接口，定义公共方法穿鞋子。    </p>
+<pre><code>class LeatherShoe implements Shoe{
+    public LeatherShoe(){
+
+    }
+
+    public void wear(){
+        //穿皮鞋
+    }
+}
+</code></pre><p>皮鞋实体类</p>
+<pre><code>class ClothShoe implements Shoe{
+    public ClothShoe(){
+
+    }
+
+    public void wear(){
+        //穿布鞋
+    }
+}    
+</code></pre><p>布鞋实体类    </p>
+<pre><code>interface ShoeFactory{
+    Shoe createShoe();
+}
+</code></pre><p>鞋子工厂接口    </p>
+<pre><code>class ClothFactory implements ShoeFactory{
+    public Shoe createShoe(){
+        ClothShoe clothShoe = new ClothShoe();
+        return clothShoe;
+    }
+}
+</code></pre><p>布鞋工厂类</p>
+<pre><code>class LeatherFactory implements ShoeFactory{
+    public Shoe createShoe(){
+        LeatherShoe leatherShoe = new LeatherShoe();
+        return leatherShoe;
+    }
+}
+</code></pre><p>皮鞋工厂类    </p>
+<pre><code>class Client{
+    public static void main(String args[]){
+        Shoe mShoe;
+        ShoeFactory shoeFactory;
+        shoeFactory = new ClothFactory();//创建布鞋工厂
+        mShoe = shoeFactory.createShoe();//布鞋工厂生产布鞋
+        mShoe.wear();//穿布鞋
+    }
+}    
+</code></pre><p>客户端</p>
+<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ol>
+<li>在工厂方法模式中，工厂方法用来创建客户所需要的产品，同时还向客户隐藏了哪种具体 产品类将被实例化这一细节，用户只需要关心所需产品对应的工厂，无须关心创建细节，甚 至无须知道具体产品类的类名。</li>
+<li>基于工厂角色和产品角色的多态性设计是工厂方法模式的关键。它能够让工厂可以自主确 定创建何种产品对象，而如何创建这个对象的细节则完全封装在具体工厂内部。工厂方法模 式之所以又被称为多态工厂模式，就正是因为所有的具体工厂类都具有同一抽象父类。</li>
+<li>使用工厂方法模式的另一个优点是在系统中加入新产品时，无须修改抽象工厂和抽象产品 提供的接口，无须修改客户端，也无须修改其他的具体工厂和具体产品，而只要添加一个具 体工厂和具体产品就可以了，这样，系统的可扩展性也就变得非常好，完全符合“开闭原则”。</li>
 </ol>
-<blockquote>
-<p>第一个问题：我的gradle路径，这个8bnwg5hd3w55iofp58khbp6yv文件夹下应该有四个文件，才算你gradle2.14.1是完整的。</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/Users/smallstrong/.gradle/wrapper/dists/gradle-2.14.1-all/8bnwg5hd3w55iofp58khbp6yv</div></pre></td></tr></table></figure>
-<blockquote>
-<p>第二个问题：因为是mac，所以自动跳过这个问题，win自行解决。</p>
-<p>第三个问题：自行收到下载freeline.zip,解压copy到项目根路径<br><a href="static.freelinebuild.com/freeline/0.8.4/all/freeline.zip">static.freelinebuild.com/freeline/0.8.4/all/freeline.zip</a></p>
-</blockquote>
+<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><ol>
+<li>在添加新产品时，需要编写新的具体产品类，而且还要提供与之对应的具体工厂类，系统 中类的个数将成对增加，在一定程度上增加了系统的复杂度，有更多的类需要编译和运行， 会给系统带来一些额外的开销。</li>
+<li>由于考虑到系统的可扩展性，需要引入抽象层，在客户端代码中均使用抽象层进行定义， 增加了系统的抽象性和理解难度，且在实现时可能需要用到DOM、反射等技术，增加了系统 的实现难度</li>
+</ol>
 
 	
 	
@@ -363,21 +413,13 @@
     
     <!-- Prev Nav -->
     
-        <a href="/2017/01/07/设计模式之单例模式/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2016/12/17/学习Java中的一些笔记/" id="post_nav-older" class="next-content">
+        <a href="/2017/04/11/设计模式之简单工厂模式/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
