@@ -4,7 +4,7 @@
     <!-- Title -->
     
     <title>
-        再见上海，你好杭州 | smallstrong&#39;s blog
+        设计模式之建造者模式 | smallstrong&#39;s blog
     </title>
     
     <!-- Favicons -->
@@ -40,7 +40,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://www.smallstrong.wang">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="再见上海，你好杭州 | smallstrong&#39;s blog">
+    <meta property="og:title" content="设计模式之建造者模式 | smallstrong&#39;s blog">
     <meta property="og:description" content="null">
     
      <!--[if lte IE 9]>
@@ -213,7 +213,7 @@
 	<ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
 		for="post-toc-trigger-btn">
 			
-			
+			<ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#优点："><span class="post-toc-number">1.</span> <span class="post-toc-text">优点：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#缺点"><span class="post-toc-number">2.</span> <span class="post-toc-text">缺点</span></a></li></ol>
 		
 <!--			<li class="mdl-menu__item">Some Action</li>-->
 	</ul>
@@ -246,7 +246,7 @@
 		
 	
         <p class="article-headline-p">
-            再见上海，你好杭州
+            设计模式之建造者模式
         </p>
     </div>
 
@@ -264,7 +264,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Small Strong</strong>
-        <span>12月 11, 2016</span>
+        <span>4月 14, 2017</span>
     </div>
     
     <div class="section-spacer"></div>
@@ -299,21 +299,21 @@
     
     
     <!-- Share Twitter -->
-    <a class="post_share-link" href="https://twitter.com/intent/tweet?text=再见上海，你好杭州&url=http://www.smallstrong.wang//2016/12/11/再见上海，你好杭州/index.html&via=Small Strong" target="_blank">
+    <a class="post_share-link" href="https://twitter.com/intent/tweet?text=设计模式之建造者模式&url=http://www.smallstrong.wang//2017/04/14/设计模式之建造者模式/index.html&via=Small Strong" target="_blank">
         <li class="mdl-menu__item">
             分享到 Twitter
         </li>
     </a>
     
     <!-- Share Google+ -->
-    <a class="post_share-link" href="https://plus.google.com/share?url=http://www.smallstrong.wang//2016/12/11/再见上海，你好杭州/index.html" target="_blank">
+    <a class="post_share-link" href="https://plus.google.com/share?url=http://www.smallstrong.wang//2017/04/14/设计模式之建造者模式/index.html" target="_blank">
         <li class="mdl-menu__item">
             分享到 Google+
         </li>
     </a>
     
     <!-- Share Weibo -->
-    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=再见上海，你好杭州&url=http://www.smallstrong.wang//2016/12/11/再见上海，你好杭州/index.html&pic=&searchPic=false&style=simple" target="_blank">
+    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=设计模式之建造者模式&url=http://www.smallstrong.wang//2017/04/14/设计模式之建造者模式/index.html&pic=&searchPic=false&style=simple" target="_blank">
         <li class="mdl-menu__item">
             分享到微博
         </li>
@@ -325,16 +325,83 @@
                 <!-- Post Content -->
                 <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
 	
-		<p><center>none of programming,just mood</center><br><a id="more"></a></p>
-<pre><code>再见，若西，视惠；
-再见，易舍居；
-再见，宇哥，边哥，镇榕；
-再见，洋洋，灰灰，毛毛；
-再见，九号线；
-再见，松江南；
-再见，上海；
-你好，杭州；
-</code></pre>
+		<center>建造者模式</center>
+
+
+<blockquote>
+<p>建造者模式</p>
+</blockquote>
+<p><img src="/images/建造者UML.png" alt="建造者UML.png"></p>
+<pre><code>class Goods{
+    private String A;
+    private String B;
+    private String C;
+    //setter and getter 
+    // toString 
+}
+</code></pre><p>最终得到的商品类，A，B，C假想成商品的重要组成部分</p>
+<pre><code>abstract class GoodsBuild{
+    protected Goods goods = new Goods();
+    public abstract buildA();
+    public abstract buildB();
+    public abstract buildC();
+
+    public Goods makeGoods(){
+        return goods;
+    }
+}
+</code></pre><p>抽象建造者    </p>
+<pre><code>class AGoodsBuild extends GoodsBuild{
+    public void buildA(){
+        goods.setA(&quot;A商品的第一个属性&quot;);
+    }
+    public void buildB(){
+        goods.setA(&quot;A商品的第二个属性&quot;);
+    }
+    public void buildC(){
+        goods.setA(&quot;A商品的第三个属性&quot;);
+    }
+}
+</code></pre><p>A商品的构造器    </p>
+<pre><code>class BGoodsBuild extends GoodsBuild{
+    public void buildA(){
+        goods.setA(&quot;B商品的第一个属性&quot;);
+    }
+    public void buildB(){
+        goods.setA(&quot;B商品的第二个属性&quot;);
+    }
+    public void buildC(){
+        goods.setA(&quot;B商品的第三个属性&quot;);
+    }
+}
+</code></pre><p>B商品的构造器</p>
+<pre><code>class GoodsController{
+    public Goods getGoods(GoodsBuild gb){
+        gb.buildA();
+        gb.buildB();
+        gb.buildC();
+        return gb.makeGoods();
+    }
+}
+</code></pre><p>商品控制器，用来拿商品的</p>
+<pre><code>class Client{
+    public static void main(String args[]){
+        GoodBuild gb = new AGoodsBuild();
+        GoodsController controller = new GoodsController();
+        Goods goods = controller.getGoods(gb);
+    }
+}    
+</code></pre><p>客户端，一个商品控制器传入一个具体的商品构造器即可获得对于属性的商品goods。</p>
+<h3 id="优点："><a href="#优点：" class="headerlink" title="优点："></a>优点：</h3><ol>
+<li>在建造者模式中，客户端不必知道产品内部组成的细节，将产品本身与产品的创建过程解 耦，使得相同的创建过程可以创建不同的产品对象。</li>
+<li>每一个具体建造者都相对独立，而与其他的具体建造者无关，因此可以很方便地替换具体 建造者或增加新的具体建造者，用户使用不同的具体建造者即可得到不同的产品对象。由于 指挥者类针对抽象建造者编程，增加新的具体建造者无须修改原有类库的代码，系统扩展方 便，符合“开闭原则”</li>
+<li>可以更加精细地控制产品的创建过程。将复杂产品的创建步骤分解在不同的方法中，使得 创建过程更加清晰，也更方便使用程序来控制创建过程。</li>
+</ol>
+<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><ol>
+<li>建造者模式所创建的产品一般具有较多的共同点，其组成部分相似，如果产品之间的差异 性很大，例如很多组成部分都不相同，不适合使用建造者模式，因此其使用范围受到一定的 限制。</li>
+<li>如果产品的内部变化复杂，可能会导致需要定义很多具体建造者类来实现这种变化，导致 系统变得很庞大，增加系统的理解难度和运行成本。</li>
+</ol>
+
 	
 	
 	
@@ -354,21 +421,13 @@
     
     <!-- Prev Nav -->
     
-        <a href="/2016/12/17/学习Java中的一些笔记/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2016/11/30/Android环信聊天头像昵称显示解决方案/" id="post_nav-older" class="next-content">
+        <a href="/2017/04/13/设计模式之抽象工厂模式/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
