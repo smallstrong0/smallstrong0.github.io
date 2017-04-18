@@ -4,7 +4,7 @@
     <!-- Title -->
     
     <title>
-        smallstrong&#39;s blog
+        设计模式之适配器模式 | smallstrong&#39;s blog
     </title>
     
     <!-- Favicons -->
@@ -40,7 +40,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://www.smallstrong.wang">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="smallstrong&#39;s blog">
+    <meta property="og:title" content="设计模式之适配器模式 | smallstrong&#39;s blog">
     <meta property="og:description" content="null">
     
      <!--[if lte IE 9]>
@@ -246,7 +246,7 @@
 		
 	
         <p class="article-headline-p">
-            
+            设计模式之适配器模式
         </p>
     </div>
 
@@ -264,7 +264,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Small Strong</strong>
-        <span>4月 01, 2017</span>
+        <span>4月 18, 2017</span>
     </div>
     
     <div class="section-spacer"></div>
@@ -299,21 +299,21 @@
     
     
     <!-- Share Twitter -->
-    <a class="post_share-link" href="https://twitter.com/intent/tweet?text=&url=http://www.smallstrong.wang//googleeb8a0c05bf01c617.html&via=Small Strong" target="_blank">
+    <a class="post_share-link" href="https://twitter.com/intent/tweet?text=设计模式之适配器模式&url=http://www.smallstrong.wang//2017/04/18/设计模式之适配器模式/index.html&via=Small Strong" target="_blank">
         <li class="mdl-menu__item">
             分享到 Twitter
         </li>
     </a>
     
     <!-- Share Google+ -->
-    <a class="post_share-link" href="https://plus.google.com/share?url=http://www.smallstrong.wang//googleeb8a0c05bf01c617.html" target="_blank">
+    <a class="post_share-link" href="https://plus.google.com/share?url=http://www.smallstrong.wang//2017/04/18/设计模式之适配器模式/index.html" target="_blank">
         <li class="mdl-menu__item">
             分享到 Google+
         </li>
     </a>
     
     <!-- Share Weibo -->
-    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=&url=http://www.smallstrong.wang//googleeb8a0c05bf01c617.html&pic=&searchPic=false&style=simple" target="_blank">
+    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=设计模式之适配器模式&url=http://www.smallstrong.wang//2017/04/18/设计模式之适配器模式/index.html&pic=&searchPic=false&style=simple" target="_blank">
         <li class="mdl-menu__item">
             分享到微博
         </li>
@@ -325,7 +325,82 @@
                 <!-- Post Content -->
                 <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
 	
-		google-site-verification: googleeb8a0c05bf01c617.html
+		<center>适配器模式</center>
+
+<blockquote>
+<p>适配器模式</p>
+</blockquote>
+<p><img src="/images/适配器UML.png" alt="适配器UML.png"></p>
+<pre><code>interface Rule{
+    void driveCar();
+    boolean haveHouse();
+    long spendMoneyForHer();
+}
+</code></pre><blockquote>
+<p>程序员哥哥找女朋友，女朋友对其有这三点简单要求</p>
+</blockquote>
+<pre><code>class MeAdapter implements Rule{
+    private Car car;
+    private House  house;
+    private Money money;
+    public MeAdapter(Car car,House house,Money money){
+        this.car = car;
+        this.house = house;
+        this.moeny = money;
+    }
+
+    public void driveCar(){
+        car.drive();//开出我的五菱宏光
+    }
+
+    public boolean haveHouse(){
+            house.live();
+            return true;//亮出我的农村小土屋
+    }
+
+    public long spendMoneyForHer(){
+        money.spend();
+        return 10000000;//做梦都想给你花这么多钱
+    }
+}
+</code></pre><blockquote>
+<p>一个程序员哥哥想做到有房有车有钱的梦想适配器</p>
+</blockquote>
+<pre><code>class Car{
+    public void drive(){
+        //司机开车
+    }
+}    
+</code></pre><blockquote>
+<p>实体类车， 方法开车    </p>
+</blockquote>
+<pre><code>class House{
+    public void live(){
+        //住房子
+    }
+}
+</code></pre><blockquote>
+<p>实体类房子， 住房子</p>
+</blockquote>
+<pre><code>class Money{
+    public void spend{
+        //花钱
+    }
+}
+</code></pre><blockquote>
+<p>实体类钱， 花钱</p>
+</blockquote>
+<pre><code>class Client{
+    Rule rule;
+    rule = new MeAdapter(new Car(),new House,new Money);
+    rule.driveCar();
+    rule.haveHouse();
+    rule.spendMoneyForHer();
+}    
+</code></pre><blockquote>
+<p>满足女票的几点小需求</p>
+</blockquote>
+
 	
 	
 	
@@ -350,6 +425,14 @@
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
+    
+        <a href="/2017/04/17/设计模式之原型模式/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
     
 </nav>
         </div>
