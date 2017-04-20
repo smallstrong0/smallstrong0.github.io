@@ -4,7 +4,7 @@
     <!-- Title -->
     
     <title>
-        设计模式之适配器模式 | smallstrong&#39;s blog
+        设计模式之组合模式 | smallstrong&#39;s blog
     </title>
     
     <!-- Favicons -->
@@ -40,7 +40,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://www.smallstrong.wang">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="设计模式之适配器模式 | smallstrong&#39;s blog">
+    <meta property="og:title" content="设计模式之组合模式 | smallstrong&#39;s blog">
     <meta property="og:description" content="null">
     
      <!--[if lte IE 9]>
@@ -213,7 +213,7 @@
 	<ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
 		for="post-toc-trigger-btn">
 			
-			
+			<ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#优点"><span class="post-toc-number">1.</span> <span class="post-toc-text">优点</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#缺点"><span class="post-toc-number">2.</span> <span class="post-toc-text">缺点</span></a></li></ol>
 		
 <!--			<li class="mdl-menu__item">Some Action</li>-->
 	</ul>
@@ -246,7 +246,7 @@
 		
 	
         <p class="article-headline-p">
-            设计模式之适配器模式
+            设计模式之组合模式
         </p>
     </div>
 
@@ -264,7 +264,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Small Strong</strong>
-        <span>4月 18, 2017</span>
+        <span>4月 20, 2017</span>
     </div>
     
     <div class="section-spacer"></div>
@@ -299,21 +299,21 @@
     
     
     <!-- Share Twitter -->
-    <a class="post_share-link" href="https://twitter.com/intent/tweet?text=设计模式之适配器模式&url=http://www.smallstrong.wang//2017/04/18/设计模式之适配器模式/index.html&via=Small Strong" target="_blank">
+    <a class="post_share-link" href="https://twitter.com/intent/tweet?text=设计模式之组合模式&url=http://www.smallstrong.wang//2017/04/20/设计模式之组合模式/index.html&via=Small Strong" target="_blank">
         <li class="mdl-menu__item">
             分享到 Twitter
         </li>
     </a>
     
     <!-- Share Google+ -->
-    <a class="post_share-link" href="https://plus.google.com/share?url=http://www.smallstrong.wang//2017/04/18/设计模式之适配器模式/index.html" target="_blank">
+    <a class="post_share-link" href="https://plus.google.com/share?url=http://www.smallstrong.wang//2017/04/20/设计模式之组合模式/index.html" target="_blank">
         <li class="mdl-menu__item">
             分享到 Google+
         </li>
     </a>
     
     <!-- Share Weibo -->
-    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=设计模式之适配器模式&url=http://www.smallstrong.wang//2017/04/18/设计模式之适配器模式/index.html&pic=&searchPic=false&style=simple" target="_blank">
+    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=设计模式之组合模式&url=http://www.smallstrong.wang//2017/04/20/设计模式之组合模式/index.html&pic=&searchPic=false&style=simple" target="_blank">
         <li class="mdl-menu__item">
             分享到微博
         </li>
@@ -325,81 +325,86 @@
                 <!-- Post Content -->
                 <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
 	
-		<center>适配器模式</center>
+		<center>组合模式</center>
 
 <blockquote>
-<p>适配器模式</p>
+<p>组合模式</p>
 </blockquote>
-<p><img src="/images/适配器UML.png" alt="适配器UML.png"></p>
-<pre><code>interface Rule{
-    void driveCar();
-    boolean haveHouse();
-    long spendMoneyForHer();
+<p><img src="/images/组合UML.png" alt="组合UML.png"></p>
+<pre><code>interface View{
+    void getBackground();
 }
 </code></pre><blockquote>
-<p>程序员哥哥找女朋友，女朋友对其有这三点简单要求</p>
+<p>View顶层接口，随便搞个获取背景方法，不要在意没有返回值哈哈</p>
 </blockquote>
-<pre><code>class MeAdapter implements Rule{
-    private Car car;
-    private House  house;
-    private Money money;
-    public MeAdapter(Car car,House house,Money money){
-        this.car = car;
-        this.house = house;
-        this.moeny = money;
+<pre><code>class TextView implements View{
+    public TextView(){
+        //迷人的无参构造方法
     }
+    public void getBackground(){
 
-    public void driveCar(){
-        car.drive();//开出我的五菱宏光
-    }
-
-    public boolean haveHouse(){
-            house.live();
-            return true;//亮出我的农村小土屋
-    }
-
-    public long spendMoneyForHer(){
-        money.spend();
-        return 10000000;//做梦都想给你花这么多钱
-    }
-}
-</code></pre><blockquote>
-<p>一个程序员哥哥想做到有房有车有钱的梦想适配器</p>
-</blockquote>
-<pre><code>class Car{
-    public void drive(){
-        //司机开车
     }
 }    
 </code></pre><blockquote>
-<p>实体类车， 方法开车    </p>
+<p>文字类，实现View接口。</p>
 </blockquote>
-<pre><code>class House{
-    public void live(){
-        //住房子
+<pre><code>class ImageView implements View{
+    public ImageView(){
+        //我也是个无参构造函数
     }
-}
+    public void getBackground(){
+
+    }
+}    
 </code></pre><blockquote>
-<p>实体类房子， 住房子</p>
+<p>图片类，实现View接口</p>
 </blockquote>
-<pre><code>class Money{
-    public void spend{
-        //花钱
+<pre><code>class ViewGroup implements View{
+    private List&lt;View&gt; viewList = new ArrayList&lt;View&gt;();
+    public void addView(View view){
+        viewList.add(view);
     }
-}
+
+    public void deleteView(View view){
+        viewList.remove(view);
+    }
+
+    public void getBackground(){
+        for(View view : viewList){
+            view.getBackground();
+        }
+    }
+}    
 </code></pre><blockquote>
-<p>实体类钱， 花钱</p>
+<p>ViewGroup类    ，容器构件</p>
 </blockquote>
 <pre><code>class Client{
-    Rule rule;
-    rule = new MeAdapter(new Car(),new House,new Money);
-    rule.driveCar();
-    rule.haveHouse();
-    rule.spendMoneyForHer();
-}    
+    public static void main(String[] args){
+        View viewGroup,textView,imageView;
+        textView = new TextView();
+        imageView = new ImageView();
+        viewGroup = new ViewGroup();
+        viewGroup.add(textView);
+        viewGroup.add(imageView);
+        viewGroup.getBackground();
+    }
+}
 </code></pre><blockquote>
-<p>满足女票的几点小需求</p>
+<p>客户端类</p>
 </blockquote>
+<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ol>
+<li><p>组合模式可以清楚地定义分层次的复杂对象，表示对象的全部或部分层次，它让客户端忽 略了层次的差异，方便对整个层次结构进行控制。</p>
+</li>
+<li><p>客户端可以一致地使用一个组合结构或其中单个对象，不必关心处理的是单个对象还是整 个组合结构，简化了客户端代码。</p>
+</li>
+<li><p>在组合模式中增加新的容器构件和叶子构件都很方便，无须对现有类库进行任何修改，符 合“开闭原则”。</p>
+</li>
+<li><p>组合模式为树形结构的面向对象实现提供了一种灵活的解决方案，通过叶子对象和容器对 象的递归组合，可以形成复杂的树形结构，但对树形结构的控制却非常简单。</p>
+</li>
+</ol>
+<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><ol>
+<li>在增加新构件时很难对容器中的构件类型进行限制。有时候我们希望一个容器中只能有某些<br>特定类型的对象，例如在某个文件夹中只能包含文本文件，使用组合模式时，不能依赖类型<br>系统来施加这些约束，因为它们都来自于相同的抽象层，在这种情况下，必须通过在运行时<br>进行类型检查来实现，这个实现过程较为复杂。</li>
+</ol>
 
 	
 	
@@ -420,21 +425,13 @@
     
     <!-- Prev Nav -->
     
-        <a href="/2017/04/19/设计模式之桥接模式/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2017/04/17/设计模式之原型模式/" id="post_nav-older" class="next-content">
+        <a href="/2017/04/19/设计模式之桥接模式/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
