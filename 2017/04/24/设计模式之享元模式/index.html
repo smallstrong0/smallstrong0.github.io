@@ -4,7 +4,7 @@
     <!-- Title -->
     
     <title>
-        about | smallstrong&#39;s blog
+        设计模式之享元模式 | smallstrong&#39;s blog
     </title>
     
     <!-- Favicons -->
@@ -40,7 +40,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://www.smallstrong.wang">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="about | smallstrong&#39;s blog">
+    <meta property="og:title" content="设计模式之享元模式 | smallstrong&#39;s blog">
     <meta property="og:description" content="null">
     
      <!--[if lte IE 9]>
@@ -213,7 +213,7 @@
 	<ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
 		for="post-toc-trigger-btn">
 			
-			
+			<ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#个人总结"><span class="post-toc-number">1.</span> <span class="post-toc-text">个人总结</span></a></li></ol>
 		
 <!--			<li class="mdl-menu__item">Some Action</li>-->
 	</ul>
@@ -246,7 +246,7 @@
 		
 	
         <p class="article-headline-p">
-            about
+            设计模式之享元模式
         </p>
     </div>
 
@@ -264,7 +264,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Small Strong</strong>
-        <span>9月 02, 2016</span>
+        <span>4月 24, 2017</span>
     </div>
     
     <div class="section-spacer"></div>
@@ -299,21 +299,21 @@
     
     
     <!-- Share Twitter -->
-    <a class="post_share-link" href="https://twitter.com/intent/tweet?text=about&url=http://www.smallstrong.wang//about/index.html&via=Small Strong" target="_blank">
+    <a class="post_share-link" href="https://twitter.com/intent/tweet?text=设计模式之享元模式&url=http://www.smallstrong.wang//2017/04/24/设计模式之享元模式/index.html&via=Small Strong" target="_blank">
         <li class="mdl-menu__item">
             分享到 Twitter
         </li>
     </a>
     
     <!-- Share Google+ -->
-    <a class="post_share-link" href="https://plus.google.com/share?url=http://www.smallstrong.wang//about/index.html" target="_blank">
+    <a class="post_share-link" href="https://plus.google.com/share?url=http://www.smallstrong.wang//2017/04/24/设计模式之享元模式/index.html" target="_blank">
         <li class="mdl-menu__item">
             分享到 Google+
         </li>
     </a>
     
     <!-- Share Weibo -->
-    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=about&url=http://www.smallstrong.wang//about/index.html&pic=&searchPic=false&style=simple" target="_blank">
+    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=设计模式之享元模式&url=http://www.smallstrong.wang//2017/04/24/设计模式之享元模式/index.html&pic=&searchPic=false&style=simple" target="_blank">
         <li class="mdl-menu__item">
             分享到微博
         </li>
@@ -325,9 +325,75 @@
                 <!-- Post Content -->
                 <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
 	
-		<p>Android开发工程师</p>
-<p>QQ:393019766</p>
-<p>e-mail:15757855346@163.com</p>
+		<center>享元模式</center>
+
+<blockquote>
+<p>享元模式，刚好现在共享单车火，拿来开刀</p>
+</blockquote>
+<p><img src="/images/享元模式UML.png" alt="享元模式UML.png"></p>
+<pre><code>interface ShareBike{
+    void ride();
+}
+</code></pre><blockquote>
+<p>抽象共享单车    </p>
+</blockquote>
+<pre><code>class ShareBikeOFO implements ShareBike{
+    public void ride(){
+        //小黄车驾到
+    }
+}
+</code></pre><blockquote>
+<p>天朝小黄车</p>
+</blockquote>
+<pre><code>class ShareBikeMoBai implements ShareBike{
+    public void ride(){
+        //摩拜单车
+    }
+}
+</code></pre><blockquote>
+<p>50斤的摩拜单车</p>
+</blockquote>
+<pre><code>class BikeType{
+    public static final String OFO = &quot;OFO&quot;;
+    public static final String MOBAI = &quot;MOBAI&quot;;
+}
+</code></pre><blockquote>
+<p>共享单车类型    </p>
+</blockquote>
+<pre><code>class ShareBikeFactory{
+    HashMap shareBikeMaps = new HashMap();
+
+    public ShareBikeFactory(){
+        shareBikeFactory.put(&quot;BikeType.OFO&quot;,new ShareBikeOFO());
+        shareBikeFactory.put(&quot;BikeType.MOBAI&quot;,new ShareBikeMoBai());
+    }
+
+    public ShareBike getShareBike(String type){
+        if(BikeType.OFO.equals(type)){
+            return (ShareBikeOFO)shareBikeMaps.get(type);
+        }else if(BikeType.MOBAI.equals(type){
+            return (ShareBikeMOBAI)shareBikeMaps.get(type);
+        }
+        return null;
+    }
+}
+</code></pre><blockquote>
+<p>单车托管所</p>
+</blockquote>
+<pre><code>public class Client{
+    public static void main(String args[]){
+        ShareBikeFactory mshareBikeFactory = new ShareBikeFactory();
+        ShareBike shareBikeOFO,shareBikeMobai;
+        shareBikeOFO  = mshareBikeFactory.get(BikeType.OFO);
+        shareBikeMoBai  = mshareBikeFactory.get(BikeType.MOBAI);
+        shareBikeOFO.ride();
+        shareBikeMoBai.ride();
+    }
+}
+</code></pre><blockquote>
+<p>客户端根据需求拿单车来骑车</p>
+</blockquote>
+<h3 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h3><p>享元模式是为了避免大量创建对象省内存时候用的，Android中消息机制中Message用链表来存储消息实现消息复用就是用到这种模式。    </p>
 
 	
 	
@@ -353,6 +419,14 @@
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
+    
+        <a href="/2017/04/23/设计模式之外观模式/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
     
 </nav>
         </div>
