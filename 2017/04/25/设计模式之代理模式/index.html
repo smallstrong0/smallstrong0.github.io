@@ -4,7 +4,7 @@
     <!-- Title -->
     
     <title>
-        smallstrong&#39;s blog
+        设计模式之代理模式 | smallstrong&#39;s blog
     </title>
     
     <!-- Favicons -->
@@ -40,7 +40,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://www.smallstrong.wang">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="smallstrong&#39;s blog">
+    <meta property="og:title" content="设计模式之代理模式 | smallstrong&#39;s blog">
     <meta property="og:description" content="null">
     
      <!--[if lte IE 9]>
@@ -213,7 +213,7 @@
 	<ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
 		for="post-toc-trigger-btn">
 			
-			
+			<ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#个人总结"><span class="post-toc-number">1.</span> <span class="post-toc-text">个人总结</span></a></li></ol>
 		
 <!--			<li class="mdl-menu__item">Some Action</li>-->
 	</ul>
@@ -246,7 +246,7 @@
 		
 	
         <p class="article-headline-p">
-            
+            设计模式之代理模式
         </p>
     </div>
 
@@ -264,7 +264,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Small Strong</strong>
-        <span>4月 01, 2017</span>
+        <span>4月 25, 2017</span>
     </div>
     
     <div class="section-spacer"></div>
@@ -299,21 +299,21 @@
     
     
     <!-- Share Twitter -->
-    <a class="post_share-link" href="https://twitter.com/intent/tweet?text=&url=http://www.smallstrong.wang//googleeb8a0c05bf01c617.html&via=Small Strong" target="_blank">
+    <a class="post_share-link" href="https://twitter.com/intent/tweet?text=设计模式之代理模式&url=http://www.smallstrong.wang//2017/04/25/设计模式之代理模式/index.html&via=Small Strong" target="_blank">
         <li class="mdl-menu__item">
             分享到 Twitter
         </li>
     </a>
     
     <!-- Share Google+ -->
-    <a class="post_share-link" href="https://plus.google.com/share?url=http://www.smallstrong.wang//googleeb8a0c05bf01c617.html" target="_blank">
+    <a class="post_share-link" href="https://plus.google.com/share?url=http://www.smallstrong.wang//2017/04/25/设计模式之代理模式/index.html" target="_blank">
         <li class="mdl-menu__item">
             分享到 Google+
         </li>
     </a>
     
     <!-- Share Weibo -->
-    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=&url=http://www.smallstrong.wang//googleeb8a0c05bf01c617.html&pic=&searchPic=false&style=simple" target="_blank">
+    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=设计模式之代理模式&url=http://www.smallstrong.wang//2017/04/25/设计模式之代理模式/index.html&pic=&searchPic=false&style=simple" target="_blank">
         <li class="mdl-menu__item">
             分享到微博
         </li>
@@ -325,7 +325,52 @@
                 <!-- Post Content -->
                 <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
 	
-		google-site-verification: googleeb8a0c05bf01c617.html
+		<center>代理模式</center>
+
+<blockquote>
+<p>代理模式,故事是这么发生的。你女票要看五月天演唱会，结果你上大麦手速不够么抢到。为了不再次成为单身狗，你决定去找黄牛搞票。不说了，下个月五块钱以上的活动不要叫我。</p>
+</blockquote>
+<p><img src="/images/代理模式UML.png" alt="代理模式UML.png"></p>
+<pre><code>interface BuyTicket{
+    void buyTicket();
+}
+</code></pre><blockquote>
+<p>定义一个业务接口，买票</p>
+</blockquote>
+<pre><code>class RealBuyTicket implements BuyTicket{
+    public void buyTicket(){
+        //正正经经买票，大麦官方渠道
+    }
+}    
+</code></pre><blockquote>
+<p>这个是官方渠道，票其实都在这出售，但是谁叫你手速慢。（枉亏我自称麒麟臂）</p>
+</blockquote>
+<pre><code>class ProxyBuyTicket implements BuyTicket{
+    RealBuyTicket realBuyTicket = new RealBuyTicket();
+    public void buyTicket(){
+        addMoney();// 收点代理费
+        realBuyTicket.buyTicket();
+    }
+
+    public void addMoney(){
+        // 老铁，加点钱
+    }
+}
+</code></pre><blockquote>
+<p>买票代理类，加钱就能买</p>
+</blockquote>
+<pre><code>class Cliten{
+    public static void main(String[] args){
+        BuyTicket mButTicket = new ProxyBuyTicket();
+        mButTicket.buyTicket();
+    }
+}
+</code></pre><blockquote>
+<p>找到黄牛，买五月天内场门票，两张哦！</p>
+</blockquote>
+<h3 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h3><p>代理模式其实衍生开去分为很多种类，包括远程代理（翻墙），虚拟代理（用在要创建资源耗费大的对象时候用到），缓冲代理（避免重复请求） 等。代理类及真正的实现类其实在实际中处理业务会非常复杂。</p>
+<p>代理模式能总结成一句话，我想做某件事，自己做不到或者不能直接做，需要找个方法代理来处理。</p>
+
 	
 	
 	
@@ -350,6 +395,14 @@
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
+    
+        <a href="/2017/04/24/设计模式之享元模式/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
     
 </nav>
         </div>
