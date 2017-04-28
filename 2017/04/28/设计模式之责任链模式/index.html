@@ -4,7 +4,7 @@
     <!-- Title -->
     
     <title>
-        Android优雅实现渐变色的进度条 | smallstrong&#39;s blog
+        设计模式之责任链模式 | smallstrong&#39;s blog
     </title>
     
     <!-- Favicons -->
@@ -40,7 +40,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://www.smallstrong.wang">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Android优雅实现渐变色的进度条 | smallstrong&#39;s blog">
+    <meta property="og:title" content="设计模式之责任链模式 | smallstrong&#39;s blog">
     <meta property="og:description" content="null">
     
      <!--[if lte IE 9]>
@@ -213,7 +213,7 @@
 	<ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
 		for="post-toc-trigger-btn">
 			
-			<ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Android优雅实现渐变色的进度条"><span class="post-toc-number">1.</span> <span class="post-toc-text">Android优雅实现渐变色的进度条</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#布局文件"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">布局文件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#progress-red-xml"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">progress_red.xml</span></a></li></ol></li></ol>
+			<ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#个人总结"><span class="post-toc-number">1.</span> <span class="post-toc-text">个人总结</span></a></li></ol>
 		
 <!--			<li class="mdl-menu__item">Some Action</li>-->
 	</ul>
@@ -246,7 +246,7 @@
 		
 	
         <p class="article-headline-p">
-            Android优雅实现渐变色的进度条
+            设计模式之责任链模式
         </p>
     </div>
 
@@ -264,7 +264,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Small Strong</strong>
-        <span>9月 06, 2016</span>
+        <span>4月 28, 2017</span>
     </div>
     
     <div class="section-spacer"></div>
@@ -284,7 +284,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/view/">view</a>
+        
     </ul>
     
     <!-- Share -->
@@ -299,21 +299,21 @@
     
     
     <!-- Share Twitter -->
-    <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Android优雅实现渐变色的进度条&url=http://www.smallstrong.wang//2016/09/06/ProgressBar/index.html&via=Small Strong" target="_blank">
+    <a class="post_share-link" href="https://twitter.com/intent/tweet?text=设计模式之责任链模式&url=http://www.smallstrong.wang//2017/04/28/设计模式之责任链模式/index.html&via=Small Strong" target="_blank">
         <li class="mdl-menu__item">
             分享到 Twitter
         </li>
     </a>
     
     <!-- Share Google+ -->
-    <a class="post_share-link" href="https://plus.google.com/share?url=http://www.smallstrong.wang//2016/09/06/ProgressBar/index.html" target="_blank">
+    <a class="post_share-link" href="https://plus.google.com/share?url=http://www.smallstrong.wang//2017/04/28/设计模式之责任链模式/index.html" target="_blank">
         <li class="mdl-menu__item">
             分享到 Google+
         </li>
     </a>
     
     <!-- Share Weibo -->
-    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Android优雅实现渐变色的进度条&url=http://www.smallstrong.wang//2016/09/06/ProgressBar/index.html&pic=&searchPic=false&style=simple" target="_blank">
+    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=设计模式之责任链模式&url=http://www.smallstrong.wang//2017/04/28/设计模式之责任链模式/index.html&pic=&searchPic=false&style=simple" target="_blank">
         <li class="mdl-menu__item">
             分享到微博
         </li>
@@ -325,45 +325,101 @@
                 <!-- Post Content -->
                 <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
 	
-		<p><center>本文介绍在使用progress如何实现渐变色的进度条</center><br><a id="more"></a></p>
-<h1 id="Android优雅实现渐变色的进度条"><a href="#Android优雅实现渐变色的进度条" class="headerlink" title="Android优雅实现渐变色的进度条"></a>Android优雅实现渐变色的进度条</h1><p><img src="/images/progress.png" alt="progress.png"></p>
-<h2 id="布局文件"><a href="#布局文件" class="headerlink" title="布局文件"></a>布局文件</h2><pre><code>&lt;android.support.v4.widget.ContentLoadingProgressBar
-            android:id=&quot;@+id/pb&quot;
-            style=&quot;?android:attr/progressBarStyleHorizontal&quot;
-            android:layout_width=&quot;match_parent&quot;
-            android:layout_height=&quot;6dp&quot;
-            android:layout_marginBottom=&quot;5dp&quot;
-            android:layout_marginLeft=&quot;16dp&quot;
-            android:layout_marginRight=&quot;16dp&quot;
-            android:max=&quot;10000&quot;
-            android:progressDrawable=&quot;@drawable/progress_red&quot;/&gt;
-</code></pre><h2 id="progress-red-xml"><a href="#progress-red-xml" class="headerlink" title="progress_red.xml"></a>progress_red.xml</h2><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-&lt;layer-list xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
-&lt;item android:id=&quot;@android:id/background&quot;&gt;
-    &lt;shape&gt;
-        &lt;corners android:radius=&quot;5dip&quot; /&gt;
-        &lt;gradient
-            android:angle=&quot;270&quot;
-            android:centerColor=&quot;@color/gray_bit&quot;
-            android:centerY=&quot;0.75&quot;
-            android:endColor=&quot;@color/gray_bit&quot;
-            android:startColor=&quot;@color/gray_bit&quot; /&gt;
-    &lt;/shape&gt;
-&lt;/item&gt;
+		<center>设计模式之责任链模式</center>
 
-&lt;item android:id=&quot;@android:id/progress&quot;&gt;
-    &lt;clip&gt;
-        &lt;shape&gt;
-            &lt;corners android:radius=&quot;5dip&quot; /&gt;
-            &lt;gradient
-                android:endColor=&quot;@color/yellow_deep&quot;
-                android:centerColor=&quot;@color/yellow_middle&quot;
-                android:startColor=&quot;@color/yellow_little&quot; /&gt;
-        &lt;/shape&gt;
-    &lt;/clip&gt;
-&lt;/item&gt;
-&lt;/layer-list&gt;            
-</code></pre>
+
+<blockquote>
+<p>责任链模式</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/1321838-8ac226dddb839fd1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="责任链模式UML.png"></p>
+<pre><code>abstract class Department{
+    protected Department mDepartment;
+
+    public void setDepartment(Department department){
+        this.mDepartment = department;
+    }
+
+    public abstract void makeChoice(Things s);
+}
+</code></pre><blockquote>
+<p>抽象部门，成员变量指定上级部门，定义处理事情的方法</p>
+</blockquote>
+<pre><code>class Municipal extends Department{
+    public void makeChoice(Things s){
+        if(s.level &lt;= 1){
+            Log.i(&quot;smallstrong&quot;,&quot;市级部门&quot;+s.thing);
+        }else{
+            this.mDepartment.makeChoice(s);//报告上级
+        }
+    }
+}
+</code></pre><blockquote>
+<p>市级部门</p>
+</blockquote>
+<pre><code>class Provincial extends Department{
+    public void makeChoice(Things s){
+        if(s.level &lt;= 2){
+            Log.i(&quot;smallstrong&quot;,&quot;省级部门&quot;+s.thing);
+        }else{
+            this.mDepartment.makeChoice(s);//报告上级
+        }
+    }
+}
+</code></pre><blockquote>
+<p>省级部门</p>
+</blockquote>
+<pre><code>class Country extends Department{
+    public void makeChoice(Things s){
+        if(s.level &gt; 0){
+            Log.i(&quot;smallstrong&quot;,&quot;国家级部门&quot;+s.thing);
+        }else{
+            //this.mDepartment.makeChoice(s);//报告上级
+        }
+    }
+}    
+</code></pre><blockquote>
+<p>国家级部门    </p>
+</blockquote>
+<pre><code>class Things{
+    private static final int level;//1  市级范围  2 省级范围 3 国家级范围
+    private static final String thing;
+
+    public Things(int level ,String thing){
+        this.level = level;
+        this.thing = thing;
+    }
+}
+</code></pre><blockquote>
+<p>具体事情与等级    </p>
+</blockquote>
+<pre><code>class Client{
+    public static void main(String args[]){
+        Department mMunicipal,mProvincial,mCountry;
+        mMunicipal = new Municipal();
+        mProvincial = new Provincial();
+        mCountry = new Country();
+        mMunicipal.setDepartment(mProvincial);
+        mProvincial.setDepartment(mCountry);
+
+        Things thing = new Things(1,&quot;李达康冲击GDP&quot;);
+        mMunicipal.makeChoice(thing);    
+
+        Things thing = new Things(2,&quot;沙瑞金书记召开省部级会议&quot;);
+        mMunicipal.makeChoice(thing);    
+
+        Things thing = new Things(3,&quot;赵立春老书记被罢免&quot;);
+        mMunicipal.makeChoice(thing);    
+    }
+}
+</code></pre><blockquote>
+<p>客户端，先要构造一个责任顺序。</p>
+</blockquote>
+<p>log如下</p>
+<p>[市级部门李达康冲击GDP]</p>
+<p>[沙瑞金书记召开省部级会议]</p>
+<p>[赵立春老书记被罢免]</p>
+<h3 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h3><p>责任链模式适用于多个对象都可以处理一个事情，对象可以根据情况处理或者丢给一个级别的对象处理。客户端要代码实现一个责任顺序。Android中view事件的分发已经有序广播的传递都采用了这种模式（相似）。</p>
+
 	
 	
 	
@@ -383,19 +439,19 @@
     
     <!-- Prev Nav -->
     
-        <a href="/2016/09/06/Android-64K/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
+    
+        <a href="/2017/04/27/设计模式之策略模式/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
     
 </nav>
         </div>
