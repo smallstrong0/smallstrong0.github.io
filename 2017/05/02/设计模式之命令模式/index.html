@@ -4,7 +4,7 @@
     <!-- Title -->
     
     <title>
-        archive_a: 2016 | smallstrong&#39;s blog
+        设计模式之命令模式 | smallstrong&#39;s blog
     </title>
     
     <!-- Favicons -->
@@ -40,7 +40,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://www.smallstrong.wang">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="archive_a: 2016 | smallstrong&#39;s blog">
+    <meta property="og:title" content="设计模式之命令模式 | smallstrong&#39;s blog">
     <meta property="og:description" content="null">
     
      <!--[if lte IE 9]>
@@ -192,319 +192,338 @@
                 </button>
 				
 				
-                <!-- Index Module -->
-<div class="material-index mdl-grid">
-	
-		<!-- Paradox Header -->
-		<!-- Daily pic -->
-<div class="mdl-card daily-pic mdl-cell mdl-cell--8-col index-top-block">
-    
-    <!-- Pic & Slogan -->
-    <div class="mdl-card__media mdl-color-text--grey-50" style="background-image:url(/img/daily_pic.png)">
-        <p class="index-top-block-slogan"><a href="#">学无止境</a></p>
-    </div>
+                
+	<!-- Back Button -->
+<!--
+	<div class="material-back" id="backhome-div" tabindex="0">
+		<a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" href="#" onclick="window.history.back();return false;" target="_self" role="button" data-upgraded=",MaterialButton,MaterialRipple">
+			<i class="material-icons" role="presentation">arrow_back</i>
+			<span class="mdl-button__ripple-container">
+				<span class="mdl-ripple"></span>
+			</span>
+		</a>
+	</div>			
+-->
+	<!-- Left aligned menu below button -->
+	<button id="post-toc-trigger-btn"
+			class="mdl-button mdl-js-button mdl-button--icon">
+	  <i class="material-icons">format_list_numbered</i>
+	</button>
 
-    <!-- Avatar & Name -->
-    <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
-        <!-- Author Avatar -->
-        <div id="author-avatar">
-            <img src="/img/avatar.png" width="32px" height="32px" alt="avatar">
-        </div>
-        <div>
-            <strong>Small Strong</strong>
-        </div>
-    </div>
-</div>
-
-		<!-- Blog info -->
-<div class="mdl-card something-else mdl-cell mdl-cell--8-col mdl-cell--4-col-desktop index-top-block">
-	
-    <!-- Search -->
-	
-	<!-- Google -->
-	<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable" method="post" action="">
-		<label id="search-label" class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--fab mdl-color--accent mdl-shadow--4dp" for="search">
-			<i class="material-icons mdl-color-text--white" role="presentation">search</i>
-		</label>
-
-		<form id="search-form" method="get" action="//google.com/search" accept-charset="UTF-8" class="mdl-textfield__expandable-holder" target="_blank">
-			<input class="mdl-textfield__input search-input" type="search" name="q" id="search" placeholder="">
-			<label id="search-form-label" class="mdl-textfield__label" for="search"></label>
+	<ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+		for="post-toc-trigger-btn">
 			
-			<input type="hidden" name="sitesearch" value="http://www.smallstrong.wang">
-		</form>
-	</div>
-
-
-
-
-
-
-    <!-- LOGO -->
-    <div class="something-else-logo mdl-color--white mdl-color-text--grey-600">
-        <a href="null">
-            <img src="/img/avatar.png" alt="logo" />
-        </a>
-    </div>
-
-    <!-- Infomation -->
-    <div class="mdl-card__supporting-text meta meta--fill mdl-color-text--grey-600">
-        <!-- Blog Title -->
-        <div>
-            <strong>smallstrong&#39;s blog</strong>
-        </div>
-        <div class="section-spacer"></div>
-        
-        <!-- Pages -->
-        <button id="show-pages-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-            <i class="material-icons" role="presentation">view_carousel</i>
-            <span class="visuallyhidden">Pages</span>
-        </button>
-        <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="show-pages-button">
-            
-                <a class="index_share-link" href="/about" title="about">
-                    <l class="mdl-menu__item mdl-js-ripple-effect"i>
-                        about
-                    </li>
-                </a>
-            
-        </ul>
-        
-        <!-- Menu -->
-        <button id="menubtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-            <i class="material-icons" role="presentation">more_vert</i>
-            <span class="visuallyhidden">show menu</span>
-        </button>
-        <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="menubtn">
-            
-            <a class="index_share-link" href="null">
-                <li class="mdl-menu__item mdl-js-ripple-effect">
-                    文章 RSS
-                </li>
-            </a>
-            <a class="index_share-link" href="https://twitter.com/intent/tweet?text=smallstrong&#39;s blog&url=http://www.smallstrong.wang/&via=Small Strong" target="_blank">
-                <li class="mdl-menu__item mdl-js-ripple-effect">
-                    分享到 Twitter
-                </li>
-            </a>
-            <a class="index_share-link" href="https://plus.google.com/share?url=http://www.smallstrong.wang/" target="_blank">
-                <li class="mdl-menu__item mdl-js-ripple-effect">
-                    分享到 Google+
-                </li>
-            </a>
-            <a class="index_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=smallstrong&#39;s blog&url=http://www.smallstrong.wang/&pic=&searchPic=false&style=simple" target="_blank">
-                <li class="mdl-menu__item mdl-js-ripple-effect">
-                    分享到微博
-                </li>
-            </a>
-        </ul>
-    </div>
-</div>
-
-	
-    
-    
+			<ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#个人总结"><span class="post-toc-number">1.</span> <span class="post-toc-text">个人总结</span></a></li></ol>
 		
-			<!-- Paradox Thumbnail -->
-        	<div class="post_entry-module mdl-card mdl-cell mdl-cell--12-col fade out">
-    
-    <!-- Post Thumbnail -->
+<!--			<li class="mdl-menu__item">Some Action</li>-->
+	</ul>
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+		
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+	<!-- Paradox Post Header -->
 	
 		
 			<!-- Random Thumbnail -->
 			<div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-		
-	
-				
-		<!-- Post Title -->
-		<p class="article-headline-p"><a href="/2016/09/25/Android-屏幕适配不完全梳理/">Android 屏幕适配不完全梳理</a></p>
-	</div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-          本文介绍Android屏幕适配的一些心得(坑)
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2016/09/25/Android-屏幕适配不完全梳理/" target="_self">继续阅读</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Small Strong's avatar">
-            </div>
-            <div>
-                <strong>Small Strong</strong>
-                <span>9月 25, 2016</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/Android/">Android</a>
-            </span>
-            
-            
-            
-            <!-- Post Views -->
-            <span class="post_entry-views">
-                
-            </span>
-        </div>
-    </div>
-            
-</div>
-
-		
-		
-    
-		
-			<!-- Paradox Thumbnail -->
-        	<div class="post_entry-module mdl-card mdl-cell mdl-cell--12-col fade out">
-    
-    <!-- Post Thumbnail -->
-	
-		
-			<!-- Random Thumbnail -->
-			<div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-		
-	
-				
-		<!-- Post Title -->
-		<p class="article-headline-p"><a href="/2016/09/06/Android-64K/">Android 64K</a></p>
-	</div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-          64K限制引发的血案
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2016/09/06/Android-64K/" target="_self">继续阅读</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Small Strong's avatar">
-            </div>
-            <div>
-                <strong>Small Strong</strong>
-                <span>9月 06, 2016</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-            
-            
-            
-            <!-- Post Views -->
-            <span class="post_entry-views">
-                
-            </span>
-        </div>
-    </div>
-            
-</div>
-
-		
-		
-    
-		
-			<!-- Paradox Thumbnail -->
-        	<div class="post_entry-module mdl-card mdl-cell mdl-cell--12-col fade out">
-    
-    <!-- Post Thumbnail -->
-	
-		
-			<!-- Random Thumbnail -->
-			<div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-		
-	
-				
-		<!-- Post Title -->
-		<p class="article-headline-p"><a href="/2016/09/06/ProgressBar/">Android优雅实现渐变色的进度条</a></p>
-	</div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-          本文介绍在使用progress如何实现渐变色的进度条
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2016/09/06/ProgressBar/" target="_self">继续阅读</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Small Strong's avatar">
-            </div>
-            <div>
-                <strong>Small Strong</strong>
-                <span>9月 06, 2016</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/Android/">Android</a>
-            </span>
-            
-            
-            
-            <!-- Post Views -->
-            <span class="post_entry-views">
-                
-            </span>
-        </div>
-    </div>
-            
-</div>
-
-		
-		
-    
-		<!-- Index nav -->
-        <nav class="material-nav mdl-cell mdl-cell--12-col">
-            <a class="extend prev" rel="prev" href="/archives/2016/"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">arrow_back</i></button></a><a class="page-number" href="/archives/2016/">1</a><span class="page-number current">2</span>
-        </nav>
-    
-    
-	
-		<script>
+				<script>
     
     var randomNum;
+    randomNum = Math.floor(Math.random() * 5 + 1);
     
-    var locatePost = $(".something-else").next();
-    for(var i=0; i < 10; i++){
-        
-        randomNum = Math.floor(Math.random() * 5 + 1);
-        
-        locatePost.children(".post_thumbnail-random").attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children(".post_thumbnail-random").css('background-image', 'url(' + '/img/random/' + randomNum + '.png' + ')')
-        
-        locatePost = locatePost.next();
-    }
+    $(".post_thumbnail-random").css('background-image', 'url(' + '/img/random/' + randomNum + '.png' + ')');
     
 </script>
 
+		
+	
+        <p class="article-headline-p">
+            设计模式之命令模式
+        </p>
+    </div>
+
 	
 
+				
+				
+					<!-- Paradox Post Info -->
+					<div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+    
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Small Strong</strong>
+        <span>5月 02, 2017</span>
+    </div>
+    
+    <div class="section-spacer"></div>
+	
+    <!-- Favorite -->
+<!--
+    <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+        <i class="material-icons" role="presentation">favorite</i>
+        <span class="visuallyhidden">favorites</span>
+    </button>
+-->
+    
+    <!-- Tags (bookmark) -->
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        
+    </ul>
+    
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+    
+    
+    
+    
+    <!-- Share Twitter -->
+    <a class="post_share-link" href="https://twitter.com/intent/tweet?text=设计模式之命令模式&url=http://www.smallstrong.wang//2017/05/02/设计模式之命令模式/index.html&via=Small Strong" target="_blank">
+        <li class="mdl-menu__item">
+            分享到 Twitter
+        </li>
+    </a>
+    
+    <!-- Share Google+ -->
+    <a class="post_share-link" href="https://plus.google.com/share?url=http://www.smallstrong.wang//2017/05/02/设计模式之命令模式/index.html" target="_blank">
+        <li class="mdl-menu__item">
+            分享到 Google+
+        </li>
+    </a>
+    
+    <!-- Share Weibo -->
+    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=设计模式之命令模式&url=http://www.smallstrong.wang//2017/05/02/设计模式之命令模式/index.html&pic=&searchPic=false&style=simple" target="_blank">
+        <li class="mdl-menu__item">
+            分享到微博
+        </li>
+    </a>
+</ul>
 </div>
+				
+
+                <!-- Post Content -->
+                <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+	
+		<center>设计模式之命令模式</center>
+
+
+<blockquote>
+<p>命令模式</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/1321838-fb4422e6ea2b011c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="命令模式UML.png"></p>
+<pre><code>class GameBoy{
+    public void toLeft(){
+        //左移
+    }
+    public void toRight(){
+        //右移
+    }
+    public void toTop(){
+        //上移
+    }
+    public void toBottom(){
+        //下移
+    }
+    public void toA(){
+        //A键出拳
+    }
+    public void toB(){
+        //B键踢腿
+    }
+}
+</code></pre><blockquote>
+<p>GameBoy,游戏机类    </p>
+</blockquote>
+<pre><code>interface Command{
+    void execute();
+}
+</code></pre><blockquote>
+<p>按钮接口    </p>
+</blockquote>
+<pre><code>class LeftCommand implements Command{
+    private GameBoy gameBoy;
+    public LeftCommand(GameBoy gameBoy){
+        this.gameBoy = gameBoy;
+    }
+    public void execute(){
+        gameBoy.toLeft();
+    }
+}
+
+class RightCommand implements Command{
+    private GameBoy gameBoy;
+    public RightCommand(GameBoy gameBoy){
+        this.gameBoy = gameBoy;
+    }
+    public void execute(){
+        gameBoy.toRight();
+    }
+}    
+
+class TopCommand implements Command{
+    private GameBoy gameBoy;
+    public TopCommand(GameBoy gameBoy){
+        this.gameBoy = gameBoy;
+    }
+    public void execute(){
+        gameBoy.toTop();
+    }
+}    
+
+class BottomCommand implements Command{
+    private GameBoy gameBoy;
+    public BottomCommand(GameBoy gameBoy){
+        this.gameBoy = gameBoy;
+    }
+    public void execute(){
+        gameBoy.toBottom();
+    }
+}    
+
+class ACommand implements Command{
+    private GameBoy gameBoy;
+    public ACommand(GameBoy gameBoy){
+        this.gameBoy = gameBoy;
+    }
+    public void execute(){
+        gameBoy.toA();
+    }
+}    
+
+
+class BCommand implements Command{
+    private GameBoy gameBoy;
+    public BCommand(GameBoy gameBoy){
+        this.gameBoy = gameBoy;
+    }
+    public void execute(){
+        gameBoy.toB();
+    }
+}    
+</code></pre><blockquote>
+<p>上述六个类是具体的按键 上下左右AB键    </p>
+</blockquote>
+<pre><code>class Buttons{
+    private Command leftCommand,rightCommand,topCommand,bottomCommand,aCommand,bCommand;
+    public Buttons(Command leftCommand, Command rightCommand, Command topCommand, Command bottomCommand, Command aCommand, Command bCommand){
+        this.leftCommand = leftCommand;
+        this.rightCommand = rightCommand;
+        this.topCommand = topCommand;
+        this.bottomCommand = bottomCommand;
+        this.aCommand = aCommand;
+        this.bCommand = bCommand;
+    }
+    public void toLeft(){
+        leftCommand.execute();
+        //左移
+    }
+    public void toRight(){
+        rightCommand.execute();
+        //右移
+    }
+    public void toTop(){
+        topCommand.execute();
+        //上移
+    }
+    public void toBottom(){
+        bottomCommand.execute();
+        //下移
+    }
+    public void toA(){
+        ACommand.execute();
+        //A键出拳
+    }
+    public void toB(){
+        BCommand.execute();
+        //B键踢腿
+    }
+
+}
+</code></pre><blockquote>
+<p>键盘按钮类，开关类    </p>
+</blockquote>
+<pre><code>public class Client{
+    public static void main(String[] args){
+        GameBoy gameBoy = new GameBoy();//游戏机先创建出来
+        // 上下左右AB命令
+        Command leftCommand,rightCommand,topCommand,bottomCommand,aCommand,bCommand;
+        leftCommand = new LeftCommand(gameBoy);
+        rightCommand = new RightCommand(gameBoy);
+        topCommand = new TopCommand(gameBoy);
+        bottomCommand = new BottomCommand(gameBoy);
+        aCommand = new ACommand(gameBoy);
+        bCommand = new BCommand(gameBoy);
+
+        // 具体操作的按键
+        Buttons buttons = new Buttons(leftCommand,rightCommand,topCommand,bottomCommand,aCommand,bCommand);
+        //按键按下执行操作
+        buttons.toLeft();
+        buttons.toRight();
+        buttons.toTop();
+        buttons.toBottom();
+        buttons.toA();
+        buttons.toB();
+    }        
+}
+</code></pre><h4 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h4><p>上述用例讲的是一个小游戏机运用了命令模式，将按钮这个动作请求和具体实现功能解耦。功能上的解耦伴随的代价是类的数量的增多，在实际开发中根据场景来考量是否采用。</p>
+
+	
+	
+	
+	
+</div>
+				
+				
+
+                <!-- Post Comments -->
+                
+
+
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/04/28/设计模式之责任链模式/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+        </div>
+    </div>
 
 				
 				
