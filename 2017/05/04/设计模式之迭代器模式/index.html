@@ -4,7 +4,7 @@
     <!-- Title -->
     
     <title>
-        设计模式之简单工厂模式 | smallstrong&#39;s blog
+        设计模式之迭代器模式 | smallstrong&#39;s blog
     </title>
     
     <!-- Favicons -->
@@ -40,7 +40,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://www.smallstrong.wang">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="设计模式之简单工厂模式 | smallstrong&#39;s blog">
+    <meta property="og:title" content="设计模式之迭代器模式 | smallstrong&#39;s blog">
     <meta property="og:description" content="null">
     
      <!--[if lte IE 9]>
@@ -213,7 +213,7 @@
 	<ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
 		for="post-toc-trigger-btn">
 			
-			
+			<ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#个人理解"><span class="post-toc-number">1.</span> <span class="post-toc-text">个人理解</span></a></li></ol>
 		
 <!--			<li class="mdl-menu__item">Some Action</li>-->
 	</ul>
@@ -246,7 +246,7 @@
 		
 	
         <p class="article-headline-p">
-            设计模式之简单工厂模式
+            设计模式之迭代器模式
         </p>
     </div>
 
@@ -264,7 +264,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Small Strong</strong>
-        <span>4月 26, 2017</span>
+        <span>5月 04, 2017</span>
     </div>
     
     <div class="section-spacer"></div>
@@ -299,21 +299,21 @@
     
     
     <!-- Share Twitter -->
-    <a class="post_share-link" href="https://twitter.com/intent/tweet?text=设计模式之简单工厂模式&url=http://www.smallstrong.wang//2017/04/26/设计模式之简单工厂模式/index.html&via=Small Strong" target="_blank">
+    <a class="post_share-link" href="https://twitter.com/intent/tweet?text=设计模式之迭代器模式&url=http://www.smallstrong.wang//2017/05/04/设计模式之迭代器模式/index.html&via=Small Strong" target="_blank">
         <li class="mdl-menu__item">
             分享到 Twitter
         </li>
     </a>
     
     <!-- Share Google+ -->
-    <a class="post_share-link" href="https://plus.google.com/share?url=http://www.smallstrong.wang//2017/04/26/设计模式之简单工厂模式/index.html" target="_blank">
+    <a class="post_share-link" href="https://plus.google.com/share?url=http://www.smallstrong.wang//2017/05/04/设计模式之迭代器模式/index.html" target="_blank">
         <li class="mdl-menu__item">
             分享到 Google+
         </li>
     </a>
     
     <!-- Share Weibo -->
-    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=设计模式之简单工厂模式&url=http://www.smallstrong.wang//2017/04/26/设计模式之简单工厂模式/index.html&pic=&searchPic=false&style=simple" target="_blank">
+    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=设计模式之迭代器模式&url=http://www.smallstrong.wang//2017/05/04/设计模式之迭代器模式/index.html&pic=&searchPic=false&style=simple" target="_blank">
         <li class="mdl-menu__item">
             分享到微博
         </li>
@@ -325,56 +325,82 @@
                 <!-- Post Content -->
                 <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
 	
-		<center>简单工厂模式</center>
+		<center>设计模式之迭代器模式</center>
 
 <blockquote>
-<p>简单工厂模式</p>
+<p>迭代器模式</p>
 </blockquote>
-<p><img src="http://upload-images.jianshu.io/upload_images/1321838-37346dd3ae04d1e9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="简单工厂UML.png"></p>
-<pre><code>interface Shoe{
-    public void wear();
+<p><img src="http://upload-images.jianshu.io/upload_images/1321838-456a5db7d266ead1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="迭代器UML.png"></p>
+<pre><code>public  interface Iterator&lt;T&gt;{
+    boolean hasNext();
+    T next();
 }
-</code></pre><p>定义鞋类接口，定义公共方法穿鞋子。    </p>
-<pre><code>class LeatherShoe implements Shoe{
-    public LeatherShoe(){
+</code></pre><blockquote>
+<p>迭代器接口    </p>
+</blockquote>
+<pre><code>public class ConcreteIterator&lt;T&gt; implements Iterator&lt;T&gt; {
+    private List&lt;T&gt; list = new ArrayList&lt;T&gt;();
+    private int cursor = 0;
 
+    public ConcreteIterator(List&lt;T&gt; list){
+        this.list = list;
     }
 
-    public void wear(){
-        //穿皮鞋
-    }
-}
-</code></pre><p>皮鞋实体类</p>
-<pre><code>class ClothShoe implements Shoe{
-    public ClothShoe(){
-
+    public boolean hasNext(){
+        return cursor != list.size();
     }
 
-    public void wear(){
-        //穿布鞋
-    }
-}    
-</code></pre><p>布鞋实体类    </p>
-<pre><code>class ShoeFactory{
-    public static Shoe getShoe(String type){
-        Shoe mShoe = null;
-        if(type.equals(&quot;皮鞋&quot;)){
-            mShoe = new LeatherShoe();
-        }else if(type.equals(&quot;布鞋&quot;)){
-            mShoe = new ClothShoe();
+    public T next(){
+        T obj = null;
+        if(this.next()){
+            obj = this.list.get(cursor++);
         }
-        return mShoe;
+        return obj;
     }
 }
-</code></pre><p>鞋子工厂类</p>
-<pre><code>class Client{
-    public static void main(String args[]){
-        Shoe mShoe;
-        mShoe = ShoeFactory.getShoe(&quot;皮鞋&quot;);
-        mShoe.wear();
+</code></pre><blockquote>
+<p>具体迭代器类    </p>
+</blockquote>
+<pre><code>public interface Aggregate&lt;T&gt;{
+    void add(T obj);
+    void remove(T obj);
+    Iterator&lt;T&gt; iterator();
+}
+</code></pre><blockquote>
+<p>容器接口</p>
+</blockquote>
+<pre><code>public class     ConcreteAggregate&lt;T&gt; implements Aggregate&lt;T&gt;{
+    private List&lt;T&gt; list = new ArrayList&lt;&gt;();
+    public void add(T obj){
+        list.add(obj);
     }
-}    
-</code></pre><p>客户端获取鞋类工厂，根据传入type为皮鞋，获取皮鞋对象，之后运行穿皮鞋方法。</p>
+    public void remove(T obj){
+        list.remove(obj);
+    }
+    public Iterator&lt;T&gt; iterator(){
+        return new ConcreteIterator&lt;T&gt;(list);
+    }
+}
+</code></pre><blockquote>
+<p>具体容器类    </p>
+</blockquote>
+<pre><code>public class Client{
+    public static void main(String args[]){
+        Aggregate&lt;String&gt; data = new ConcreteAggregate&lt;&gt;();
+        data.add(&quot;1&quot;);
+        data.add(&quot;2&quot;);
+        data.add(&quot;3&quot;);
+        data.add(&quot;4&quot;);
+        Iterator&lt;String&gt; i = data.iterator();
+        whihe(i.hasNext()){
+            System.out.print(i.next());
+        }
+    }
+}
+</code></pre><blockquote>
+<p>客户端</p>
+</blockquote>
+<h3 id="个人理解"><a href="#个人理解" class="headerlink" title="个人理解"></a>个人理解</h3><p>在java中的集合是迭代器模式的最好体现。在Android中数据库查询所用到的Cursor，用query方法查询数据库会返回一个Cursor游标，用它来遍历数据。</p>
 
 	
 	
@@ -395,21 +421,13 @@
     
     <!-- Prev Nav -->
     
-        <a href="/2017/04/26/Java设计模式之看懂UML类图/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2017/01/07/设计模式之单例模式/" id="post_nav-older" class="next-content">
+        <a href="/2017/05/03/设计模式之解释器模式/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
