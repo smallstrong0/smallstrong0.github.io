@@ -4,7 +4,7 @@
     <!-- Title -->
     
     <title>
-        Android 屏幕适配不完全梳理 | smallstrong&#39;s blog
+        设计模式之观察者模式 | smallstrong&#39;s blog
     </title>
     
     <!-- Favicons -->
@@ -40,7 +40,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://www.smallstrong.wang">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Android 屏幕适配不完全梳理 | smallstrong&#39;s blog">
+    <meta property="og:title" content="设计模式之观察者模式 | smallstrong&#39;s blog">
     <meta property="og:description" content="null">
     
      <!--[if lte IE 9]>
@@ -213,7 +213,7 @@
 	<ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
 		for="post-toc-trigger-btn">
 			
-			<ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#屏幕尺寸，分辨率"><span class="post-toc-number">1.</span> <span class="post-toc-text">屏幕尺寸，分辨率</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#基本概念（dp-dip-sp-px-dpi）"><span class="post-toc-number">2.</span> <span class="post-toc-text">基本概念（dp,dip,sp,px,dpi）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#图片放入mdpi-hdpi-xhdpi-xxhdpi-xxxdpi文件夹的正确姿势"><span class="post-toc-number">3.</span> <span class="post-toc-text">图片放入mdpi,hdpi,xhdpi,xxhdpi,xxxdpi文件夹的正确姿势</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#书写布局文件时候需要注意什么"><span class="post-toc-number">4.</span> <span class="post-toc-text">书写布局文件时候需要注意什么</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#开源的屏幕适配解决方案"><span class="post-toc-number">5.</span> <span class="post-toc-text">开源的屏幕适配解决方案</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#参考"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">参考</span></a></li></ol></li></ol>
+			<ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#本例很简单的说明了观察者模式，被观察对象发生变化时通知订阅该对象的观察者们作出相应改变。在Java的API中就内涵了这些，平时写的接口回调也是类似。Android中事件总线，广播等等都用到这这种模式。"><span class="post-toc-number">1.</span> <span class="post-toc-text">本例很简单的说明了观察者模式，被观察对象发生变化时通知订阅该对象的观察者们作出相应改变。在Java的API中就内涵了这些，平时写的接口回调也是类似。Android中事件总线，广播等等都用到这这种模式。</span></a></li></ol>
 		
 <!--			<li class="mdl-menu__item">Some Action</li>-->
 	</ul>
@@ -246,7 +246,7 @@
 		
 	
         <p class="article-headline-p">
-            Android 屏幕适配不完全梳理
+            设计模式之观察者模式
         </p>
     </div>
 
@@ -264,7 +264,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Small Strong</strong>
-        <span>9月 25, 2016</span>
+        <span>5月 10, 2017</span>
     </div>
     
     <div class="section-spacer"></div>
@@ -284,7 +284,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/屏幕适配/">屏幕适配</a>
+        
     </ul>
     
     <!-- Share -->
@@ -299,21 +299,21 @@
     
     
     <!-- Share Twitter -->
-    <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Android 屏幕适配不完全梳理&url=http://www.smallstrong.wang//2016/09/25/Android-屏幕适配不完全梳理/index.html&via=Small Strong" target="_blank">
+    <a class="post_share-link" href="https://twitter.com/intent/tweet?text=设计模式之观察者模式&url=http://www.smallstrong.wang//2017/05/10/设计模式之观察者模式/index.html&via=Small Strong" target="_blank">
         <li class="mdl-menu__item">
             分享到 Twitter
         </li>
     </a>
     
     <!-- Share Google+ -->
-    <a class="post_share-link" href="https://plus.google.com/share?url=http://www.smallstrong.wang//2016/09/25/Android-屏幕适配不完全梳理/index.html" target="_blank">
+    <a class="post_share-link" href="https://plus.google.com/share?url=http://www.smallstrong.wang//2017/05/10/设计模式之观察者模式/index.html" target="_blank">
         <li class="mdl-menu__item">
             分享到 Google+
         </li>
     </a>
     
     <!-- Share Weibo -->
-    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Android 屏幕适配不完全梳理&url=http://www.smallstrong.wang//2016/09/25/Android-屏幕适配不完全梳理/index.html&pic=&searchPic=false&style=simple" target="_blank">
+    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=设计模式之观察者模式&url=http://www.smallstrong.wang//2017/05/10/设计模式之观察者模式/index.html&pic=&searchPic=false&style=simple" target="_blank">
         <li class="mdl-menu__item">
             分享到微博
         </li>
@@ -325,65 +325,66 @@
                 <!-- Post Content -->
                 <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
 	
-		<p><center>本文介绍Android屏幕适配的一些心得(坑)</center><br><a id="more"></a></p>
-<blockquote>
-<p>Android系统由于其开源性质，碎片化问题一直被人诟病。今天想梳理一下自己这些日子下来总结的屏幕适配的经验。恩，开始了。</p>
-</blockquote>
-<ul>
-<li>屏幕尺寸，分辨率</li>
-<li>基本概念（dp,dip,sp,px,dpi）</li>
-<li>图片放入mdpi,hdpi,xhdpi,xxhdpi,xxxdpi文件夹的正确姿势</li>
-<li>书写布局文件时候需要注意什么</li>
-<li>开源的屏幕适配解决方案</li>
-</ul>
-<h2 id="屏幕尺寸，分辨率"><a href="#屏幕尺寸，分辨率" class="headerlink" title="屏幕尺寸，分辨率"></a>屏幕尺寸，分辨率</h2><p>我们先来看一张图（数据来自友盟2016年8月）</p>
-<p><img src="/images/分辨率.png" alt="分辨率.png"></p>
-<p>图中我们看到，排名前六的机型分辨率占到了九成以上的市场，因此适配他们基本就可以了。分别是：</p>
-<ol>
-<li>1280 x 720</li>
-<li>1920 X 1080</li>
-<li>854 x 480 </li>
-<li>960 x 540</li>
-<li>800 x 480</li>
-<li>1184 x 720</li>
-</ol>
-<p>随着时间的推移，屏幕分辨率会越来越高，低分辨率屏手机市场份额会逐年递减。</p>
-<p>屏幕尺寸：指屏幕对角线的长度。单位是英寸，1英寸=2.54厘米。平时我们说的几寸屏就是对角线的长度。</p>
-<h2 id="基本概念（dp-dip-sp-px-dpi）"><a href="#基本概念（dp-dip-sp-px-dpi）" class="headerlink" title="基本概念（dp,dip,sp,px,dpi）"></a>基本概念（dp,dip,sp,px,dpi）</h2><p>这边我把他们分成三类</p>
-<ol>
-<li>px</li>
-<li>dpi</li>
-<li>dp,dip,sp</li>
-</ol>
-<p>px:1个像素点，我们平常说这个手机分辨率1280 x 720，就是屏幕上有1280 乘以 720个像素点。</p>
-<p>dpi:屏幕像素密度的单位。上面说到一英尺是2.52cm对吧，dpi的概念就是一英尺就这个2.54cm里面包含多少个像素点。</p>
-<p>dp == dip<br>dip全拼：Density Independent Pixels（密度无关像素）的缩写。</p>
-<p>他们之间的关系可以用这个公式表示：px = dp * (dpi / 160)</p>
-<p>sp:Google推荐些字体大小的时候用sp，概念和dp完全一样。（Android设置里面可以改字体大小，你用了sp就会有效果）</p>
-<h2 id="图片放入mdpi-hdpi-xhdpi-xxhdpi-xxxdpi文件夹的正确姿势"><a href="#图片放入mdpi-hdpi-xhdpi-xxhdpi-xxxdpi文件夹的正确姿势" class="headerlink" title="图片放入mdpi,hdpi,xhdpi,xxhdpi,xxxdpi文件夹的正确姿势"></a>图片放入mdpi,hdpi,xhdpi,xxhdpi,xxxdpi文件夹的正确姿势</h2><p>一般公司都会给两套图来做图片适配。然后我们公司UI妹子给的两套图就是适配ios那边的两套图。原型图是iPhone5的1136x640分辨率的。之后生成的一倍图与两倍图，然后丢了过来。然后我就斯巴达了，因为图片如果用wrap_content的话，要么太大要么太小，然后我每次就估摸着自己摸索是多少dp,也还算能凑合过去。一次写底部导航栏的时候，radiobutton在xml里面是不能设置图片大小的只能在代码中改。我其实当时内心是哟欧草泥马奔腾的。为了让这些个草泥马不奔腾，我觉得去找UI妹子要图。</p>
-<p>先看张图</p>
-<p><img src="/images/dpi.png" alt="dpi.png"></p>
-<p>手机的像素密度不同就会去加载对应文件夹下面的图片。那要是没有怎么办，放心他会自动去找最相近文件夹下面的同名图片，不过会有那么一点变化，不是加载其图片真实大小，而是经过一定比例的缩放，我们来看一下这个比例是多少：</p>
-<p>mdpi：hdpi：xhdpi：xxhdpi：xxxhdpi=2：3：4：6：8 的尺寸比例进行缩放。</p>
-<p>假设我的手机是1280 x 720分辨率,经过计算我应该去xhdpi文件夹下面找图片资源，丫的没有，去xxhdpi里面一找，发现有了。是一张120px x 120px的图片，那么好我们换算一下 120 x（2/3）= 80 px，也就是我其实加载到内存里面是进行2/3倍的缩放的，同理放大也是一样的。不过这边提到一点，低分辨率图片放大会失真，建议放正确分辨率的图片到高分辨图片文件夹中，这样会避免失真的烦恼。</p>
-<p>总结（根据主流分辨率）：</p>
-<p>hdpi   对应 854 x 480  960 x 540 800 x 480<br>xhdpi  对应 1280 x 720 1184 x 720<br>xxhdpi 对应 1920 X 1080</p>
-<p>基本上我要的两套图我就丢 xhdoi xxhdpi里面。</p>
-<p>接着上面那个梗，最后和ui妹子给出了个方案原型图是750*1334，输出两套图，两倍于三倍图。虽然不是最理想的（最理想就是720 x 1280就给我这个机型切出来的大小，但是一个公司就一个UI妹子，所以折中了一下），不过相差不是很大了，能接受了。这边提供一个链接，说的挺不错。</p>
-<p><a href="http://www.sketchs.cn/tutorials/detail/257.html" target="_blank" rel="external">点我，切图就要这么切</a></p>
-<h2 id="书写布局文件时候需要注意什么"><a href="#书写布局文件时候需要注意什么" class="headerlink" title="书写布局文件时候需要注意什么"></a>书写布局文件时候需要注意什么</h2><p>使用wrap_content、match_parent、weight，dp，sp这是官方给出的方案，的确有道理。我写布局就是尽量用权重，其实原来就是百分比布局。</p>
-<p>不过还是有一些坑的，例如：</p>
-<ol>
-<li>dp写布局要小心一点，因为在同分辨率不同尺寸下的手机里面出来效果是不一样的，Android机子还真有这种情况。</li>
-<li>关于sp，说实话从内心来讲我是拒绝的，因为啊，在设置中改变字体大小，调最大，我了个去，你会发现自己写的好好的布局显现出来超级难看，不忍直视。虽然官方是推荐sp，但是我内心还是向往dp的（项目中还是sp,习惯了，毕竟少有闲人去调整字体大小，真改了，我呵呵）</li>
-<li>在你的UI给你一些不那么正常图的时候（分辨率乱来），wrap_content写imageview控件就有那么点风险了。</li>
-</ol>
-<h2 id="开源的屏幕适配解决方案"><a href="#开源的屏幕适配解决方案" class="headerlink" title="开源的屏幕适配解决方案"></a>开源的屏幕适配解决方案</h2><p>屏幕适配终结者，百分比适配。</p>
-<p><a href="https://github.com/hongyangAndroid/AndroidAutoLayout" target="_blank" rel="external">鸿洋的解决方案，直接接入</a></p>
-<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="http://blog.csdn.net/zhaokaiqiang1992/article/details/45419023#使用非密度制约像素" target="_blank" rel="external">凯子哥</a></p>
-<p><a href="http://blog.csdn.net/lmj623565791/article/details/46695347" target="_blank" rel="external">鸿洋</a></p>
-<p><a href="http://stormzhang.com/android/2014/05/16/android-screen-adaptation/" target="_blank" rel="external">stormzhang</a></p>
+		<center>设计模式之观察者模式</center>
 
+<blockquote>
+<p>观察者模式</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/1321838-c0313263af1576f5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="观察者模式UML.png"></p>
+<pre><code>abstract class Subject{
+    protected ArrayList&lt;Observer&gt; list = new ArrayList&lt;&gt;();
+    void notift();
+    void addObserver(Observer observer);
+    void removeObserver(Observer observer);
+}
+</code></pre><blockquote>
+<p>抽象观察对象    </p>
+</blockquote>
+<pre><code>class ConcreteSubject extends Subject{
+    public void notify(){
+        for(int i = 0;i &lt; list.size();i++){
+            list.get(i).update(&quot;坐骑：秋名山神车---五菱宏光&quot;);    
+        }
+    }
+
+    public addObserver(Observer observer){
+        list.add(observer);
+    }
+
+    public removeObserver(Observer observer){
+        list.remove(observer);
+    }
+}
+</code></pre><blockquote>
+<p>具体观察对象        </p>
+</blockquote>
+<pre><code>interface Observer{
+    void update(String str);
+}
+</code></pre><blockquote>
+<p>抽象观察者</p>
+</blockquote>
+<pre><code>class ConcreteObserver implements Observer{
+    public void update(String str){
+        System.out.println(str);
+    }
+}    
+</code></pre><blockquote>
+<p>观察者</p>
+</blockquote>
+<pre><code>class Client{
+    public static void main(String[] args){
+        Subject mSubject = new ConcreteSubject();
+        mSubject.add(new ConcreteObserver());
+        mSubject.add(new ConcreteObserver());
+        mSubject.add(new ConcreteObserver());
+        mSubject.notify();
+    }
+}    
+</code></pre><blockquote>
+<p>客户端</p>
+</blockquote>
+<h4 id="本例很简单的说明了观察者模式，被观察对象发生变化时通知订阅该对象的观察者们作出相应改变。在Java的API中就内涵了这些，平时写的接口回调也是类似。Android中事件总线，广播等等都用到这这种模式。"><a href="#本例很简单的说明了观察者模式，被观察对象发生变化时通知订阅该对象的观察者们作出相应改变。在Java的API中就内涵了这些，平时写的接口回调也是类似。Android中事件总线，广播等等都用到这这种模式。" class="headerlink" title="本例很简单的说明了观察者模式，被观察对象发生变化时通知订阅该对象的观察者们作出相应改变。在Java的API中就内涵了这些，平时写的接口回调也是类似。Android中事件总线，广播等等都用到这这种模式。"></a>本例很简单的说明了观察者模式，被观察对象发生变化时通知订阅该对象的观察者们作出相应改变。在Java的API中就内涵了这些，平时写的接口回调也是类似。Android中事件总线，广播等等都用到这这种模式。</h4>
 	
 	
 	
@@ -403,21 +404,13 @@
     
     <!-- Prev Nav -->
     
-        <a href="/2016/10/11/五分钟教你在VPS上搭建VPN/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2016/09/06/Android-64K/" id="post_nav-older" class="next-content">
+        <a href="/2017/05/09/设计模式之备忘录模式/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
