@@ -4,7 +4,7 @@
     <!-- Title -->
     
     <title>
-        设计模式之模板方法模式 | smallstrong&#39;s blog
+        设计模式之访问者模式 | smallstrong&#39;s blog
     </title>
     
     <!-- Favicons -->
@@ -40,7 +40,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://www.smallstrong.wang">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="设计模式之模板方法模式 | smallstrong&#39;s blog">
+    <meta property="og:title" content="设计模式之访问者模式 | smallstrong&#39;s blog">
     <meta property="og:description" content="null">
     
      <!--[if lte IE 9]>
@@ -213,7 +213,7 @@
 	<ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
 		for="post-toc-trigger-btn">
 			
-			<ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#个人想法"><span class="post-toc-number">1.</span> <span class="post-toc-text">个人想法</span></a></li></ol>
+			
 		
 <!--			<li class="mdl-menu__item">Some Action</li>-->
 	</ul>
@@ -246,7 +246,7 @@
 		
 	
         <p class="article-headline-p">
-            设计模式之模板方法模式
+            设计模式之访问者模式
         </p>
     </div>
 
@@ -264,7 +264,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Small Strong</strong>
-        <span>5月 12, 2017</span>
+        <span>5月 16, 2017</span>
     </div>
     
     <div class="section-spacer"></div>
@@ -299,21 +299,21 @@
     
     
     <!-- Share Twitter -->
-    <a class="post_share-link" href="https://twitter.com/intent/tweet?text=设计模式之模板方法模式&url=http://www.smallstrong.wang//2017/05/12/设计模式之模板方法模式/index.html&via=Small Strong" target="_blank">
+    <a class="post_share-link" href="https://twitter.com/intent/tweet?text=设计模式之访问者模式&url=http://www.smallstrong.wang//2017/05/16/设计模式之访问者模式/index.html&via=Small Strong" target="_blank">
         <li class="mdl-menu__item">
             分享到 Twitter
         </li>
     </a>
     
     <!-- Share Google+ -->
-    <a class="post_share-link" href="https://plus.google.com/share?url=http://www.smallstrong.wang//2017/05/12/设计模式之模板方法模式/index.html" target="_blank">
+    <a class="post_share-link" href="https://plus.google.com/share?url=http://www.smallstrong.wang//2017/05/16/设计模式之访问者模式/index.html" target="_blank">
         <li class="mdl-menu__item">
             分享到 Google+
         </li>
     </a>
     
     <!-- Share Weibo -->
-    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=设计模式之模板方法模式&url=http://www.smallstrong.wang//2017/05/12/设计模式之模板方法模式/index.html&pic=&searchPic=false&style=simple" target="_blank">
+    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=设计模式之访问者模式&url=http://www.smallstrong.wang//2017/05/16/设计模式之访问者模式/index.html&pic=&searchPic=false&style=simple" target="_blank">
         <li class="mdl-menu__item">
             分享到微博
         </li>
@@ -325,84 +325,109 @@
                 <!-- Post Content -->
                 <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
 	
-		<center>设计模式之模板方法模式</center>
-
+		<center>设计模式之访问者模式</center>
 
 <blockquote>
-<p>模板方法模式</p>
+<p>访问者模式<br>例子以公司招聘查看简历为背景</p>
 </blockquote>
-<p><img src="http://upload-images.jianshu.io/upload_images/1321838-e3500c32024cfc9b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="模板方法UML.png"></p>
-<pre><code>abstract class AbsTemplate{
-    protected void stepOne(){
-        //步骤一
+<p><img src="http://upload-images.jianshu.io/upload_images/1321838-b864a2960f721b4e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="访问者模式UML.png"></p>
+<pre><code>interface Visitor{
+    void visitClerical(Clerical clerical);//查看文员简历
+    void visitCoder(Coder coder);//查看程序员简历
+}     
+</code></pre><blockquote>
+<p>访问者接口，分别对ElementA与ElementB进行访问</p>
+</blockquote>
+<pre><code>class HRVisitor{
+    public void visitClerical(Clerical clerical){
+        //HR关注文员简历XXXXX
     }
-    protected void stepTwo(){
-        //步骤二
-    }
-    protected void stepThree(){
-        //步骤三
-    }
-    public void run(){
-        stepOne();
-        stepTwo();
-        stepThree();
+
+    public void visitCoder(Coder coder){
+        //HR看码农简历，看经验看学校
     }
 }
 </code></pre><blockquote>
-<p>抽象模板，定义三个必要步骤和一个实现事情的功能方法</p>
+<p>HR访问者</p>
 </blockquote>
-<pre><code>class TemplateA extends AbsTemplate{
-    protected void stepOne(){
-        super.stepOne();
-        //步骤一
-        //添加一些这个实现类想添加的逻辑
+<pre><code>class CTOVisitor{
+    public void visitClerical(Clerical clerical){
+        //CTO不关心文员简历，可是是空实现
     }
-    protected void stepTwo(){
-        super.stepTwo();
-        //步骤二
-        //添加一些这个实现类想添加的逻辑
-    }
-    protected void stepThree(){
-        super.stepThree();
-        //步骤三
-        //添加一些这个实现类想添加的逻辑
-    }
-}    
-</code></pre><blockquote>
-<p>实现类A，在实现步骤的具体方法中实现A特有的逻辑</p>
-</blockquote>
-<pre><code>class TemplateB extends AbsTemplate{
-    protected void stepOne(){
-        super.stepOne();
-        //步骤一
-        //添加一些这个实现类想添加的逻辑
-    }
-    protected void stepTwo(){
-        super.stepTwo();
-        //步骤二
-        //添加一些这个实现类想添加的逻辑
-    }
-    protected void stepThree(){
-        super.stepThree();
-        //步骤三
-        //添加一些这个实现类想添加的逻辑
-    }
-}    
-</code></pre><blockquote>
-<p>实现B，在实现步骤的具体方法中实现B特有的逻辑</p>
-</blockquote>
-<pre><code>class Client{
-    pblic static void main(String[] args){
-        AbsTemplate template = new TemplateA();
-        template.run();//A 搞事
-        template = new TemplateB();
-        template.run();//B 搞事
+
+    public void visitCoder(Coder coder){
+        //CTO看码农简历，看项目 看技能
     }
 }
 </code></pre><blockquote>
-<p>客户端</p>
+<p>CTO访问者</p>
 </blockquote>
-<h3 id="个人想法"><a href="#个人想法" class="headerlink" title="个人想法"></a>个人想法</h3><p>模板模式的适用场景是一套固定的流程，但是流程中具体的实现或许会有差异。可以把共同逻辑抽到抽象父类中实现，在子类中实现个性化的代码。    </p>
+<pre><code>abstract class JobSeeker{
+    public String name;
+    public String school;
+    public String skill;
+
+    public JobSeeker(String name ,String school ,String skill){
+        this.name = name;
+        this.school = school;
+        this.skill = skill;
+    }
+
+    public abstract void accept(Visitor visitor);
+}
+</code></pre><blockquote>
+<p>抽象求职者类    </p>
+</blockquote>
+<pre><code>class Clerical extends JobSeeker{
+    public Clerical(String name ,String school ,String skill){
+        super(name , school , skill);
+    }
+    public void accept(Visitor visitor){
+        visitor.visitClerical(this);
+    }
+}
+</code></pre><blockquote>
+<p>文员求职者    </p>
+</blockquote>
+<pre><code>class Coder extends JobSeeker{
+    public Coder(String name ,String school ,String skill){
+        super(name , school , skill);
+    }
+    public void accept(Visitor visitor){
+        visitor.visitCoder(this);
+    }
+}
+</code></pre><blockquote>
+<p>码农求职者</p>
+</blockquote>
+<pre><code>public class JobStructure{
+    List&lt;JobSeeker&gt; list = new ArrayList&lt;&gt;();
+
+    public void seeResume(Visitor visitor){
+        for(JobSeeker jobSeeker : list){
+            jobSeeker.accept(visitor);
+        }
+    }
+
+    public void addJobSeeker(JobSeeker jobSeeker){
+        list.add(jobSeeker);
+    }
+}    
+</code></pre><blockquote>
+<p>查阅简历类</p>
+</blockquote>
+<pre><code>class CLient{
+    public static void main(String[] args){
+        JobStructure jobStructure = new JobStructure();
+        jobStructure.addJobSeeker(new Coder(&quot;小强&quot;,&quot;清华&quot;,&quot;Android&quot;));
+        jobStructure.addJobSeeker(new Coder(&quot;小民&quot;,&quot;北大&quot;,&quot;Word&quot;));
+        jobStructure.seeResume(new CTOVisitor());
+        jobStructure.seeResume(new HRVisitor());
+    }
+}    
+</code></pre><blockquote>
+<p>客户端类，收集简历，CTO查看简历，HR查看简历</p>
+</blockquote>
 
 	
 	
@@ -423,21 +448,13 @@
     
     <!-- Prev Nav -->
     
-        <a href="/2017/05/16/设计模式之访问者模式/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2017/05/11/设计模式之状态模式/" id="post_nav-older" class="next-content">
+        <a href="/2017/05/12/设计模式之模板方法模式/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
