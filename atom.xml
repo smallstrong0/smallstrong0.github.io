@@ -1,0 +1,2103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>smallstrong&#39;s blog</title>
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://www.smallstrong.wang/"/>
+  <updated>2017-05-16T07:58:48.000Z</updated>
+  <id>http://www.smallstrong.wang/</id>
+  
+  <author>
+    <name>Small Strong</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>设计模式之访问者模式</title>
+    <link href="http://www.smallstrong.wang/2017/05/16/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E8%AE%BF%E9%97%AE%E8%80%85%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://www.smallstrong.wang/2017/05/16/设计模式之访问者模式/</id>
+    <published>2017-05-16T06:27:55.000Z</published>
+    <updated>2017-05-16T07:58:48.000Z</updated>
+    
+    <content type="html"><![CDATA[<center>设计模式之访问者模式</center>
+
+<blockquote>
+<p>访问者模式<br>例子以公司招聘查看简历为背景</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/1321838-b864a2960f721b4e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="访问者模式UML.png"></p>
+<pre><code>interface Visitor{
+    void visitClerical(Clerical clerical);//查看文员简历
+    void visitCoder(Coder coder);//查看程序员简历
+}     
+</code></pre><blockquote>
+<p>访问者接口，分别对ElementA与ElementB进行访问</p>
+</blockquote>
+<pre><code>class HRVisitor{
+    public void visitClerical(Clerical clerical){
+        //HR关注文员简历XXXXX
+    }
+
+    public void visitCoder(Coder coder){
+        //HR看码农简历，看经验看学校
+    }
+}
+</code></pre><blockquote>
+<p>HR访问者</p>
+</blockquote>
+<pre><code>class CTOVisitor{
+    public void visitClerical(Clerical clerical){
+        //CTO不关心文员简历，可是是空实现
+    }
+
+    public void visitCoder(Coder coder){
+        //CTO看码农简历，看项目 看技能
+    }
+}
+</code></pre><blockquote>
+<p>CTO访问者</p>
+</blockquote>
+<pre><code>abstract class JobSeeker{
+    public String name;
+    public String school;
+    public String skill;
+
+    public JobSeeker(String name ,String school ,String skill){
+        this.name = name;
+        this.school = school;
+        this.skill = skill;
+    }
+
+    public abstract void accept(Visitor visitor);
+}
+</code></pre><blockquote>
+<p>抽象求职者类    </p>
+</blockquote>
+<pre><code>class Clerical extends JobSeeker{
+    public Clerical(String name ,String school ,String skill){
+        super(name , school , skill);
+    }
+    public void accept(Visitor visitor){
+        visitor.visitClerical(this);
+    }
+}
+</code></pre><blockquote>
+<p>文员求职者    </p>
+</blockquote>
+<pre><code>class Coder extends JobSeeker{
+    public Coder(String name ,String school ,String skill){
+        super(name , school , skill);
+    }
+    public void accept(Visitor visitor){
+        visitor.visitCoder(this);
+    }
+}
+</code></pre><blockquote>
+<p>码农求职者</p>
+</blockquote>
+<pre><code>public class JobStructure{
+    List&lt;JobSeeker&gt; list = new ArrayList&lt;&gt;();
+
+    public void seeResume(Visitor visitor){
+        for(JobSeeker jobSeeker : list){
+            jobSeeker.accept(visitor);
+        }
+    }
+
+    public void addJobSeeker(JobSeeker jobSeeker){
+        list.add(jobSeeker);
+    }
+}    
+</code></pre><blockquote>
+<p>查阅简历类</p>
+</blockquote>
+<pre><code>class CLient{
+    public static void main(String[] args){
+        JobStructure jobStructure = new JobStructure();
+        jobStructure.addJobSeeker(new Coder(&quot;小强&quot;,&quot;清华&quot;,&quot;Android&quot;));
+        jobStructure.addJobSeeker(new Coder(&quot;小民&quot;,&quot;北大&quot;,&quot;Word&quot;));
+        jobStructure.seeResume(new CTOVisitor());
+        jobStructure.seeResume(new HRVisitor());
+    }
+}    
+</code></pre><blockquote>
+<p>客户端类，收集简历，CTO查看简历，HR查看简历</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;center&gt;设计模式之访问者模式&lt;/center&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;访问者模式&lt;br&gt;例子以公司招聘查看简历为背景&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_i
+    
+    </summary>
+    
+      <category term="设计模式" scheme="http://www.smallstrong.wang/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>设计模式之模板方法模式</title>
+    <link href="http://www.smallstrong.wang/2017/05/12/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://www.smallstrong.wang/2017/05/12/设计模式之模板方法模式/</id>
+    <published>2017-05-12T07:31:51.000Z</published>
+    <updated>2017-05-12T10:00:30.000Z</updated>
+    
+    <content type="html"><![CDATA[<center>设计模式之模板方法模式</center>
+
+
+<blockquote>
+<p>模板方法模式</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/1321838-e3500c32024cfc9b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="模板方法UML.png"></p>
+<pre><code>abstract class AbsTemplate{
+    protected void stepOne(){
+        //步骤一
+    }
+    protected void stepTwo(){
+        //步骤二
+    }
+    protected void stepThree(){
+        //步骤三
+    }
+    public void run(){
+        stepOne();
+        stepTwo();
+        stepThree();
+    }
+}
+</code></pre><blockquote>
+<p>抽象模板，定义三个必要步骤和一个实现事情的功能方法</p>
+</blockquote>
+<pre><code>class TemplateA extends AbsTemplate{
+    protected void stepOne(){
+        super.stepOne();
+        //步骤一
+        //添加一些这个实现类想添加的逻辑
+    }
+    protected void stepTwo(){
+        super.stepTwo();
+        //步骤二
+        //添加一些这个实现类想添加的逻辑
+    }
+    protected void stepThree(){
+        super.stepThree();
+        //步骤三
+        //添加一些这个实现类想添加的逻辑
+    }
+}    
+</code></pre><blockquote>
+<p>实现类A，在实现步骤的具体方法中实现A特有的逻辑</p>
+</blockquote>
+<pre><code>class TemplateB extends AbsTemplate{
+    protected void stepOne(){
+        super.stepOne();
+        //步骤一
+        //添加一些这个实现类想添加的逻辑
+    }
+    protected void stepTwo(){
+        super.stepTwo();
+        //步骤二
+        //添加一些这个实现类想添加的逻辑
+    }
+    protected void stepThree(){
+        super.stepThree();
+        //步骤三
+        //添加一些这个实现类想添加的逻辑
+    }
+}    
+</code></pre><blockquote>
+<p>实现B，在实现步骤的具体方法中实现B特有的逻辑</p>
+</blockquote>
+<pre><code>class Client{
+    pblic static void main(String[] args){
+        AbsTemplate template = new TemplateA();
+        template.run();//A 搞事
+        template = new TemplateB();
+        template.run();//B 搞事
+    }
+}
+</code></pre><blockquote>
+<p>客户端</p>
+</blockquote>
+<h3 id="个人想法"><a href="#个人想法" class="headerlink" title="个人想法"></a>个人想法</h3><p>模板模式的适用场景是一套固定的流程，但是流程中具体的实现或许会有差异。可以把共同逻辑抽到抽象父类中实现，在子类中实现个性化的代码。    </p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;center&gt;设计模式之模板方法模式&lt;/center&gt;
+
+
+&lt;blockquote&gt;
+&lt;p&gt;模板方法模式&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1321838-e
+    
+    </summary>
+    
+      <category term="设计模式" scheme="http://www.smallstrong.wang/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>设计模式之状态模式</title>
+    <link href="http://www.smallstrong.wang/2017/05/11/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%8A%B6%E6%80%81%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://www.smallstrong.wang/2017/05/11/设计模式之状态模式/</id>
+    <published>2017-05-11T07:16:11.000Z</published>
+    <updated>2017-05-11T07:31:55.000Z</updated>
+    
+    <content type="html"><![CDATA[<center>设计模式之状态模式</center>
+
+
+<blockquote>
+<p>状态模式</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/1321838-e29eb69db5ab30ed.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="状态模式UML.png">    </p>
+<pre><code>interface TransformersState{
+    void skill();//变形金刚不同状态下有不同技能
+}
+</code></pre><blockquote>
+<p>汽车人接口    </p>
+</blockquote>
+<pre><code>class CarTransformersState implements TransformersState{
+    public void skill(){
+        // 汽车状态，技能就是压马路吧
+    }
+}
+</code></pre><blockquote>
+<p>变形金刚的汽车型状态</p>
+</blockquote>
+<pre><code>class FightingTransformersState implements TransformersState{
+    public void skill(){
+        // 战斗状态，技能反正不是压马路，就假设为射击技能吧
+    }
+}
+</code></pre><blockquote>
+<p>变形金刚的战斗型状态</p>
+</blockquote>
+<pre><code>class Context{
+    TransformersState mTransformersState;
+    public void setState(TransformersState mTransformersState){
+    this.mTransformersState = mTransformersState;
+    }
+    public void skill(){
+        mTransformersState.skill();
+    }
+}
+</code></pre><blockquote>
+<p>用来管理切换状态的类</p>
+</blockquote>
+<pre><code>class Client{
+    public static void main(String[] args){
+        Context context = new Context();
+        context.setState(new FightingTransformersState());//切到战斗模式
+        context.skill();//战斗状态下的技能
+        context.setState(new CarTransformersState());//切到跑车模式
+        context.skill();//跑车状态下的技能
+    }
+}    
+</code></pre><blockquote>
+<p>客户端</p>
+</blockquote>
+<h4 id="状态模式的场景一个对象的具体行为取决于这个对象内部的状态，这些状态可以被抽象出来单独为类。这种模式一定程度上会解决if-else多层判断的问题。状态及某种状态的具体实现可以被抽出去成类，层次会比较清晰，不过类会增多"><a href="#状态模式的场景一个对象的具体行为取决于这个对象内部的状态，这些状态可以被抽象出来单独为类。这种模式一定程度上会解决if-else多层判断的问题。状态及某种状态的具体实现可以被抽出去成类，层次会比较清晰，不过类会增多" class="headerlink" title="状态模式的场景一个对象的具体行为取决于这个对象内部的状态，这些状态可以被抽象出来单独为类。这种模式一定程度上会解决if-else多层判断的问题。状态及某种状态的具体实现可以被抽出去成类，层次会比较清晰，不过类会增多"></a>状态模式的场景一个对象的具体行为取决于这个对象内部的状态，这些状态可以被抽象出来单独为类。这种模式一定程度上会解决if-else多层判断的问题。状态及某种状态的具体实现可以被抽出去成类，层次会比较清晰，不过类会增多</h4>]]></content>
+    
+    <summary type="html">
+    
+      &lt;center&gt;设计模式之状态模式&lt;/center&gt;
+
+
+&lt;blockquote&gt;
+&lt;p&gt;状态模式&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1321838-e29eb
+    
+    </summary>
+    
+      <category term="设计模式" scheme="http://www.smallstrong.wang/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>设计模式之观察者模式</title>
+    <link href="http://www.smallstrong.wang/2017/05/10/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://www.smallstrong.wang/2017/05/10/设计模式之观察者模式/</id>
+    <published>2017-05-10T06:20:14.000Z</published>
+    <updated>2017-05-10T08:36:27.000Z</updated>
+    
+    <content type="html"><![CDATA[<center>设计模式之观察者模式</center>
+
+<blockquote>
+<p>观察者模式</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/1321838-c0313263af1576f5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="观察者模式UML.png"></p>
+<pre><code>abstract class Subject{
+    protected ArrayList&lt;Observer&gt; list = new ArrayList&lt;&gt;();
+    void notift();
+    void addObserver(Observer observer);
+    void removeObserver(Observer observer);
+}
+</code></pre><blockquote>
+<p>抽象观察对象    </p>
+</blockquote>
+<pre><code>class ConcreteSubject extends Subject{
+    public void notify(){
+        for(int i = 0;i &lt; list.size();i++){
+            list.get(i).update(&quot;坐骑：秋名山神车---五菱宏光&quot;);    
+        }
+    }
+
+    public addObserver(Observer observer){
+        list.add(observer);
+    }
+
+    public removeObserver(Observer observer){
+        list.remove(observer);
+    }
+}
+</code></pre><blockquote>
+<p>具体观察对象        </p>
+</blockquote>
+<pre><code>interface Observer{
+    void update(String str);
+}
+</code></pre><blockquote>
+<p>抽象观察者</p>
+</blockquote>
+<pre><code>class ConcreteObserver implements Observer{
+    public void update(String str){
+        System.out.println(str);
+    }
+}    
+</code></pre><blockquote>
+<p>观察者</p>
+</blockquote>
+<pre><code>class Client{
+    public static void main(String[] args){
+        Subject mSubject = new ConcreteSubject();
+        mSubject.add(new ConcreteObserver());
+        mSubject.add(new ConcreteObserver());
+        mSubject.add(new ConcreteObserver());
+        mSubject.notify();
+    }
+}    
+</code></pre><blockquote>
+<p>客户端</p>
+</blockquote>
+<h4 id="本例很简单的说明了观察者模式，被观察对象发生变化时通知订阅该对象的观察者们作出相应改变。在Java的API中就内涵了这些，平时写的接口回调也是类似。Android中事件总线，广播等等都用到这这种模式。"><a href="#本例很简单的说明了观察者模式，被观察对象发生变化时通知订阅该对象的观察者们作出相应改变。在Java的API中就内涵了这些，平时写的接口回调也是类似。Android中事件总线，广播等等都用到这这种模式。" class="headerlink" title="本例很简单的说明了观察者模式，被观察对象发生变化时通知订阅该对象的观察者们作出相应改变。在Java的API中就内涵了这些，平时写的接口回调也是类似。Android中事件总线，广播等等都用到这这种模式。"></a>本例很简单的说明了观察者模式，被观察对象发生变化时通知订阅该对象的观察者们作出相应改变。在Java的API中就内涵了这些，平时写的接口回调也是类似。Android中事件总线，广播等等都用到这这种模式。</h4>]]></content>
+    
+    <summary type="html">
+    
+      &lt;center&gt;设计模式之观察者模式&lt;/center&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;观察者模式&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1321838-c031
+    
+    </summary>
+    
+      <category term="设计模式" scheme="http://www.smallstrong.wang/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>设计模式之备忘录模式</title>
+    <link href="http://www.smallstrong.wang/2017/05/09/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%A4%87%E5%BF%98%E5%BD%95%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://www.smallstrong.wang/2017/05/09/设计模式之备忘录模式/</id>
+    <published>2017-05-09T02:14:43.000Z</published>
+    <updated>2017-05-09T07:14:32.000Z</updated>
+    
+    <content type="html"><![CDATA[<center>设计模式之备忘录模式</center>
+
+
+
+<blockquote>
+<p>备忘录模式</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/1321838-ac5dddfc229f6593.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="备忘录模式UML.png"></p>
+<pre><code>class Originator{
+    private int stateA = 0;
+    private int stateB = 0;
+    private int stateC = 0;
+
+    public Memoto createMemoto(){
+        Memoto memoto = new Memoto();
+        memoto.setStateA(stateA);
+        memoto.setStateB(stateB);
+        memoto.setStateC(stateC);
+    }
+
+    public void restore(Memoto memoto){
+        this.stateA = memoto.getStateA();
+        this.stateB = memoto.getStateB();
+        this.stateC = memoto.getStateC();
+    }
+
+    public void change(){
+        stateA = 1;
+        stateB = 2;
+        stateC = 3;
+    }
+
+    public void showData(){
+        System.out.println(stateA+&quot;==&quot;+stateB+&quot;==&quot;+stateC);
+    }
+
+}
+</code></pre><blockquote>
+<p>原始类</p>
+</blockquote>
+<pre><code>class Memoto{
+    private int stateA;
+    private int stateB;
+    private int stateC;
+
+    public int getStateA(){
+        return this.stateA;
+    }
+    public int getStateB(){
+        return this.stateB;
+    }
+    public int getStateC(){
+        return this.stateC;
+    }
+    public void setStateA(int a){
+        this.stateA = a;
+    }
+    public void setStateB(int b){
+        this.stateB = b;
+    }
+    public void setStateC(int c){
+        this.stateC = c;
+    }
+}    
+</code></pre><blockquote>
+<p>数据bean类</p>
+</blockquote>
+<pre><code>class Caretaker{
+    Memoto memoto;
+    public Memoto restoreMemoto(){
+        return this.memoto;//恢复数据
+    }
+
+    public void storeMemoto(Memoto memoto){
+        this.memoto = memoto;
+    }
+}
+</code></pre><blockquote>
+<p>备忘录对象，管理Memoto对象</p>
+</blockquote>
+<pre><code>class Cliten{
+    public static void main(String args[]){
+        Originator originator = new Originator();
+        Caretaker caretaker = new Caretaker();
+        originator.showData();//原始数据为 0 0 0 
+        originator.change();//改变之后为 1 2 3
+        caretaker.storeMemoto(originator.createMemoto());//存储状态
+        //模拟下次登录之后 重新开始
+        Originator originatorNew = new Originator();    
+        originatorNew.restore(caretaker.restoreMemoto());
+        originatorNew.showData();//数据为 1 2 3
+    }
+}
+</code></pre><blockquote>
+<p>客户端模拟备忘录模式。当需要保存状态的时候将状态存入Caretaker即可。Caretaker这里只是保存最后一次变化状态，可以扩展需求做的更丰富一些。</p>
+</blockquote>
+<h4 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h4><p>例子比较简单，仅仅只是备忘录模式的原型。一句话概括就是备忘录类会记住应该记住的状态，而存储与恢复状态在原始类中调用。<br>备忘录模式在Android源码里面例子，当界面退居后台或者由于内存不足被干翻，在这之前会调用Activity中onSaveInstanceState方法保存状态。当界面再次出现在界面上时在onRestoreInstanceState方法中获取之前保存的状态。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;center&gt;设计模式之备忘录模式&lt;/center&gt;
+
+
+
+&lt;blockquote&gt;
+&lt;p&gt;备忘录模式&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1321838-ac
+    
+    </summary>
+    
+      <category term="设计模式" scheme="http://www.smallstrong.wang/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>设计模式之中介者模式</title>
+    <link href="http://www.smallstrong.wang/2017/05/08/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E4%B8%AD%E4%BB%8B%E8%80%85%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://www.smallstrong.wang/2017/05/08/设计模式之中介者模式/</id>
+    <published>2017-05-08T06:22:44.000Z</published>
+    <updated>2017-05-08T07:11:09.000Z</updated>
+    
+    <content type="html"><![CDATA[<center>设计模式之中介者模式</center>
+
+
+<blockquote>
+<p>中介者模式，最近因为某种原因（穷）,导致要买二手车挂指标。正好拿来当中介者模式的例子。</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/1321838-2f5f359c9ef29729.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="中介者模式UML.png"></p>
+<pre><code>abstract class Mediator{
+    protected BuyCarPeople buyer;
+    protected SoldCarPeople solder;
+
+    public abstract void work();
+
+    public void setBuyCarPeople(BuyCarPeople buyer){
+        this.buyer = buyer;
+    }
+
+    public void setSoldCarPeople(SoldCarPeople solder){
+        this.solder = solder;
+    }
+}
+</code></pre><blockquote>
+<p>抽象中介者，抽象方法work是中介的职责</p>
+</blockquote>
+<pre><code>class GuaZiMediator extends Mediator{
+    public void work(){
+        getCarInfo();
+        getMoneyFromBuyer();
+        //中间抽层
+        giveMoneyForSolder();
+        giveCarForBuyer();
+    }
+
+    private void getCarInfo(）{
+        solder.actionToMediator();
+    }
+
+    private void getMoneyFromBuyer(){
+        buyer.actionToMediator();
+    }
+
+    private void giveMoneyForSolder(){
+        solder.actionFromMediator();
+    }
+
+    private void giveCarForBuyer(){
+        buyer.actionFromMediator();
+    }
+}
+</code></pre><blockquote>
+<p>具体的中介者，在买卖二手车这件事情之中，完全对接买卖双发，中间干点羞羞的事情</p>
+</blockquote>
+<pre><code>abstract class People{
+    protected Mediator mediator;
+    public People(Mediator mediator){
+        this.mediator = mediator;
+    }
+    abstract void actionToMediator();
+    abstract void actionFromMediator();
+}
+</code></pre><blockquote>
+<p>抽象买二手车的买卖双方</p>
+</blockquote>
+<pre><code>class BuyCarPeople extends People{
+    public BuyCarPeople(Mediator mediator){
+        super(mediator);
+    }
+
+    public void actionToMediator(){
+        // 把钱给中介
+    }
+
+    public void actionFromMediator(){
+        //中介给我车
+    }
+}
+</code></pre><blockquote>
+<p>买车人    </p>
+</blockquote>
+<pre><code>class SoldCarPeople extends People{
+    public SoldCarPeople(Mediator mediator){
+        super(mediator);
+    }
+
+    public void actionToMediator(){
+        //把车给中介 帮忙卖
+    }
+
+    public void actionFromMediator(){
+        //中介把卖车钱给我
+    }
+}
+</code></pre><blockquote>
+<p>卖车人</p>
+</blockquote>
+<pre><code>public class Client{
+    Mediator mediator = new GuaZiMediator();
+    SolderCarPeople solder = new SolderCarPeople(mediator);
+    BuyCarPeople buyer = new BuyCarPeople(mediator);
+    mediator.setBuyCarPeople(buyer);
+    mediator.setSoldCarPeople(solder);
+    mediator.work();//中介帮忙买卖车
+}
+</code></pre><blockquote>
+<p>客户端    </p>
+</blockquote>
+<h4 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h4><p>当两个或者更多的对象之间要相互调用，互相持有是很麻烦的事情。引入中介者模式，中介者类会联系各方，所有的方法需求都通过中介者转达。中介者持有所有各个对象完成交互。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;center&gt;设计模式之中介者模式&lt;/center&gt;
+
+
+&lt;blockquote&gt;
+&lt;p&gt;中介者模式，最近因为某种原因（穷）,导致要买二手车挂指标。正好拿来当中介者模式的例子。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;http://upload-image
+    
+    </summary>
+    
+      <category term="设计模式" scheme="http://www.smallstrong.wang/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>设计模式之迭代器模式</title>
+    <link href="http://www.smallstrong.wang/2017/05/04/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E8%BF%AD%E4%BB%A3%E5%99%A8%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://www.smallstrong.wang/2017/05/04/设计模式之迭代器模式/</id>
+    <published>2017-05-04T05:58:22.000Z</published>
+    <updated>2017-05-04T07:18:32.000Z</updated>
+    
+    <content type="html"><![CDATA[<center>设计模式之迭代器模式</center>
+
+<blockquote>
+<p>迭代器模式</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/1321838-456a5db7d266ead1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="迭代器UML.png"></p>
+<pre><code>public  interface Iterator&lt;T&gt;{
+    boolean hasNext();
+    T next();
+}
+</code></pre><blockquote>
+<p>迭代器接口    </p>
+</blockquote>
+<pre><code>public class ConcreteIterator&lt;T&gt; implements Iterator&lt;T&gt; {
+    private List&lt;T&gt; list = new ArrayList&lt;T&gt;();
+    private int cursor = 0;
+
+    public ConcreteIterator(List&lt;T&gt; list){
+        this.list = list;
+    }
+
+    public boolean hasNext(){
+        return cursor != list.size();
+    }
+
+    public T next(){
+        T obj = null;
+        if(this.next()){
+            obj = this.list.get(cursor++);
+        }
+        return obj;
+    }
+}
+</code></pre><blockquote>
+<p>具体迭代器类    </p>
+</blockquote>
+<pre><code>public interface Aggregate&lt;T&gt;{
+    void add(T obj);
+    void remove(T obj);
+    Iterator&lt;T&gt; iterator();
+}
+</code></pre><blockquote>
+<p>容器接口</p>
+</blockquote>
+<pre><code>public class     ConcreteAggregate&lt;T&gt; implements Aggregate&lt;T&gt;{
+    private List&lt;T&gt; list = new ArrayList&lt;&gt;();
+    public void add(T obj){
+        list.add(obj);
+    }
+    public void remove(T obj){
+        list.remove(obj);
+    }
+    public Iterator&lt;T&gt; iterator(){
+        return new ConcreteIterator&lt;T&gt;(list);
+    }
+}
+</code></pre><blockquote>
+<p>具体容器类    </p>
+</blockquote>
+<pre><code>public class Client{
+    public static void main(String args[]){
+        Aggregate&lt;String&gt; data = new ConcreteAggregate&lt;&gt;();
+        data.add(&quot;1&quot;);
+        data.add(&quot;2&quot;);
+        data.add(&quot;3&quot;);
+        data.add(&quot;4&quot;);
+        Iterator&lt;String&gt; i = data.iterator();
+        whihe(i.hasNext()){
+            System.out.print(i.next());
+        }
+    }
+}
+</code></pre><blockquote>
+<p>客户端</p>
+</blockquote>
+<h3 id="个人理解"><a href="#个人理解" class="headerlink" title="个人理解"></a>个人理解</h3><p>在java中的集合是迭代器模式的最好体现。在Android中数据库查询所用到的Cursor，用query方法查询数据库会返回一个Cursor游标，用它来遍历数据。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;center&gt;设计模式之迭代器模式&lt;/center&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;迭代器模式&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1321838-456a
+    
+    </summary>
+    
+      <category term="设计模式" scheme="http://www.smallstrong.wang/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>设计模式之解释器模式</title>
+    <link href="http://www.smallstrong.wang/2017/05/03/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://www.smallstrong.wang/2017/05/03/设计模式之解释器模式/</id>
+    <published>2017-05-03T02:05:21.000Z</published>
+    <updated>2017-05-03T02:43:40.000Z</updated>
+    
+    <content type="html"><![CDATA[<center>设计模式之解释器模式</center>
+
+
+<blockquote>
+<p>解释器模式</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/1321838-8e27a4af2008c064.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="解释器模式UML.png"></p>
+<p>本例想描述一个筛子游戏，假设筛子的范围是一到六这六个中文字，最后判大小,以分号为结尾。输入类型：例（三四五;）十二点，大</p>
+<pre><code>abstract class AbstractExpression{
+    Object interpret(String str);
+}
+</code></pre><blockquote>
+<p>抽象解释方法    </p>
+</blockquote>
+<pre><code>class TerminalExpression extends AbstractExpression{
+    public Object interpret(String str){
+        switch(str){
+            case &quot;一&quot;:
+                return 1;
+                break;
+            case &quot;二&quot;:
+                return 2;
+                break;
+            case &quot;三&quot;:
+                return 3;
+                break;
+            case &quot;四&quot;:
+                return 4;
+                break;
+            case &quot;五&quot;:
+                return 5;
+                break;
+            case &quot;六&quot;:
+                return 6;
+                break;    
+            default:
+                return 0;                
+        }
+    }
+}
+</code></pre><blockquote>
+<p>数字解释方法    </p>
+</blockquote>
+<pre><code>class NonTerminalExpression extends AbstractExpression{
+    public Object interpret(String str){
+        if(&quot;;&quot;.euqals(str){
+            return &quot;finish&quot;
+        }else{
+            return &quot;finish&quot;;
+        }
+    }
+}
+</code></pre><blockquote>
+<p>结束解释器    </p>
+</blockquote>
+<pre><code>class Calculator{
+    TerminalExpression terminalExpression = new terminalExpression();
+    NonTerminalExpression nonTerminalExpression = new NonTerminalExpression();
+    int sum = 0;
+    public String calculator(String key){
+        for(int i = 0;i &lt; 3;i ++){
+            sum = sum + terminalExpressionin.terpret(key.charAt(i));
+        }
+        Log.i(&quot;smallstrong&quot;,nonTerminalExpression. interpret(key.charAt(3)));
+        if(sum &lt;= 9){
+            return &quot;小&quot;;
+        }else{
+            return &quot;大&quot;;
+        }
+    }
+}
+</code></pre><blockquote>
+<p>解释器处理类    </p>
+</blockquote>
+<pre><code>class Client{
+    public static void main(String args[]){
+        Calculator mCalculator = new Calculator();
+        Log.i(&quot;smallstrong&quot;,mCalculator.calculator(&quot;六六六;&quot;));
+    }
+}
+</code></pre><blockquote>
+<p>客户端</p>
+</blockquote>
+<h3 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h3><p>解释器模式这例子很牵强，实际运用也是极少。看了许多大佬们的blog都觉得不是很理解。<br>正则表达在编译时的处理算是解释器模式比较好的例子。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;center&gt;设计模式之解释器模式&lt;/center&gt;
+
+
+&lt;blockquote&gt;
+&lt;p&gt;解释器模式&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1321838-8e2
+    
+    </summary>
+    
+      <category term="设计模式" scheme="http://www.smallstrong.wang/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>设计模式之命令模式</title>
+    <link href="http://www.smallstrong.wang/2017/05/02/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://www.smallstrong.wang/2017/05/02/设计模式之命令模式/</id>
+    <published>2017-05-02T06:26:31.000Z</published>
+    <updated>2017-05-02T06:55:34.000Z</updated>
+    
+    <content type="html"><![CDATA[<center>设计模式之命令模式</center>
+
+
+<blockquote>
+<p>命令模式</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/1321838-fb4422e6ea2b011c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="命令模式UML.png"></p>
+<pre><code>class GameBoy{
+    public void toLeft(){
+        //左移
+    }
+    public void toRight(){
+        //右移
+    }
+    public void toTop(){
+        //上移
+    }
+    public void toBottom(){
+        //下移
+    }
+    public void toA(){
+        //A键出拳
+    }
+    public void toB(){
+        //B键踢腿
+    }
+}
+</code></pre><blockquote>
+<p>GameBoy,游戏机类    </p>
+</blockquote>
+<pre><code>interface Command{
+    void execute();
+}
+</code></pre><blockquote>
+<p>按钮接口    </p>
+</blockquote>
+<pre><code>class LeftCommand implements Command{
+    private GameBoy gameBoy;
+    public LeftCommand(GameBoy gameBoy){
+        this.gameBoy = gameBoy;
+    }
+    public void execute(){
+        gameBoy.toLeft();
+    }
+}
+
+class RightCommand implements Command{
+    private GameBoy gameBoy;
+    public RightCommand(GameBoy gameBoy){
+        this.gameBoy = gameBoy;
+    }
+    public void execute(){
+        gameBoy.toRight();
+    }
+}    
+
+class TopCommand implements Command{
+    private GameBoy gameBoy;
+    public TopCommand(GameBoy gameBoy){
+        this.gameBoy = gameBoy;
+    }
+    public void execute(){
+        gameBoy.toTop();
+    }
+}    
+
+class BottomCommand implements Command{
+    private GameBoy gameBoy;
+    public BottomCommand(GameBoy gameBoy){
+        this.gameBoy = gameBoy;
+    }
+    public void execute(){
+        gameBoy.toBottom();
+    }
+}    
+
+class ACommand implements Command{
+    private GameBoy gameBoy;
+    public ACommand(GameBoy gameBoy){
+        this.gameBoy = gameBoy;
+    }
+    public void execute(){
+        gameBoy.toA();
+    }
+}    
+
+
+class BCommand implements Command{
+    private GameBoy gameBoy;
+    public BCommand(GameBoy gameBoy){
+        this.gameBoy = gameBoy;
+    }
+    public void execute(){
+        gameBoy.toB();
+    }
+}    
+</code></pre><blockquote>
+<p>上述六个类是具体的按键 上下左右AB键    </p>
+</blockquote>
+<pre><code>class Buttons{
+    private Command leftCommand,rightCommand,topCommand,bottomCommand,aCommand,bCommand;
+    public Buttons(Command leftCommand, Command rightCommand, Command topCommand, Command bottomCommand, Command aCommand, Command bCommand){
+        this.leftCommand = leftCommand;
+        this.rightCommand = rightCommand;
+        this.topCommand = topCommand;
+        this.bottomCommand = bottomCommand;
+        this.aCommand = aCommand;
+        this.bCommand = bCommand;
+    }
+    public void toLeft(){
+        leftCommand.execute();
+        //左移
+    }
+    public void toRight(){
+        rightCommand.execute();
+        //右移
+    }
+    public void toTop(){
+        topCommand.execute();
+        //上移
+    }
+    public void toBottom(){
+        bottomCommand.execute();
+        //下移
+    }
+    public void toA(){
+        ACommand.execute();
+        //A键出拳
+    }
+    public void toB(){
+        BCommand.execute();
+        //B键踢腿
+    }
+
+}
+</code></pre><blockquote>
+<p>键盘按钮类，开关类    </p>
+</blockquote>
+<pre><code>public class Client{
+    public static void main(String[] args){
+        GameBoy gameBoy = new GameBoy();//游戏机先创建出来
+        // 上下左右AB命令
+        Command leftCommand,rightCommand,topCommand,bottomCommand,aCommand,bCommand;
+        leftCommand = new LeftCommand(gameBoy);
+        rightCommand = new RightCommand(gameBoy);
+        topCommand = new TopCommand(gameBoy);
+        bottomCommand = new BottomCommand(gameBoy);
+        aCommand = new ACommand(gameBoy);
+        bCommand = new BCommand(gameBoy);
+
+        // 具体操作的按键
+        Buttons buttons = new Buttons(leftCommand,rightCommand,topCommand,bottomCommand,aCommand,bCommand);
+        //按键按下执行操作
+        buttons.toLeft();
+        buttons.toRight();
+        buttons.toTop();
+        buttons.toBottom();
+        buttons.toA();
+        buttons.toB();
+    }        
+}
+</code></pre><h4 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h4><p>上述用例讲的是一个小游戏机运用了命令模式，将按钮这个动作请求和具体实现功能解耦。功能上的解耦伴随的代价是类的数量的增多，在实际开发中根据场景来考量是否采用。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;center&gt;设计模式之命令模式&lt;/center&gt;
+
+
+&lt;blockquote&gt;
+&lt;p&gt;命令模式&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1321838-fb442
+    
+    </summary>
+    
+      <category term="设计模式" scheme="http://www.smallstrong.wang/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>设计模式之责任链模式</title>
+    <link href="http://www.smallstrong.wang/2017/04/28/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E8%B4%A3%E4%BB%BB%E9%93%BE%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://www.smallstrong.wang/2017/04/28/设计模式之责任链模式/</id>
+    <published>2017-04-28T00:37:21.000Z</published>
+    <updated>2017-04-28T07:25:34.000Z</updated>
+    
+    <content type="html"><![CDATA[<center>设计模式之责任链模式</center>
+
+
+<blockquote>
+<p>责任链模式</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/1321838-8ac226dddb839fd1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="责任链模式UML.png"></p>
+<pre><code>abstract class Department{
+    protected Department mDepartment;
+
+    public void setDepartment(Department department){
+        this.mDepartment = department;
+    }
+
+    public abstract void makeChoice(Things s);
+}
+</code></pre><blockquote>
+<p>抽象部门，成员变量指定上级部门，定义处理事情的方法</p>
+</blockquote>
+<pre><code>class Municipal extends Department{
+    public void makeChoice(Things s){
+        if(s.level &lt;= 1){
+            Log.i(&quot;smallstrong&quot;,&quot;市级部门&quot;+s.thing);
+        }else{
+            this.mDepartment.makeChoice(s);//报告上级
+        }
+    }
+}
+</code></pre><blockquote>
+<p>市级部门</p>
+</blockquote>
+<pre><code>class Provincial extends Department{
+    public void makeChoice(Things s){
+        if(s.level &lt;= 2){
+            Log.i(&quot;smallstrong&quot;,&quot;省级部门&quot;+s.thing);
+        }else{
+            this.mDepartment.makeChoice(s);//报告上级
+        }
+    }
+}
+</code></pre><blockquote>
+<p>省级部门</p>
+</blockquote>
+<pre><code>class Country extends Department{
+    public void makeChoice(Things s){
+        if(s.level &gt; 0){
+            Log.i(&quot;smallstrong&quot;,&quot;国家级部门&quot;+s.thing);
+        }else{
+            //this.mDepartment.makeChoice(s);//报告上级
+        }
+    }
+}    
+</code></pre><blockquote>
+<p>国家级部门    </p>
+</blockquote>
+<pre><code>class Things{
+    private static final int level;//1  市级范围  2 省级范围 3 国家级范围
+    private static final String thing;
+
+    public Things(int level ,String thing){
+        this.level = level;
+        this.thing = thing;
+    }
+}
+</code></pre><blockquote>
+<p>具体事情与等级    </p>
+</blockquote>
+<pre><code>class Client{
+    public static void main(String args[]){
+        Department mMunicipal,mProvincial,mCountry;
+        mMunicipal = new Municipal();
+        mProvincial = new Provincial();
+        mCountry = new Country();
+        mMunicipal.setDepartment(mProvincial);
+        mProvincial.setDepartment(mCountry);
+
+        Things thing = new Things(1,&quot;李达康冲击GDP&quot;);
+        mMunicipal.makeChoice(thing);    
+
+        Things thing = new Things(2,&quot;沙瑞金书记召开省部级会议&quot;);
+        mMunicipal.makeChoice(thing);    
+
+        Things thing = new Things(3,&quot;赵立春老书记被罢免&quot;);
+        mMunicipal.makeChoice(thing);    
+    }
+}
+</code></pre><blockquote>
+<p>客户端，先要构造一个责任顺序。</p>
+</blockquote>
+<p>log如下</p>
+<p>[市级部门李达康冲击GDP]</p>
+<p>[沙瑞金书记召开省部级会议]</p>
+<p>[赵立春老书记被罢免]</p>
+<h3 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h3><p>责任链模式适用于多个对象都可以处理一个事情，对象可以根据情况处理或者丢给一个级别的对象处理。客户端要代码实现一个责任顺序。Android中view事件的分发已经有序广播的传递都采用了这种模式（相似）。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;center&gt;设计模式之责任链模式&lt;/center&gt;
+
+
+&lt;blockquote&gt;
+&lt;p&gt;责任链模式&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1321838-8ac
+    
+    </summary>
+    
+      <category term="设计模式" scheme="http://www.smallstrong.wang/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>设计模式之策略模式</title>
+    <link href="http://www.smallstrong.wang/2017/04/27/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://www.smallstrong.wang/2017/04/27/设计模式之策略模式/</id>
+    <published>2017-04-27T07:59:45.000Z</published>
+    <updated>2017-04-27T08:14:01.000Z</updated>
+    
+    <content type="html"><![CDATA[<center>设计模式之策略模式</center>
+
+
+
+<blockquote>
+<p>策略模式</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/1321838-caa98047d7077bac.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="策略模式UML.png"></p>
+<pre><code>interface Hero{
+    void kaida();
+}
+</code></pre><blockquote>
+<p>英雄接口，开大。</p>
+</blockquote>
+<pre><code>class SunWuKong implements Hero{
+    public void kaida(){
+        //孙悟空开大
+    }
+}    
+</code></pre><blockquote>
+<p>英雄孙悟空，实现开大方法</p>
+</blockquote>
+<pre><code>class DianWei implements Hero{
+    public void kaida(){
+        //典韦跳大
+    }
+}
+</code></pre><blockquote>
+<p>英雄典韦,实现开大方法</p>
+</blockquote>
+<pre><code>class Military{
+    private Hero hero;
+    public Military(Hero hero){
+        this.hero = hero;
+    }
+
+    public void kaida(){
+        if(hero != null){
+            hero.kaida();                
+        }
+    }
+}
+</code></pre><blockquote>
+<p>军师类，军师职责是挑选合适的英雄去开大，就是这样</p>
+</blockquote>
+<pre><code>class Client{
+    Hero hero = new SunWuKong();
+    Military mMilitary = new Military(hero);
+    mMilitary.kaida();
+}
+</code></pre><blockquote>
+<p>客户端，这边选择的是孙悟空去开大，根据不同需求在运行时指定不同英雄，交给军师，让其开大</p>
+</blockquote>
+<h3 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h3><p>策略模式给我感觉是一种，想做一件事情，这事情有很多种解决途径，有对的有错的，这些途径就是策略类(例子中的孙悟空，典韦)，关键难点在于客户端如何抉择，这个是一个难点。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;center&gt;设计模式之策略模式&lt;/center&gt;
+
+
+
+&lt;blockquote&gt;
+&lt;p&gt;策略模式&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1321838-caa9
+    
+    </summary>
+    
+      <category term="设计模式" scheme="http://www.smallstrong.wang/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>记一次项目引入bugly热修复（基于微信tinker）与接入walle多渠道打包共存的方式</title>
+    <link href="http://www.smallstrong.wang/2017/04/26/%E8%AE%B0%E4%B8%80%E6%AC%A1%E9%A1%B9%E7%9B%AE%E5%BC%95%E5%85%A5bugly%E7%83%AD%E4%BF%AE%E5%A4%8D%EF%BC%88%E5%9F%BA%E4%BA%8E%E5%BE%AE%E4%BF%A1tinker%EF%BC%89%E4%B8%8E%E6%8E%A5%E5%85%A5walle%E5%A4%9A%E6%B8%A0%E9%81%93%E6%89%93%E5%8C%85%E5%85%B1%E5%AD%98%E7%9A%84%E6%96%B9%E5%BC%8F/"/>
+    <id>http://www.smallstrong.wang/2017/04/26/记一次项目引入bugly热修复（基于微信tinker）与接入walle多渠道打包共存的方式/</id>
+    <published>2017-04-26T13:06:15.000Z</published>
+    <updated>2017-04-26T13:08:03.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="记一次项目引入bugly热修复（基于微信tinker）与接入walle多渠道打包共存的方式"><a href="#记一次项目引入bugly热修复（基于微信tinker）与接入walle多渠道打包共存的方式" class="headerlink" title="记一次项目引入bugly热修复（基于微信tinker）与接入walle多渠道打包共存的方式"></a>记一次项目引入bugly热修复（基于微信tinker）与接入walle多渠道打包共存的方式</h3><blockquote>
+<p><a href="https://bugly.qq.com/docs/user-guide/instruction-manual-android-hotfix/?v=20170207114801" target="_blank" rel="external">bugly官方热更新指南</a></p>
+<p><a href="https://bugly.qq.com/docs/user-guide/instruction-manual-android-hotfix-demo/?v=20170207114801" target="_blank" rel="external">bugly官方接入使用详解</a></p>
+<p><a href="https://github.com/Meituan-Dianping/walle" target="_blank" rel="external">walle github地址</a></p>
+<p><a href="http://tech.meituan.com/android-apk-v2-signature-scheme.html" target="_blank" rel="external">walle 原理</a></p>
+</blockquote>
+<h4 id="写在最前面"><a href="#写在最前面" class="headerlink" title="写在最前面"></a>写在最前面</h4><ol>
+<li>bugly热更新基于微信开源的热修复框架tinker，bugly集成了tinker，并将自家的崩溃日志SDK一起集成进了升级SDK中，bugly提供了热更新管理后台。</li>
+<li>bugly提供的多渠道打包方式基于原始的productFlavors方式，会在最终dex中产生不同渠道的差异，因此会产生N多不同tinkId，因此对应tinkId打出补丁包的话也会产生N多。因此换用美团walle打包方式，在签名阶段将渠道信息写入。</li>
+</ol>
+<h3 id="首先先将bugly升级包中的Tinker引入"><a href="#首先先将bugly升级包中的Tinker引入" class="headerlink" title="首先先将bugly升级包中的Tinker引入"></a>首先先将bugly升级包中的Tinker引入</h3><ol>
+<li>app目录下添加 apply from: ‘tinker-support.gradle’ 将tinker的gradle进行分拆</li>
+<li>依赖他们家升级包  compile ‘com.tencent.bugly:crashreport_upgrade:latest.release’</li>
+</ol>
+<blockquote>
+<p>贴出代码，下面这些就已经可以了，我个人遇到的一些问题列举一下。</p>
+</blockquote>
+<ol>
+<li>def appName = “app-0210-15-36-17” 这引号里面的是你要去修复的生成版本时间文件夹（发版时候保存好，弄丢很刺激哦）</li>
+<li>要生成补丁包的时候一定要更换 tinkerId = “joojia_tinker_patch”</li>
+</ol>
+<h5 id="新建tinker-support-gradle做gradle拆分"><a href="#新建tinker-support-gradle做gradle拆分" class="headerlink" title="新建tinker-support.gradle做gradle拆分"></a>新建tinker-support.gradle做gradle拆分</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">apply plugin: &apos;com.tencent.bugly.tinker-support&apos;</div><div class="line"></div><div class="line">def bakPath = file(&quot;$&#123;buildDir&#125;/bakApk/&quot;)</div><div class="line">//当你生成基准包的时候，请替换下面这行</div><div class="line">//这行在打出补丁包的时候会制定你/build/bakApk目录下的apk文件，进行对比。</div><div class="line">def appName = &quot;app-0210-15-36-17&quot;</div><div class="line"></div><div class="line">/**</div><div class="line"> * 对于插件各参数的详细解析请参考</div><div class="line"> */</div><div class="line">tinkerSupport &#123;</div><div class="line"></div><div class="line">    // 开启tinker-support插件，默认值true</div><div class="line">    enable = true</div><div class="line"></div><div class="line">    // 指定归档目录，默认值当前module的子目录tinker</div><div class="line">    autoBackupApkDir = &quot;$&#123;bakPath&#125;&quot;</div><div class="line"></div><div class="line">    // 是否启用覆盖tinkerPatch配置功能，默认值false</div><div class="line">    // 开启后tinkerPatch配置不生效，即无需添加tinkerPatch</div><div class="line">    overrideTinkerPatchConfiguration = true</div><div class="line"></div><div class="line">    // 编译补丁包时，必需指定基线版本的apk，默认值为空</div><div class="line">    // 如果为空，则表示不是进行补丁包的编译</div><div class="line">    // @&#123;link tinkerPatch.oldApk &#125;</div><div class="line">    baseApk =  &quot;$&#123;bakPath&#125;/$&#123;appName&#125;/app-release.apk&quot;</div><div class="line"></div><div class="line">    // 对应tinker插件applyMapping</div><div class="line">    baseApkProguardMapping = &quot;$&#123;bakPath&#125;/$&#123;appName&#125;/app-release-mapping.txt&quot;</div><div class="line"></div><div class="line">    // 对应tinker插件applyResourceMapping</div><div class="line">    baseApkResourceMapping = &quot;$&#123;bakPath&#125;/$&#123;appName&#125;/app-release-R.txt&quot;</div><div class="line">//这个id在生成基准包和生成patch时候都要修改</div><div class="line">    tinkerId = &quot;joojia_tinker_patch&quot;</div><div class="line"></div><div class="line">    //构建多渠道打包时候使用</div><div class="line">    buildAllFlavorsDir = &quot;$&#123;bakPath&#125;/$&#123;appName&#125;&quot;</div><div class="line"></div><div class="line">    // 是否开启代理Application，设置之后无须改造Application，默认为false</div><div class="line">    enableProxyApplication = true</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="接下来将walle多渠道打包接入"><a href="#接下来将walle多渠道打包接入" class="headerlink" title="接下来将walle多渠道打包接入"></a>接下来将walle多渠道打包接入</h3><ol>
+<li>app目录下gradle添加 apply plugin: ‘walle’，依赖插件 classpath ‘com.meituan.android.walle:plugin:1.0.4’</li>
+<li>依赖包 compile ‘com.meituan.android.walle:library:1.0.4’</li>
+<li>添加channel文件在app目录下，里面写你的渠道号</li>
+<li>app目录下gradle加段代码</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">walle &#123;</div><div class="line">    // 指定渠道包的输出路径</div><div class="line">    apkOutputFolder = new File(&quot;$&#123;project.buildDir&#125;/outputs/channels&quot;);</div><div class="line">    // 定制渠道包的APK的文件名称</div><div class="line">    apkFileNameFormat = &apos;$&#123;appName&#125;-$&#123;packageName&#125;-$&#123;channel&#125;-$&#123;buildType&#125;-v$&#123;versionName&#125;-$&#123;versionCode&#125;-$&#123;buildTime&#125;.apk&apos;;</div><div class="line">    // 配置渠道文件列表，也可以通过channelList来配置</div><div class="line">    channelFile = &quot;./channel&quot;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="两者结合"><a href="#两者结合" class="headerlink" title="两者结合"></a>两者结合</h3><ol>
+<li>首先 ./gradlew clean assembleRelease -PchannelFile=app/channel 会在BakApk先生成一个基准包，在output/channels目录下生成所有渠道包(千万注意你channel的目录)</li>
+<li>./gradlew buildTinkerPatchRelease 生成一个补丁包基于上面那个基准包来生成即可，之后去bugly平台下发即可。</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;记一次项目引入bugly热修复（基于微信tinker）与接入walle多渠道打包共存的方式&quot;&gt;&lt;a href=&quot;#记一次项目引入bugly热修复（基于微信tinker）与接入walle多渠道打包共存的方式&quot; class=&quot;headerlink&quot; title=&quot;记一
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>设计模式之代理模式</title>
+    <link href="http://www.smallstrong.wang/2017/04/26/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://www.smallstrong.wang/2017/04/26/设计模式之代理模式/</id>
+    <published>2017-04-26T13:04:01.000Z</published>
+    <updated>2017-04-26T13:05:44.000Z</updated>
+    
+    <content type="html"><![CDATA[<center>设计模式之代理模式</center>
+
+
+
+
+
+<blockquote>
+<p>代理模式,故事是这么发生的。你女票要看五月天演唱会，结果你上大麦手速不够么抢到。为了不再次成为单身狗，你决定去找黄牛搞票。不说了，下个月五块钱以上的活动不要叫我。</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/1321838-6d569dcc93af98c7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="代理模式UML.png"></p>
+<pre><code>interface BuyTicket{
+    void buyTicket();
+}
+</code></pre><blockquote>
+<p>定义一个业务接口，买票</p>
+</blockquote>
+<pre><code>class RealBuyTicket implements BuyTicket{
+    public void buyTicket(){
+        //正正经经买票，大麦官方渠道
+    }
+}    
+</code></pre><blockquote>
+<p>这个是官方渠道，票其实都在这出售，但是谁叫你手速慢。（枉亏我自称麒麟臂）</p>
+</blockquote>
+<pre><code>class ProxyBuyTicket implements BuyTicket{
+    RealBuyTicket realBuyTicket = new RealBuyTicket();
+    public void buyTicket(){
+        addMoney();// 收点代理费
+        realBuyTicket.buyTicket();
+    }
+
+    public void addMoney(){
+        // 老铁，加点钱
+    }
+}
+</code></pre><blockquote>
+<p>买票代理类，加钱就能买</p>
+</blockquote>
+<pre><code>class Clitet{
+    public static void main(String[] args){
+        BuyTicket mButTicket = new ProxyBuyTicket();
+        mButTicket.buyTicket();
+    }
+}
+</code></pre><blockquote>
+<p>找到黄牛，买五月天内场门票，两张哦！</p>
+</blockquote>
+<h3 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h3><p>代理模式其实衍生开去分为很多种类，包括远程代理（翻墙），虚拟代理（用在要创建资源耗费大的对象时候用到），缓冲代理（避免重复请求） 等。代理类及真正的实现类其实在实际中处理业务会非常复杂。</p>
+<p>代理模式能总结成一句话，我想做某件事，自己做不到或者不能直接做，需要找个方法代理来处理。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;center&gt;设计模式之代理模式&lt;/center&gt;
+
+
+
+
+
+&lt;blockquote&gt;
+&lt;p&gt;代理模式,故事是这么发生的。你女票要看五月天演唱会，结果你上大麦手速不够么抢到。为了不再次成为单身狗，你决定去找黄牛搞票。不说了，下个月五块钱以上的活动不要叫我。&lt;/p&gt;
+&lt;/bloc
+    
+    </summary>
+    
+      <category term="设计模式" scheme="http://www.smallstrong.wang/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>设计模式之享元模式</title>
+    <link href="http://www.smallstrong.wang/2017/04/26/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://www.smallstrong.wang/2017/04/26/设计模式之享元模式/</id>
+    <published>2017-04-26T13:03:07.000Z</published>
+    <updated>2017-04-26T13:03:41.000Z</updated>
+    
+    <content type="html"><![CDATA[<center>设计模式之享元模式</center>
+
+
+<blockquote>
+<p>享元模式，刚好现在共享单车火，拿来开刀</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/1321838-cf870c8243622b17.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="享元模式UML.png"></p>
+<pre><code>interface ShareBike{
+    void ride();
+}
+</code></pre><blockquote>
+<p>抽象共享单车    </p>
+</blockquote>
+<pre><code>class ShareBikeOFO implements ShareBike{
+    public void ride(){
+        //小黄车驾到
+    }
+}
+</code></pre><blockquote>
+<p>天朝小黄车</p>
+</blockquote>
+<pre><code>class ShareBikeMoBai implements ShareBike{
+    public void ride(){
+        //摩拜单车
+    }
+}
+</code></pre><blockquote>
+<p>50斤的摩拜单车</p>
+</blockquote>
+<pre><code>class BikeType{
+    public static final String OFO = &quot;OFO&quot;;
+    public static final String MOBAI = &quot;MOBAI&quot;;
+}
+</code></pre><blockquote>
+<p>共享单车类型    </p>
+</blockquote>
+<pre><code>class ShareBikeFactory{
+    HashMap shareBikeMaps = new HashMap();
+
+    public ShareBikeFactory(){
+        shareBikeFactory.put(&quot;BikeType.OFO&quot;,new ShareBikeOFO());
+        shareBikeFactory.put(&quot;BikeType.MOBAI&quot;,new ShareBikeMoBai());
+    }
+
+    public ShareBike getShareBike(String type){
+        if(BikeType.OFO.equals(type)){
+            return (ShareBikeOFO)shareBikeMaps.get(type);
+        }else if(BikeType.MOBAI.equals(type){
+            return (ShareBikeMOBAI)shareBikeMaps.get(type);
+        }
+        return null;
+    }
+}
+</code></pre><blockquote>
+<p>单车托管所</p>
+</blockquote>
+<pre><code>public class Client{
+    public static void main(String args[]){
+        ShareBikeFactory mshareBikeFactory = new ShareBikeFactory();
+        ShareBike shareBikeOFO,shareBikeMobai;
+        shareBikeOFO  = mshareBikeFactory.get(BikeType.OFO);
+        shareBikeMoBai  = mshareBikeFactory.get(BikeType.MOBAI);
+        shareBikeOFO.ride();
+        shareBikeMoBai.ride();
+    }
+}
+</code></pre><blockquote>
+<p>客户端根据需求拿单车来骑车</p>
+</blockquote>
+<h3 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h3><p>享元模式是为了避免大量创建对象省内存时候用的，Android中消息机制中Message用链表来存储消息实现消息复用就是用到这种模式。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;center&gt;设计模式之享元模式&lt;/center&gt;
+
+
+&lt;blockquote&gt;
+&lt;p&gt;享元模式，刚好现在共享单车火，拿来开刀&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_image
+    
+    </summary>
+    
+      <category term="设计模式" scheme="http://www.smallstrong.wang/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>设计模式之外观模式</title>
+    <link href="http://www.smallstrong.wang/2017/04/26/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://www.smallstrong.wang/2017/04/26/设计模式之外观模式/</id>
+    <published>2017-04-26T13:01:59.000Z</published>
+    <updated>2017-04-26T13:02:42.000Z</updated>
+    
+    <content type="html"><![CDATA[<center>设计模式之外观模式</center>
+
+<blockquote>
+<p>外观模式，例子是我经常去莲花街一家叫好吃不如饺子的店，东西好吃，便宜实惠。</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/1321838-4c0a8288e34372a5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="外观模式UML.png"></p>
+<pre><code>interface Food{
+    void eat();
+}
+</code></pre><blockquote>
+<p>食物接口    吃方法</p>
+</blockquote>
+<pre><code>class Dumplings implements Food{
+    public void eat(){
+        //嫂子家的饺子，感觉一般般
+    }
+}
+</code></pre><blockquote>
+<p>饺子    </p>
+</blockquote>
+<pre><code>class SaucedNoodles implements Food{
+    public void eat(){
+        //嫂子家的打卤面  么的说
+    }
+}
+</code></pre><blockquote>
+<p>打卤面</p>
+</blockquote>
+<pre><code>class IronBoardRice implements Food{
+    public void eat(){
+        //嫂子家的铁板饭  也么的说
+    }
+}    
+</code></pre><blockquote>
+<p>铁板饭</p>
+</blockquote>
+<pre><code>class RestaurantFacade{
+    Food mDumplings,mSaucedNoodles,mIronBoardRice;
+
+    public RestaurantFacade(){
+        //无参构造
+    }
+
+    public void eatDumplings(){
+        if(mDumplings == null){
+            mDumplings = new Dumplings();
+        }
+        mDumplings.eat();
+    }
+
+    public void eatSaucedNoodles(){
+        if(mSaucedNoodles == null){
+            mSaucedNoodles = new SaucedNoodles();
+        }
+        mSaucedNoodles.eat();
+    }
+
+    public void eatIronBoardRice(){
+        if(mIronBoardRice == null){
+            mIronBoardRice = new IronBoardRice();
+        }
+        mIronBoardRice.eat();
+    }
+}
+</code></pre><blockquote>
+<p>好吃不如饺子这家店，提供各色菜系</p>
+</blockquote>
+<pre><code>public class Client{
+    public static void main(String[] args){
+        RestaurantFacade mRestaurantFacade = new RestaurantFacade();
+        mRestaurantFacade.eatDumplings();//吃饺子
+        mRestaurantFacade.eatSaucedNoodles();//吃打卤面
+        mRestaurantFacade.eatIronBoardRice();//吃铁板饭
+    }
+}
+</code></pre><blockquote>
+<p>客户端调用这家店，点菜吃东西</p>
+</blockquote>
+<h3 id="个人的理解"><a href="#个人的理解" class="headerlink" title="个人的理解"></a>个人的理解</h3><p>外观模式又叫门面模式，在很多开源库中都很常见，更多的作用是一种客户端与具体实现类的隔离。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;center&gt;设计模式之外观模式&lt;/center&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;外观模式，例子是我经常去莲花街一家叫好吃不如饺子的店，东西好吃，便宜实惠。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;http://upload-images.jiansh
+    
+    </summary>
+    
+      <category term="设计模式" scheme="http://www.smallstrong.wang/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>设计模式之装饰者模式</title>
+    <link href="http://www.smallstrong.wang/2017/04/26/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://www.smallstrong.wang/2017/04/26/设计模式之装饰者模式/</id>
+    <published>2017-04-26T13:00:43.000Z</published>
+    <updated>2017-04-26T13:01:44.000Z</updated>
+    
+    <content type="html"><![CDATA[<center>设计模式之装饰者模式</center>
+
+
+<blockquote>
+<p>装饰者模式</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/1321838-91af22458db2465a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="装饰UML.png"></p>
+<pre><code>interface Liquid{
+    void drink();
+}
+</code></pre><blockquote>
+<p>定义一个液体接口，能喝的哦</p>
+</blockquote>
+<pre><code>class Water implements Liquid{
+    public void drink(){
+        // 我们不生产水，我们只是大自然的搬运工
+    }
+}
+</code></pre><blockquote>
+<p>纯净水    </p>
+</blockquote>
+<pre><code>class LiquidDecortor implements Liquid{
+    private Liquid liquid;//被装饰的主体
+    public LiquidDecortor(Liquid liquid){
+        this.liquid = liquid;
+    }
+
+    public void drink(){
+        liquid.drink();//实际调用的是主体的喝方法
+    }
+}
+</code></pre><blockquote>
+<p>抽象装饰类</p>
+</blockquote>
+<pre><code>class Coffee extends LiquidDecortor{
+    public Coffee(Liquid liquid){
+        super(liquid);
+    }
+
+    public void drink(){
+        super.drink();
+        other taste//咖啡啥子味道自行脑补，就是添加了新的味道，扩充了液体只能喝的功能。虽然还是喝但是喝出来coffee的味道
+    }
+
+    public void otherMethods(){
+        //半透明装饰模式，不仅仅是增强了原本接口规范的功能，还新增了另外功能，比如咖啡能壮阳（别听我瞎比比）
+    }
+}
+</code></pre><blockquote>
+<p>   咖啡类，扩展了喝的功能，添加了点味道</p>
+</blockquote>
+<pre><code>class Milk extends LiquidDecortor{
+    public Milk(Liquid liquid){
+        super(liquid);
+    }
+
+    public void drink(){
+        super.drink();
+        other taste//牛奶会有奶香味
+    }
+
+    public void otherMethods(){
+        //半透明装饰模式，不仅仅是增强了原本接口规范的功能，还新增了另外功能，比如牛奶帮助睡眠
+    }
+}
+</code></pre><blockquote>
+<p>   牛奶类，扩展了喝的功能，添加了点奶味</p>
+</blockquote>
+<pre><code>class Client{
+    public static void main(String[] args){
+        Liquid liquid,milk;
+        liquid = new Water();
+        milk = new Milk(liquid);
+        milk.drink();//喝牛奶  透明装饰者模式
+
+        ///////////////////////华丽分割线
+
+        Milk superMilk = new Milk(liquid);
+        superMilk.drink();//还是喝牛奶
+        superMilk.otherMethods();//其他功能，促睡眠，长个子，呵呵呵等
+    }
+}
+</code></pre><blockquote>
+<p>客户端</p>
+</blockquote>
+<h3 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h3><p>装饰者模式是为了增强功能以及扩展新功能，这和java的继承功能重合。相比之下，装饰者模式更加灵活。对于一个需要被扩展功能的对象来说（被装饰类）可以动态的去选择适合自己想要的装饰类来完成功能的加强或者添加新功能。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;center&gt;设计模式之装饰者模式&lt;/center&gt;
+
+
+&lt;blockquote&gt;
+&lt;p&gt;装饰者模式&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1321838-91a
+    
+    </summary>
+    
+      <category term="设计模式" scheme="http://www.smallstrong.wang/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>设计模式之组合模式</title>
+    <link href="http://www.smallstrong.wang/2017/04/26/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://www.smallstrong.wang/2017/04/26/设计模式之组合模式/</id>
+    <published>2017-04-26T12:59:30.000Z</published>
+    <updated>2017-04-26T13:00:02.000Z</updated>
+    
+    <content type="html"><![CDATA[<center>设计模式之组合模式</center>
+
+
+<blockquote>
+<p>组合模式</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/1321838-4a6090174d9636a4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="组合UML.png"></p>
+<pre><code>interface View{
+    void getBackground();
+}
+</code></pre><blockquote>
+<p>View顶层接口，随便搞个获取背景方法，不要在意没有返回值哈哈</p>
+</blockquote>
+<pre><code>class TextView implements View{
+    public TextView(){
+        //迷人的无参构造方法
+    }
+    public void getBackground(){
+
+    }
+}    
+</code></pre><blockquote>
+<p>文字类，实现View接口。</p>
+</blockquote>
+<pre><code>class ImageView implements View{
+    public ImageView(){
+        //我也是个无参构造函数
+    }
+    public void getBackground(){
+
+    }
+}    
+</code></pre><blockquote>
+<p>图片类，实现View接口</p>
+</blockquote>
+<pre><code>class ViewGroup implements View{
+    private List&lt;View&gt; viewList = new ArrayList&lt;View&gt;();
+    public void addView(View view){
+        viewList.add(view);
+    }
+
+    public void deleteView(View view){
+        viewList.remove(view);
+    }
+
+    public void getBackground(){
+        for(View view : viewList){
+            view.getBackground();
+        }
+    }
+}    
+</code></pre><blockquote>
+<p>ViewGroup类    ，容器构件</p>
+</blockquote>
+<pre><code>class Client{
+    public static void main(String[] args){
+        View viewGroup,textView,imageView;
+        textView = new TextView();
+        imageView = new ImageView();
+        viewGroup = new ViewGroup();
+        viewGroup.add(textView);
+        viewGroup.add(imageView);
+        viewGroup.getBackground();
+    }
+}
+</code></pre><blockquote>
+<p>客户端类</p>
+</blockquote>
+<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ol>
+<li><p>组合模式可以清楚地定义分层次的复杂对象，表示对象的全部或部分层次，它让客户端忽 略了层次的差异，方便对整个层次结构进行控制。</p>
+</li>
+<li><p>客户端可以一致地使用一个组合结构或其中单个对象，不必关心处理的是单个对象还是整 个组合结构，简化了客户端代码。</p>
+</li>
+<li><p>在组合模式中增加新的容器构件和叶子构件都很方便，无须对现有类库进行任何修改，符 合“开闭原则”。</p>
+</li>
+<li><p>组合模式为树形结构的面向对象实现提供了一种灵活的解决方案，通过叶子对象和容器对 象的递归组合，可以形成复杂的树形结构，但对树形结构的控制却非常简单。</p>
+</li>
+</ol>
+<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><ol>
+<li>在增加新构件时很难对容器中的构件类型进行限制。有时候我们希望一个容器中只能有某些<br>特定类型的对象，例如在某个文件夹中只能包含文本文件，使用组合模式时，不能依赖类型<br>系统来施加这些约束，因为它们都来自于相同的抽象层，在这种情况下，必须通过在运行时<br>进行类型检查来实现，这个实现过程较为复杂。</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;center&gt;设计模式之组合模式&lt;/center&gt;
+
+
+&lt;blockquote&gt;
+&lt;p&gt;组合模式&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1321838-4a609
+    
+    </summary>
+    
+      <category term="设计模式" scheme="http://www.smallstrong.wang/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>设计模式之桥接模式</title>
+    <link href="http://www.smallstrong.wang/2017/04/26/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://www.smallstrong.wang/2017/04/26/设计模式之桥接模式/</id>
+    <published>2017-04-26T12:58:38.000Z</published>
+    <updated>2017-04-26T12:59:11.000Z</updated>
+    
+    <content type="html"><![CDATA[<center>设计模式之桥接模式</center>
+
+
+<blockquote>
+<p>桥接模式</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/1321838-0775abe3bcdb2f62.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="桥接UML.png"></p>
+<pre><code>abstract class People{
+    protected Property property;
+    public People(Property property){
+        this.property = property;
+    }
+    public abstract void chooseInvest();
+}
+</code></pre><blockquote>
+<p>人的抽象类，这类人喜欢投资</p>
+</blockquote>
+<pre><code>class American extends People{
+    public void chooseInvest(){
+        property.invest();//父类构造方法如果传入股票，则美国人喜欢投资股票
+    }
+}    
+</code></pre><blockquote>
+<p>美国人的投资方式</p>
+</blockquote>
+<pre><code>class ChineseMother extends People{
+    public void chooseInvest(){
+        property.invest();//中国大妈喜欢买黄金也喜欢炒房，反正就是很厉害
+    }
+}
+</code></pre><blockquote>
+<p>毁天灭地的中国大妈类，所到之处寸草不生</p>
+</blockquote>
+<pre><code>interface Property{
+    void invest();
+}    
+</code></pre><blockquote>
+<p>资产接口 ， 具有投资熟悉</p>
+</blockquote>
+<pre><code>class RealEstate implements Property{
+    public void invest(){
+        //让我们愉快的投入中国房地产事业吧，一平九万八只是起点
+    }
+}    
+</code></pre><blockquote>
+<p>房地产类</p>
+</blockquote>
+<pre><code>class Glod implements Property{
+    public void invest(){
+        //投资黄金资产
+    }
+}    
+</code></pre><blockquote>
+<p>黄金类</p>
+</blockquote>
+<pre><code>class Stock implements Property{
+    public void invest(){
+        //股票资产
+    }
+}    
+</code></pre><blockquote>
+<p>股票类</p>
+</blockquote>
+<pre><code>class Client{
+    public static void main(String[] args）{
+        Property property = new Glod();
+        People people = new ChineseMother(property);
+        people.chooseInvest();
+    }
+}    
+</code></pre><blockquote>
+<p>客户端，模拟的是中国大妈炒黄金的辉煌景象</p>
+</blockquote>
+<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ol>
+<li>分离抽象接口及其实现部分。桥接模式使用“对象间的关联关系”解耦了抽象和实现之间固 有的绑定关系，使得抽象和实现可以沿着各自的维度来变化。所谓抽象和实现沿着各自维度 的变化，也就是说抽象和实现不再在同一个继承层次结构中，而是“子类化”它们，使它们各自 都具有自己的子类，以便任何组合子类，从而获得多维度组合对象。</li>
+<li>在很多情况下，桥接模式可以取代多层继承方案，多层继承方案违背了“单一职责原则”， 复用性较差，且类的个数非常多，桥接模式是比多层继承方案更好的解决方法，它极大减少 了子类的个数。</li>
+<li>桥接模式提高了系统的可扩展性，在两个变化维度中任意扩展一个维度，都不需要修改原 有系统，符合“开闭原则”。    </li>
+</ol>
+<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><ol>
+<li>桥接模式的使用会增加系统的理解与设计难度，由于关联关系建立在抽象层，要求开发者 一开始就针对抽象层进行设计与编程。</li>
+<li>桥接模式要求正确识别出系统中两个独立变化的维度，因此其使用范围具有一定的局限 性，如何正确识别两个独立维度也需要一定的经验积累。</li>
+</ol>
+<h2 id="适用场景"><a href="#适用场景" class="headerlink" title="适用场景"></a>适用场景</h2><ol>
+<li>如果一个系统需要在抽象化和具体化之间增加更多的灵活性，避免在两个层次之间建立静 态的继承关系，通过桥接模式可以使它们在抽象层建立一个关联关系。</li>
+<li>“抽象部分”和“实现部分”可以以继承的方式独立扩展而互不影响，在程序运行时可以动态 将一个抽象化子类的对象和一个实现化子类的对象进行组合，即系统需要对抽象化角色和实 现化角色进行动态耦合。</li>
+<li>一个类存在两个(或多个)独立变化的维度，且这两个(或多个)维度都需要独立进行扩展。</li>
+<li>对于那些不希望使用继承或因为多层继承导致系统类的个数急剧增加的系统，桥接模式尤 为适用。</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;center&gt;设计模式之桥接模式&lt;/center&gt;
+
+
+&lt;blockquote&gt;
+&lt;p&gt;桥接模式&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1321838-0775a
+    
+    </summary>
+    
+      <category term="设计模式" scheme="http://www.smallstrong.wang/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>设计模式之适配器模式</title>
+    <link href="http://www.smallstrong.wang/2017/04/26/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://www.smallstrong.wang/2017/04/26/设计模式之适配器模式/</id>
+    <published>2017-04-26T12:45:11.000Z</published>
+    <updated>2017-04-26T12:58:24.000Z</updated>
+    
+    <content type="html"><![CDATA[<center>设计模式之适配器模式</center>
+
+
+<blockquote>
+<p>适配器模式</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/1321838-dcbeabe9d51f2dfa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="适配器UML.png"></p>
+<pre><code>interface Rule{
+    void driveCar();
+    boolean haveHouse();
+    long spendMoneyForHer();
+}
+</code></pre><blockquote>
+<p>程序员哥哥找女朋友，女朋友对其有这三点简单要求</p>
+</blockquote>
+<pre><code>class MeAdapter implements Rule{
+    private Car car;
+    private House  house;
+    private Money money;
+    public MeAdapter(Car car,House house,Money money){
+        this.car = car;
+        this.house = house;
+        this.moeny = money;
+    }
+
+    public void driveCar(){
+        car.drive();//开出我的五菱宏光
+    }
+
+    public boolean haveHouse(){
+            house.live();
+            return true;//亮出我的农村小土屋
+    }
+
+    public long spendMoneyForHer(){
+        money.spend();
+        return 10000000;//做梦都想给你花这么多钱
+    }
+}
+</code></pre><blockquote>
+<p>一个程序员哥哥想做到有房有车有钱的梦想适配器</p>
+</blockquote>
+<pre><code>class Car{
+    public void drive(){
+        //司机开车
+    }
+}    
+</code></pre><blockquote>
+<p>实体类车， 方法开车    </p>
+</blockquote>
+<pre><code>class House{
+    public void live(){
+        //住房子
+    }
+}
+</code></pre><blockquote>
+<p>实体类房子， 住房子</p>
+</blockquote>
+<pre><code>class Money{
+    public void spend{
+        //花钱
+    }
+}
+</code></pre><blockquote>
+<p>实体类钱， 花钱</p>
+</blockquote>
+<pre><code>class Client{
+    Rule rule;
+    rule = new MeAdapter(new Car(),new House,new Money);
+    rule.driveCar();
+    rule.haveHouse();
+    rule.spendMoneyForHer();
+}    
+</code></pre><blockquote>
+<p>满足女票的几点小需求</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;center&gt;设计模式之适配器模式&lt;/center&gt;
+
+
+&lt;blockquote&gt;
+&lt;p&gt;适配器模式&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1321838-dcb
+    
+    </summary>
+    
+      <category term="设计模式" scheme="http://www.smallstrong.wang/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>设计模式之原型模式</title>
+    <link href="http://www.smallstrong.wang/2017/04/26/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://www.smallstrong.wang/2017/04/26/设计模式之原型模式/</id>
+    <published>2017-04-26T12:44:02.000Z</published>
+    <updated>2017-04-26T12:46:22.000Z</updated>
+    
+    <content type="html"><![CDATA[<center>设计模式之原型模式</center>
+
+<blockquote>
+<p>原型模式（浅克隆）</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/1321838-68e41139927c49fb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="原型模式UML.png"></p>
+<pre><code>class Prototype implements Cloneable{
+    public Prototype clone(){
+         Prototype prototype = null;  
+         try{
+             prototype = (Prototype)super.clone();
+         }catch(CloneNotSupportedException e){
+             e.printStackTrace();
+         }
+         return prototype; 
+    }
+}
+</code></pre><blockquote>
+<p>在java虚拟机中，只有实现了这个接口的类才可以被拷贝，否则在运行时会抛出CloneNotSupportedException异常。    </p>
+</blockquote>
+<pre><code>class PrototypeBean extends Prototype{
+    public void sayHello{
+        Log.i(&quot;smallstrong&quot;,&quot;sayHello&quot;);
+    }
+}
+</code></pre><blockquote>
+<p>继承    Prototype，这个实体类就是我们想要copy的类</p>
+</blockquote>
+<pre><code>public class Client{
+    public static void main(String args[]){
+        PrototypeBean prototype = new PrototypeBean();
+        PrototypeBean newPrototype;
+        newPrototype = (PrototypeBean)prototype.clone();
+        newPrototype.sayHello();
+    }
+}
+</code></pre><blockquote>
+<p>客户端先创建一个PrototypeBean实例，之后调用clone方法来创建新的实例</p>
+</blockquote>
+<h3 id="浅克隆与深克隆"><a href="#浅克隆与深克隆" class="headerlink" title="浅克隆与深克隆"></a>浅克隆与深克隆</h3><ol>
+<li>浅克隆指的是在克隆过程中仅仅只是对值类型（int boolean String等）进行了copy,而对于引用类型（对象，数组等）的只是copy了地址，并没有实际开辟一块引用类型变量的内存空间。</li>
+<li>深克隆指的是类中的不管值类型还是引用类型，统统都在内存空间中重新创建。（可以通过实现序列化将对象通过流的方式copy，或者把所有引用类型的也都实现Cloneable,一并clone）<h3 id="优点："><a href="#优点：" class="headerlink" title="优点："></a>优点：</h3></li>
+<li>当创建新的对象实例较为复杂时，使用原型模式可以简化对象的创建过程，通过复制一个 已有实例可以提高新实例的创建效率。<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3></li>
+<li>在实现深克隆时需要编写较为复杂的代码，而且当对象之间存在多重的嵌套引用时，为了 实现深克隆，每一层对象对应的类都必须支持深克隆，实现起来可能会比较麻烦。</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;center&gt;设计模式之原型模式&lt;/center&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;原型模式（浅克隆）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1321838-6
+    
+    </summary>
+    
+      <category term="设计模式" scheme="http://www.smallstrong.wang/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    
+  </entry>
+  
+</feed>

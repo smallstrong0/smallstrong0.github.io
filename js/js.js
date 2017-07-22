@@ -2,7 +2,7 @@
 /*global $, jQuery, alert*/
 
 // Custom_js
-// Active_Toc_js
+// Back_to_top_js
 // Material_js
 // Bootstrap_js
 // Sidebar_js
@@ -75,7 +75,7 @@ $(document).ready(function() {
 
     // Click anywhere to close the FAB menu
     $(document).click(function() {
-        if( $("#prime").hasClass("is-visible") ){
+        if( $("#prime").hasClass("is-visible") ) {
             $("#prime").click();
         }
     });
@@ -88,15 +88,30 @@ $(document).ready(function() {
     $(document).click(function() {
         $("#local-search-result ul").css("display", "none");
     });
-
 });
 
 //**********************************
 //**********************************
-//**********************************   Active_Toc_js
+//**********************************   Back_to_top_js
 //**********************************
 //**********************************
 
+$(window).scroll(function (event) {
+    var scroll = $(window).scrollTop();
+	if (scroll > 300) {
+		$('#back-to-top').addClass('btt-visible');
+	} else {
+		$('#back-to-top').removeClass('btt-visible');
+	}
+
+	var footerOffset = $('.mdl-mini-footer').offset().top;
+	var windowHeight = $( window ).height();
+	if (scroll > footerOffset - windowHeight + 42) {
+		$('#back-to-top').addClass('btt-docked');
+	} else {
+		$('#back-to-top').removeClass('btt-docked');
+	}
+});
 
 //**********************************
 //**********************************
@@ -2163,12 +2178,12 @@ $(document).ready(function() {
             overlay.addClass('active');
             $('.MD-burger-layer').remove('MD-burger-line');
             $('.MD-burger-layer').add('MD-burger-arrow');
-			document.documentElement.style.overflow = "hidden";
+      document.documentElement.style.overflow = "hidden";
         } else {
             overlay.removeClass('active');
             $('.MD-burger-layer').removeClass('MD-burger-arrow');
             $('.MD-burger-layer').addClass('MD-burger-line');
-			document.documentElement.style.overflow = "auto";
+      document.documentElement.style.overflow = "auto";
         }
     });
 
@@ -2177,7 +2192,7 @@ $(document).ready(function() {
         $('#sidebar').removeClass('open');
         $('.MD-burger-layer').removeClass('MD-burger-arrow');
         $('.MD-burger-layer').addClass('MD-burger-line');
-		document.documentElement.style.overflow = "auto";
+    document.documentElement.style.overflow = "auto";
     });
 
 });
@@ -2192,8 +2207,6 @@ $(document).ready(function() {
 
     // Hide toggle buttons on default position
     toggleButtons.css('display', 'initial');
-    $('body').css('display', 'initial');
-
 
     // Sidebar position
     $('#sidebar-position').change(function() {
