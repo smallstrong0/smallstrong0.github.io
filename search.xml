@@ -3,6 +3,45 @@
   
     
     <entry>
+      <title><![CDATA[在google cloud 上搭建Jenkins持续集成实现Android应用的自动打包]]></title>
+      <url>/2017/07/23/%E5%9C%A8google-cloud-%E4%B8%8A%E6%90%AD%E5%BB%BAJenkins%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E5%AE%9E%E7%8E%B0Android%E5%BA%94%E7%94%A8%E7%9A%84%E8%87%AA%E5%8A%A8%E6%89%93%E5%8C%85/</url>
+      <content type="html"><![CDATA[<center> Jenkins 持续集成 之Android自动化打包发包</center>
+
+<blockquote>
+<p>本篇单纯为了做记录，最基本条件就是你需要全程翻墙，而且你需要一台配置不是最低的VPS。</p>
+<p>偶然间在小伙伴的桌上看到了一本APP研发录，兴起就花了一下午看了一下。书里讲的东西都非常切合实际开发情景。当读到第八章自动打包的时候，觉得这个事情可以搞一波。</p>
+<p>对比实际开发中，当提测时候经常遇到ui 测试找你说这个bug啥啥的，有些其实已经修复了只是没有更新包。碰巧那会儿你正(<del>和妹子聊得开心</del>）认真工作。看着旁边测试妹子还站着呢，你怎忍心？没办法，停下来，花个N分钟只是为了装个包。。。只是为了装个包。。。只是为了装个包？那还需要我亲自动手，服务器来做不就行了。</p>
+</blockquote>
+<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><ol>
+<li>一台VPS服务器（由于Android用gradle打包的过程是一个十分吃系统资源的活，公司的应用配置在双核 13g内存的情况下打包完成是4分钟）</li>
+<li>Google cloud有由Bitnami提供的一套包含Jenkins 及一些其必要的插件包括，及其他必要环境的方案。我在下面会贴图。（你可以理解使用这套方案，你这台VPS会默认安装Debian操作系统，里面已经拥有了Jenkins的一些必要环境已经插件，而且这台Debian系统的VPS，已经预装了Java环境，gradle环境，以及git环境）</li>
+<li>上面两步一句话概括就是你在一台VPS上有了个Jenkins的CI系统，默认80端口就能访问。那接下来的任务就是我们要这台Debian系统的服务器拥有打包Android应用功能的环境。前面说到Java环境已经有了，gradle环境已经有了，要实现版本控制的git环境已经有了，那就还缺Android sdk环境了。想到，我们SDK只需要提供编译打包的功能，所以只需要下载SDK tools即可。命令行官网自行下载，方法自己去找（偷偷告诉你，Google自家云服务器下载这个tools速度惊人）</li>
+<li>当准备好所有Android打包需要的环境之后，在Jenkins创建项目，配置好相应环境的目录。这些网上很多，不过我相信每个人遇到的问题都会有所不同，我在文章最后会说说我掉进的一些深坑。配置好环境之后，我是每隔两分钟检查git库是否有更新有更新就打包，最后我会将生成好的debug包上传至fir进行分发。测试和UI同学直接扫码下载安装。解放双手值得拥有。</li>
+</ol>
+<h3 id="我掉进的一些深坑"><a href="#我掉进的一些深坑" class="headerlink" title="我掉进的一些深坑"></a>我掉进的一些深坑</h3><ol>
+<li>由于对Linux系统的不熟悉，加上用ssh远程登录操作服务器真的很卡。这第一个坑就是，用户权限导致了我服务器配置的正确的ssh，然而我公司的git服务器压根儿连不上。当时真的把我搞懵逼了。解决方案是创建一个Jenkins用户，修改你创建的Jenkins项目的目录权限。这里你要掌握Debian系统下自由切换root及其他用户。</li>
+<li>在填写构建项目的时候，一定选择Use Gradle Wrapper，Make gradlew executable要勾上Force GRADLE_USER_HOME to use workspace    也勾上。这样他会自己去下载gradle。</li>
+<li>VPS配置不能低，双核10g内存我觉得是底配。不然编译打包过程出个gradle need more memory之类的服务器就躺了。</li>
+<li>另外一些，包括Android编译时候需要统一license，Android SDK的路径是写在local.properties里面的。路径写正确了。还有各种环境配置的目录基本都在/opt/bitnami/下面。部分Jenkins插件也需要安装。反正缺啥补啥，看报错定位，用Google来解决问题，遇到问题先不慌，已经有这么多人搞好了，说明那种掉下去爬不上的天坑肯定是没有的，你也可以的。</li>
+</ol>
+<h3 id="一些我参考的链接-希望对你也有帮助"><a href="#一些我参考的链接-希望对你也有帮助" class="headerlink" title="一些我参考的链接 希望对你也有帮助"></a>一些我参考的链接 希望对你也有帮助</h3><p><a href="http://www.vogella.com/tutorials/JenkinsAndroid/article.html#android_jenkinsbuild_installation" target="_blank" rel="external">http://www.vogella.com/tutorials/JenkinsAndroid/article.html#android_jenkinsbuild_installation</a></p>
+<p><a href="http://jaycechant.info/2017/Android-sdk-on-Linux-for-Jenkins-etc/" target="_blank" rel="external">http://jaycechant.info/2017/Android-sdk-on-Linux-for-Jenkins-etc/</a></p>
+<p><a href="https://stackoverflow.com/questions/39760172/you-have-not-accepted-the-license-agreements-of-the-following-sdk-components" target="_blank" rel="external">https://stackoverflow.com/questions/39760172/you-have-not-accepted-the-license-agreements-of-the-following-sdk-components</a></p>
+<h3 id="写到最后"><a href="#写到最后" class="headerlink" title="写到最后"></a>写到最后</h3><p>这本是运维该干的事情，但是你既然已经有了一颗(<del>装逼</del>)瞎折腾的心就别半途而废。我在我mac本 已经 公司的win本上在本地都事先成功打包过自己github上的一些小demo。都成功了，但是换了Debian系统的服务器还是会遇到各种层出不穷的问题，关键就是不放弃。我算算在第一次成功打出包之前我至少有50次失败的经历。</p>
+<p>这个打包服务已经正常稳定的工作两星期了，的确方便了不少。至少省下来和女票正常交流的时间哈哈。如果你遇到任何这方面的问题，欢迎留言交流。</p>
+<h3 id="打包记录"><a href="#打包记录" class="headerlink" title="打包记录"></a>打包记录</h3><p><img src="http://upload-images.jianshu.io/upload_images/1321838-5e952fcca9a44753.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="屏幕快照 2017-07-23 下午4.30.07.png"></p>
+]]></content>
+      
+        <categories>
+            
+            <category> Android </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[设计模式之访问者模式]]></title>
       <url>/2017/05/16/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E8%AE%BF%E9%97%AE%E8%80%85%E6%A8%A1%E5%BC%8F/</url>
       <content type="html"><![CDATA[<center>设计模式之访问者模式</center>

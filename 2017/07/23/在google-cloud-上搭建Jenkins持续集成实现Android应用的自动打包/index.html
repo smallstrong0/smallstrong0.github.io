@@ -14,7 +14,7 @@
     
     <title>
         
-            归档 | 
+            在google cloud 上搭建Jenkins持续集成实现Android应用的自动打包 | 
         
         smallstrong&#39;s blog
     </title>
@@ -73,15 +73,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://www.smallstrong.wang">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="归档 | smallstrong&#39;s blog">
+    <meta property="og:title" content="在google cloud 上搭建Jenkins持续集成实现Android应用的自动打包 | smallstrong&#39;s blog">
     <meta property="og:image" content="/img/favicon.png" />
     <meta property="og:description" content="">
     
 
     
+        <meta property="article:published_time" content="7月 23, 2017" />
+        <meta property="article:modified_time" content="7月 23, 2017" />
+    
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="归档 | smallstrong&#39;s blog">
+    <meta name="twitter:title" content="在google cloud 上搭建Jenkins持续集成实现Android应用的自动打包 | smallstrong&#39;s blog">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -89,13 +92,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://www.smallstrong.wang/archives/page/4/index.html" />
+        <link rel="canonical" href="http://www.smallstrong.wang/2017/07/23/在google-cloud-上搭建Jenkins持续集成实现Android应用的自动打包/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "smallstrong&#39;s blog",
+        "logo": "/img/favicon.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Small Strong",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/favicon.png"
+        },
+        "description": "学无止境"
+    },
+    "headline": "在google cloud 上搭建Jenkins持续集成实现Android应用的自动打包",
+    "url": "http://www.smallstrong.wang/2017/07/23/在google-cloud-上搭建Jenkins持续集成实现Android应用的自动打包/index.html",
+    "datePublished": "7月 23, 2017",
+    "dateModified": "7月 23, 2017",
+    "description": "",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://www.smallstrong.wang"
+    }
+}
+</script>
 
 
     
@@ -281,639 +314,310 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
     
-        
-    
-
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2016/11/30/Android环信聊天头像昵称显示解决方案/">Android环信聊天头像昵称显示解决方案</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            解决环信头像昵称显示问题
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2016/11/30/Android环信聊天头像昵称显示解决方案/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/ava.png" width="44px" height="44px" alt="Small Strong's avatar">
-            </div>
-            <div>
-                <strong>Small Strong</strong>
-                <span>11月 30, 2016</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/Android/">Android</a>
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
             </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
+        </a>
     </div>
-</div>
+    -->
 
-            
-            
-        
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
     
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#准备工作"><span class="post-toc-number">1.</span> <span class="post-toc-text">准备工作</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#我掉进的一些深坑"><span class="post-toc-number">2.</span> <span class="post-toc-text">我掉进的一些深坑</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一些我参考的链接-希望对你也有帮助"><span class="post-toc-number">3.</span> <span class="post-toc-text">一些我参考的链接 希望对你也有帮助</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#写到最后"><span class="post-toc-number">4.</span> <span class="post-toc-text">写到最后</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#打包记录"><span class="post-toc-number">5.</span> <span class="post-toc-text">打包记录</span></a></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
     
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2016/11/30/Android图片压缩并上传七牛服务器/">Android图片压缩并上传七牛服务器</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            多图片压缩并上传七牛服务器
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2016/11/30/Android图片压缩并上传七牛服务器/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/ava.png" width="44px" height="44px" alt="Small Strong's avatar">
-            </div>
-            <div>
-                <strong>Small Strong</strong>
-                <span>11月 30, 2016</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/Android/">Android</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2016/11/23/那些你可能不知道的app推广渠道/">那些你可能不知道的app推广渠道</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            android app 推广渠道真心多到你想不到
 
 
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2016/11/23/那些你可能不知道的app推广渠道/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/ava.png" width="44px" height="44px" alt="Small Strong's avatar">
-            </div>
-            <div>
-                <strong>Small Strong</strong>
-                <span>11月 23, 2016</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/运营/">运营</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2016/11/18/一个Textview控件里包含不同样式的字体/"> 一个Textview控件里包含不同样式的字体</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            Textview小技巧
 
 
-一个textview表示价格的时候，¥符号要小一些，好吧，就按...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2016/11/18/一个Textview控件里包含不同样式的字体/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/ava.png" width="44px" height="44px" alt="Small Strong's avatar">
-            </div>
-            <div>
-                <strong>Small Strong</strong>
-                <span>11月 18, 2016</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/Android/">Android</a>
-            </span>
+<!-- Layouts -->
 
-            
+    <!-- Post Module -->
+    <div class="material-post_container">
 
-            
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
 
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2016/10/31/mac-合并分区的时候失败，你可以尝试下这个/">mac 合并分区的时候失败，你可以尝试下这个</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            mac分区小记
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2016/10/31/mac-合并分区的时候失败，你可以尝试下这个/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/ava.png" width="44px" height="44px" alt="Small Strong's avatar">
-            </div>
-            <div>
-                <strong>Small Strong</strong>
-                <span>10月 31, 2016</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
+                <!-- Post Header(Thumbnail & Title) -->
                 
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
+    <!-- Paradox Post Header -->
+    
+        <!-- Custom Thumbnail -->
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(/images/jenkins.png)">
+    
+            <p class="article-headline-p">
+                在google cloud 上搭建Jenkins持续集成实现Android应用的自动打包
+            </p>
         </div>
-    </div>
-</div>
 
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2016/10/13/排序算法集锦/">排序</a></p>
-    </div>
 
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            8大经典排序
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2016/10/13/排序算法集锦/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/ava.png" width="44px" height="44px" alt="Small Strong's avatar">
-            </div>
-            <div>
-                <strong>Small Strong</strong>
-                <span>10月 13, 2016</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/算法/">算法</a>
-            </span>
 
-            
 
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2016/10/12/vim快捷键笔记/">vim快捷键笔记</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            vim一些快捷键笔记
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2016/10/12/vim快捷键笔记/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/ava.png" width="44px" height="44px" alt="Small Strong's avatar">
-            </div>
-            <div>
-                <strong>Small Strong</strong>
-                <span>10月 12, 2016</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
                 
-            </span>
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
 
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/ava.png" width="44px" height="44px" alt="Author Avatar"/>
     </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Small Strong</strong>
+        <span>7月 23, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAT4AAAE+CAAAAAAxUyPsAAAEyklEQVR42u3a0W4bMQwEQP//T7evBdI4yyUdN+joKUidO2lUwNRSj1/GYjwQ4MOHD5+BDx8+fAY+fD+E7xGPvzzoj99PP/n85y8W8OFdn83k4zOffzJZOz58+PDhw7fnS6ab/L7bgOefzzdp8+R87fjw4cOHD98V33QB00Xmz3z+hI5jvy58+PDhw4fvvXzTv+qeloPmm4cPHz58+PD9RL48DugO9lfBQfKv+PDhw4cP3/fz5a/ZfCYpKaaLf8Xz8eHDhw8fvtfxbQqIn/7zt97vw4cPHz58/z3fdOQBelf0PH/XbWRQCuDDhw8fPnwLvu6i2CYOyK+d5fFEHrvv14sPHz58+PDt+aaL30x6OvVpM37ans8LLHz48OHDh2/PNz3qTy+rTa+aTVmTmXTb8+mG4cOHDx8+fAu+6XWuLnyfFgp5IdIVKNO/wocPHz58+K74uqZ43thOmPJGe15m5duTF2H48OHDhw/fni9/cYc4jQm6cqrb+HyG+PDhw4cP3xXf9Ki/+fqfhvLd8/PWfoeIDx8+fPjwXfF1JUIegneh/+Dq2KIoGWwhPnz48OHDd8TXFRz7cGHTSt80EvLGAD58+PDhw3fLN/1q35BNt6Q78HdRfhSL4MOHDx8+fAu+aQN7Guvnx/g8yNi0BPKgISpc8OHDhw8fvjVf3iCfFhzdFbGkcNnH/YP/EPjw4cOHD9+ar1tGUqZMy4UurO/i+Gmsjw8fPnz48O35ki/v/VW2TTSfb0keE+RrGd8ywIcPHz58+AK+x3p0je3u7a/eJHz48OHDh+9dfF1TOY/I98+Ztvm79gM+fPjw4cP3Or5NwP1Fg3kdpk8b5wn3cWSADx8+fPjwPeXLD+R587u7RtYVE3mZks/8izILHz58+PDhW/BtAvRNOTK9Brcn3jwfHz58+PDhu+XLv7ynrevpW6Yxwb4kOgjr8eHDhw8fvpiviwCu4v79BnSlyTQiwYcPHz58+G75rqLt/DLZNOLPS5bNJ8s2OT58+PDhwxfzJS3n7kJYvrBo0hXuVTiCDx8+fPjwXfFtwu4cJYnmu7Jp+sY8hjhLXPDhw4cPH75FiZCH4x3Qpil+G0/gw4cPHz58r+DLS5BpiJAf16+ul023vCxx8OHDhw8fvjVfV4hsWuZdoJ8stWucD66s4cOHDx8+fEd8V8FBVwblJU63MWMmfPjw4cOH72V8XemwOfZ3bfhpG6CLOcqwHh8+fPjw4av6vPniN5/JQ/NpuZO3w/O54cOHDx8+fFd80wN21EgeRvZdKJ+/66rBjw8fPnz48N3yTQuCaRC/iRvyGXZl1mBW+PDhw4cP34Lvahn5tDbx+vSq2dXAhw8fPnz4rvi6L/488t4XE3ncMI3+z+o+fPjw4cOHb3Hm7a5z5VF7UojkS+oa7d3P+PDhw4cP3xXftBWdH+aTMmUKPVjqOtqIChd8+PDhw4ev4rsK1nOmfcGUxxn7Eg0fPnz48OF7L19+aO/i/i7oz4ubshjChw8fPnz4vp0vLxS6d023ZzqTaaiBDx8+fPjwvYJvWhx018U2QUPy3ucz2V+ew4cPHz58+PZ83fLysmNfanRB/zSGiOJ7fPjw4cOHb8FnjNsDCPDhw4fPwIcPHz4DH75/d/wGpSpEwvJuCwgAAAAASUVORK5CYII=">
+    
+</ul>
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+    <!-- Leancloud Views -->
+        <a class="post_share-link" href="#">
+            <li class="mdl-menu__item">
+                <span id="/2017/07/23/在google-cloud-上搭建Jenkins持续集成实现Android应用的自动打包/" class="leancloud-views_num" data-flag-title="在google cloud 上搭建Jenkins持续集成实现Android应用的自动打包">
+     &nbsp;浏览量
+</span>
+
+            </li>
+        </a>
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
 </div>
 
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2016/10/11/五分钟教你在VPS上搭建VPN/">五分钟教你在VPS上搭建VPN</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            老司机带你去墙外看看，来开车了坐稳！
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2016/10/11/五分钟教你在VPS上搭建VPN/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/ava.png" width="44px" height="44px" alt="Small Strong's avatar">
-            </div>
-            <div>
-                <strong>Small Strong</strong>
-                <span>10月 11, 2016</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/科学上网/">科学上网</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2016/09/25/Android-屏幕适配不完全梳理/">Android 屏幕适配不完全梳理</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            本文介绍Android屏幕适配的一些心得(坑)
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2016/09/25/Android-屏幕适配不完全梳理/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/ava.png" width="44px" height="44px" alt="Small Strong's avatar">
-            </div>
-            <div>
-                <strong>Small Strong</strong>
-                <span>9月 25, 2016</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/Android/">Android</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2016/09/06/Android-64K/">Android 64K</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            64K限制引发的血案
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2016/09/06/Android-64K/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/ava.png" width="44px" height="44px" alt="Small Strong's avatar">
-            </div>
-            <div>
-                <strong>Small Strong</strong>
-                <span>9月 06, 2016</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
                 
-            </span>
 
-            
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <center> Jenkins 持续集成 之Android自动化打包发包</center>
 
-            
+<blockquote>
+<p>本篇单纯为了做记录，最基本条件就是你需要全程翻墙，而且你需要一台配置不是最低的VPS。</p>
+<p>偶然间在小伙伴的桌上看到了一本APP研发录，兴起就花了一下午看了一下。书里讲的东西都非常切合实际开发情景。当读到第八章自动打包的时候，觉得这个事情可以搞一波。</p>
+<p>对比实际开发中，当提测时候经常遇到ui 测试找你说这个bug啥啥的，有些其实已经修复了只是没有更新包。碰巧那会儿你正(<del>和妹子聊得开心</del>）认真工作。看着旁边测试妹子还站着呢，你怎忍心？没办法，停下来，花个N分钟只是为了装个包。。。只是为了装个包。。。只是为了装个包？那还需要我亲自动手，服务器来做不就行了。</p>
+</blockquote>
+<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><ol>
+<li>一台VPS服务器（由于Android用gradle打包的过程是一个十分吃系统资源的活，公司的应用配置在双核 13g内存的情况下打包完成是4分钟）</li>
+<li>Google cloud有由Bitnami提供的一套包含Jenkins 及一些其必要的插件包括，及其他必要环境的方案。我在下面会贴图。（你可以理解使用这套方案，你这台VPS会默认安装Debian操作系统，里面已经拥有了Jenkins的一些必要环境已经插件，而且这台Debian系统的VPS，已经预装了Java环境，gradle环境，以及git环境）</li>
+<li>上面两步一句话概括就是你在一台VPS上有了个Jenkins的CI系统，默认80端口就能访问。那接下来的任务就是我们要这台Debian系统的服务器拥有打包Android应用功能的环境。前面说到Java环境已经有了，gradle环境已经有了，要实现版本控制的git环境已经有了，那就还缺Android sdk环境了。想到，我们SDK只需要提供编译打包的功能，所以只需要下载SDK tools即可。命令行官网自行下载，方法自己去找（偷偷告诉你，Google自家云服务器下载这个tools速度惊人）</li>
+<li>当准备好所有Android打包需要的环境之后，在Jenkins创建项目，配置好相应环境的目录。这些网上很多，不过我相信每个人遇到的问题都会有所不同，我在文章最后会说说我掉进的一些深坑。配置好环境之后，我是每隔两分钟检查git库是否有更新有更新就打包，最后我会将生成好的debug包上传至fir进行分发。测试和UI同学直接扫码下载安装。解放双手值得拥有。</li>
+</ol>
+<h3 id="我掉进的一些深坑"><a href="#我掉进的一些深坑" class="headerlink" title="我掉进的一些深坑"></a>我掉进的一些深坑</h3><ol>
+<li>由于对Linux系统的不熟悉，加上用ssh远程登录操作服务器真的很卡。这第一个坑就是，用户权限导致了我服务器配置的正确的ssh，然而我公司的git服务器压根儿连不上。当时真的把我搞懵逼了。解决方案是创建一个Jenkins用户，修改你创建的Jenkins项目的目录权限。这里你要掌握Debian系统下自由切换root及其他用户。</li>
+<li>在填写构建项目的时候，一定选择Use Gradle Wrapper，Make gradlew executable要勾上Force GRADLE_USER_HOME to use workspace    也勾上。这样他会自己去下载gradle。</li>
+<li>VPS配置不能低，双核10g内存我觉得是底配。不然编译打包过程出个gradle need more memory之类的服务器就躺了。</li>
+<li>另外一些，包括Android编译时候需要统一license，Android SDK的路径是写在local.properties里面的。路径写正确了。还有各种环境配置的目录基本都在/opt/bitnami/下面。部分Jenkins插件也需要安装。反正缺啥补啥，看报错定位，用Google来解决问题，遇到问题先不慌，已经有这么多人搞好了，说明那种掉下去爬不上的天坑肯定是没有的，你也可以的。</li>
+</ol>
+<h3 id="一些我参考的链接-希望对你也有帮助"><a href="#一些我参考的链接-希望对你也有帮助" class="headerlink" title="一些我参考的链接 希望对你也有帮助"></a>一些我参考的链接 希望对你也有帮助</h3><p><a href="http://www.vogella.com/tutorials/JenkinsAndroid/article.html#android_jenkinsbuild_installation" target="_blank" rel="external">http://www.vogella.com/tutorials/JenkinsAndroid/article.html#android_jenkinsbuild_installation</a></p>
+<p><a href="http://jaycechant.info/2017/Android-sdk-on-Linux-for-Jenkins-etc/" target="_blank" rel="external">http://jaycechant.info/2017/Android-sdk-on-Linux-for-Jenkins-etc/</a></p>
+<p><a href="https://stackoverflow.com/questions/39760172/you-have-not-accepted-the-license-agreements-of-the-following-sdk-components" target="_blank" rel="external">https://stackoverflow.com/questions/39760172/you-have-not-accepted-the-license-agreements-of-the-following-sdk-components</a></p>
+<h3 id="写到最后"><a href="#写到最后" class="headerlink" title="写到最后"></a>写到最后</h3><p>这本是运维该干的事情，但是你既然已经有了一颗(<del>装逼</del>)瞎折腾的心就别半途而废。我在我mac本 已经 公司的win本上在本地都事先成功打包过自己github上的一些小demo。都成功了，但是换了Debian系统的服务器还是会遇到各种层出不穷的问题，关键就是不放弃。我算算在第一次成功打出包之前我至少有50次失败的经历。</p>
+<p>这个打包服务已经正常稳定的工作两星期了，的确方便了不少。至少省下来和女票正常交流的时间哈哈。如果你遇到任何这方面的问题，欢迎留言交流。</p>
+<h3 id="打包记录"><a href="#打包记录" class="headerlink" title="打包记录"></a>打包记录</h3><p><img src="http://upload-images.jianshu.io/upload_images/1321838-5e952fcca9a44753.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="屏幕快照 2017-07-23 下午4.30.07.png"></p>
 
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
+    
+
+    
 </div>
 
-            
-            
-        
-    
 
-    
-    <!-- Index nav -->
-        <nav class="material-nav mdl-cell mdl-cell--12-col">
-            <a class="extend prev" rel="prev" href="/archives/page/3/"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">arrow_back</i></button></a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/archives/page/5/">5</a><a class="extend next" rel="next" href="/archives/page/5/"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">arrow_forward</i></button></a>
-        </nav>
-    
+                
 
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
 
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #757575;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load"> 
+    <button class="disqus_click_btn">阅读评论（请确保 disqus 可以正常加载）</button>
+</div>
 
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
-    $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://www.smallstrong.wang/2017/07/23/在google-cloud-上搭建Jenkins持续集成实现Android应用的自动打包/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://www.smallstrong.wang/2017/07/23/在google-cloud-上搭建Jenkins持续集成实现Android应用的自动打包/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
 </script>
 
-    
+<script type="text/ls-javascript" id="disqus-lazy-load-script">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//www-smallstrong-wang.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+  	
+
 </div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/05/16/设计模式之访问者模式/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
