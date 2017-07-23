@@ -3,6 +3,42 @@
   
     
     <entry>
+      <title><![CDATA[Shadowsocks 全端翻墙]]></title>
+      <url>/2017/07/23/Shadowsocks-%E5%85%A8%E7%AB%AF%E7%BF%BB%E5%A2%99/</url>
+      <content type="html"><![CDATA[<p><center>Shadowsocks 全端翻墙</center></p>
+<h3 id="开篇先来点逼格的。"><a href="#开篇先来点逼格的。" class="headerlink" title="开篇先来点逼格的。"></a>开篇先来点逼格的。</h3><blockquote>
+<p>I spend many ways to break the GFW,and this is my destination.</p>
+</blockquote>
+<h3 id="Shadowsocks-全端翻墙"><a href="#Shadowsocks-全端翻墙" class="headerlink" title="Shadowsocks 全端翻墙"></a>Shadowsocks 全端翻墙</h3><h5 id="对比国内众翻墙姿势，种类奇多但多数不够优雅。免费VPN流量的限制及其难以忍受的不稳定性（某灯频繁验证），付费VPN死于政策因素卷款跑路的层出不穷（green，佛跳墙），网上免费ss六小时改一次ip地址，告诉我你能忍？"><a href="#对比国内众翻墙姿势，种类奇多但多数不够优雅。免费VPN流量的限制及其难以忍受的不稳定性（某灯频繁验证），付费VPN死于政策因素卷款跑路的层出不穷（green，佛跳墙），网上免费ss六小时改一次ip地址，告诉我你能忍？" class="headerlink" title="对比国内众翻墙姿势，种类奇多但多数不够优雅。免费VPN流量的限制及其难以忍受的不稳定性（某灯频繁验证），付费VPN死于政策因素卷款跑路的层出不穷（green，佛跳墙），网上免费ss六小时改一次ip地址，告诉我你能忍？"></a>对比国内众翻墙姿势，种类奇多但多数不够优雅。免费VPN流量的限制及其难以忍受的不稳定性（某灯频繁验证），付费VPN死于政策因素卷款跑路的层出不穷（green，佛跳墙），网上免费ss六小时改一次ip地址，告诉我你能忍？</h5><blockquote>
+<p>why shadowsocks?  </p>
+</blockquote>
+<ol>
+<li>该服务全天免费提供，高速稳定，无流量限制。</li>
+<li>该服务一个账号，win、mac、iphone、android、ipad全端翻墙。</li>
+<li>该服务搭在我的Google云服务器上，数据的安全性有保证。</li>
+</ol>
+<h4 id="Use"><a href="#Use" class="headerlink" title="Use"></a>Use</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">服务器地址： 104.154.222.14</div><div class="line">服务器端口： 8989</div><div class="line">数据加密方式： aes-256-cfb</div><div class="line">密码： small</div><div class="line">代理端口： 1080（optional ，up on you）</div></pre></td></tr></table></figure>
+<ol>
+<li>打开对于设备的客户端，输入上述信息。</li>
+<li>启动代理。</li>
+</ol>
+<blockquote>
+<p>Any question:</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">qq: 393019766</div><div class="line">wechat: smallstrong0</div><div class="line">e-mail: smallstrong007@gmail.com</div><div class="line">blog: smallstrong.wang</div></pre></td></tr></table></figure>
+<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p><a href="https://github.com/smallstrong0/ss" target="_blank" rel="external">https://github.com/smallstrong0/ss</a></p>
+<h3 id="github上提供的客户端我在-我的mac-win10-ihpnoe-以及Android设备上都是完美运行的，有小伙伴翻译win7系统对应的客户端无法使用，对应网上找找-应该是版本兼容问题。"><a href="#github上提供的客户端我在-我的mac-win10-ihpnoe-以及Android设备上都是完美运行的，有小伙伴翻译win7系统对应的客户端无法使用，对应网上找找-应该是版本兼容问题。" class="headerlink" title="github上提供的客户端我在 我的mac win10 ihpnoe 以及Android设备上都是完美运行的，有小伙伴翻译win7系统对应的客户端无法使用，对应网上找找 应该是版本兼容问题。"></a>github上提供的客户端我在 我的mac win10 ihpnoe 以及Android设备上都是完美运行的，有小伙伴翻译win7系统对应的客户端无法使用，对应网上找找 应该是版本兼容问题。</h3>]]></content>
+      
+        <categories>
+            
+            <category> 科学上网 </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[在google cloud 上搭建Jenkins持续集成实现Android应用的自动打包]]></title>
       <url>/2017/07/23/%E5%9C%A8google-cloud-%E4%B8%8A%E6%90%AD%E5%BB%BAJenkins%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E5%AE%9E%E7%8E%B0Android%E5%BA%94%E7%94%A8%E7%9A%84%E8%87%AA%E5%8A%A8%E6%89%93%E5%8C%85/</url>
       <content type="html"><![CDATA[<center> Jenkins 持续集成 之Android自动化打包发包</center>

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.smallstrong.wang/"/>
-  <updated>2017-07-23T08:40:52.000Z</updated>
+  <updated>2017-07-23T14:00:00.000Z</updated>
   <id>http://www.smallstrong.wang/</id>
   
   <author>
@@ -14,6 +14,49 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Shadowsocks 全端翻墙</title>
+    <link href="http://www.smallstrong.wang/2017/07/23/Shadowsocks-%E5%85%A8%E7%AB%AF%E7%BF%BB%E5%A2%99/"/>
+    <id>http://www.smallstrong.wang/2017/07/23/Shadowsocks-全端翻墙/</id>
+    <published>2017-07-23T13:48:28.000Z</published>
+    <updated>2017-07-23T14:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><center>Shadowsocks 全端翻墙</center></p>
+<h3 id="开篇先来点逼格的。"><a href="#开篇先来点逼格的。" class="headerlink" title="开篇先来点逼格的。"></a>开篇先来点逼格的。</h3><blockquote>
+<p>I spend many ways to break the GFW,and this is my destination.</p>
+</blockquote>
+<h3 id="Shadowsocks-全端翻墙"><a href="#Shadowsocks-全端翻墙" class="headerlink" title="Shadowsocks 全端翻墙"></a>Shadowsocks 全端翻墙</h3><h5 id="对比国内众翻墙姿势，种类奇多但多数不够优雅。免费VPN流量的限制及其难以忍受的不稳定性（某灯频繁验证），付费VPN死于政策因素卷款跑路的层出不穷（green，佛跳墙），网上免费ss六小时改一次ip地址，告诉我你能忍？"><a href="#对比国内众翻墙姿势，种类奇多但多数不够优雅。免费VPN流量的限制及其难以忍受的不稳定性（某灯频繁验证），付费VPN死于政策因素卷款跑路的层出不穷（green，佛跳墙），网上免费ss六小时改一次ip地址，告诉我你能忍？" class="headerlink" title="对比国内众翻墙姿势，种类奇多但多数不够优雅。免费VPN流量的限制及其难以忍受的不稳定性（某灯频繁验证），付费VPN死于政策因素卷款跑路的层出不穷（green，佛跳墙），网上免费ss六小时改一次ip地址，告诉我你能忍？"></a>对比国内众翻墙姿势，种类奇多但多数不够优雅。免费VPN流量的限制及其难以忍受的不稳定性（某灯频繁验证），付费VPN死于政策因素卷款跑路的层出不穷（green，佛跳墙），网上免费ss六小时改一次ip地址，告诉我你能忍？</h5><blockquote>
+<p>why shadowsocks?  </p>
+</blockquote>
+<ol>
+<li>该服务全天免费提供，高速稳定，无流量限制。</li>
+<li>该服务一个账号，win、mac、iphone、android、ipad全端翻墙。</li>
+<li>该服务搭在我的Google云服务器上，数据的安全性有保证。</li>
+</ol>
+<h4 id="Use"><a href="#Use" class="headerlink" title="Use"></a>Use</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">服务器地址： 104.154.222.14</div><div class="line">服务器端口： 8989</div><div class="line">数据加密方式： aes-256-cfb</div><div class="line">密码： small</div><div class="line">代理端口： 1080（optional ，up on you）</div></pre></td></tr></table></figure>
+<ol>
+<li>打开对于设备的客户端，输入上述信息。</li>
+<li>启动代理。</li>
+</ol>
+<blockquote>
+<p>Any question:</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">qq: 393019766</div><div class="line">wechat: smallstrong0</div><div class="line">e-mail: smallstrong007@gmail.com</div><div class="line">blog: smallstrong.wang</div></pre></td></tr></table></figure>
+<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p><a href="https://github.com/smallstrong0/ss" target="_blank" rel="external">https://github.com/smallstrong0/ss</a></p>
+<h3 id="github上提供的客户端我在-我的mac-win10-ihpnoe-以及Android设备上都是完美运行的，有小伙伴翻译win7系统对应的客户端无法使用，对应网上找找-应该是版本兼容问题。"><a href="#github上提供的客户端我在-我的mac-win10-ihpnoe-以及Android设备上都是完美运行的，有小伙伴翻译win7系统对应的客户端无法使用，对应网上找找-应该是版本兼容问题。" class="headerlink" title="github上提供的客户端我在 我的mac win10 ihpnoe 以及Android设备上都是完美运行的，有小伙伴翻译win7系统对应的客户端无法使用，对应网上找找 应该是版本兼容问题。"></a>github上提供的客户端我在 我的mac win10 ihpnoe 以及Android设备上都是完美运行的，有小伙伴翻译win7系统对应的客户端无法使用，对应网上找找 应该是版本兼容问题。</h3>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;center&gt;Shadowsocks 全端翻墙&lt;/center&gt;&lt;/p&gt;
+&lt;h3 id=&quot;开篇先来点逼格的。&quot;&gt;&lt;a href=&quot;#开篇先来点逼格的。&quot; class=&quot;headerlink&quot; title=&quot;开篇先来点逼格的。&quot;&gt;&lt;/a&gt;开篇先来点逼格的。&lt;/h3&gt;&lt;blo
+    
+    </summary>
+    
+      <category term="科学上网" scheme="http://www.smallstrong.wang/categories/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>在google cloud 上搭建Jenkins持续集成实现Android应用的自动打包</title>
@@ -1969,108 +2012,6 @@ class BCommand implements Command{
 &lt;p&gt;桥接模式&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1321838-0775a
-    
-    </summary>
-    
-      <category term="设计模式" scheme="http://www.smallstrong.wang/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>设计模式之适配器模式</title>
-    <link href="http://www.smallstrong.wang/2017/04/26/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/"/>
-    <id>http://www.smallstrong.wang/2017/04/26/设计模式之适配器模式/</id>
-    <published>2017-04-26T12:45:11.000Z</published>
-    <updated>2017-04-26T12:58:24.000Z</updated>
-    
-    <content type="html"><![CDATA[<center>设计模式之适配器模式</center>
-
-
-<blockquote>
-<p>适配器模式</p>
-</blockquote>
-<p><img src="http://upload-images.jianshu.io/upload_images/1321838-dcbeabe9d51f2dfa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="适配器UML.png"></p>
-<pre><code>interface Rule{
-    void driveCar();
-    boolean haveHouse();
-    long spendMoneyForHer();
-}
-</code></pre><blockquote>
-<p>程序员哥哥找女朋友，女朋友对其有这三点简单要求</p>
-</blockquote>
-<pre><code>class MeAdapter implements Rule{
-    private Car car;
-    private House  house;
-    private Money money;
-    public MeAdapter(Car car,House house,Money money){
-        this.car = car;
-        this.house = house;
-        this.moeny = money;
-    }
-
-    public void driveCar(){
-        car.drive();//开出我的五菱宏光
-    }
-
-    public boolean haveHouse(){
-            house.live();
-            return true;//亮出我的农村小土屋
-    }
-
-    public long spendMoneyForHer(){
-        money.spend();
-        return 10000000;//做梦都想给你花这么多钱
-    }
-}
-</code></pre><blockquote>
-<p>一个程序员哥哥想做到有房有车有钱的梦想适配器</p>
-</blockquote>
-<pre><code>class Car{
-    public void drive(){
-        //司机开车
-    }
-}    
-</code></pre><blockquote>
-<p>实体类车， 方法开车    </p>
-</blockquote>
-<pre><code>class House{
-    public void live(){
-        //住房子
-    }
-}
-</code></pre><blockquote>
-<p>实体类房子， 住房子</p>
-</blockquote>
-<pre><code>class Money{
-    public void spend{
-        //花钱
-    }
-}
-</code></pre><blockquote>
-<p>实体类钱， 花钱</p>
-</blockquote>
-<pre><code>class Client{
-    Rule rule;
-    rule = new MeAdapter(new Car(),new House,new Money);
-    rule.driveCar();
-    rule.haveHouse();
-    rule.spendMoneyForHer();
-}    
-</code></pre><blockquote>
-<p>满足女票的几点小需求</p>
-</blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;center&gt;设计模式之适配器模式&lt;/center&gt;
-
-
-&lt;blockquote&gt;
-&lt;p&gt;适配器模式&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1321838-dcb
     
     </summary>
     
