@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.smallstrong.wang/"/>
-  <updated>2017-07-24T01:13:28.000Z</updated>
+  <updated>2017-08-03T01:14:29.000Z</updated>
   <id>http://www.smallstrong.wang/</id>
   
   <author>
@@ -14,6 +14,48 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Mac上用Jenkins自动化打包Android应用</title>
+    <link href="http://www.smallstrong.wang/2017/08/03/Mac%E4%B8%8A%E7%94%A8Jenkins%E8%87%AA%E5%8A%A8%E5%8C%96%E6%89%93%E5%8C%85Android%E5%BA%94%E7%94%A8/"/>
+    <id>http://www.smallstrong.wang/2017/08/03/Mac上用Jenkins自动化打包Android应用/</id>
+    <published>2017-08-03T01:12:16.000Z</published>
+    <updated>2017-08-03T01:14:29.000Z</updated>
+    
+    <content type="html"><![CDATA[<center> Mac下 Jenkins 持续集成 之Android自动化打包发包</center>
+
+
+<h3 id="总结下Jenkins在Mac电脑上自动化打包Android应用遇到的一些小问题"><a href="#总结下Jenkins在Mac电脑上自动化打包Android应用遇到的一些小问题" class="headerlink" title="总结下Jenkins在Mac电脑上自动化打包Android应用遇到的一些小问题"></a>总结下Jenkins在Mac电脑上自动化打包Android应用遇到的一些小问题</h3><blockquote>
+<p>最深刻的一点就是，Jenkins安装完成后，其实你电脑会自动添加一个Jenkins用户，目录在/Users/Shared/Jenkins下，你接下来遇到的绝大多数问题无非是该用户无权限访问你本机的Android sdk啊，你本机用户无法去查看Jenkins用户下的文件之类的。所以这次我玩的姿势是在命令行直接切换成root用户 命令行输入 sudo su root以及密码,省去无权限问题。另外根据你在玩的实际情况，改变你要访问路径的权限即可，暴力虽不优雅chmod 777 (your file or dir)。ls -al 可以查看当前目录下所有文件 包括隐藏文件以及这些文件所对应用户的权限，防身技能要记住。记住以上几点我们就来开始装逼之旅。</p>
+</blockquote>
+<h3 id="三步走"><a href="#三步走" class="headerlink" title="三步走"></a>三步走</h3><h4 id="1-git配置好，把代码拉下来。（Jenkins配置Java路径等所有配置路径问题基本都是用户权限问题，不多概述，当然前提你路径得写对）"><a href="#1-git配置好，把代码拉下来。（Jenkins配置Java路径等所有配置路径问题基本都是用户权限问题，不多概述，当然前提你路径得写对）" class="headerlink" title="1.git配置好，把代码拉下来。（Jenkins配置Java路径等所有配置路径问题基本都是用户权限问题，不多概述，当然前提你路径得写对）"></a>1.git配置好，把代码拉下来。（Jenkins配置Java路径等所有配置路径问题基本都是用户权限问题，不多概述，当然前提你路径得写对）</h4><h4 id="2-Use-Gradle-Wrapper构建项目（问题最多）"><a href="#2-Use-Gradle-Wrapper构建项目（问题最多）" class="headerlink" title="2.Use Gradle Wrapper构建项目（问题最多）"></a>2.Use Gradle Wrapper构建项目（问题最多）</h4><h4 id="3-配置fir来上传应用"><a href="#3-配置fir来上传应用" class="headerlink" title="3.配置fir来上传应用"></a>3.配置fir来上传应用</h4><h3 id="问题总结"><a href="#问题总结" class="headerlink" title="问题总结"></a>问题总结</h3><ol>
+<li><p>mac用户在安装好Jenkins遇到的第一个错误就是文件夹中文件权限问题。你以你本机用户去访问Jenkins用户目录下是没有读写权限的。下面就是你要的answer。意思就是说该目录你以原来mac默认创建的用户是没有权限去查看的，你必须添加mac下自己的用户并开放读写权限。good luck!<br>/Users/Shared/Jenkins/Home/secrets/initialAdminPassword<br><a href="https://stackoverflow.com/questions/37146063/how-do-i-get-initial-admin-password-for-jenkins-on-mac" target="_blank" rel="external">https://stackoverflow.com/questions/37146063/how-do-i-get-initial-admin-password-for-jenkins-on-mac</a></p>
+</li>
+<li><p>git ssh登陆老报错。(https的直接跳)<br>cd /Users/smallstrong/.ssh （smallstrong是我用户名不是你的这目录如果没有自己先去ssh生成吧不多说了）里面是你ssh的公钥私钥，把里面所有文件复制到/Users/Shared/Jenkins/.ssh目录下，在你配置源码管理的时候我的用户名字是Jenkins然后ssh选择 From the Jenkins master ~/.ssh即可。</p>
+</li>
+<li><p>如果你在构建环节选择Use Gradle Wrapper，那么他会自动去下载你依赖的gradle包，速度之慢欲仙欲死。我是直接把本地的/Users/smallstrong/.gradle/wrapper/dists/目录下我干两年Android来下的所有gradle,哈哈啥版本都有直接copy。把要下载的gradle版本copy到/Users/Shared/Jenkins/Home/workspace/Android/wrapper/dists(其中我的项目名字叫Android)目录下即可。</p>
+</li>
+</ol>
+<p>4.有些时候我们git上没有local.properties文件，会报找不到sdk目录问题。在里面我路径是这样子的ndk.dir=/Users/smallstrong/Library/Android/sdk/ndk-bundle<br>sdk.dir=/Users/smallstrong/Library/Android/sdk，记住改变该目录以及上级上上级目录的访问权限，不然这货读取不到又报错。</p>
+<p>5.当你进入到这一步的时候，往下走就是正常的gradle编译打包过程，我们签名key不放在服务器所以我本地copy一份放在了根目录，你们的我不知道。根据报错玩吧。</p>
+<h3 id="任何意想不到的问题欢迎留言，我刚弄完还算熟，兴许会给你带来帮助。"><a href="#任何意想不到的问题欢迎留言，我刚弄完还算熟，兴许会给你带来帮助。" class="headerlink" title="任何意想不到的问题欢迎留言，我刚弄完还算熟，兴许会给你带来帮助。"></a>任何意想不到的问题欢迎留言，我刚弄完还算熟，兴许会给你带来帮助。</h3><blockquote>
+<p>因为之前在Google云服务上已经折腾过一回且试用将近一月稳定高效，所以这次在本机mac上做这件事感觉在捏菜（因为本机电脑命令行敲起来不卡贼快，配ssh登陆服务器做这些事情，不说了先哭一会儿）。现在的我即将踏上Python后端取经之路，跨端玩想想都刺激。</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;center&gt; Mac下 Jenkins 持续集成 之Android自动化打包发包&lt;/center&gt;
+
+
+&lt;h3 id=&quot;总结下Jenkins在Mac电脑上自动化打包Android应用遇到的一些小问题&quot;&gt;&lt;a href=&quot;#总结下Jenkins在Mac电脑上自动化打包Andro
+    
+    </summary>
+    
+      <category term="Android" scheme="http://www.smallstrong.wang/categories/Android/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Shadowsocks 全端翻墙</title>
@@ -63,9 +105,9 @@
     <link href="http://www.smallstrong.wang/2017/07/23/%E5%9C%A8google-cloud-%E4%B8%8A%E6%90%AD%E5%BB%BAJenkins%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E5%AE%9E%E7%8E%B0Android%E5%BA%94%E7%94%A8%E7%9A%84%E8%87%AA%E5%8A%A8%E6%89%93%E5%8C%85/"/>
     <id>http://www.smallstrong.wang/2017/07/23/在google-cloud-上搭建Jenkins持续集成实现Android应用的自动打包/</id>
     <published>2017-07-23T07:06:42.000Z</published>
-    <updated>2017-07-23T08:40:52.000Z</updated>
+    <updated>2017-08-03T01:14:28.000Z</updated>
     
-    <content type="html"><![CDATA[<center> Jenkins 持续集成 之Android自动化打包发包</center>
+    <content type="html"><![CDATA[<center>服务器 Jenkins 持续集成 之Android自动化打包发包</center>
 
 <blockquote>
 <p>本篇单纯为了做记录，最基本条件就是你需要全程翻墙，而且你需要一台配置不是最低的VPS。</p>
@@ -94,11 +136,11 @@
     
     <summary type="html">
     
-      &lt;center&gt; Jenkins 持续集成 之Android自动化打包发包&lt;/center&gt;
+      &lt;center&gt;服务器 Jenkins 持续集成 之Android自动化打包发包&lt;/center&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;本篇单纯为了做记录，最基本条件就是你需要全程翻墙，而且你需要一台配置不是最低的VPS。&lt;/p&gt;
-&lt;p&gt;偶然间在小伙伴的桌上看到了一本APP研发录，兴起就
+&lt;p&gt;偶然间在小伙伴的桌上看到了一本APP研发录，
     
     </summary>
     
@@ -1898,120 +1940,6 @@ class BCommand implements Command{
 &lt;p&gt;组合模式&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1321838-4a609
-    
-    </summary>
-    
-      <category term="设计模式" scheme="http://www.smallstrong.wang/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>设计模式之桥接模式</title>
-    <link href="http://www.smallstrong.wang/2017/04/26/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/"/>
-    <id>http://www.smallstrong.wang/2017/04/26/设计模式之桥接模式/</id>
-    <published>2017-04-26T12:58:38.000Z</published>
-    <updated>2017-04-26T12:59:11.000Z</updated>
-    
-    <content type="html"><![CDATA[<center>设计模式之桥接模式</center>
-
-
-<blockquote>
-<p>桥接模式</p>
-</blockquote>
-<p><img src="http://upload-images.jianshu.io/upload_images/1321838-0775abe3bcdb2f62.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="桥接UML.png"></p>
-<pre><code>abstract class People{
-    protected Property property;
-    public People(Property property){
-        this.property = property;
-    }
-    public abstract void chooseInvest();
-}
-</code></pre><blockquote>
-<p>人的抽象类，这类人喜欢投资</p>
-</blockquote>
-<pre><code>class American extends People{
-    public void chooseInvest(){
-        property.invest();//父类构造方法如果传入股票，则美国人喜欢投资股票
-    }
-}    
-</code></pre><blockquote>
-<p>美国人的投资方式</p>
-</blockquote>
-<pre><code>class ChineseMother extends People{
-    public void chooseInvest(){
-        property.invest();//中国大妈喜欢买黄金也喜欢炒房，反正就是很厉害
-    }
-}
-</code></pre><blockquote>
-<p>毁天灭地的中国大妈类，所到之处寸草不生</p>
-</blockquote>
-<pre><code>interface Property{
-    void invest();
-}    
-</code></pre><blockquote>
-<p>资产接口 ， 具有投资熟悉</p>
-</blockquote>
-<pre><code>class RealEstate implements Property{
-    public void invest(){
-        //让我们愉快的投入中国房地产事业吧，一平九万八只是起点
-    }
-}    
-</code></pre><blockquote>
-<p>房地产类</p>
-</blockquote>
-<pre><code>class Glod implements Property{
-    public void invest(){
-        //投资黄金资产
-    }
-}    
-</code></pre><blockquote>
-<p>黄金类</p>
-</blockquote>
-<pre><code>class Stock implements Property{
-    public void invest(){
-        //股票资产
-    }
-}    
-</code></pre><blockquote>
-<p>股票类</p>
-</blockquote>
-<pre><code>class Client{
-    public static void main(String[] args）{
-        Property property = new Glod();
-        People people = new ChineseMother(property);
-        people.chooseInvest();
-    }
-}    
-</code></pre><blockquote>
-<p>客户端，模拟的是中国大妈炒黄金的辉煌景象</p>
-</blockquote>
-<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ol>
-<li>分离抽象接口及其实现部分。桥接模式使用“对象间的关联关系”解耦了抽象和实现之间固 有的绑定关系，使得抽象和实现可以沿着各自的维度来变化。所谓抽象和实现沿着各自维度 的变化，也就是说抽象和实现不再在同一个继承层次结构中，而是“子类化”它们，使它们各自 都具有自己的子类，以便任何组合子类，从而获得多维度组合对象。</li>
-<li>在很多情况下，桥接模式可以取代多层继承方案，多层继承方案违背了“单一职责原则”， 复用性较差，且类的个数非常多，桥接模式是比多层继承方案更好的解决方法，它极大减少 了子类的个数。</li>
-<li>桥接模式提高了系统的可扩展性，在两个变化维度中任意扩展一个维度，都不需要修改原 有系统，符合“开闭原则”。    </li>
-</ol>
-<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><ol>
-<li>桥接模式的使用会增加系统的理解与设计难度，由于关联关系建立在抽象层，要求开发者 一开始就针对抽象层进行设计与编程。</li>
-<li>桥接模式要求正确识别出系统中两个独立变化的维度，因此其使用范围具有一定的局限 性，如何正确识别两个独立维度也需要一定的经验积累。</li>
-</ol>
-<h2 id="适用场景"><a href="#适用场景" class="headerlink" title="适用场景"></a>适用场景</h2><ol>
-<li>如果一个系统需要在抽象化和具体化之间增加更多的灵活性，避免在两个层次之间建立静 态的继承关系，通过桥接模式可以使它们在抽象层建立一个关联关系。</li>
-<li>“抽象部分”和“实现部分”可以以继承的方式独立扩展而互不影响，在程序运行时可以动态 将一个抽象化子类的对象和一个实现化子类的对象进行组合，即系统需要对抽象化角色和实 现化角色进行动态耦合。</li>
-<li>一个类存在两个(或多个)独立变化的维度，且这两个(或多个)维度都需要独立进行扩展。</li>
-<li>对于那些不希望使用继承或因为多层继承导致系统类的个数急剧增加的系统，桥接模式尤 为适用。</li>
-</ol>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;center&gt;设计模式之桥接模式&lt;/center&gt;
-
-
-&lt;blockquote&gt;
-&lt;p&gt;桥接模式&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1321838-0775a
     
     </summary>
     

@@ -14,7 +14,7 @@
     
     <title>
         
-            分类: 设计模式 | 
+            Mac上用Jenkins自动化打包Android应用 | 
         
         smallstrong&#39;s blog
     </title>
@@ -73,15 +73,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://www.smallstrong.wang">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="分类: 设计模式 | smallstrong&#39;s blog">
+    <meta property="og:title" content="Mac上用Jenkins自动化打包Android应用 | smallstrong&#39;s blog">
     <meta property="og:image" content="/img/favicon.png" />
     <meta property="og:description" content="">
     
 
     
+        <meta property="article:published_time" content="8月 03, 2017" />
+        <meta property="article:modified_time" content="8月 03, 2017" />
+    
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="分类: 设计模式 | smallstrong&#39;s blog">
+    <meta name="twitter:title" content="Mac上用Jenkins自动化打包Android应用 | smallstrong&#39;s blog">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -89,13 +92,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://www.smallstrong.wang/categories/设计模式/page/3/index.html" />
+        <link rel="canonical" href="http://www.smallstrong.wang/2017/08/03/Mac上用Jenkins自动化打包Android应用/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "smallstrong&#39;s blog",
+        "logo": "/img/favicon.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Small Strong",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/favicon.png"
+        },
+        "description": "学无止境"
+    },
+    "headline": "Mac上用Jenkins自动化打包Android应用",
+    "url": "http://www.smallstrong.wang/2017/08/03/Mac上用Jenkins自动化打包Android应用/index.html",
+    "datePublished": "8月 03, 2017",
+    "dateModified": "8月 03, 2017",
+    "description": "",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://www.smallstrong.wang"
+    }
+}
+</script>
 
 
     
@@ -281,368 +314,304 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
+                    <!-- Post TOC -->
+
     
-    <div class="locate-thumbnail-symbol"></div>
-
-    <!-- Pin on top -->
-    
-        
-    
-
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/04/26/设计模式之抽象工厂模式/">设计模式之抽象工厂模式</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            设计模式之抽象工厂模式
-
-
-
-
-抽象工厂模式
-
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/04/26/设计模式之抽象工厂模式/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/ava.png" width="44px" height="44px" alt="Small Strong's avatar">
-            </div>
-            <div>
-                <strong>Small Strong</strong>
-                <span>4月 26, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/设计模式/">设计模式</a>
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
             </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
+        </a>
     </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#总结下Jenkins在Mac电脑上自动化打包Android应用遇到的一些小问题"><span class="post-toc-number">1.</span> <span class="post-toc-text">总结下Jenkins在Mac电脑上自动化打包Android应用遇到的一些小问题</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#三步走"><span class="post-toc-number">2.</span> <span class="post-toc-text">三步走</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-git配置好，把代码拉下来。（Jenkins配置Java路径等所有配置路径问题基本都是用户权限问题，不多概述，当然前提你路径得写对）"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">1.git配置好，把代码拉下来。（Jenkins配置Java路径等所有配置路径问题基本都是用户权限问题，不多概述，当然前提你路径得写对）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-Use-Gradle-Wrapper构建项目（问题最多）"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">2.Use Gradle Wrapper构建项目（问题最多）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-配置fir来上传应用"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">3.配置fir来上传应用</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#问题总结"><span class="post-toc-number">3.</span> <span class="post-toc-text">问题总结</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#任何意想不到的问题欢迎留言，我刚弄完还算熟，兴许会给你带来帮助。"><span class="post-toc-number">4.</span> <span class="post-toc-text">任何意想不到的问题欢迎留言，我刚弄完还算熟，兴许会给你带来帮助。</span></a></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+    
+
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        <!-- Custom Thumbnail -->
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(/images/mac_jenkins.png)">
+    
+            <p class="article-headline-p">
+                Mac上用Jenkins自动化打包Android应用
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/ava.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Small Strong</strong>
+        <span>8月 03, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQ4AAAEOCAAAAABd2qZ5AAADlElEQVR42u3ay24jMQwEwPz/T3uvAQI73aTkeIHSyXCMkVRzYPj4eljf1hcCHDhw4MCBAwcOHDg+mOMrXsUGT37/+pnfv3n219fnmd0FBw4cOHDc4Givl1zp9XETiNeffz5teBccOHDgwHGNI9lmEywT4jaQ78lw4MCBA8cncMzCbZKYJcTJ83HgwIEDx//F8frobQmvDcwtHA4cOHDg+CuO9ijt95uCY9IA+4NaKQ4cOHDgWA80fP7nt8534MCBAweOHxztatO8fLghD95nFw4cOHDgOMuRB6r8SrPRh035b3Z+HDhw4MBxjyNp/0QtnLjVNGs7zS6PAwcOHDjeydE2foptFsMKedupbUoVxUEcOHDgwDHi2AwW1MlSGWJziGJ8AQcOHDhwXObIE7D2kkkozdPFWRpZFwdx4MCBA8eao03PZkW9vCnV7vv6OREfDhw4cOC4xjEbfWubSZsntw2tVaDFgQMHDhyHRuUewcrHCPIQOLte+xqKWikOHDhw4Bhx5CMFCdCsgJincHnwLoqJOHDgwIHjGkfU/l8U75JQmrepZqkjDhw4cOC4zZGEpf0l20G3/CSbJBMHDhw4cNzmaIfVkktufj8L9gcGGnDgwIEDxyGONtHKW1P7Ml9+4bpwiQMHDhw4LnDkIXD2mzz4tWlkW3CMAi0OHDhw4DjEMWvh5Nsn6WLeWJqF1SLQ4sCBAweOEUebbm1GHGajbO0l64ImDhw4cOC4zJEX7NpxhDYV3Le1ot1x4MCBA8dRjvZBm6G3likvMq7OjwMHDhw4LnDMhgbyoYfZCF0btmfDDThw4MCB4wZHO3Y2G27InzAL3m3zDAcOHDhw3ObIj56Hw02z6lQp8JcXjAMHDhw4LnDkJbl2aGCD0o4ptM0tHDhw4MDxHo5T27QJXjLWcOrl4cCBAweOd3K0G7SFvM3z2xbUI1g4cODAgeM2x6Yk1w4TbMhmLahVCocDBw4cOAKOdiWhbjYSkQf7fGwi4saBAwcOHEc5ZsFpA7FJt5IW14EUDgcOHDhwXCsOtmW7tly42fdioMWBAwcOHIc48gCWXyYf1N6/jPafAxw4cODA8WkcbcDL21350HY+hFencDhw4MCB4+0cbWicFfsSoDzQ4sCBAweOd3Ik10uSsaIwVzacNm2npyEfBw4cOHBc4MgLbbMgOvumDZ9teokDBw4cOG5wWDhw4MCBAwcOHDhw4Piw9Q8pylO8hVShtAAAAABJRU5ErkJggg==">
+    
+</ul>
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+    <!-- Leancloud Views -->
+        <a class="post_share-link" href="#">
+            <li class="mdl-menu__item">
+                <span id="/2017/08/03/Mac上用Jenkins自动化打包Android应用/" class="leancloud-views_num" data-flag-title="Mac上用Jenkins自动化打包Android应用">
+     &nbsp;浏览量
+</span>
+
+            </li>
+        </a>
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
 </div>
 
-            
-            
-        
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+        <center> Mac下 Jenkins 持续集成 之Android自动化打包发包</center>
+
+
+<h3 id="总结下Jenkins在Mac电脑上自动化打包Android应用遇到的一些小问题"><a href="#总结下Jenkins在Mac电脑上自动化打包Android应用遇到的一些小问题" class="headerlink" title="总结下Jenkins在Mac电脑上自动化打包Android应用遇到的一些小问题"></a>总结下Jenkins在Mac电脑上自动化打包Android应用遇到的一些小问题</h3><blockquote>
+<p>最深刻的一点就是，Jenkins安装完成后，其实你电脑会自动添加一个Jenkins用户，目录在/Users/Shared/Jenkins下，你接下来遇到的绝大多数问题无非是该用户无权限访问你本机的Android sdk啊，你本机用户无法去查看Jenkins用户下的文件之类的。所以这次我玩的姿势是在命令行直接切换成root用户 命令行输入 sudo su root以及密码,省去无权限问题。另外根据你在玩的实际情况，改变你要访问路径的权限即可，暴力虽不优雅chmod 777 (your file or dir)。ls -al 可以查看当前目录下所有文件 包括隐藏文件以及这些文件所对应用户的权限，防身技能要记住。记住以上几点我们就来开始装逼之旅。</p>
+</blockquote>
+<h3 id="三步走"><a href="#三步走" class="headerlink" title="三步走"></a>三步走</h3><h4 id="1-git配置好，把代码拉下来。（Jenkins配置Java路径等所有配置路径问题基本都是用户权限问题，不多概述，当然前提你路径得写对）"><a href="#1-git配置好，把代码拉下来。（Jenkins配置Java路径等所有配置路径问题基本都是用户权限问题，不多概述，当然前提你路径得写对）" class="headerlink" title="1.git配置好，把代码拉下来。（Jenkins配置Java路径等所有配置路径问题基本都是用户权限问题，不多概述，当然前提你路径得写对）"></a>1.git配置好，把代码拉下来。（Jenkins配置Java路径等所有配置路径问题基本都是用户权限问题，不多概述，当然前提你路径得写对）</h4><h4 id="2-Use-Gradle-Wrapper构建项目（问题最多）"><a href="#2-Use-Gradle-Wrapper构建项目（问题最多）" class="headerlink" title="2.Use Gradle Wrapper构建项目（问题最多）"></a>2.Use Gradle Wrapper构建项目（问题最多）</h4><h4 id="3-配置fir来上传应用"><a href="#3-配置fir来上传应用" class="headerlink" title="3.配置fir来上传应用"></a>3.配置fir来上传应用</h4><h3 id="问题总结"><a href="#问题总结" class="headerlink" title="问题总结"></a>问题总结</h3><ol>
+<li><p>mac用户在安装好Jenkins遇到的第一个错误就是文件夹中文件权限问题。你以你本机用户去访问Jenkins用户目录下是没有读写权限的。下面就是你要的answer。意思就是说该目录你以原来mac默认创建的用户是没有权限去查看的，你必须添加mac下自己的用户并开放读写权限。good luck!<br>/Users/Shared/Jenkins/Home/secrets/initialAdminPassword<br><a href="https://stackoverflow.com/questions/37146063/how-do-i-get-initial-admin-password-for-jenkins-on-mac" target="_blank" rel="external">https://stackoverflow.com/questions/37146063/how-do-i-get-initial-admin-password-for-jenkins-on-mac</a></p>
+</li>
+<li><p>git ssh登陆老报错。(https的直接跳)<br>cd /Users/smallstrong/.ssh （smallstrong是我用户名不是你的这目录如果没有自己先去ssh生成吧不多说了）里面是你ssh的公钥私钥，把里面所有文件复制到/Users/Shared/Jenkins/.ssh目录下，在你配置源码管理的时候我的用户名字是Jenkins然后ssh选择 From the Jenkins master ~/.ssh即可。</p>
+</li>
+<li><p>如果你在构建环节选择Use Gradle Wrapper，那么他会自动去下载你依赖的gradle包，速度之慢欲仙欲死。我是直接把本地的/Users/smallstrong/.gradle/wrapper/dists/目录下我干两年Android来下的所有gradle,哈哈啥版本都有直接copy。把要下载的gradle版本copy到/Users/Shared/Jenkins/Home/workspace/Android/wrapper/dists(其中我的项目名字叫Android)目录下即可。</p>
+</li>
+</ol>
+<p>4.有些时候我们git上没有local.properties文件，会报找不到sdk目录问题。在里面我路径是这样子的ndk.dir=/Users/smallstrong/Library/Android/sdk/ndk-bundle<br>sdk.dir=/Users/smallstrong/Library/Android/sdk，记住改变该目录以及上级上上级目录的访问权限，不然这货读取不到又报错。</p>
+<p>5.当你进入到这一步的时候，往下走就是正常的gradle编译打包过程，我们签名key不放在服务器所以我本地copy一份放在了根目录，你们的我不知道。根据报错玩吧。</p>
+<h3 id="任何意想不到的问题欢迎留言，我刚弄完还算熟，兴许会给你带来帮助。"><a href="#任何意想不到的问题欢迎留言，我刚弄完还算熟，兴许会给你带来帮助。" class="headerlink" title="任何意想不到的问题欢迎留言，我刚弄完还算熟，兴许会给你带来帮助。"></a>任何意想不到的问题欢迎留言，我刚弄完还算熟，兴许会给你带来帮助。</h3><blockquote>
+<p>因为之前在Google云服务上已经折腾过一回且试用将近一月稳定高效，所以这次在本机mac上做这件事感觉在捏菜（因为本机电脑命令行敲起来不卡贼快，配ssh登陆服务器做这些事情，不说了先哭一会儿）。现在的我即将踏上Python后端取经之路，跨端玩想想都刺激。</p>
+</blockquote>
+
     
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
+
     
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/04/26/设计模式之工厂模式/">设计模式之工厂模式</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            设计模式之工厂模式
-
-
-工厂模式
-
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/04/26/设计模式之工厂模式/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/ava.png" width="44px" height="44px" alt="Small Strong's avatar">
-            </div>
-            <div>
-                <strong>Small Strong</strong>
-                <span>4月 26, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/设计模式/">设计模式</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
 </div>
 
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/04/26/Java设计模式之看懂UML类图/">Java设计模式之看懂UML类图</a></p>
-    </div>
+                
 
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            Java设计模式之看懂UML类图
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
 
-
-来，看图。
-
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/04/26/Java设计模式之看懂UML类图/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/ava.png" width="44px" height="44px" alt="Small Strong's avatar">
-            </div>
-            <div>
-                <strong>Small Strong</strong>
-                <span>4月 26, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/设计模式/">设计模式</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #757575;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load"> 
+    <button class="disqus_click_btn">阅读评论（disqus 评论需要科学上网 可参考本站Shadowsocks-全端翻墙文章）</button>
 </div>
 
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/04/26/设计模式之简单工厂模式/">设计模式之简单工厂模式</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            简单工厂模式
-
-
-简单工厂模式
-
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/04/26/设计模式之简单工厂模式/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/ava.png" width="44px" height="44px" alt="Small Strong's avatar">
-            </div>
-            <div>
-                <strong>Small Strong</strong>
-                <span>4月 26, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/设计模式/">设计模式</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/01/07/设计模式之单例模式/">设计模式之单例模式</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            单例模式
-
-
-
-
-单例模式
-
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/01/07/设计模式之单例模式/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/ava.png" width="44px" height="44px" alt="Small Strong's avatar">
-            </div>
-            <div>
-                <strong>Small Strong</strong>
-                <span>1月 07, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/设计模式/">设计模式</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-    <!-- Index nav -->
-        <nav class="material-nav mdl-cell mdl-cell--12-col">
-            <a class="extend prev" rel="prev" href="/categories/设计模式/page/2/"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">arrow_back</i></button></a><a class="page-number" href="/categories/设计模式/">1</a><a class="page-number" href="/categories/设计模式/page/2/">2</a><span class="page-number current">3</span>
-        </nav>
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
-    $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://www.smallstrong.wang/2017/08/03/Mac上用Jenkins自动化打包Android应用/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://www.smallstrong.wang/2017/08/03/Mac上用Jenkins自动化打包Android应用/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
 </script>
 
-    
+<script type="text/ls-javascript" id="disqus-lazy-load-script">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//www-smallstrong-wang.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+  	
+
 </div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/07/23/Shadowsocks-全端翻墙/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
