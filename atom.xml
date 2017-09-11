@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.smallstrong.wang/"/>
-  <updated>2017-08-03T01:14:29.000Z</updated>
+  <updated>2017-09-11T01:15:16.000Z</updated>
   <id>http://www.smallstrong.wang/</id>
   
   <author>
@@ -14,6 +14,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python 时间处理类积累</title>
+    <link href="http://www.smallstrong.wang/2017/09/11/python-%E6%97%B6%E9%97%B4%E5%A4%84%E7%90%86%E7%B1%BB%E7%A7%AF%E7%B4%AF/"/>
+    <id>http://www.smallstrong.wang/2017/09/11/python-时间处理类积累/</id>
+    <published>2017-09-11T01:10:59.000Z</published>
+    <updated>2017-09-11T01:15:16.000Z</updated>
+    
+    <content type="html"><![CDATA[<center>python 时间处理类整理</center>
+
+<h3 id="直接贴码，下附链接"><a href="#直接贴码，下附链接" class="headerlink" title="直接贴码，下附链接"></a>直接贴码，下附链接</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div><div class="line">193</div><div class="line">194</div><div class="line">195</div><div class="line">196</div><div class="line">197</div><div class="line">198</div><div class="line">199</div><div class="line">200</div><div class="line">201</div><div class="line">202</div><div class="line">203</div><div class="line">204</div><div class="line">205</div><div class="line">206</div><div class="line">207</div><div class="line">208</div><div class="line">209</div><div class="line">210</div><div class="line">211</div><div class="line">212</div><div class="line">213</div><div class="line">214</div><div class="line">215</div><div class="line">216</div><div class="line">217</div><div class="line">218</div><div class="line">219</div><div class="line">220</div><div class="line">221</div><div class="line">222</div><div class="line">223</div><div class="line">224</div><div class="line">225</div><div class="line">226</div><div class="line">227</div><div class="line">228</div><div class="line">229</div><div class="line">230</div><div class="line">231</div><div class="line">232</div><div class="line">233</div><div class="line">234</div><div class="line">235</div><div class="line">236</div><div class="line">237</div><div class="line">238</div></pre></td><td class="code"><pre><div class="line">#! /usr/bin/env python</div><div class="line"># -*- coding: utf8 -*-</div><div class="line"></div><div class="line">import os</div><div class="line">import sys</div><div class="line">import time</div><div class="line">import datetime</div><div class="line">import json</div><div class="line">import random</div><div class="line">import hashlib</div><div class="line">import math</div><div class="line">import HTMLParser</div><div class="line">import calendar</div><div class="line">import string</div><div class="line"></div><div class="line"></div><div class="line">def get_ts():</div><div class="line">    &quot;&quot;&quot;</div><div class="line">    :return: 获取当前时间轴</div><div class="line">    &quot;&quot;&quot;</div><div class="line">    return long(time.time())</div><div class="line"></div><div class="line"></div><div class="line">def get_ms():</div><div class="line">    &quot;&quot;&quot;</div><div class="line">    :return: 获取当前时间轴 毫秒值</div><div class="line">    &quot;&quot;&quot;</div><div class="line">    return long(time.time() * 1000)</div><div class="line"></div><div class="line"></div><div class="line">def day2ts(day):</div><div class="line">    &quot;&quot;&quot;</div><div class="line">    :param date: 2017-09-09</div><div class="line">    :return: 时间轴</div><div class="line">    &quot;&quot;&quot;</div><div class="line">    return time.mktime(time.strptime(day, &apos;%Y-%m-%d&apos;))</div><div class="line"></div><div class="line"></div><div class="line">def day_cn2ts(day):</div><div class="line">    &quot;&quot;&quot;</div><div class="line">    :param date: 2017年09月09日</div><div class="line">    :return: 时间轴</div><div class="line">    &quot;&quot;&quot;</div><div class="line">    return time.mktime(time.strptime(day, &apos;%Y年%m月%d日&apos;))</div><div class="line"></div><div class="line"></div><div class="line">def time2ts(time):</div><div class="line">    &quot;&quot;&quot;</div><div class="line">    :param time:  2017-09-09 11:11:11</div><div class="line">    :return: 时间轴</div><div class="line">    &quot;&quot;&quot;</div><div class="line">    return time.mktime(time.strptime(time, &apos;%Y-%m-%d %H:%M:%S&apos;))</div><div class="line"></div><div class="line"></div><div class="line">def time_cn2ts(time):</div><div class="line">    &quot;&quot;&quot;</div><div class="line">    :param time:  2017年09月09日 11:11:11</div><div class="line">    :return: 时间轴</div><div class="line">    &quot;&quot;&quot;</div><div class="line">    return time.mktime(time.strptime(time, &apos;%Y年%m月%d日 %H:%M:%S&apos;))</div><div class="line"></div><div class="line"></div><div class="line">def get_month(ts=None):</div><div class="line">    &quot;&quot;&quot;</div><div class="line">    :param ts: 时间轴</div><div class="line">    :return: 获取时间轴月份</div><div class="line">    &quot;&quot;&quot;</div><div class="line">    if ts is None:</div><div class="line">        ts = get_ts()</div><div class="line">    return time.strftime(&apos;%Y-%m&apos;, time.localtime(ts))</div><div class="line"></div><div class="line"></div><div class="line">def get_month_cn(ts=None):</div><div class="line">    if ts is None:</div><div class="line">        ts = get_ts()</div><div class="line">    return time.strftime(&apos;%Y年%m日&apos;, time.localtime(ts))</div><div class="line"></div><div class="line"></div><div class="line">def get_day(ts=None):</div><div class="line">    &quot;&quot;&quot;</div><div class="line">    :param ts: 时间轴</div><div class="line">    :return: 返回时间轴对应的日子</div><div class="line">    &quot;&quot;&quot;</div><div class="line">    if ts is None:</div><div class="line">        ts = get_ts()</div><div class="line">    return time.strftime(&apos;%Y-%m-%d&apos;, time.localtime(ts))</div><div class="line"></div><div class="line"></div><div class="line">def get_day_cn(ts=None):</div><div class="line">    &quot;&quot;&quot;</div><div class="line">    :param ts: 时间轴</div><div class="line">    :return: 返回时间轴对应的日子 中文</div><div class="line">    &quot;&quot;&quot;</div><div class="line">    if ts is None:</div><div class="line">        ts = get_ts()</div><div class="line">    return time.strftime(&apos;%Y年%m月%d日&apos;, time.localtime(ts))</div><div class="line"></div><div class="line"></div><div class="line">def get_time(ts=None):</div><div class="line">    &quot;&quot;&quot;</div><div class="line">    :param ts: 时间轴</div><div class="line">    :return: 返回 %Y-%m-%d %H:%M:%S</div><div class="line">    &quot;&quot;&quot;</div><div class="line">    if ts is None:</div><div class="line">        ts = get_ts()</div><div class="line">    return time.strftime(&apos;%Y-%m-%d %H:%M:%S&apos;, time.localtime(ts))</div><div class="line"></div><div class="line"></div><div class="line">def get_time_cn(ts=None):</div><div class="line">    &quot;&quot;&quot;</div><div class="line">    :param ts: 时间轴</div><div class="line">    :return: 返回 %Y年%m月%d日 %H:%M:%S</div><div class="line">    &quot;&quot;&quot;</div><div class="line">    if ts is None:</div><div class="line">        ts = get_ts()</div><div class="line">    return time.strftime(&apos;%Y年%m月%d日 %H:%M:%S&apos;, time.localtime(ts))</div><div class="line"></div><div class="line"></div><div class="line">def get_week_num():</div><div class="line">    &apos;&apos;&apos;</div><div class="line">    获取今天的星期</div><div class="line">    :return: 0~6,0-&gt;Sunday</div><div class="line">    &apos;&apos;&apos;</div><div class="line">    l_time = time.localtime()</div><div class="line">    return int(time.strftime(&apos;%w&apos;, l_time))</div><div class="line"></div><div class="line"></div><div class="line">def get_today_zero_time(now=time.time()):</div><div class="line">    &quot;&quot;&quot;</div><div class="line">    :param now: 时间轴</div><div class="line">    :return: 传入时间轴当天的零点时间轴</div><div class="line">    &quot;&quot;&quot;</div><div class="line">    midnight = now - (now % 86400) + time.timezone</div><div class="line">    return long(midnight)</div><div class="line"></div><div class="line"></div><div class="line">def get_last_month(date=None):</div><div class="line">    &quot;&quot;&quot;</div><div class="line">    :param date: 时间轴</div><div class="line">    :return: 当前时间轴 上月  ——&gt; 2017-08</div><div class="line">    &quot;&quot;&quot;</div><div class="line">    if not date:</div><div class="line">        date = get_day()</div><div class="line">    date_list = date.split(&apos;-&apos;)</div><div class="line">    if int(date_list[1]) == 1:</div><div class="line">        return &apos;&#123;&#125;-12&apos;.format(int(date_list[0]) - 1)</div><div class="line"></div><div class="line">    return &apos;&#123;&#125;-&#123;&#125;&apos;.format(date_list[0], str(int(date_list[1]) - 1).zfill(2))</div><div class="line"></div><div class="line"></div><div class="line">def get_week_first_day(ts=None):</div><div class="line">    &quot;&quot;&quot;</div><div class="line">    :param ts: 时间轴</div><div class="line">    :return: 当前时间轴本周的日期2017-09-04</div><div class="line">    &quot;&quot;&quot;</div><div class="line">    if not ts:</div><div class="line">        ts = get_ts()</div><div class="line">    day = get_day(ts)</div><div class="line">    time_list = day.split(&apos;-&apos;)</div><div class="line">    week = calendar.weekday(int(time_list[0]), int(time_list[1]), int(time_list[2]))</div><div class="line">    week_first_day = get_day(ts - week * 86400)</div><div class="line">    return week_first_day</div><div class="line"></div><div class="line"></div><div class="line">def get_week_first_timestamp(ts=None):</div><div class="line">    &quot;&quot;&quot;</div><div class="line">    :param ts: 得到该时间轴 这周星期一起始时间轴</div><div class="line">    :return:</div><div class="line">    &quot;&quot;&quot;</div><div class="line">    a = &apos;&#123;&#125; 00:00:01&apos;.format(get_week_first_day(ts))</div><div class="line">    s = time.mktime(time.strptime(a, &apos;%Y-%m-%d %H:%M:%S&apos;))</div><div class="line">    return long(s)</div><div class="line"></div><div class="line"></div><div class="line">def d_value_day(ts, now_ts=get_ts()):</div><div class="line">    &quot;&quot;&quot;</div><div class="line">    :param ts: 之前的时间轴</div><div class="line">    :param now_ts: 现在的时间轴</div><div class="line">    :return: 相差天数</div><div class="line">    &quot;&quot;&quot;</div><div class="line">    d1 = get_day(ts)</div><div class="line">    d2 = get_day(now_ts)</div><div class="line">    date_list1 = d1.split(&apos;-&apos;)</div><div class="line">    date_list2 = d2.split(&apos;-&apos;)</div><div class="line">    d1 = datetime.datetime(int(date_list1[0]), int(date_list1[1]), int(date_list1[2]))</div><div class="line">    d2 = datetime.datetime(int(date_list2[0]), int(date_list2[1]), int(date_list2[2]))</div><div class="line">    return (d2 - d1).days</div><div class="line"></div><div class="line"></div><div class="line">def get_weekenk_time(ctime, ts):</div><div class="line">    &apos;&apos;&apos;</div><div class="line">    :param ctime:</div><div class="line">    :param ts:</div><div class="line">    :return: 输出ctime所在周截止到ts 的周末时间</div><div class="line">    &apos;&apos;&apos;</div><div class="line">    saturday_start_stamp, sunday_end_time = get_weekenk_full_stamp(ctime)</div><div class="line">    if ctime &lt;= saturday_start_stamp:</div><div class="line">        if ts &lt;= sunday_end_time and ts &gt; saturday_start_stamp:</div><div class="line">            return ts - saturday_start_stamp</div><div class="line">        elif ts &lt;= saturday_start_stamp:</div><div class="line">            return 0</div><div class="line">        else:</div><div class="line">            return 86400 * 2</div><div class="line">    else:</div><div class="line">        if ts &lt;= sunday_end_time:</div><div class="line">            return ts - ctime</div><div class="line">        else:</div><div class="line">            return sunday_end_time - ctime</div><div class="line"></div><div class="line"></div><div class="line">def get_weekenk_full_stamp(ctime):</div><div class="line">    &apos;&apos;&apos;</div><div class="line">    :param ctime: 传入 一个时间轴</div><div class="line">    :return:   输出 这个时间轴对应的这个周的周末的 起始时间自 和结束时间轴</div><div class="line">    &apos;&apos;&apos;</div><div class="line">    str = time.strftime(&quot;%Y-%m-%d&quot;, time.localtime(ctime))</div><div class="line">    c_start_stamp = long(time.mktime(time.strptime(str, &apos;%Y-%m-%d&apos;)))</div><div class="line"></div><div class="line">    day = time.localtime(ctime).tm_wday</div><div class="line">    if day == 5:</div><div class="line">        return c_start_stamp, c_start_stamp + 86400 * 2 -1</div><div class="line">    elif day == 6:</div><div class="line">        return c_start_stamp - 86400, c_start_stamp + 86400 -1</div><div class="line">    else:</div><div class="line">        saturday_start_stamp = (5 - day) * 86400 + c_start_stamp</div><div class="line">        return saturday_start_stamp, saturday_start_stamp + 86400 * 2 -1</div><div class="line"></div><div class="line"></div><div class="line">if __name__ == &apos;__main__&apos;:</div><div class="line">    print get_ts()</div><div class="line">    print get_ms()</div><div class="line">    print get_day(get_ts())</div><div class="line">    print get_day_cn(get_ts())</div><div class="line">    print get_week_num()</div><div class="line">    print get_today_zero_time()</div><div class="line">    print get_last_month()</div><div class="line">    print get_week_first_day()</div><div class="line">    print get_weekenk_full_stamp(get_ts())</div></pre></td></tr></table></figure>
+<h3 id="获取地址"><a href="#获取地址" class="headerlink" title="获取地址"></a>获取地址</h3><p><a href="https://github.com/smallstrong0/py_time" target="_blank" rel="external">https://github.com/smallstrong0/py_time</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;center&gt;python 时间处理类整理&lt;/center&gt;
+
+&lt;h3 id=&quot;直接贴码，下附链接&quot;&gt;&lt;a href=&quot;#直接贴码，下附链接&quot; class=&quot;headerlink&quot; title=&quot;直接贴码，下附链接&quot;&gt;&lt;/a&gt;直接贴码，下附链接&lt;/h3&gt;&lt;figure clas
+    
+    </summary>
+    
+    
+      <category term="python" scheme="http://www.smallstrong.wang/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>Mac上用Jenkins自动化打包Android应用</title>
@@ -1833,113 +1859,6 @@ class BCommand implements Command{
 &lt;p&gt;装饰者模式&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1321838-91a
-    
-    </summary>
-    
-      <category term="设计模式" scheme="http://www.smallstrong.wang/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>设计模式之组合模式</title>
-    <link href="http://www.smallstrong.wang/2017/04/26/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/"/>
-    <id>http://www.smallstrong.wang/2017/04/26/设计模式之组合模式/</id>
-    <published>2017-04-26T12:59:30.000Z</published>
-    <updated>2017-04-26T13:00:02.000Z</updated>
-    
-    <content type="html"><![CDATA[<center>设计模式之组合模式</center>
-
-
-<blockquote>
-<p>组合模式</p>
-</blockquote>
-<p><img src="http://upload-images.jianshu.io/upload_images/1321838-4a6090174d9636a4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="组合UML.png"></p>
-<pre><code>interface View{
-    void getBackground();
-}
-</code></pre><blockquote>
-<p>View顶层接口，随便搞个获取背景方法，不要在意没有返回值哈哈</p>
-</blockquote>
-<pre><code>class TextView implements View{
-    public TextView(){
-        //迷人的无参构造方法
-    }
-    public void getBackground(){
-
-    }
-}    
-</code></pre><blockquote>
-<p>文字类，实现View接口。</p>
-</blockquote>
-<pre><code>class ImageView implements View{
-    public ImageView(){
-        //我也是个无参构造函数
-    }
-    public void getBackground(){
-
-    }
-}    
-</code></pre><blockquote>
-<p>图片类，实现View接口</p>
-</blockquote>
-<pre><code>class ViewGroup implements View{
-    private List&lt;View&gt; viewList = new ArrayList&lt;View&gt;();
-    public void addView(View view){
-        viewList.add(view);
-    }
-
-    public void deleteView(View view){
-        viewList.remove(view);
-    }
-
-    public void getBackground(){
-        for(View view : viewList){
-            view.getBackground();
-        }
-    }
-}    
-</code></pre><blockquote>
-<p>ViewGroup类    ，容器构件</p>
-</blockquote>
-<pre><code>class Client{
-    public static void main(String[] args){
-        View viewGroup,textView,imageView;
-        textView = new TextView();
-        imageView = new ImageView();
-        viewGroup = new ViewGroup();
-        viewGroup.add(textView);
-        viewGroup.add(imageView);
-        viewGroup.getBackground();
-    }
-}
-</code></pre><blockquote>
-<p>客户端类</p>
-</blockquote>
-<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ol>
-<li><p>组合模式可以清楚地定义分层次的复杂对象，表示对象的全部或部分层次，它让客户端忽 略了层次的差异，方便对整个层次结构进行控制。</p>
-</li>
-<li><p>客户端可以一致地使用一个组合结构或其中单个对象，不必关心处理的是单个对象还是整 个组合结构，简化了客户端代码。</p>
-</li>
-<li><p>在组合模式中增加新的容器构件和叶子构件都很方便，无须对现有类库进行任何修改，符 合“开闭原则”。</p>
-</li>
-<li><p>组合模式为树形结构的面向对象实现提供了一种灵活的解决方案，通过叶子对象和容器对 象的递归组合，可以形成复杂的树形结构，但对树形结构的控制却非常简单。</p>
-</li>
-</ol>
-<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><ol>
-<li>在增加新构件时很难对容器中的构件类型进行限制。有时候我们希望一个容器中只能有某些<br>特定类型的对象，例如在某个文件夹中只能包含文本文件，使用组合模式时，不能依赖类型<br>系统来施加这些约束，因为它们都来自于相同的抽象层，在这种情况下，必须通过在运行时<br>进行类型检查来实现，这个实现过程较为复杂。</li>
-</ol>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;center&gt;设计模式之组合模式&lt;/center&gt;
-
-
-&lt;blockquote&gt;
-&lt;p&gt;组合模式&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1321838-4a609
     
     </summary>
     
