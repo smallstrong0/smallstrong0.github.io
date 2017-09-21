@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.smallstrong.wang/"/>
-  <updated>2017-09-11T01:15:16.000Z</updated>
+  <updated>2017-09-21T07:32:42.000Z</updated>
   <id>http://www.smallstrong.wang/</id>
   
   <author>
@@ -16,11 +16,44 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>揭秘一行代码完成千台服务器自动升级部署</title>
+    <link href="http://www.smallstrong.wang/2017/09/21/%E6%8F%AD%E7%A7%98%E4%B8%80%E8%A1%8C%E4%BB%A3%E7%A0%81%E5%AE%8C%E6%88%90%E5%8D%83%E5%8F%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%87%AA%E5%8A%A8%E5%8D%87%E7%BA%A7%E9%83%A8%E7%BD%B2/"/>
+    <id>http://www.smallstrong.wang/2017/09/21/揭秘一行代码完成千台服务器自动升级部署/</id>
+    <published>2017-09-21T02:36:33.000Z</published>
+    <updated>2017-09-21T07:32:42.000Z</updated>
+    
+    <content type="html"><![CDATA[<center>揭秘一行代码完成千台服务器自动升级部署</center>
+
+
+<h3 id="核心思想"><a href="#核心思想" class="headerlink" title="核心思想"></a>核心思想</h3><blockquote>
+<p>服务器利用crontab定时任务去每分钟跑一个shell脚本,shell脚本的任务是打开服务器项目目录，pull 一下www分支下的代码。ok,自动化部署完成。而触发这个事件，你需要键入的一行代码就是将本地www分支上的代码push到远程www分支即可。</p>
+</blockquote>
+<p>正常开发流程可能会有dev,test,stage,www四个环境。<br>dev环境是开发环境,test测试环境,stage预发布环境这三个环境分为一类,称为线下环境。另一类就是线上环境了。</p>
+<p>首先，在git上先为各个环境拉出对应分支。dev,test,stage,www四条环境分支。我们小伙伴开发在master分支上,当需要对接口的时候，我们切换到dev分支merge掉master分支。然后将本地的dev分支推送到远程的dev分支上去。此时，crontab定时器跑任务时候，会把远程dev分支的更新pull下来。而pull下来的代码此刻就完成了服务器代码的更新部署操作。同样的姿势,你可以在test及stage环境下操作。</p>
+<p>但是，线下操作与线上操作不能同样对待。毕竟上线代码不是每个小程序员都有的权力。可以在push到远程www分支时候设置权限，每一个pr都要主管同意才能push成功，从而达到安全性的把关。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;center&gt;揭秘一行代码完成千台服务器自动升级部署&lt;/center&gt;
+
+
+&lt;h3 id=&quot;核心思想&quot;&gt;&lt;a href=&quot;#核心思想&quot; class=&quot;headerlink&quot; title=&quot;核心思想&quot;&gt;&lt;/a&gt;核心思想&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;服务器利用cront
+    
+    </summary>
+    
+      <category term="服务器" scheme="http://www.smallstrong.wang/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>python 时间处理类积累</title>
     <link href="http://www.smallstrong.wang/2017/09/11/python-%E6%97%B6%E9%97%B4%E5%A4%84%E7%90%86%E7%B1%BB%E7%A7%AF%E7%B4%AF/"/>
     <id>http://www.smallstrong.wang/2017/09/11/python-时间处理类积累/</id>
     <published>2017-09-11T01:10:59.000Z</published>
-    <updated>2017-09-11T01:15:16.000Z</updated>
+    <updated>2017-09-11T01:16:28.000Z</updated>
     
     <content type="html"><![CDATA[<center>python 时间处理类整理</center>
 
@@ -1747,118 +1780,6 @@ class BCommand implements Command{
 &lt;p&gt;外观模式，例子是我经常去莲花街一家叫好吃不如饺子的店，东西好吃，便宜实惠。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;img src=&quot;http://upload-images.jiansh
-    
-    </summary>
-    
-      <category term="设计模式" scheme="http://www.smallstrong.wang/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>设计模式之装饰者模式</title>
-    <link href="http://www.smallstrong.wang/2017/04/26/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/"/>
-    <id>http://www.smallstrong.wang/2017/04/26/设计模式之装饰者模式/</id>
-    <published>2017-04-26T13:00:43.000Z</published>
-    <updated>2017-04-26T13:01:44.000Z</updated>
-    
-    <content type="html"><![CDATA[<center>设计模式之装饰者模式</center>
-
-
-<blockquote>
-<p>装饰者模式</p>
-</blockquote>
-<p><img src="http://upload-images.jianshu.io/upload_images/1321838-91af22458db2465a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="装饰UML.png"></p>
-<pre><code>interface Liquid{
-    void drink();
-}
-</code></pre><blockquote>
-<p>定义一个液体接口，能喝的哦</p>
-</blockquote>
-<pre><code>class Water implements Liquid{
-    public void drink(){
-        // 我们不生产水，我们只是大自然的搬运工
-    }
-}
-</code></pre><blockquote>
-<p>纯净水    </p>
-</blockquote>
-<pre><code>class LiquidDecortor implements Liquid{
-    private Liquid liquid;//被装饰的主体
-    public LiquidDecortor(Liquid liquid){
-        this.liquid = liquid;
-    }
-
-    public void drink(){
-        liquid.drink();//实际调用的是主体的喝方法
-    }
-}
-</code></pre><blockquote>
-<p>抽象装饰类</p>
-</blockquote>
-<pre><code>class Coffee extends LiquidDecortor{
-    public Coffee(Liquid liquid){
-        super(liquid);
-    }
-
-    public void drink(){
-        super.drink();
-        other taste//咖啡啥子味道自行脑补，就是添加了新的味道，扩充了液体只能喝的功能。虽然还是喝但是喝出来coffee的味道
-    }
-
-    public void otherMethods(){
-        //半透明装饰模式，不仅仅是增强了原本接口规范的功能，还新增了另外功能，比如咖啡能壮阳（别听我瞎比比）
-    }
-}
-</code></pre><blockquote>
-<p>   咖啡类，扩展了喝的功能，添加了点味道</p>
-</blockquote>
-<pre><code>class Milk extends LiquidDecortor{
-    public Milk(Liquid liquid){
-        super(liquid);
-    }
-
-    public void drink(){
-        super.drink();
-        other taste//牛奶会有奶香味
-    }
-
-    public void otherMethods(){
-        //半透明装饰模式，不仅仅是增强了原本接口规范的功能，还新增了另外功能，比如牛奶帮助睡眠
-    }
-}
-</code></pre><blockquote>
-<p>   牛奶类，扩展了喝的功能，添加了点奶味</p>
-</blockquote>
-<pre><code>class Client{
-    public static void main(String[] args){
-        Liquid liquid,milk;
-        liquid = new Water();
-        milk = new Milk(liquid);
-        milk.drink();//喝牛奶  透明装饰者模式
-
-        ///////////////////////华丽分割线
-
-        Milk superMilk = new Milk(liquid);
-        superMilk.drink();//还是喝牛奶
-        superMilk.otherMethods();//其他功能，促睡眠，长个子，呵呵呵等
-    }
-}
-</code></pre><blockquote>
-<p>客户端</p>
-</blockquote>
-<h3 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h3><p>装饰者模式是为了增强功能以及扩展新功能，这和java的继承功能重合。相比之下，装饰者模式更加灵活。对于一个需要被扩展功能的对象来说（被装饰类）可以动态的去选择适合自己想要的装饰类来完成功能的加强或者添加新功能。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;center&gt;设计模式之装饰者模式&lt;/center&gt;
-
-
-&lt;blockquote&gt;
-&lt;p&gt;装饰者模式&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1321838-91a
     
     </summary>
     

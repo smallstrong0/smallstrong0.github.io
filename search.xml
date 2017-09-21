@@ -3,6 +3,29 @@
   
     
     <entry>
+      <title><![CDATA[揭秘一行代码完成千台服务器自动升级部署]]></title>
+      <url>/2017/09/21/%E6%8F%AD%E7%A7%98%E4%B8%80%E8%A1%8C%E4%BB%A3%E7%A0%81%E5%AE%8C%E6%88%90%E5%8D%83%E5%8F%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%87%AA%E5%8A%A8%E5%8D%87%E7%BA%A7%E9%83%A8%E7%BD%B2/</url>
+      <content type="html"><![CDATA[<center>揭秘一行代码完成千台服务器自动升级部署</center>
+
+
+<h3 id="核心思想"><a href="#核心思想" class="headerlink" title="核心思想"></a>核心思想</h3><blockquote>
+<p>服务器利用crontab定时任务去每分钟跑一个shell脚本,shell脚本的任务是打开服务器项目目录，pull 一下www分支下的代码。ok,自动化部署完成。而触发这个事件，你需要键入的一行代码就是将本地www分支上的代码push到远程www分支即可。</p>
+</blockquote>
+<p>正常开发流程可能会有dev,test,stage,www四个环境。<br>dev环境是开发环境,test测试环境,stage预发布环境这三个环境分为一类,称为线下环境。另一类就是线上环境了。</p>
+<p>首先，在git上先为各个环境拉出对应分支。dev,test,stage,www四条环境分支。我们小伙伴开发在master分支上,当需要对接口的时候，我们切换到dev分支merge掉master分支。然后将本地的dev分支推送到远程的dev分支上去。此时，crontab定时器跑任务时候，会把远程dev分支的更新pull下来。而pull下来的代码此刻就完成了服务器代码的更新部署操作。同样的姿势,你可以在test及stage环境下操作。</p>
+<p>但是，线下操作与线上操作不能同样对待。毕竟上线代码不是每个小程序员都有的权力。可以在push到远程www分支时候设置权限，每一个pr都要主管同意才能push成功，从而达到安全性的把关。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 服务器 </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[python 时间处理类积累]]></title>
       <url>/2017/09/11/python-%E6%97%B6%E9%97%B4%E5%A4%84%E7%90%86%E7%B1%BB%E7%A7%AF%E7%B4%AF/</url>
       <content type="html"><![CDATA[<center>python 时间处理类整理</center>
