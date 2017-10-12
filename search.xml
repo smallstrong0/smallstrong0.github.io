@@ -3,6 +3,34 @@
   
     
     <entry>
+      <title><![CDATA[ssh方式登录服务器]]></title>
+      <url>/2017/10/12/ssh%E6%96%B9%E5%BC%8F%E7%99%BB%E5%BD%95%E6%9C%8D%E5%8A%A1%E5%99%A8/</url>
+      <content type="html"><![CDATA[<center>ssh方式登录获取服务器shell窗口</center>
+
+<h3 id="购买好阿里云服务器之后，首先第一步就是ssh方式登录获取服务器shell窗口。"><a href="#购买好阿里云服务器之后，首先第一步就是ssh方式登录获取服务器shell窗口。" class="headerlink" title="购买好阿里云服务器之后，首先第一步就是ssh方式登录获取服务器shell窗口。"></a>购买好阿里云服务器之后，首先第一步就是ssh方式登录获取服务器shell窗口。</h3><p>步骤：</p>
+<ol>
+<li><p>服务器安装ssh (root用户登录,OpenSSH的主配置文件：/etc/ssh/sshd_config)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum install openssh-server -y</div></pre></td></tr></table></figure>
+</li>
+<li><p>添加用户日常登录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">adduser username</div><div class="line">passwd username</div><div class="line">usermod -aG wheel username (将该用户添加到wheel组获得sudo权限)</div><div class="line">sudo su root (用户切换)</div></pre></td></tr></table></figure>
+</li>
+<li><p>登录阿里云控制台,开放出22端口用于ssh连接<br> 云服务器ECS –&gt; 安全组 –&gt; 配置规则 –&gt; 快速创建规则(开放出22,80,443端口)<br> tip:完成第三步后，一般我会购买一个域名解析到这台服务器，这样ssh登录时候就不用输入这台服务器的IP地址了，直接输入域名就好了。</p>
+</li>
+<li>mac端ssh登录<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ssh username@IP address</div><div class="line">or</div><div class="line">ssh smallstrong@smallstrong.site</div></pre></td></tr></table></figure></li>
+</ol>
+]]></content>
+      
+        <categories>
+            
+            <category> 蓝鲸计划 </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[揭秘一行代码完成千台服务器自动升级部署]]></title>
       <url>/2017/09/21/%E6%8F%AD%E7%A7%98%E4%B8%80%E8%A1%8C%E4%BB%A3%E7%A0%81%E5%AE%8C%E6%88%90%E5%8D%83%E5%8F%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%87%AA%E5%8A%A8%E5%8D%87%E7%BA%A7%E9%83%A8%E7%BD%B2/</url>
       <content type="html"><![CDATA[<center>揭秘一行代码完成千台服务器自动升级部署</center>

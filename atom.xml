@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.smallstrong.wang/"/>
-  <updated>2017-09-21T07:32:42.000Z</updated>
+  <updated>2017-10-12T01:36:38.000Z</updated>
   <id>http://www.smallstrong.wang/</id>
   
   <author>
@@ -14,6 +14,42 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ssh方式登录服务器</title>
+    <link href="http://www.smallstrong.wang/2017/10/12/ssh%E6%96%B9%E5%BC%8F%E7%99%BB%E5%BD%95%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    <id>http://www.smallstrong.wang/2017/10/12/ssh方式登录服务器/</id>
+    <published>2017-10-12T01:32:38.000Z</published>
+    <updated>2017-10-12T01:36:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<center>ssh方式登录获取服务器shell窗口</center>
+
+<h3 id="购买好阿里云服务器之后，首先第一步就是ssh方式登录获取服务器shell窗口。"><a href="#购买好阿里云服务器之后，首先第一步就是ssh方式登录获取服务器shell窗口。" class="headerlink" title="购买好阿里云服务器之后，首先第一步就是ssh方式登录获取服务器shell窗口。"></a>购买好阿里云服务器之后，首先第一步就是ssh方式登录获取服务器shell窗口。</h3><p>步骤：</p>
+<ol>
+<li><p>服务器安装ssh (root用户登录,OpenSSH的主配置文件：/etc/ssh/sshd_config)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum install openssh-server -y</div></pre></td></tr></table></figure>
+</li>
+<li><p>添加用户日常登录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">adduser username</div><div class="line">passwd username</div><div class="line">usermod -aG wheel username (将该用户添加到wheel组获得sudo权限)</div><div class="line">sudo su root (用户切换)</div></pre></td></tr></table></figure>
+</li>
+<li><p>登录阿里云控制台,开放出22端口用于ssh连接<br> 云服务器ECS –&gt; 安全组 –&gt; 配置规则 –&gt; 快速创建规则(开放出22,80,443端口)<br> tip:完成第三步后，一般我会购买一个域名解析到这台服务器，这样ssh登录时候就不用输入这台服务器的IP地址了，直接输入域名就好了。</p>
+</li>
+<li>mac端ssh登录<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ssh username@IP address</div><div class="line">or</div><div class="line">ssh smallstrong@smallstrong.site</div></pre></td></tr></table></figure></li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;center&gt;ssh方式登录获取服务器shell窗口&lt;/center&gt;
+
+&lt;h3 id=&quot;购买好阿里云服务器之后，首先第一步就是ssh方式登录获取服务器shell窗口。&quot;&gt;&lt;a href=&quot;#购买好阿里云服务器之后，首先第一步就是ssh方式登录获取服务器shell窗口。&quot; cl
+    
+    </summary>
+    
+      <category term="蓝鲸计划" scheme="http://www.smallstrong.wang/categories/%E8%93%9D%E9%B2%B8%E8%AE%A1%E5%88%92/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>揭秘一行代码完成千台服务器自动升级部署</title>
@@ -1676,110 +1712,6 @@ class BCommand implements Command{
 &lt;p&gt;享元模式，刚好现在共享单车火，拿来开刀&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_image
-    
-    </summary>
-    
-      <category term="设计模式" scheme="http://www.smallstrong.wang/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>设计模式之外观模式</title>
-    <link href="http://www.smallstrong.wang/2017/04/26/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/"/>
-    <id>http://www.smallstrong.wang/2017/04/26/设计模式之外观模式/</id>
-    <published>2017-04-26T13:01:59.000Z</published>
-    <updated>2017-04-26T13:02:42.000Z</updated>
-    
-    <content type="html"><![CDATA[<center>设计模式之外观模式</center>
-
-<blockquote>
-<p>外观模式，例子是我经常去莲花街一家叫好吃不如饺子的店，东西好吃，便宜实惠。</p>
-</blockquote>
-<p><img src="http://upload-images.jianshu.io/upload_images/1321838-4c0a8288e34372a5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="外观模式UML.png"></p>
-<pre><code>interface Food{
-    void eat();
-}
-</code></pre><blockquote>
-<p>食物接口    吃方法</p>
-</blockquote>
-<pre><code>class Dumplings implements Food{
-    public void eat(){
-        //嫂子家的饺子，感觉一般般
-    }
-}
-</code></pre><blockquote>
-<p>饺子    </p>
-</blockquote>
-<pre><code>class SaucedNoodles implements Food{
-    public void eat(){
-        //嫂子家的打卤面  么的说
-    }
-}
-</code></pre><blockquote>
-<p>打卤面</p>
-</blockquote>
-<pre><code>class IronBoardRice implements Food{
-    public void eat(){
-        //嫂子家的铁板饭  也么的说
-    }
-}    
-</code></pre><blockquote>
-<p>铁板饭</p>
-</blockquote>
-<pre><code>class RestaurantFacade{
-    Food mDumplings,mSaucedNoodles,mIronBoardRice;
-
-    public RestaurantFacade(){
-        //无参构造
-    }
-
-    public void eatDumplings(){
-        if(mDumplings == null){
-            mDumplings = new Dumplings();
-        }
-        mDumplings.eat();
-    }
-
-    public void eatSaucedNoodles(){
-        if(mSaucedNoodles == null){
-            mSaucedNoodles = new SaucedNoodles();
-        }
-        mSaucedNoodles.eat();
-    }
-
-    public void eatIronBoardRice(){
-        if(mIronBoardRice == null){
-            mIronBoardRice = new IronBoardRice();
-        }
-        mIronBoardRice.eat();
-    }
-}
-</code></pre><blockquote>
-<p>好吃不如饺子这家店，提供各色菜系</p>
-</blockquote>
-<pre><code>public class Client{
-    public static void main(String[] args){
-        RestaurantFacade mRestaurantFacade = new RestaurantFacade();
-        mRestaurantFacade.eatDumplings();//吃饺子
-        mRestaurantFacade.eatSaucedNoodles();//吃打卤面
-        mRestaurantFacade.eatIronBoardRice();//吃铁板饭
-    }
-}
-</code></pre><blockquote>
-<p>客户端调用这家店，点菜吃东西</p>
-</blockquote>
-<h3 id="个人的理解"><a href="#个人的理解" class="headerlink" title="个人的理解"></a>个人的理解</h3><p>外观模式又叫门面模式，在很多开源库中都很常见，更多的作用是一种客户端与具体实现类的隔离。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;center&gt;设计模式之外观模式&lt;/center&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;外观模式，例子是我经常去莲花街一家叫好吃不如饺子的店，东西好吃，便宜实惠。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&quot;http://upload-images.jiansh
     
     </summary>
     
