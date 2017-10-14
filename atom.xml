@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.smallstrong.wang/"/>
-  <updated>2017-10-12T01:36:38.000Z</updated>
+  <updated>2017-10-14T04:41:19.000Z</updated>
   <id>http://www.smallstrong.wang/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://www.smallstrong.wang/2017/10/12/ssh%E6%96%B9%E5%BC%8F%E7%99%BB%E5%BD%95%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     <id>http://www.smallstrong.wang/2017/10/12/ssh方式登录服务器/</id>
     <published>2017-10-12T01:32:38.000Z</published>
-    <updated>2017-10-12T01:36:38.000Z</updated>
+    <updated>2017-10-14T04:41:19.000Z</updated>
     
     <content type="html"><![CDATA[<center>ssh方式登录获取服务器shell窗口</center>
 
@@ -34,8 +34,12 @@
 </li>
 <li><p>登录阿里云控制台,开放出22端口用于ssh连接<br> 云服务器ECS –&gt; 安全组 –&gt; 配置规则 –&gt; 快速创建规则(开放出22,80,443端口)<br> tip:完成第三步后，一般我会购买一个域名解析到这台服务器，这样ssh登录时候就不用输入这台服务器的IP地址了，直接输入域名就好了。</p>
 </li>
-<li>mac端ssh登录<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ssh username@IP address</div><div class="line">or</div><div class="line">ssh smallstrong@smallstrong.site</div></pre></td></tr></table></figure></li>
+<li>mac端ssh登录<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ssh username@IP address</div><div class="line">or</div><div class="line">ssh smallstrong@smallstrong.site</div></pre></td></tr></table></figure>
+</li>
 </ol>
+<blockquote>
+<p>tips<br>     可以在用户目录下创建 /.ssh/authorized_keys文件 添加你的ssh公钥到该文件。该文件的访问权限为600 （sudo chmod 600 authorized_keys）<br>这样你的电脑通过ssh登录服务器就省去了输入该用户密码的操作。</p>
+</blockquote>
 ]]></content>
     
     <summary type="html">
