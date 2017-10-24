@@ -3,6 +3,47 @@
   
     
     <entry>
+      <title><![CDATA[nginx+uWSGI+supervisor+flask项目部署]]></title>
+      <url>/2017/10/24/nginx-uWSGI-supervisor-flask%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/</url>
+      <content type="html"><![CDATA[<center>nginx+uWSGI+supervisor+flask项目部署</center>
+
+
+<h2 id="nginx-uWSGI-Flask-Supervisor部署项目"><a href="#nginx-uWSGI-Flask-Supervisor部署项目" class="headerlink" title="nginx+uWSGI+Flask+Supervisor部署项目"></a>nginx+uWSGI+Flask+Supervisor部署项目</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">OS version: Ubuntu 16.04.2</div><div class="line">nginx version: nginx/1.10.3 (Ubuntu)</div><div class="line">uWSGI version: uWSGI (2.0.15)</div><div class="line">Flask version: Flask (0.12.2)</div><div class="line">Supervisor version: Supervisor(3.2.0)</div></pre></td></tr></table></figure>
+<h3 id="nginx-配置-新建文件-etc-nginx-conf-d-xxx-conf-xxx-conf-中xxx你来定"><a href="#nginx-配置-新建文件-etc-nginx-conf-d-xxx-conf-xxx-conf-中xxx你来定" class="headerlink" title="nginx 配置 新建文件 /etc/nginx/conf.d/xxx.conf  xxx.conf 中xxx你来定"></a>nginx 配置 新建文件 /etc/nginx/conf.d/xxx.conf  xxx.conf 中xxx你来定</h3><p>删除/etc/nginx/sites-enabled/ 以及 /etc/nginx/sites-available/ 下所有文件<br>你可以这么玩，sudo rm -f /etc/nginx/sites-enabled/default<br>为什么这么做呢？<br>先看nginx.conf里面有：<br>include /etc/nginx/conf.d/<em>.conf;<br>include /etc/nginx/sites-enabled/</em>;<br>而sites-enabled里面也有default这种文件,我这么做的原因是删了看着干净。以后做扩展找起来也好找，都在conf.d目录下。</p>
+<p>极简配置<br>客户端访问80端口,有Nginx接受到请求，并下发到服务器6001端口进行处理，6001端口会部署一个uWSGIweb服务器.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">server &#123;</div><div class="line">      listen  80;</div><div class="line">      server_name www.smallstrong.site; #公网地址</div><div class="line"></div><div class="line">      location / &#123;</div><div class="line">        include      uwsgi_params;</div><div class="line">        uwsgi_pass   127.0.0.1:6001;</div><div class="line">      &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>Nginx常用的几个命令：<br>sudo service nginx start<br>sudo service nginx stop<br>sudo service nginx restart</p>
+<h3 id="pip全局安装virtualenv在自己项目根目录新建一个独立的Python环境"><a href="#pip全局安装virtualenv在自己项目根目录新建一个独立的Python环境" class="headerlink" title="pip全局安装virtualenv在自己项目根目录新建一个独立的Python环境"></a>pip全局安装virtualenv在自己项目根目录新建一个独立的Python环境</h3><ol>
+<li>pip install virtualenv</li>
+<li>cd 到你项目根目录</li>
+<li>virtualenv api_env</li>
+<li>source api_env/bin/activate (deactivate 可退出)</li>
+<li>接下来pip来安装自己需要的Python库,Flask,uWSGI等（依赖问题自行解决）</li>
+</ol>
+<p><img src="/images/py_env.png" alt="py_env.png"></p>
+<h4 id="接下来写一个最简单的Flask应用"><a href="#接下来写一个最简单的Flask应用" class="headerlink" title="接下来写一个最简单的Flask应用"></a>接下来写一个最简单的Flask应用</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">#! /usr/bin/env python</div><div class="line"># -*- coding: utf-8 -*-</div><div class="line"></div><div class="line">from flask import Flask</div><div class="line"></div><div class="line">app = Flask(__name__)</div><div class="line"></div><div class="line">whale_apis = &#123;</div><div class="line">    &apos;test&apos;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">@app.route(&apos;/api/&lt;func&gt;&apos;, methods=[&apos;GET&apos;, &apos;POST&apos;])</div><div class="line">def go(func):</div><div class="line">    exec &apos;import fe.&apos; + func</div><div class="line">    data = eval(&apos;fe.&apos; + func + &apos;.go()&apos;)</div><div class="line">    return data</div><div class="line"></div><div class="line"></div><div class="line">if __name__ == &apos;__main__&apos;:</div><div class="line">    app.run(debug=True)</div></pre></td></tr></table></figure>
+<p>上面的代码是我的flask网络框架的主入口，路由是/api/方法名称，默认接受GET 和 POST请求，动态导入工程目录下fe目录下的同方法名文件，执行go方法并返还数据。fe目录是所有网络请求目录，后续在剖析Flask应用会详细介绍。</p>
+<h4 id="写好Flask入口之后，写一个uWSGI服务器的配置文件"><a href="#写好Flask入口之后，写一个uWSGI服务器的配置文件" class="headerlink" title="写好Flask入口之后，写一个uWSGI服务器的配置文件"></a>写好Flask入口之后，写一个uWSGI服务器的配置文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">[uwsgi]</div><div class="line"></div><div class="line"># uwsgi 启动时所使用的地址与端口</div><div class="line">socket = 127.0.0.1:6001</div><div class="line"></div><div class="line">module = manage:app</div><div class="line"></div><div class="line"># 处理器数</div><div class="line">processes = 4</div><div class="line"></div><div class="line"># 线程数</div><div class="line">threads = 2</div><div class="line"></div><div class="line">req-logger = file:/home/small/logs/req.log</div><div class="line"></div><div class="line">logger = file:/home/small/logs/err.log</div></pre></td></tr></table></figure>
+<p>放在项目根目录下，取名叫uwsgi.ini<br>这时候 命令行输入 uwsgi uwsgi.ini 即开启了uWSGI服务器。</p>
+<h3 id="Supervisor安装管理uwsgi进程"><a href="#Supervisor安装管理uwsgi进程" class="headerlink" title="Supervisor安装管理uwsgi进程"></a>Supervisor安装管理uwsgi进程</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">[program:whale_api]</div><div class="line">command=/home/small/whale/whale_api/api_env/bin/uwsgi  /home/small/whale/whale_api/uwsgi.ini</div><div class="line"></div><div class="line">directory=/home/small/whale/whale_api</div><div class="line">user=root</div><div class="line"></div><div class="line">autostart=true</div><div class="line">autorestart=true</div><div class="line">startretries=3</div><div class="line">stdout_logfile=/home/small/logs/supervisor_out.log</div><div class="line">stderr_logfile=/home/small/logs/supervisor_err.log</div></pre></td></tr></table></figure>
+<p>默认生成的配置文件里面会有一部分要修改，包括日志输出位置。<br>serverurl=unix:///var/run/supervisor.sock找不到原因是你杀死supervisord进程重新开或是权限不足，反正这块坑还是比较多的</p>
+<p>启动supervisor<br>sudo supervisord -c supervisord.conf<br>管理常用指令：<br>sudo supervisorctl shutdown //会关闭supervisor进程和其管理的子进程<br>sudo supervisorctl status //查看现在运行的supervisor进程的状态<br>sudo supervisorctl start<br>sudo supervisorctl stop<br>sudo supervisorctl restart</p>
+<p>昨晚的结果就是：</p>
+<p><img src="/images/py_bushu.png" alt="py_bushu.png"></p>
+<blockquote>
+<p>这只是万里长征第一步。写下这些命令也只是方便日后出问题了来查阅，不至于很闷逼。相信还有很多未知的问题在等待这我，等我踩完会继续在文章中填上。下班回家！</p>
+</blockquote>
+]]></content>
+      
+        <categories>
+            
+            <category> 蓝鲸计划 </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[ssh方式登录服务器]]></title>
       <url>/2017/10/12/ssh%E6%96%B9%E5%BC%8F%E7%99%BB%E5%BD%95%E6%9C%8D%E5%8A%A1%E5%99%A8/</url>
       <content type="html"><![CDATA[<center>ssh方式登录获取服务器shell窗口</center>
@@ -123,7 +164,7 @@
 <li>该服务一个账号，win、mac、iphone、android、ipad全端翻墙。</li>
 <li>该服务搭在我的Google云服务器上，数据的安全性有保证。</li>
 </ol>
-<h4 id="Use"><a href="#Use" class="headerlink" title="Use"></a>Use</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">服务器地址： 104.154.222.14</div><div class="line">服务器端口： 8989</div><div class="line">数据加密方式： aes-256-cfb</div><div class="line">密码： small</div><div class="line">代理端口： 1080（optional ，up on you）</div></pre></td></tr></table></figure>
+<h4 id="Use"><a href="#Use" class="headerlink" title="Use"></a>Use</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">服务器地址： 104.128.91.246</div><div class="line">服务器端口： 443</div><div class="line">数据加密方式： aes-256-cfb</div><div class="line">密码： MTg2MjBjYT</div><div class="line">代理端口： 1080（optional ，up on you）</div></pre></td></tr></table></figure>
 <ol>
 <li>打开对于设备的客户端，输入上述信息。</li>
 <li>启动代理。</li>

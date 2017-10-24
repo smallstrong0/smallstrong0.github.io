@@ -14,7 +14,7 @@
     
     <title>
         
-            归档: 2017 | 
+            nginx+uWSGI+supervisor+flask项目部署 | 
         
         smallstrong&#39;s blog
     </title>
@@ -73,15 +73,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://www.smallstrong.wang">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="归档: 2017 | smallstrong&#39;s blog">
+    <meta property="og:title" content="nginx+uWSGI+supervisor+flask项目部署 | smallstrong&#39;s blog">
     <meta property="og:image" content="/img/favicon.png" />
     <meta property="og:description" content="">
     
 
     
+        <meta property="article:published_time" content="10月 24, 2017" />
+        <meta property="article:modified_time" content="10月 24, 2017" />
+    
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="归档: 2017 | smallstrong&#39;s blog">
+    <meta name="twitter:title" content="nginx+uWSGI+supervisor+flask项目部署 | smallstrong&#39;s blog">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -89,13 +92,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://www.smallstrong.wang/archives/2017/page/4/index.html" />
+        <link rel="canonical" href="http://www.smallstrong.wang/2017/10/24/nginx-uWSGI-supervisor-flask项目部署/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "smallstrong&#39;s blog",
+        "logo": "/img/favicon.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Small Strong",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/favicon.png"
+        },
+        "description": "学无止境"
+    },
+    "headline": "nginx+uWSGI+supervisor+flask项目部署",
+    "url": "http://www.smallstrong.wang/2017/10/24/nginx-uWSGI-supervisor-flask项目部署/index.html",
+    "datePublished": "10月 24, 2017",
+    "dateModified": "10月 24, 2017",
+    "description": "",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://www.smallstrong.wang"
+    }
+}
+</script>
 
 
     
@@ -281,300 +314,312 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
+                    <!-- Post TOC -->
+
     
-    <div class="locate-thumbnail-symbol"></div>
-
-    <!-- Pin on top -->
-    
-        
-    
-
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/04/26/Java设计模式之看懂UML类图/">Java设计模式之看懂UML类图</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            Java设计模式之看懂UML类图
-
-
-来，看图。
-
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/04/26/Java设计模式之看懂UML类图/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/ava.png" width="44px" height="44px" alt="Small Strong's avatar">
-            </div>
-            <div>
-                <strong>Small Strong</strong>
-                <span>4月 26, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/设计模式/">设计模式</a>
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
             </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
+        </a>
     </div>
-</div>
+    -->
 
-            
-            
-        
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
     
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#nginx-uWSGI-Flask-Supervisor部署项目"><span class="post-toc-number">1.</span> <span class="post-toc-text">nginx+uWSGI+Flask+Supervisor部署项目</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#nginx-配置-新建文件-etc-nginx-conf-d-xxx-conf-xxx-conf-中xxx你来定"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">nginx 配置 新建文件 /etc/nginx/conf.d/xxx.conf  xxx.conf 中xxx你来定</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#pip全局安装virtualenv在自己项目根目录新建一个独立的Python环境"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">pip全局安装virtualenv在自己项目根目录新建一个独立的Python环境</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#接下来写一个最简单的Flask应用"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">接下来写一个最简单的Flask应用</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#写好Flask入口之后，写一个uWSGI服务器的配置文件"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">写好Flask入口之后，写一个uWSGI服务器的配置文件</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Supervisor安装管理uwsgi进程"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">Supervisor安装管理uwsgi进程</span></a></li></ol></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
     
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/04/26/设计模式之简单工厂模式/">设计模式之简单工厂模式</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            简单工厂模式
-
-
-简单工厂模式
-
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/04/26/设计模式之简单工厂模式/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/ava.png" width="44px" height="44px" alt="Small Strong's avatar">
-            </div>
-            <div>
-                <strong>Small Strong</strong>
-                <span>4月 26, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/设计模式/">设计模式</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/01/07/设计模式之单例模式/">设计模式之单例模式</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            单例模式
 
 
 
 
-单例模式
+<!-- Layouts -->
 
+    <!-- Post Module -->
+    <div class="material-post_container">
 
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/01/07/设计模式之单例模式/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/ava.png" width="44px" height="44px" alt="Small Strong's avatar">
-            </div>
-            <div>
-                <strong>Small Strong</strong>
-                <span>1月 07, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/设计模式/">设计模式</a>
-            </span>
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
 
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/01/07/项目freeline接入/">项目freeline接入</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            记录引入freeline遇到的一些小问题
-
-
-按照官方的指示，只要几部就能顺利接入。可惜这...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/01/07/项目freeline接入/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/ava.png" width="44px" height="44px" alt="Small Strong's avatar">
-            </div>
-            <div>
-                <strong>Small Strong</strong>
-                <span>1月 07, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
+                <!-- Post Header(Thumbnail & Title) -->
                 
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
+    <!-- Paradox Post Header -->
+    
+        <!-- Custom Thumbnail -->
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(/images/flask_project.png)">
+    
+            <p class="article-headline-p">
+                nginx+uWSGI+supervisor+flask项目部署
+            </p>
         </div>
-    </div>
-</div>
 
-            
-            
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/ava.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Small Strong</strong>
+        <span>10月 24, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQ4AAAEOCAAAAABd2qZ5AAADgUlEQVR42u3aS44iMAwFQO5/6ZntSCPgPTuhaamyQjSdT2Vh2fHjj/HPeCDAgQMHDhw4cODAgeOLOR7xeDrdk988+698rdffPFuxPQsOHDhw4LjB8SYUvVw4CmYvD5nv5xnQ6iw4cODAgeMax+uAl2892XSyVhQm4//FgQMHDhy/lyOfLUnb2mvAgQMHDhy/lyMv/OVpYU72dYEWBw4cOHCMCmr5w08LlCd4m2vDgQMHDhyf4WibDL7580f7O3DgwIEDx38cN8a+ue1UI0W0Wxw4cODAcZQjKdIlz0KbAuK+yDgrZeLAgQMHjhscr5OizYFzlPz7/HPOigMHDhw4PsMxA2ofltrLmB3+TajGgQMHDhwXOJIAmQe/2QHabzZ7w4EDBw4c9zjaxuU2PcvLi/muZu3aOHDgwIHjMxz7x5uiKS0OlrNmuPyCceDAgQPHPY4bzzyzsJ2XBQ9fEg4cOHDgOMpxMYCVqeCmaW+TfOLAgQMHjrMcs2JfHg6TEuEGNGEd1kpx4MCBA8ea41TzQYvVPj5trirKaHHgwIEDx5qj3VbSatAinnr0ykuTOHDgwIHjHscmKLaJ2Wb1PKgXCSoOHDhw4LjMkRfp9g0NbevD7ClrmNHiwIEDB441R1Jiy5sJ2taE9kpmf8WBAwcOHLc5kuPlRz1VFtyncMXvceDAgQPHNY6zrQP3SoHJU9OBQIsDBw4cOK5xJO0Om7LdjbaJfODAgQMHjrMcedrWFgfbefYFyllzAw4cOHDgOMvRJlRt2GshotA4mqdI4XDgwIEDx4IjT342wS8Pw8nFtCXLNzPgwIEDB46jHO0m2iJgXiictSnMZsCBAwcOHLc5Nq0GRUhblB1nu0oSPBw4cODAcZajbUdrU7X8MWlWLpwlezhw4MCB4x7HJkzODpkfL18rKWLWxUEcOHDgwLF4dmrTntnh24erPVzUfoEDBw4cOI5ytGPT0DYLtDllcqk4cODAgeM2xyw45YW5pJWhba1ri5tv4HDgwIEDxwWOTcjMG6zz0NuC5mlhndHiwIEDB44Fx6n06dTBZs3Z9Slw4MCBA8ePcuRPRLPULj/Mpl0bBw4cOHB8D8epreQFwTx1bBs1cODAgQPHbY5ZE0PyQJXPnJca94EfBw4cOHDc42hLbLOQnKyYoG92jgMHDhw4bnMYOHDgwIEDBw4cOHDg+LLxFwyDJgbqJXWwAAAAAElFTkSuQmCC">
+    
+</ul>
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+    <!-- Leancloud Views -->
+        <a class="post_share-link" href="#">
+            <li class="mdl-menu__item">
+                <span id="/2017/10/24/nginx-uWSGI-supervisor-flask项目部署/" class="leancloud-views_num" data-flag-title="nginx+uWSGI+supervisor+flask项目部署">
+     &nbsp;浏览量
+</span>
+
+            </li>
+        </a>
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
         
     
 
-    
-    <!-- Index nav -->
-        <nav class="material-nav mdl-cell mdl-cell--12-col">
-            <a class="extend prev" rel="prev" href="/archives/2017/page/3/"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">arrow_back</i></button></a><a class="page-number" href="/archives/2017/">1</a><a class="page-number" href="/archives/2017/page/2/">2</a><a class="page-number" href="/archives/2017/page/3/">3</a><span class="page-number current">4</span>
-        </nav>
+    <!-- Share Weibo -->
     
 
+    <!-- Share Twitter -->
     
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
 
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
+    <!-- Share Facebook -->
+    
 
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
-    $('.post_thumbnail-random').addClass('lazy');
+    <!-- Share Google+ -->
+    
 
-        locatePost = locatePost.next();
-    }
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <center>nginx+uWSGI+supervisor+flask项目部署</center>
+
+
+<h2 id="nginx-uWSGI-Flask-Supervisor部署项目"><a href="#nginx-uWSGI-Flask-Supervisor部署项目" class="headerlink" title="nginx+uWSGI+Flask+Supervisor部署项目"></a>nginx+uWSGI+Flask+Supervisor部署项目</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">OS version: Ubuntu 16.04.2</div><div class="line">nginx version: nginx/1.10.3 (Ubuntu)</div><div class="line">uWSGI version: uWSGI (2.0.15)</div><div class="line">Flask version: Flask (0.12.2)</div><div class="line">Supervisor version: Supervisor(3.2.0)</div></pre></td></tr></table></figure>
+<h3 id="nginx-配置-新建文件-etc-nginx-conf-d-xxx-conf-xxx-conf-中xxx你来定"><a href="#nginx-配置-新建文件-etc-nginx-conf-d-xxx-conf-xxx-conf-中xxx你来定" class="headerlink" title="nginx 配置 新建文件 /etc/nginx/conf.d/xxx.conf  xxx.conf 中xxx你来定"></a>nginx 配置 新建文件 /etc/nginx/conf.d/xxx.conf  xxx.conf 中xxx你来定</h3><p>删除/etc/nginx/sites-enabled/ 以及 /etc/nginx/sites-available/ 下所有文件<br>你可以这么玩，sudo rm -f /etc/nginx/sites-enabled/default<br>为什么这么做呢？<br>先看nginx.conf里面有：<br>include /etc/nginx/conf.d/<em>.conf;<br>include /etc/nginx/sites-enabled/</em>;<br>而sites-enabled里面也有default这种文件,我这么做的原因是删了看着干净。以后做扩展找起来也好找，都在conf.d目录下。</p>
+<p>极简配置<br>客户端访问80端口,有Nginx接受到请求，并下发到服务器6001端口进行处理，6001端口会部署一个uWSGIweb服务器.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">server &#123;</div><div class="line">      listen  80;</div><div class="line">      server_name www.smallstrong.site; #公网地址</div><div class="line"></div><div class="line">      location / &#123;</div><div class="line">        include      uwsgi_params;</div><div class="line">        uwsgi_pass   127.0.0.1:6001;</div><div class="line">      &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>Nginx常用的几个命令：<br>sudo service nginx start<br>sudo service nginx stop<br>sudo service nginx restart</p>
+<h3 id="pip全局安装virtualenv在自己项目根目录新建一个独立的Python环境"><a href="#pip全局安装virtualenv在自己项目根目录新建一个独立的Python环境" class="headerlink" title="pip全局安装virtualenv在自己项目根目录新建一个独立的Python环境"></a>pip全局安装virtualenv在自己项目根目录新建一个独立的Python环境</h3><ol>
+<li>pip install virtualenv</li>
+<li>cd 到你项目根目录</li>
+<li>virtualenv api_env</li>
+<li>source api_env/bin/activate (deactivate 可退出)</li>
+<li>接下来pip来安装自己需要的Python库,Flask,uWSGI等（依赖问题自行解决）</li>
+</ol>
+<p><img src="/images/py_env.png" alt="py_env.png"></p>
+<h4 id="接下来写一个最简单的Flask应用"><a href="#接下来写一个最简单的Flask应用" class="headerlink" title="接下来写一个最简单的Flask应用"></a>接下来写一个最简单的Flask应用</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">#! /usr/bin/env python</div><div class="line"># -*- coding: utf-8 -*-</div><div class="line"></div><div class="line">from flask import Flask</div><div class="line"></div><div class="line">app = Flask(__name__)</div><div class="line"></div><div class="line">whale_apis = &#123;</div><div class="line">    &apos;test&apos;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">@app.route(&apos;/api/&lt;func&gt;&apos;, methods=[&apos;GET&apos;, &apos;POST&apos;])</div><div class="line">def go(func):</div><div class="line">    exec &apos;import fe.&apos; + func</div><div class="line">    data = eval(&apos;fe.&apos; + func + &apos;.go()&apos;)</div><div class="line">    return data</div><div class="line"></div><div class="line"></div><div class="line">if __name__ == &apos;__main__&apos;:</div><div class="line">    app.run(debug=True)</div></pre></td></tr></table></figure>
+<p>上面的代码是我的flask网络框架的主入口，路由是/api/方法名称，默认接受GET 和 POST请求，动态导入工程目录下fe目录下的同方法名文件，执行go方法并返还数据。fe目录是所有网络请求目录，后续在剖析Flask应用会详细介绍。</p>
+<h4 id="写好Flask入口之后，写一个uWSGI服务器的配置文件"><a href="#写好Flask入口之后，写一个uWSGI服务器的配置文件" class="headerlink" title="写好Flask入口之后，写一个uWSGI服务器的配置文件"></a>写好Flask入口之后，写一个uWSGI服务器的配置文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">[uwsgi]</div><div class="line"></div><div class="line"># uwsgi 启动时所使用的地址与端口</div><div class="line">socket = 127.0.0.1:6001</div><div class="line"></div><div class="line">module = manage:app</div><div class="line"></div><div class="line"># 处理器数</div><div class="line">processes = 4</div><div class="line"></div><div class="line"># 线程数</div><div class="line">threads = 2</div><div class="line"></div><div class="line">req-logger = file:/home/small/logs/req.log</div><div class="line"></div><div class="line">logger = file:/home/small/logs/err.log</div></pre></td></tr></table></figure>
+<p>放在项目根目录下，取名叫uwsgi.ini<br>这时候 命令行输入 uwsgi uwsgi.ini 即开启了uWSGI服务器。</p>
+<h3 id="Supervisor安装管理uwsgi进程"><a href="#Supervisor安装管理uwsgi进程" class="headerlink" title="Supervisor安装管理uwsgi进程"></a>Supervisor安装管理uwsgi进程</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">[program:whale_api]</div><div class="line">command=/home/small/whale/whale_api/api_env/bin/uwsgi  /home/small/whale/whale_api/uwsgi.ini</div><div class="line"></div><div class="line">directory=/home/small/whale/whale_api</div><div class="line">user=root</div><div class="line"></div><div class="line">autostart=true</div><div class="line">autorestart=true</div><div class="line">startretries=3</div><div class="line">stdout_logfile=/home/small/logs/supervisor_out.log</div><div class="line">stderr_logfile=/home/small/logs/supervisor_err.log</div></pre></td></tr></table></figure>
+<p>默认生成的配置文件里面会有一部分要修改，包括日志输出位置。<br>serverurl=unix:///var/run/supervisor.sock找不到原因是你杀死supervisord进程重新开或是权限不足，反正这块坑还是比较多的</p>
+<p>启动supervisor<br>sudo supervisord -c supervisord.conf<br>管理常用指令：<br>sudo supervisorctl shutdown //会关闭supervisor进程和其管理的子进程<br>sudo supervisorctl status //查看现在运行的supervisor进程的状态<br>sudo supervisorctl start<br>sudo supervisorctl stop<br>sudo supervisorctl restart</p>
+<p>昨晚的结果就是：</p>
+<p><img src="/images/py_bushu.png" alt="py_bushu.png"></p>
+<blockquote>
+<p>这只是万里长征第一步。写下这些命令也只是方便日后出问题了来查阅，不至于很闷逼。相信还有很多未知的问题在等待这我，等我踩完会继续在文章中填上。下班回家！</p>
+</blockquote>
+
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #757575;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load"> 
+    <button class="disqus_click_btn">阅读评论（disqus 评论需要科学上网 可参考本站Shadowsocks-全端翻墙文章）</button>
+</div>
+
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://www.smallstrong.wang/2017/10/24/nginx-uWSGI-supervisor-flask项目部署/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://www.smallstrong.wang/2017/10/24/nginx-uWSGI-supervisor-flask项目部署/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
 </script>
 
-    
+<script type="text/ls-javascript" id="disqus-lazy-load-script">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//www-smallstrong-wang.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+  	
+
 </div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/10/12/ssh方式登录服务器/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
