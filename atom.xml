@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.smallstrong.wang/"/>
-  <updated>2017-10-24T13:49:01.000Z</updated>
+  <updated>2017-10-25T06:44:04.000Z</updated>
   <id>http://www.smallstrong.wang/</id>
   
   <author>
@@ -16,11 +16,76 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>我对docker的浅薄理解</title>
+    <link href="http://www.smallstrong.wang/2017/10/25/%E6%88%91%E5%AF%B9docker%E7%9A%84%E6%B5%85%E8%96%84%E7%90%86%E8%A7%A3/"/>
+    <id>http://www.smallstrong.wang/2017/10/25/我对docker的浅薄理解/</id>
+    <published>2017-10-25T06:37:44.000Z</published>
+    <updated>2017-10-25T06:44:04.000Z</updated>
+    
+    <content type="html"><![CDATA[<center>我对docker的浅薄理解</center>
+
+
+<h1 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h1><h3 id="what-is-docker"><a href="#what-is-docker" class="headerlink" title="what is docker?"></a>what is docker?</h3><blockquote>
+<p>docker这货就是个可以装很多容器的新型虚拟机。一个容器就是一个进程，这货做到了容器间的文件系统网络等的隔离。容器里能装镜像，这个镜像呢，至少里面是个最精简的Linux系统。你可以在别人的镜像上搞点小动作然后搞出来之后这个新的镜像就是你的了。</p>
+</blockquote>
+<h3 id="Why-we-choose-docker"><a href="#Why-we-choose-docker" class="headerlink" title="Why we choose docker ?"></a>Why we choose docker ?</h3><ol>
+<li>利用系统资源能力极高。同配置下传统虚拟机你开10个试试，但这货可以还远不止且打开速度极快。</li>
+<li>docker最后生成的就是一个Image,这个image里面包含了环境，你可以理解成连着生产环境一块儿交付。任何平台，只需配置一次，随处跑。真正做到write once,run everywhere，不像某N。</li>
+</ol>
+<h3 id="How-docker-works"><a href="#How-docker-works" class="headerlink" title="How docker works?"></a>How docker works?</h3><ol>
+<li>你的先下载docker，并安装。</li>
+<li>为了更好管理你的镜像，你需要DockerToolbox，可以直接从镜像仓库下载官方镜像（dockerhub）</li>
+<li>考虑到天朝的网络，你或许需要一个代理。<br><a href="https://www.daocloud.io/mirror#accelerator-doc" target="_blank" rel="external">https://www.daocloud.io/mirror#accelerator-doc</a></li>
+<li>下载好你要的镜像之后，start一下，看看人家是怎么玩的。Nginx+tornado可以玩转py后端，Jenkins轻松持续集成,jekyll随随便便搞个blog玩玩</li>
+<li>不过这终究是别人家的镜像，我自己怎么做镜像呢？恩，接下来我们来站在巨人的肩膀上学习（<del>装逼</del>）</li>
+</ol>
+<h3 id="Dockerfile"><a href="#Dockerfile" class="headerlink" title="Dockerfile"></a>Dockerfile</h3><blockquote>
+<p>Dockerfile这货是啥？这货是个脚本，用来构建docker镜像。<br>桌面temp路径下demo演示以及具体参数讲解<br>导出来看看你到底搞的是个啥玩意 docker export tomcat</p>
+</blockquote>
+<h3 id="Learn-docker（todo）"><a href="#Learn-docker（todo）" class="headerlink" title="Learn docker（todo）"></a>Learn docker（todo）</h3><ol>
+<li>数据管理</li>
+<li>容器互联</li>
+<li>网路配置<br>等等</li>
+</ol>
+<blockquote>
+<p>这货很吊,实乃居家旅行之装逼利器。</p>
+</blockquote>
+<h1 id="一些命令"><a href="#一些命令" class="headerlink" title="一些命令"></a>一些命令</h1><ol>
+<li>docker info:列出docker基本信息,所有容器和镜像的情况</li>
+<li>docker run –name jenkins -i -t jenkins /bin/bash 创建一个容器叫Jenkins进入Jenkins容器并打开容器内的shell</li>
+<li>exit可以切换回自己的电脑用户</li>
+<li>docker ps -a 查看当前系统中容器的列表</li>
+<li>docker  inspect 31f4b6b20718（容器名字）查看容器具体信息</li>
+<li>docker rm 31f4b6b20718(容器名字) 干翻这个容器</li>
+<li>docker images 列出镜像</li>
+<li>docker build –no-cache 根据Dockerfile来构建镜像（可指定无缓存，因为docker每执行成功一条指令会缓存一个新容器）</li>
+<li>docker history tomcat 可以查看tomcat这镜像build历史构建过程 这货到底经历了什么</li>
+<li>cat tomcat.tar | sudo docker import - yourname/tomcat 导入容器</li>
+<li>docker stop dockername  停止这个容器</li>
+</ol>
+<p>上面的内容写于三月前，记得那晚搞到一两点，为了整理还写了ppt，结果说是周五的技术分享会还被放鸽子，绝壁是醉了。链接就下边这个。<br><a href="https://github.com/smallstrong0/docker-ppt" target="_blank" rel="external">https://github.com/smallstrong0/docker-ppt</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;center&gt;我对docker的浅薄理解&lt;/center&gt;
+
+
+&lt;h1 id=&quot;Docker&quot;&gt;&lt;a href=&quot;#Docker&quot; class=&quot;headerlink&quot; title=&quot;Docker&quot;&gt;&lt;/a&gt;Docker&lt;/h1&gt;&lt;h3 id=&quot;what-is-docker&quot;&gt;
+    
+    </summary>
+    
+      <category term="蓝鲸计划" scheme="http://www.smallstrong.wang/categories/%E8%93%9D%E9%B2%B8%E8%AE%A1%E5%88%92/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>nginx+uWSGI+supervisor+flask项目部署</title>
     <link href="http://www.smallstrong.wang/2017/10/24/nginx-uWSGI-supervisor-flask%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/"/>
     <id>http://www.smallstrong.wang/2017/10/24/nginx-uWSGI-supervisor-flask项目部署/</id>
     <published>2017-10-24T01:08:22.000Z</published>
-    <updated>2017-10-24T13:49:01.000Z</updated>
+    <updated>2017-10-25T06:44:07.000Z</updated>
     
     <content type="html"><![CDATA[<center>nginx+uWSGI+supervisor+flask项目部署</center>
 
@@ -1597,83 +1662,6 @@ class BCommand implements Command{
       &lt;h3 id=&quot;记一次项目引入bugly热修复（基于微信tinker）与接入walle多渠道打包共存的方式&quot;&gt;&lt;a href=&quot;#记一次项目引入bugly热修复（基于微信tinker）与接入walle多渠道打包共存的方式&quot; class=&quot;headerlink&quot; title=&quot;记一
     
     </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>设计模式之代理模式</title>
-    <link href="http://www.smallstrong.wang/2017/04/26/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/"/>
-    <id>http://www.smallstrong.wang/2017/04/26/设计模式之代理模式/</id>
-    <published>2017-04-26T13:04:01.000Z</published>
-    <updated>2017-04-26T13:05:44.000Z</updated>
-    
-    <content type="html"><![CDATA[<center>设计模式之代理模式</center>
-
-
-
-
-
-<blockquote>
-<p>代理模式,故事是这么发生的。你女票要看五月天演唱会，结果你上大麦手速不够么抢到。为了不再次成为单身狗，你决定去找黄牛搞票。不说了，下个月五块钱以上的活动不要叫我。</p>
-</blockquote>
-<p><img src="http://upload-images.jianshu.io/upload_images/1321838-6d569dcc93af98c7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="代理模式UML.png"></p>
-<pre><code>interface BuyTicket{
-    void buyTicket();
-}
-</code></pre><blockquote>
-<p>定义一个业务接口，买票</p>
-</blockquote>
-<pre><code>class RealBuyTicket implements BuyTicket{
-    public void buyTicket(){
-        //正正经经买票，大麦官方渠道
-    }
-}    
-</code></pre><blockquote>
-<p>这个是官方渠道，票其实都在这出售，但是谁叫你手速慢。（枉亏我自称麒麟臂）</p>
-</blockquote>
-<pre><code>class ProxyBuyTicket implements BuyTicket{
-    RealBuyTicket realBuyTicket = new RealBuyTicket();
-    public void buyTicket(){
-        addMoney();// 收点代理费
-        realBuyTicket.buyTicket();
-    }
-
-    public void addMoney(){
-        // 老铁，加点钱
-    }
-}
-</code></pre><blockquote>
-<p>买票代理类，加钱就能买</p>
-</blockquote>
-<pre><code>class Clitet{
-    public static void main(String[] args){
-        BuyTicket mButTicket = new ProxyBuyTicket();
-        mButTicket.buyTicket();
-    }
-}
-</code></pre><blockquote>
-<p>找到黄牛，买五月天内场门票，两张哦！</p>
-</blockquote>
-<h3 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h3><p>代理模式其实衍生开去分为很多种类，包括远程代理（翻墙），虚拟代理（用在要创建资源耗费大的对象时候用到），缓冲代理（避免重复请求） 等。代理类及真正的实现类其实在实际中处理业务会非常复杂。</p>
-<p>代理模式能总结成一句话，我想做某件事，自己做不到或者不能直接做，需要找个方法代理来处理。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;center&gt;设计模式之代理模式&lt;/center&gt;
-
-
-
-
-
-&lt;blockquote&gt;
-&lt;p&gt;代理模式,故事是这么发生的。你女票要看五月天演唱会，结果你上大麦手速不够么抢到。为了不再次成为单身狗，你决定去找黄牛搞票。不说了，下个月五块钱以上的活动不要叫我。&lt;/p&gt;
-&lt;/bloc
-    
-    </summary>
-    
-      <category term="设计模式" scheme="http://www.smallstrong.wang/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
     
   </entry>
