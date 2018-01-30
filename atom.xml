@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.smallstrong.wang/"/>
-  <updated>2018-01-22T06:07:48.459Z</updated>
+  <updated>2018-01-30T15:47:57.715Z</updated>
   <id>http://www.smallstrong.wang/</id>
   
   <author>
@@ -14,6 +14,56 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Scrapy的项目结构介绍</title>
+    <link href="http://www.smallstrong.wang/2018/01/23/Scrapy%E7%9A%84%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84%E4%BB%8B%E7%BB%8D/"/>
+    <id>http://www.smallstrong.wang/2018/01/23/Scrapy的项目结构介绍/</id>
+    <published>2018-01-23T05:39:47.000Z</published>
+    <updated>2018-01-30T15:47:57.715Z</updated>
+    
+    <content type="html"><![CDATA[<center> Scrapy的项目结构介绍 </center>
+
+<h3 id="创建scrapy爬虫项目"><a href="#创建scrapy爬虫项目" class="headerlink" title="创建scrapy爬虫项目"></a>创建scrapy爬虫项目</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">scrapy startproject taotie</div></pre></td></tr></table></figure>
+<p><img src="/images/scrapy_init.png" alt="scrapy_init"></p>
+<blockquote>
+<p>tip 先切到venv3环境</p>
+</blockquote>
+<hr>
+<h4 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h4><p><img src="/images/scrapy_tree.png" alt="scrapy_tree"></p>
+<h4 id="scrapy-cfg文件"><a href="#scrapy-cfg文件" class="headerlink" title="scrapy.cfg文件"></a>scrapy.cfg文件</h4><p>存放的目录被认为是项目的根目录。该文件中包含 python模块名的字段定义了项目的设置。一般不用改动。</p>
+<h4 id="items-py-文件"><a href="#items-py-文件" class="headerlink" title="items.py 文件"></a>items.py 文件</h4><p>该文件中包含了scrapy数据容器模型代码。Item 对象是种简单的容器，保存了爬取到得数据。类似Java中的Bean类。</p>
+<p>定义要爬取数据的字段，丢进Item对象之中。</p>
+<h4 id="middlewares-py-文件"><a href="#middlewares-py-文件" class="headerlink" title="middlewares.py 文件"></a>middlewares.py 文件</h4><p>该文件中包含下载器中间件和爬虫中间件模型代码。</p>
+<p>下载器中间件是介于 Scrapy 的request/response 处理的钩子框架。是用于全局修改 Scrapy request 和 response的一个轻量、底层的系统。</p>
+<p>爬虫中间件是介入到 Scrapy 的 spider 处理机制的钩子框架，您可以添加代码来处理发送给 Spiders 的 response 及 spider 产生的 item 和 发出request。</p>
+<h4 id="pipelines-py-文件"><a href="#pipelines-py-文件" class="headerlink" title="pipelines.py 文件"></a>pipelines.py 文件</h4><p>每个管道组件是实现了简单方法的 Python 类。他们接收到 Item 并通过它执行一些行为，同时也决定此 Item 是否继续通过后续的管道组件，或是被丢弃而不再进行处理。</p>
+<p>对收集到的Item进行进一步处理，不符合可以pass掉。</p>
+<h4 id="settings-py-文件"><a href="#settings-py-文件" class="headerlink" title="settings.py 文件"></a>settings.py 文件</h4><p>Scrapy 设定(settings)提供了定制 Scrapy 组件的方法。您可以控制包括核心(core)，插件(extension)，pipeline 及 spider 组件。功能配置都在这里，功能解耦真心服。</p>
+<h4 id="spiders-文件夹"><a href="#spiders-文件夹" class="headerlink" title="spiders  文件夹"></a>spiders  文件夹</h4><p>具体爬虫代码都在这里，Spider是用户编写用于从单个网站(或者一些网站)爬取数据的类。为了创建一个 Spider，您必须继承 scrapy.Spider 类。</p>
+<h5 id="类中要做三件事情："><a href="#类中要做三件事情：" class="headerlink" title="类中要做三件事情："></a>类中要做三件事情：</h5><ol>
+<li>给爬虫名字命名</li>
+<li>定义要爬取的URL</li>
+<li>爬去下来的数据会回调parse方法进行数据解析（Important）</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/env python</div><div class="line"># -*- coding: utf-8 -*-</div><div class="line"># @Time    : 2018/1/23 下午3:00</div><div class="line"># @Author  : SmallStrong</div><div class="line"># @Des     :</div><div class="line"># @File    : taotie.py</div><div class="line"># @Software: PyCharm</div><div class="line"></div><div class="line"></div><div class="line">from scrapy.spiders import Spider</div><div class="line">from taotie.items import TaotieItem</div><div class="line">from scrapy import Request</div><div class="line"></div><div class="line"></div><div class="line">class Taotie(Spider):</div><div class="line">    name = &apos;taotie&apos; # 爬虫名称</div><div class="line">    headers = &#123;</div><div class="line">        &apos;User-Agent&apos;: &apos;Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/&apos;</div><div class="line">                      &apos;537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safar&apos;</div><div class="line">                      &apos;i/537.36&apos;,</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    def start_requests(self): # 爬取的链接</div><div class="line">        url = &apos;https://www.xiachufang.com/category/&apos;</div><div class="line">        yield Request(url, headers=self.headers)</div><div class="line"></div><div class="line">    def parse(self, response): # 数据进行解析</div><div class="line">        categorys = response.xpath(&apos;/html/body/div[3]/div/div/div/div&apos;)</div><div class="line">        for item in categorys:</div><div class="line">            foods = item.xpath(&apos;.//div[3]/ul&apos;)</div><div class="line">            for food in foods:</div><div class="line">                keys = food.xpath(&apos;.//li/a&apos;)</div><div class="line">                for key in keys:</div><div class="line">                    try:</div><div class="line">                        item = TaotieItem()</div><div class="line">                        item[&apos;category_id&apos;] = key.xpath(&apos;@href&apos;).extract()[0]</div><div class="line">                        print(type(key.xpath(&apos;text()&apos;).extract()[0]))</div><div class="line">                        # item[&apos;category&apos;] = key.xpath(&apos;text()&apos;).extract()[0]</div><div class="line">                    except Exception as e:</div><div class="line">                        print(e)</div><div class="line">                    yield item</div></pre></td></tr></table></figure>
+<h5 id="解析数据"><a href="#解析数据" class="headerlink" title="解析数据"></a>解析数据</h5><p>parse回调方法中会大量用到xpath语法。掌握下规则应该就能轻易上手。还有Chrome在检查下,见下图骚操作:</p>
+<p><img src="/images/xpath.png" alt="xpath"></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>本文主要介绍了scrapy项目的几个基本文件的职责，下面文章会用一个例子来实际应用。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;center&gt; Scrapy的项目结构介绍 &lt;/center&gt;
+
+&lt;h3 id=&quot;创建scrapy爬虫项目&quot;&gt;&lt;a href=&quot;#创建scrapy爬虫项目&quot; class=&quot;headerlink&quot; title=&quot;创建scrapy爬虫项目&quot;&gt;&lt;/a&gt;创建scrapy爬虫项目&lt;/h3
+    
+    </summary>
+    
+    
+      <category term="爬虫" scheme="http://www.smallstrong.wang/tags/%E7%88%AC%E8%99%AB/"/>
+    
+  </entry>
   
   <entry>
     <title>Scrapy的安装</title>
@@ -1559,87 +1609,6 @@ class BCommand implements Command{
 &lt;p&gt;责任链模式&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1321838-8ac
-    
-    </summary>
-    
-      <category term="设计模式" scheme="http://www.smallstrong.wang/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>设计模式之策略模式</title>
-    <link href="http://www.smallstrong.wang/2017/04/27/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/"/>
-    <id>http://www.smallstrong.wang/2017/04/27/设计模式之策略模式/</id>
-    <published>2017-04-27T07:59:45.000Z</published>
-    <updated>2017-04-27T08:14:01.000Z</updated>
-    
-    <content type="html"><![CDATA[<center>设计模式之策略模式</center>
-
-
-
-<blockquote>
-<p>策略模式</p>
-</blockquote>
-<p><img src="http://upload-images.jianshu.io/upload_images/1321838-caa98047d7077bac.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="策略模式UML.png"></p>
-<pre><code>interface Hero{
-    void kaida();
-}
-</code></pre><blockquote>
-<p>英雄接口，开大。</p>
-</blockquote>
-<pre><code>class SunWuKong implements Hero{
-    public void kaida(){
-        //孙悟空开大
-    }
-}    
-</code></pre><blockquote>
-<p>英雄孙悟空，实现开大方法</p>
-</blockquote>
-<pre><code>class DianWei implements Hero{
-    public void kaida(){
-        //典韦跳大
-    }
-}
-</code></pre><blockquote>
-<p>英雄典韦,实现开大方法</p>
-</blockquote>
-<pre><code>class Military{
-    private Hero hero;
-    public Military(Hero hero){
-        this.hero = hero;
-    }
-
-    public void kaida(){
-        if(hero != null){
-            hero.kaida();                
-        }
-    }
-}
-</code></pre><blockquote>
-<p>军师类，军师职责是挑选合适的英雄去开大，就是这样</p>
-</blockquote>
-<pre><code>class Client{
-    Hero hero = new SunWuKong();
-    Military mMilitary = new Military(hero);
-    mMilitary.kaida();
-}
-</code></pre><blockquote>
-<p>客户端，这边选择的是孙悟空去开大，根据不同需求在运行时指定不同英雄，交给军师，让其开大</p>
-</blockquote>
-<h3 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h3><p>策略模式给我感觉是一种，想做一件事情，这事情有很多种解决途径，有对的有错的，这些途径就是策略类(例子中的孙悟空，典韦)，关键难点在于客户端如何抉择，这个是一个难点。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;center&gt;设计模式之策略模式&lt;/center&gt;
-
-
-
-&lt;blockquote&gt;
-&lt;p&gt;策略模式&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1321838-caa9
     
     </summary>
     
