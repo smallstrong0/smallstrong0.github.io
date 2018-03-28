@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.smallstrong.wang/"/>
-  <updated>2018-01-30T15:47:57.715Z</updated>
+  <updated>2018-03-28T15:22:54.219Z</updated>
   <id>http://www.smallstrong.wang/</id>
   
   <author>
@@ -16,11 +16,116 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Docker 指令学习.md</title>
+    <link href="http://www.smallstrong.wang/2018/03/28/Docker-%E6%8C%87%E4%BB%A4%E5%AD%A6%E4%B9%A0/"/>
+    <id>http://www.smallstrong.wang/2018/03/28/Docker-指令学习/</id>
+    <published>2018-03-28T15:16:36.000Z</published>
+    <updated>2018-03-28T15:22:54.219Z</updated>
+    
+    <content type="html"><![CDATA[<center>Docker 指令学习</center>
+
+<h2 id="Docker环境信息"><a href="#Docker环境信息" class="headerlink" title="Docker环境信息"></a>Docker环境信息</h2><h3 id="docker-info"><a href="#docker-info" class="headerlink" title="docker info"></a>docker info</h3><blockquote>
+<p>docker info命令用于检查Docker是否安装。如果安装了，会显示docker信息。</p>
+</blockquote>
+<h3 id="docker-version"><a href="#docker-version" class="headerlink" title="docker version"></a>docker version</h3><blockquote>
+<p>docker version命令获取docker版本信息</p>
+</blockquote>
+<hr>
+<h2 id="容器生命周期管理"><a href="#容器生命周期管理" class="headerlink" title="容器生命周期管理"></a>容器生命周期管理</h2><blockquote>
+<p>容器生命周期管理涉及到容器的启动、停止功能。</p>
+</blockquote>
+<h3 id="docker-run"><a href="#docker-run" class="headerlink" title="docker run"></a>docker run</h3><blockquote>
+<p>docker run [OPTIONS] IMAGE [COMMAND] [ARG…]</p>
+<p>docker run -it –name test(容器取名) ece50e7f3b34(镜像名称) 由镜像新建一个容器</p>
+</blockquote>
+<h3 id="docker-start-stop-restart"><a href="#docker-start-stop-restart" class="headerlink" title="docker start/stop/restart"></a>docker start/stop/restart</h3><blockquote>
+<p>docker stop/stop/restart [OPTIONS] CONTAINER [CONTAINER…]</p>
+<p>docker start -ai 3549fa1e6c8e(容器ID) </p>
+</blockquote>
+<hr>
+<h2 id="镜像仓库命令"><a href="#镜像仓库命令" class="headerlink" title="镜像仓库命令"></a>镜像仓库命令</h2><blockquote>
+<p>docker镜像的搜索、下载和上传相关操作</p>
+</blockquote>
+<h3 id="docker-pull"><a href="#docker-pull" class="headerlink" title="docker pull"></a>docker pull</h3><blockquote>
+<p>docker pull [OPTIONS] NAME[:TAG|@DIGEST]</p>
+<p>docker pull ubuntu12.04 or docker pull 12.33.44.532:8888/test 可以从官方下载也可以指定服务器地址获取镜像</p>
+</blockquote>
+<h3 id="docker-push"><a href="#docker-push" class="headerlink" title="docker push"></a>docker push</h3><blockquote>
+<p>docker push [OPTIONS] NAME[:TAG]</p>
+</blockquote>
+<hr>
+<h2 id="镜像管理"><a href="#镜像管理" class="headerlink" title="镜像管理"></a>镜像管理</h2><blockquote>
+<p>对本地镜像进行管理</p>
+</blockquote>
+<h3 id="docker-images"><a href="#docker-images" class="headerlink" title="docker images"></a>docker images</h3><blockquote>
+<p>docker images 列出本地所有镜像</p>
+</blockquote>
+<h3 id="docker-rmi-OPTIONS-IMAGE-IMAGE…"><a href="#docker-rmi-OPTIONS-IMAGE-IMAGE…" class="headerlink" title="docker rmi [OPTIONS] IMAGE [IMAGE…]"></a>docker rmi [OPTIONS] IMAGE [IMAGE…]</h3><blockquote>
+<p>docker rmi 3549fa1e6c8e(镜像ID) </p>
+</blockquote>
+<h3 id="docker-commit"><a href="#docker-commit" class="headerlink" title="docker commit"></a>docker commit</h3><blockquote>
+<p>docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]] (不推荐) 只做特定镜像</p>
+</blockquote>
+<h3 id="docker-build"><a href="#docker-build" class="headerlink" title="docker build"></a>docker build</h3><blockquote>
+<p>docker build -t app:v0.01 . (根据当前目录的Dockerfile来构建镜像)</p>
+</blockquote>
+<hr>
+<h2 id="容器运维操作"><a href="#容器运维操作" class="headerlink" title="容器运维操作"></a>容器运维操作</h2><h3 id="docker-attach"><a href="#docker-attach" class="headerlink" title="docker attach"></a>docker attach</h3><blockquote>
+<p>docker attach [OPTIONS] CONTAINER 连接到正在运行的容器</p>
+</blockquote>
+<h3 id="docker-inspect"><a href="#docker-inspect" class="headerlink" title="docker inspect"></a>docker inspect</h3><blockquote>
+<p>docker inspect [OPTIONS] NAME|ID [NAME|ID…] 传入容器或者镜像ID会列出详细信息</p>
+</blockquote>
+<h3 id="docker-ps"><a href="#docker-ps" class="headerlink" title="docker ps"></a>docker ps</h3><blockquote>
+<p>docker ps -a 列出所有容器 可用来查看容器id</p>
+</blockquote>
+<h3 id="docker-rm-OPTIONS-CONTAINER-CONTAINER…"><a href="#docker-rm-OPTIONS-CONTAINER-CONTAINER…" class="headerlink" title="docker rm [OPTIONS] CONTAINER [CONTAINER…]"></a>docker rm [OPTIONS] CONTAINER [CONTAINER…]</h3><blockquote>
+<p>docker rm 3549fa1e6c8e(容器ID) </p>
+</blockquote>
+<h3 id="docker-events"><a href="#docker-events" class="headerlink" title="docker events"></a>docker events</h3><blockquote>
+<p>docker events 会打印出实时的系统事件</p>
+</blockquote>
+<h3 id="docker-history"><a href="#docker-history" class="headerlink" title="docker history"></a>docker history</h3><blockquote>
+<p>docker history ece50e7f3b34(Image Id) 镜像构建的日志</p>
+</blockquote>
+<h3 id="docker-logs"><a href="#docker-logs" class="headerlink" title="docker logs"></a>docker logs</h3><blockquote>
+<p>docker logs 4b9b94068c06 容器进程的日志</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;center&gt;Docker 指令学习&lt;/center&gt;
+
+&lt;h2 id=&quot;Docker环境信息&quot;&gt;&lt;a href=&quot;#Docker环境信息&quot; class=&quot;headerlink&quot; title=&quot;Docker环境信息&quot;&gt;&lt;/a&gt;Docker环境信息&lt;/h2&gt;&lt;h3 id=&quot;doc
+    
+    </summary>
+    
+      <category term="docker" scheme="http://www.smallstrong.wang/categories/docker/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>加密货币与区块链</title>
+    <link href="http://www.smallstrong.wang/2018/03/13/%E5%8A%A0%E5%AF%86%E8%B4%A7%E5%B8%81%E4%B8%8E%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    <id>http://www.smallstrong.wang/2018/03/13/加密货币与区块链/</id>
+    <published>2018-03-13T14:31:15.000Z</published>
+    <updated>2018-03-13T14:31:15.947Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Scrapy的项目结构介绍</title>
     <link href="http://www.smallstrong.wang/2018/01/23/Scrapy%E7%9A%84%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84%E4%BB%8B%E7%BB%8D/"/>
     <id>http://www.smallstrong.wang/2018/01/23/Scrapy的项目结构介绍/</id>
     <published>2018-01-23T05:39:47.000Z</published>
-    <updated>2018-01-30T15:47:57.715Z</updated>
+    <updated>2018-01-31T07:11:07.970Z</updated>
     
     <content type="html"><![CDATA[<center> Scrapy的项目结构介绍 </center>
 
@@ -1301,314 +1406,6 @@
 &lt;p&gt;解释器模式&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1321838-8e2
-    
-    </summary>
-    
-      <category term="设计模式" scheme="http://www.smallstrong.wang/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>设计模式之命令模式</title>
-    <link href="http://www.smallstrong.wang/2017/05/02/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/"/>
-    <id>http://www.smallstrong.wang/2017/05/02/设计模式之命令模式/</id>
-    <published>2017-05-02T06:26:31.000Z</published>
-    <updated>2017-05-02T06:55:34.000Z</updated>
-    
-    <content type="html"><![CDATA[<center>设计模式之命令模式</center>
-
-
-<blockquote>
-<p>命令模式</p>
-</blockquote>
-<p><img src="http://upload-images.jianshu.io/upload_images/1321838-fb4422e6ea2b011c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="命令模式UML.png"></p>
-<pre><code>class GameBoy{
-    public void toLeft(){
-        //左移
-    }
-    public void toRight(){
-        //右移
-    }
-    public void toTop(){
-        //上移
-    }
-    public void toBottom(){
-        //下移
-    }
-    public void toA(){
-        //A键出拳
-    }
-    public void toB(){
-        //B键踢腿
-    }
-}
-</code></pre><blockquote>
-<p>GameBoy,游戏机类    </p>
-</blockquote>
-<pre><code>interface Command{
-    void execute();
-}
-</code></pre><blockquote>
-<p>按钮接口    </p>
-</blockquote>
-<pre><code>class LeftCommand implements Command{
-    private GameBoy gameBoy;
-    public LeftCommand(GameBoy gameBoy){
-        this.gameBoy = gameBoy;
-    }
-    public void execute(){
-        gameBoy.toLeft();
-    }
-}
-
-class RightCommand implements Command{
-    private GameBoy gameBoy;
-    public RightCommand(GameBoy gameBoy){
-        this.gameBoy = gameBoy;
-    }
-    public void execute(){
-        gameBoy.toRight();
-    }
-}    
-
-class TopCommand implements Command{
-    private GameBoy gameBoy;
-    public TopCommand(GameBoy gameBoy){
-        this.gameBoy = gameBoy;
-    }
-    public void execute(){
-        gameBoy.toTop();
-    }
-}    
-
-class BottomCommand implements Command{
-    private GameBoy gameBoy;
-    public BottomCommand(GameBoy gameBoy){
-        this.gameBoy = gameBoy;
-    }
-    public void execute(){
-        gameBoy.toBottom();
-    }
-}    
-
-class ACommand implements Command{
-    private GameBoy gameBoy;
-    public ACommand(GameBoy gameBoy){
-        this.gameBoy = gameBoy;
-    }
-    public void execute(){
-        gameBoy.toA();
-    }
-}    
-
-
-class BCommand implements Command{
-    private GameBoy gameBoy;
-    public BCommand(GameBoy gameBoy){
-        this.gameBoy = gameBoy;
-    }
-    public void execute(){
-        gameBoy.toB();
-    }
-}    
-</code></pre><blockquote>
-<p>上述六个类是具体的按键 上下左右AB键    </p>
-</blockquote>
-<pre><code>class Buttons{
-    private Command leftCommand,rightCommand,topCommand,bottomCommand,aCommand,bCommand;
-    public Buttons(Command leftCommand, Command rightCommand, Command topCommand, Command bottomCommand, Command aCommand, Command bCommand){
-        this.leftCommand = leftCommand;
-        this.rightCommand = rightCommand;
-        this.topCommand = topCommand;
-        this.bottomCommand = bottomCommand;
-        this.aCommand = aCommand;
-        this.bCommand = bCommand;
-    }
-    public void toLeft(){
-        leftCommand.execute();
-        //左移
-    }
-    public void toRight(){
-        rightCommand.execute();
-        //右移
-    }
-    public void toTop(){
-        topCommand.execute();
-        //上移
-    }
-    public void toBottom(){
-        bottomCommand.execute();
-        //下移
-    }
-    public void toA(){
-        ACommand.execute();
-        //A键出拳
-    }
-    public void toB(){
-        BCommand.execute();
-        //B键踢腿
-    }
-
-}
-</code></pre><blockquote>
-<p>键盘按钮类，开关类    </p>
-</blockquote>
-<pre><code>public class Client{
-    public static void main(String[] args){
-        GameBoy gameBoy = new GameBoy();//游戏机先创建出来
-        // 上下左右AB命令
-        Command leftCommand,rightCommand,topCommand,bottomCommand,aCommand,bCommand;
-        leftCommand = new LeftCommand(gameBoy);
-        rightCommand = new RightCommand(gameBoy);
-        topCommand = new TopCommand(gameBoy);
-        bottomCommand = new BottomCommand(gameBoy);
-        aCommand = new ACommand(gameBoy);
-        bCommand = new BCommand(gameBoy);
-
-        // 具体操作的按键
-        Buttons buttons = new Buttons(leftCommand,rightCommand,topCommand,bottomCommand,aCommand,bCommand);
-        //按键按下执行操作
-        buttons.toLeft();
-        buttons.toRight();
-        buttons.toTop();
-        buttons.toBottom();
-        buttons.toA();
-        buttons.toB();
-    }        
-}
-</code></pre><h4 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h4><p>上述用例讲的是一个小游戏机运用了命令模式，将按钮这个动作请求和具体实现功能解耦。功能上的解耦伴随的代价是类的数量的增多，在实际开发中根据场景来考量是否采用。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;center&gt;设计模式之命令模式&lt;/center&gt;
-
-
-&lt;blockquote&gt;
-&lt;p&gt;命令模式&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1321838-fb442
-    
-    </summary>
-    
-      <category term="设计模式" scheme="http://www.smallstrong.wang/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>设计模式之责任链模式</title>
-    <link href="http://www.smallstrong.wang/2017/04/28/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E8%B4%A3%E4%BB%BB%E9%93%BE%E6%A8%A1%E5%BC%8F/"/>
-    <id>http://www.smallstrong.wang/2017/04/28/设计模式之责任链模式/</id>
-    <published>2017-04-28T00:37:21.000Z</published>
-    <updated>2017-04-28T07:25:34.000Z</updated>
-    
-    <content type="html"><![CDATA[<center>设计模式之责任链模式</center>
-
-
-<blockquote>
-<p>责任链模式</p>
-</blockquote>
-<p><img src="http://upload-images.jianshu.io/upload_images/1321838-8ac226dddb839fd1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="责任链模式UML.png"></p>
-<pre><code>abstract class Department{
-    protected Department mDepartment;
-
-    public void setDepartment(Department department){
-        this.mDepartment = department;
-    }
-
-    public abstract void makeChoice(Things s);
-}
-</code></pre><blockquote>
-<p>抽象部门，成员变量指定上级部门，定义处理事情的方法</p>
-</blockquote>
-<pre><code>class Municipal extends Department{
-    public void makeChoice(Things s){
-        if(s.level &lt;= 1){
-            Log.i(&quot;smallstrong&quot;,&quot;市级部门&quot;+s.thing);
-        }else{
-            this.mDepartment.makeChoice(s);//报告上级
-        }
-    }
-}
-</code></pre><blockquote>
-<p>市级部门</p>
-</blockquote>
-<pre><code>class Provincial extends Department{
-    public void makeChoice(Things s){
-        if(s.level &lt;= 2){
-            Log.i(&quot;smallstrong&quot;,&quot;省级部门&quot;+s.thing);
-        }else{
-            this.mDepartment.makeChoice(s);//报告上级
-        }
-    }
-}
-</code></pre><blockquote>
-<p>省级部门</p>
-</blockquote>
-<pre><code>class Country extends Department{
-    public void makeChoice(Things s){
-        if(s.level &gt; 0){
-            Log.i(&quot;smallstrong&quot;,&quot;国家级部门&quot;+s.thing);
-        }else{
-            //this.mDepartment.makeChoice(s);//报告上级
-        }
-    }
-}    
-</code></pre><blockquote>
-<p>国家级部门    </p>
-</blockquote>
-<pre><code>class Things{
-    private static final int level;//1  市级范围  2 省级范围 3 国家级范围
-    private static final String thing;
-
-    public Things(int level ,String thing){
-        this.level = level;
-        this.thing = thing;
-    }
-}
-</code></pre><blockquote>
-<p>具体事情与等级    </p>
-</blockquote>
-<pre><code>class Client{
-    public static void main(String args[]){
-        Department mMunicipal,mProvincial,mCountry;
-        mMunicipal = new Municipal();
-        mProvincial = new Provincial();
-        mCountry = new Country();
-        mMunicipal.setDepartment(mProvincial);
-        mProvincial.setDepartment(mCountry);
-
-        Things thing = new Things(1,&quot;李达康冲击GDP&quot;);
-        mMunicipal.makeChoice(thing);    
-
-        Things thing = new Things(2,&quot;沙瑞金书记召开省部级会议&quot;);
-        mMunicipal.makeChoice(thing);    
-
-        Things thing = new Things(3,&quot;赵立春老书记被罢免&quot;);
-        mMunicipal.makeChoice(thing);    
-    }
-}
-</code></pre><blockquote>
-<p>客户端，先要构造一个责任顺序。</p>
-</blockquote>
-<p>log如下</p>
-<p>[市级部门李达康冲击GDP]</p>
-<p>[沙瑞金书记召开省部级会议]</p>
-<p>[赵立春老书记被罢免]</p>
-<h3 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h3><p>责任链模式适用于多个对象都可以处理一个事情，对象可以根据情况处理或者丢给一个级别的对象处理。客户端要代码实现一个责任顺序。Android中view事件的分发已经有序广播的传递都采用了这种模式（相似）。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;center&gt;设计模式之责任链模式&lt;/center&gt;
-
-
-&lt;blockquote&gt;
-&lt;p&gt;责任链模式&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1321838-8ac
     
     </summary>
     

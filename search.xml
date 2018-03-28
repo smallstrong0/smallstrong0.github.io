@@ -3,6 +3,97 @@
   
     
     <entry>
+      <title><![CDATA[Docker 指令学习.md]]></title>
+      <url>/2018/03/28/Docker-%E6%8C%87%E4%BB%A4%E5%AD%A6%E4%B9%A0/</url>
+      <content type="html"><![CDATA[<center>Docker 指令学习</center>
+
+<h2 id="Docker环境信息"><a href="#Docker环境信息" class="headerlink" title="Docker环境信息"></a>Docker环境信息</h2><h3 id="docker-info"><a href="#docker-info" class="headerlink" title="docker info"></a>docker info</h3><blockquote>
+<p>docker info命令用于检查Docker是否安装。如果安装了，会显示docker信息。</p>
+</blockquote>
+<h3 id="docker-version"><a href="#docker-version" class="headerlink" title="docker version"></a>docker version</h3><blockquote>
+<p>docker version命令获取docker版本信息</p>
+</blockquote>
+<hr>
+<h2 id="容器生命周期管理"><a href="#容器生命周期管理" class="headerlink" title="容器生命周期管理"></a>容器生命周期管理</h2><blockquote>
+<p>容器生命周期管理涉及到容器的启动、停止功能。</p>
+</blockquote>
+<h3 id="docker-run"><a href="#docker-run" class="headerlink" title="docker run"></a>docker run</h3><blockquote>
+<p>docker run [OPTIONS] IMAGE [COMMAND] [ARG…]</p>
+<p>docker run -it –name test(容器取名) ece50e7f3b34(镜像名称) 由镜像新建一个容器</p>
+</blockquote>
+<h3 id="docker-start-stop-restart"><a href="#docker-start-stop-restart" class="headerlink" title="docker start/stop/restart"></a>docker start/stop/restart</h3><blockquote>
+<p>docker stop/stop/restart [OPTIONS] CONTAINER [CONTAINER…]</p>
+<p>docker start -ai 3549fa1e6c8e(容器ID) </p>
+</blockquote>
+<hr>
+<h2 id="镜像仓库命令"><a href="#镜像仓库命令" class="headerlink" title="镜像仓库命令"></a>镜像仓库命令</h2><blockquote>
+<p>docker镜像的搜索、下载和上传相关操作</p>
+</blockquote>
+<h3 id="docker-pull"><a href="#docker-pull" class="headerlink" title="docker pull"></a>docker pull</h3><blockquote>
+<p>docker pull [OPTIONS] NAME[:TAG|@DIGEST]</p>
+<p>docker pull ubuntu12.04 or docker pull 12.33.44.532:8888/test 可以从官方下载也可以指定服务器地址获取镜像</p>
+</blockquote>
+<h3 id="docker-push"><a href="#docker-push" class="headerlink" title="docker push"></a>docker push</h3><blockquote>
+<p>docker push [OPTIONS] NAME[:TAG]</p>
+</blockquote>
+<hr>
+<h2 id="镜像管理"><a href="#镜像管理" class="headerlink" title="镜像管理"></a>镜像管理</h2><blockquote>
+<p>对本地镜像进行管理</p>
+</blockquote>
+<h3 id="docker-images"><a href="#docker-images" class="headerlink" title="docker images"></a>docker images</h3><blockquote>
+<p>docker images 列出本地所有镜像</p>
+</blockquote>
+<h3 id="docker-rmi-OPTIONS-IMAGE-IMAGE…"><a href="#docker-rmi-OPTIONS-IMAGE-IMAGE…" class="headerlink" title="docker rmi [OPTIONS] IMAGE [IMAGE…]"></a>docker rmi [OPTIONS] IMAGE [IMAGE…]</h3><blockquote>
+<p>docker rmi 3549fa1e6c8e(镜像ID) </p>
+</blockquote>
+<h3 id="docker-commit"><a href="#docker-commit" class="headerlink" title="docker commit"></a>docker commit</h3><blockquote>
+<p>docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]] (不推荐) 只做特定镜像</p>
+</blockquote>
+<h3 id="docker-build"><a href="#docker-build" class="headerlink" title="docker build"></a>docker build</h3><blockquote>
+<p>docker build -t app:v0.01 . (根据当前目录的Dockerfile来构建镜像)</p>
+</blockquote>
+<hr>
+<h2 id="容器运维操作"><a href="#容器运维操作" class="headerlink" title="容器运维操作"></a>容器运维操作</h2><h3 id="docker-attach"><a href="#docker-attach" class="headerlink" title="docker attach"></a>docker attach</h3><blockquote>
+<p>docker attach [OPTIONS] CONTAINER 连接到正在运行的容器</p>
+</blockquote>
+<h3 id="docker-inspect"><a href="#docker-inspect" class="headerlink" title="docker inspect"></a>docker inspect</h3><blockquote>
+<p>docker inspect [OPTIONS] NAME|ID [NAME|ID…] 传入容器或者镜像ID会列出详细信息</p>
+</blockquote>
+<h3 id="docker-ps"><a href="#docker-ps" class="headerlink" title="docker ps"></a>docker ps</h3><blockquote>
+<p>docker ps -a 列出所有容器 可用来查看容器id</p>
+</blockquote>
+<h3 id="docker-rm-OPTIONS-CONTAINER-CONTAINER…"><a href="#docker-rm-OPTIONS-CONTAINER-CONTAINER…" class="headerlink" title="docker rm [OPTIONS] CONTAINER [CONTAINER…]"></a>docker rm [OPTIONS] CONTAINER [CONTAINER…]</h3><blockquote>
+<p>docker rm 3549fa1e6c8e(容器ID) </p>
+</blockquote>
+<h3 id="docker-events"><a href="#docker-events" class="headerlink" title="docker events"></a>docker events</h3><blockquote>
+<p>docker events 会打印出实时的系统事件</p>
+</blockquote>
+<h3 id="docker-history"><a href="#docker-history" class="headerlink" title="docker history"></a>docker history</h3><blockquote>
+<p>docker history ece50e7f3b34(Image Id) 镜像构建的日志</p>
+</blockquote>
+<h3 id="docker-logs"><a href="#docker-logs" class="headerlink" title="docker logs"></a>docker logs</h3><blockquote>
+<p>docker logs 4b9b94068c06 容器进程的日志</p>
+</blockquote>
+]]></content>
+      
+        <categories>
+            
+            <category> docker </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[加密货币与区块链]]></title>
+      <url>/2018/03/13/%E5%8A%A0%E5%AF%86%E8%B4%A7%E5%B8%81%E4%B8%8E%E5%8C%BA%E5%9D%97%E9%93%BE/</url>
+      <content type="html"></content>
+      
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Scrapy的项目结构介绍]]></title>
       <url>/2018/01/23/Scrapy%E7%9A%84%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84%E4%BB%8B%E7%BB%8D/</url>
       <content type="html"><![CDATA[<center> Scrapy的项目结构介绍 </center>
