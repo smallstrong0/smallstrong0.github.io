@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.smallstrong.wang/"/>
-  <updated>2018-03-28T15:22:54.219Z</updated>
+  <updated>2018-04-11T03:24:48.829Z</updated>
   <id>http://www.smallstrong.wang/</id>
   
   <author>
@@ -14,6 +14,58 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Ansible的简单使用</title>
+    <link href="http://www.smallstrong.wang/2018/04/11/Ansible%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/"/>
+    <id>http://www.smallstrong.wang/2018/04/11/Ansible的简单使用/</id>
+    <published>2018-04-11T03:16:36.000Z</published>
+    <updated>2018-04-11T03:24:48.829Z</updated>
+    
+    <content type="html"><![CDATA[<center> Ansible的简单使用 </center>
+
+<h1 id="Ansible简单使用"><a href="#Ansible简单使用" class="headerlink" title="Ansible简单使用"></a>Ansible简单使用</h1><blockquote>
+<p>ansible可以给我带来什么，为什么要学习ansible？这是我学习ansible的第一个问题。现阶段我认为ansible是个运维工具，可以帮你在本地电脑批量执行一些服务器的命令操作，这些命令可能是一次性的包安装命令，也可以是一些你经常用到的代码部署重启服务的命令。结合业务定制化的写一些playbook程序，从而减轻一些重复劳动。</p>
+<p>该笔记意在帮助初学者最快最直接的方式了解ansible的流程，如果想进一步学习推荐访问<br><a href="http://ansible-tran.readthedocs.io/en/latest/index.html" target="_blank" rel="external">Ansible中文权威指南</a></p>
+</blockquote>
+<h3 id="Ansible在Mac上的安装"><a href="#Ansible在Mac上的安装" class="headerlink" title="Ansible在Mac上的安装"></a>Ansible在Mac上的安装</h3><blockquote>
+<p>使用brew安装ansible<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install ansible</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="ssh免密登陆"><a href="#ssh免密登陆" class="headerlink" title="ssh免密登陆"></a>ssh免密登陆</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">1. 在用户目录下创建 /.ssh/authorized_keys文件</div><div class="line">2. 添加你的ssh公钥到该文件</div><div class="line">3. 该文件的访问权限为600 （sudo chmod 600 authorized_keys）</div><div class="line">4. ssh免密登陆 （例：ssh small@smallstrong.site）</div></pre></td></tr></table></figure>
+<h3 id="创建ansible项目（目录如下图）"><a href="#创建ansible项目（目录如下图）" class="headerlink" title="创建ansible项目（目录如下图）"></a>创建ansible项目（目录如下图）</h3><p><img src="https://upload-images.jianshu.io/upload_images/1321838-db72bc0056c14275.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="ansible.png"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">ansible.cfg # ansible的配置文件 </div><div class="line">fanfan.yml # 运行脚本的入口文件</div><div class="line">hosts # 填写服务器信息的文件</div><div class="line">group_vars/ # 放置全局参数的文件夹</div><div class="line">roles/fanfan_web # fanfan项目的所有执行文件放置的目录</div><div class="line">roles/fanfan_web/tasks # 具体执行的任务</div><div class="line">roles/fanfan_web/handlers # 一般是具体执行一些操作之后重启服务的任务</div><div class="line">roles/fanfan_web/files # 一些可能你要上传到服务器的代码</div><div class="line">roles/fanfan_web/templates # 我暂时没用到~~</div></pre></td></tr></table></figure>
+<p><a href="https://github.com/ansible/ansible-examples" target="_blank" rel="external">官方的demo链接</a></p>
+<h3 id="hosts主机配置"><a href="#hosts主机配置" class="headerlink" title="hosts主机配置"></a>hosts主机配置</h3><ol>
+<li><p>打开host文件，写入你服务器信息 （以下是我的例子）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[small]  # 组</div><div class="line">www.smallstrong.site        ansible_connection=ssh        ansible_ssh_user=small</div></pre></td></tr></table></figure>
+</li>
+<li><p>打开ansible.cfg文件 将inventory这项配置路径修改成上面host的路径（以下是我的例子）</p>
+<blockquote>
+<p>inventory      = /Users/smallstrong/Desktop/fanfan/beichoo-b/beichoo-api/devops/hosts</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="开撸playbook-（一个我应用自动化部署的例子）"><a href="#开撸playbook-（一个我应用自动化部署的例子）" class="headerlink" title="开撸playbook （一个我应用自动化部署的例子）"></a>开撸playbook （一个我应用自动化部署的例子）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">- hosts: small  # 该脚本执行对象是small这个服务器组</div><div class="line">  gather_facts: no # 不每次都去获取服务器基本信息加快速度</div><div class="line">  roles:</div><div class="line">    - fanfan_web # 执行roles目录下fanfan_web目录下的文件</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">- name: pull origin code</div><div class="line">  shell: sh /应用代码路径/publish.sh # 这是一个git拉代码的脚本</div><div class="line">  notify: reload uwsgi # 代码拉完之后重启uwsgi进程</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># uwsgi进程重启</div><div class="line">---</div><div class="line">- name: reload uwsgi</div><div class="line">  command: sudo service uwsgi reload</div></pre></td></tr></table></figure>
+<blockquote>
+<p>执行程序 (fanfan.yml那个路径下执行)</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ansible-playbook fanfan.yml</div></pre></td></tr></table></figure>
+<h4 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h4><h5 id="ansible其实还有很多想象空间，这里我只是简单的做了一个代码部署，期待更多的骚操作。"><a href="#ansible其实还有很多想象空间，这里我只是简单的做了一个代码部署，期待更多的骚操作。" class="headerlink" title="ansible其实还有很多想象空间，这里我只是简单的做了一个代码部署，期待更多的骚操作。"></a>ansible其实还有很多想象空间，这里我只是简单的做了一个代码部署，期待更多的骚操作。</h5>]]></content>
+    
+    <summary type="html">
+    
+      &lt;center&gt; Ansible的简单使用 &lt;/center&gt;
+
+&lt;h1 id=&quot;Ansible简单使用&quot;&gt;&lt;a href=&quot;#Ansible简单使用&quot; class=&quot;headerlink&quot; title=&quot;Ansible简单使用&quot;&gt;&lt;/a&gt;Ansible简单使用&lt;/h1&gt;&lt;blo
+    
+    </summary>
+    
+    
+      <category term="devops" scheme="http://www.smallstrong.wang/tags/devops/"/>
+    
+  </entry>
   
   <entry>
     <title>Docker 指令学习.md</title>
@@ -1296,116 +1348,6 @@
 &lt;p&gt;迭代器模式&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1321838-456a
-    
-    </summary>
-    
-      <category term="设计模式" scheme="http://www.smallstrong.wang/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>设计模式之解释器模式</title>
-    <link href="http://www.smallstrong.wang/2017/05/03/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/"/>
-    <id>http://www.smallstrong.wang/2017/05/03/设计模式之解释器模式/</id>
-    <published>2017-05-03T02:05:21.000Z</published>
-    <updated>2017-05-03T02:43:40.000Z</updated>
-    
-    <content type="html"><![CDATA[<center>设计模式之解释器模式</center>
-
-
-<blockquote>
-<p>解释器模式</p>
-</blockquote>
-<p><img src="http://upload-images.jianshu.io/upload_images/1321838-8e27a4af2008c064.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="解释器模式UML.png"></p>
-<p>本例想描述一个筛子游戏，假设筛子的范围是一到六这六个中文字，最后判大小,以分号为结尾。输入类型：例（三四五;）十二点，大</p>
-<pre><code>abstract class AbstractExpression{
-    Object interpret(String str);
-}
-</code></pre><blockquote>
-<p>抽象解释方法    </p>
-</blockquote>
-<pre><code>class TerminalExpression extends AbstractExpression{
-    public Object interpret(String str){
-        switch(str){
-            case &quot;一&quot;:
-                return 1;
-                break;
-            case &quot;二&quot;:
-                return 2;
-                break;
-            case &quot;三&quot;:
-                return 3;
-                break;
-            case &quot;四&quot;:
-                return 4;
-                break;
-            case &quot;五&quot;:
-                return 5;
-                break;
-            case &quot;六&quot;:
-                return 6;
-                break;    
-            default:
-                return 0;                
-        }
-    }
-}
-</code></pre><blockquote>
-<p>数字解释方法    </p>
-</blockquote>
-<pre><code>class NonTerminalExpression extends AbstractExpression{
-    public Object interpret(String str){
-        if(&quot;;&quot;.euqals(str){
-            return &quot;finish&quot;
-        }else{
-            return &quot;finish&quot;;
-        }
-    }
-}
-</code></pre><blockquote>
-<p>结束解释器    </p>
-</blockquote>
-<pre><code>class Calculator{
-    TerminalExpression terminalExpression = new terminalExpression();
-    NonTerminalExpression nonTerminalExpression = new NonTerminalExpression();
-    int sum = 0;
-    public String calculator(String key){
-        for(int i = 0;i &lt; 3;i ++){
-            sum = sum + terminalExpressionin.terpret(key.charAt(i));
-        }
-        Log.i(&quot;smallstrong&quot;,nonTerminalExpression. interpret(key.charAt(3)));
-        if(sum &lt;= 9){
-            return &quot;小&quot;;
-        }else{
-            return &quot;大&quot;;
-        }
-    }
-}
-</code></pre><blockquote>
-<p>解释器处理类    </p>
-</blockquote>
-<pre><code>class Client{
-    public static void main(String args[]){
-        Calculator mCalculator = new Calculator();
-        Log.i(&quot;smallstrong&quot;,mCalculator.calculator(&quot;六六六;&quot;));
-    }
-}
-</code></pre><blockquote>
-<p>客户端</p>
-</blockquote>
-<h3 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h3><p>解释器模式这例子很牵强，实际运用也是极少。看了许多大佬们的blog都觉得不是很理解。<br>正则表达在编译时的处理算是解释器模式比较好的例子。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;center&gt;设计模式之解释器模式&lt;/center&gt;
-
-
-&lt;blockquote&gt;
-&lt;p&gt;解释器模式&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1321838-8e2
     
     </summary>
     

@@ -3,6 +3,50 @@
   
     
     <entry>
+      <title><![CDATA[Ansible的简单使用]]></title>
+      <url>/2018/04/11/Ansible%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/</url>
+      <content type="html"><![CDATA[<center> Ansible的简单使用 </center>
+
+<h1 id="Ansible简单使用"><a href="#Ansible简单使用" class="headerlink" title="Ansible简单使用"></a>Ansible简单使用</h1><blockquote>
+<p>ansible可以给我带来什么，为什么要学习ansible？这是我学习ansible的第一个问题。现阶段我认为ansible是个运维工具，可以帮你在本地电脑批量执行一些服务器的命令操作，这些命令可能是一次性的包安装命令，也可以是一些你经常用到的代码部署重启服务的命令。结合业务定制化的写一些playbook程序，从而减轻一些重复劳动。</p>
+<p>该笔记意在帮助初学者最快最直接的方式了解ansible的流程，如果想进一步学习推荐访问<br><a href="http://ansible-tran.readthedocs.io/en/latest/index.html" target="_blank" rel="external">Ansible中文权威指南</a></p>
+</blockquote>
+<h3 id="Ansible在Mac上的安装"><a href="#Ansible在Mac上的安装" class="headerlink" title="Ansible在Mac上的安装"></a>Ansible在Mac上的安装</h3><blockquote>
+<p>使用brew安装ansible<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install ansible</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="ssh免密登陆"><a href="#ssh免密登陆" class="headerlink" title="ssh免密登陆"></a>ssh免密登陆</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">1. 在用户目录下创建 /.ssh/authorized_keys文件</div><div class="line">2. 添加你的ssh公钥到该文件</div><div class="line">3. 该文件的访问权限为600 （sudo chmod 600 authorized_keys）</div><div class="line">4. ssh免密登陆 （例：ssh small@smallstrong.site）</div></pre></td></tr></table></figure>
+<h3 id="创建ansible项目（目录如下图）"><a href="#创建ansible项目（目录如下图）" class="headerlink" title="创建ansible项目（目录如下图）"></a>创建ansible项目（目录如下图）</h3><p><img src="https://upload-images.jianshu.io/upload_images/1321838-db72bc0056c14275.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="ansible.png"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">ansible.cfg # ansible的配置文件 </div><div class="line">fanfan.yml # 运行脚本的入口文件</div><div class="line">hosts # 填写服务器信息的文件</div><div class="line">group_vars/ # 放置全局参数的文件夹</div><div class="line">roles/fanfan_web # fanfan项目的所有执行文件放置的目录</div><div class="line">roles/fanfan_web/tasks # 具体执行的任务</div><div class="line">roles/fanfan_web/handlers # 一般是具体执行一些操作之后重启服务的任务</div><div class="line">roles/fanfan_web/files # 一些可能你要上传到服务器的代码</div><div class="line">roles/fanfan_web/templates # 我暂时没用到~~</div></pre></td></tr></table></figure>
+<p><a href="https://github.com/ansible/ansible-examples" target="_blank" rel="external">官方的demo链接</a></p>
+<h3 id="hosts主机配置"><a href="#hosts主机配置" class="headerlink" title="hosts主机配置"></a>hosts主机配置</h3><ol>
+<li><p>打开host文件，写入你服务器信息 （以下是我的例子）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[small]  # 组</div><div class="line">www.smallstrong.site        ansible_connection=ssh        ansible_ssh_user=small</div></pre></td></tr></table></figure>
+</li>
+<li><p>打开ansible.cfg文件 将inventory这项配置路径修改成上面host的路径（以下是我的例子）</p>
+<blockquote>
+<p>inventory      = /Users/smallstrong/Desktop/fanfan/beichoo-b/beichoo-api/devops/hosts</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="开撸playbook-（一个我应用自动化部署的例子）"><a href="#开撸playbook-（一个我应用自动化部署的例子）" class="headerlink" title="开撸playbook （一个我应用自动化部署的例子）"></a>开撸playbook （一个我应用自动化部署的例子）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">- hosts: small  # 该脚本执行对象是small这个服务器组</div><div class="line">  gather_facts: no # 不每次都去获取服务器基本信息加快速度</div><div class="line">  roles:</div><div class="line">    - fanfan_web # 执行roles目录下fanfan_web目录下的文件</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">- name: pull origin code</div><div class="line">  shell: sh /应用代码路径/publish.sh # 这是一个git拉代码的脚本</div><div class="line">  notify: reload uwsgi # 代码拉完之后重启uwsgi进程</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># uwsgi进程重启</div><div class="line">---</div><div class="line">- name: reload uwsgi</div><div class="line">  command: sudo service uwsgi reload</div></pre></td></tr></table></figure>
+<blockquote>
+<p>执行程序 (fanfan.yml那个路径下执行)</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ansible-playbook fanfan.yml</div></pre></td></tr></table></figure>
+<h4 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h4><h5 id="ansible其实还有很多想象空间，这里我只是简单的做了一个代码部署，期待更多的骚操作。"><a href="#ansible其实还有很多想象空间，这里我只是简单的做了一个代码部署，期待更多的骚操作。" class="headerlink" title="ansible其实还有很多想象空间，这里我只是简单的做了一个代码部署，期待更多的骚操作。"></a>ansible其实还有很多想象空间，这里我只是简单的做了一个代码部署，期待更多的骚操作。</h5>]]></content>
+      
+        
+        <tags>
+            
+            <tag> devops </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Docker 指令学习.md]]></title>
       <url>/2018/03/28/Docker-%E6%8C%87%E4%BB%A4%E5%AD%A6%E4%B9%A0/</url>
       <content type="html"><![CDATA[<center>Docker 指令学习</center>
