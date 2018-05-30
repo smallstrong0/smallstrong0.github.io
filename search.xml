@@ -3,6 +3,130 @@
   
     
     <entry>
+      <title><![CDATA[resume]]></title>
+      <url>/2018/05/30/resume/</url>
+      <content type="html"><![CDATA[<center> resume </center>
+
+
+<h2 id="个人信息"><a href="#个人信息" class="headerlink" title="个人信息"></a>个人信息</h2><ul>
+<li>汪晓强 | 男 | 25岁 | <strong>18268027142</strong> | smallstrong007@gmail.com</li>
+<li><strong>学历</strong> : 本科 | 宁波工程学院 - 电子信息工程专业</li>
+<li><strong>工作年限</strong>：3年</li>
+<li><strong>期望职位</strong>：Python后端开发</li>
+<li><strong>期望工作地</strong> : 杭州</li>
+<li><strong>期望薪资</strong> : 面议</li>
+<li><strong>博客</strong> : <a href="www.smallstrong.site">www.smallstrong.site</a></li>
+<li><strong>Github</strong> : <a href="https://github.com/smallstrong0" target="_blank" rel="external">https://github.com/smallstrong0</a></li>
+</ul>
+<h2 id="工作经历"><a href="#工作经历" class="headerlink" title="工作经历"></a>工作经历</h2><ol>
+<li>2017.06  ~ 至今<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;蕃蕃数据科技有限公司<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Python后端开发</li>
+<li>2016.12 ~ 2017.06<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;浙江聚家网络科技有限公司<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Android端负责人</li>
+<li>2015.06 ~ 2016.11<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;上海视惠科技有限公司（上海）<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Android端负责人</li>
+</ol>
+<h2 id="专业技能"><a href="#专业技能" class="headerlink" title="专业技能"></a>专业技能</h2><ul>
+<li><p>服务端开发：Python</p>
+<ol>
+<li>熟悉Python开发框架 web.py / flask，熟悉 RESTful</li>
+<li>熟悉Linux系统、熟悉Web服务器Nginx，熟悉HTTP协议，对TCP/IP协议有所了解</li>
+<li>熟悉Nosql数据库OTS（表格存储）、MongoDB，了解MySQL数据库的使用</li>
+<li>熟悉Redis缓存，消息队列，定时任务等相关技术</li>
+<li>dev,test,stage及prod环境的开发部署</li>
+</ol>
+</li>
+<li><p>移动端开发：Android/微信小程序</p>
+<ol>
+<li>熟悉AS开发，gradle 的各项配置，app 的 签名 混淆 多渠道打包 加固 上线市场</li>
+<li>熟悉MVP、MVVM开发模式，对适配及性能优化有一定经验</li>
+<li>熟悉开发中用到的常用框架（okhttp, Glide, rxjava, eventbus，butterknife等），在项目中集成过友盟大礼包，极光推送，环信聊天，百度地图，支付宝&amp;微信支付等</li>
+<li>熟悉微信小程序开发流程，</li>
+</ol>
+</li>
+<li><p>爬虫：Scrapy/Selenium</p>
+<ol>
+<li>熟悉爬虫项目中的下载（并发），数据分离，数据存储；熟悉反爬虫中的那些套路</li>
+<li>熟悉Scrapy框架的应用，使用正则表达式，XPath，bs4等进行数据采集，并将数据存入MySQL，MongoDB</li>
+<li>了解 Selenium 自动化测试框架在爬虫领域的应用</li>
+</ol>
+</li>
+<li><p>公共技术及工具：</p>
+<ol>
+<li>熟练使用git及其在持续集成中的应用，巧用分支</li>
+<li>熟悉Jenkins在持续集成部署方面的应用，Android项目的自动构建及测试环境的应用发布；Python后端项目的自动化部署</li>
+<li>熟悉docker镜像快速构建本地服务</li>
+<li>常用工具：PyCharm,Android Studio,Web Storm,Sublime,Markdown,Vim</li>
+<li>vps私搭VPN,ss全端科学上网</li>
+</ol>
+</li>
+</ul>
+<h2 id="工作项目经历"><a href="#工作项目经历" class="headerlink" title="工作项目经历"></a>工作项目经历</h2><blockquote>
+<h5 id="杭州蕃蕃数据科技有限公司-（-2017年6月-至今）"><a href="#杭州蕃蕃数据科技有限公司-（-2017年6月-至今）" class="headerlink" title="杭州蕃蕃数据科技有限公司 （ 2017年6月 ~ 至今）"></a><strong>杭州蕃蕃数据科技有限公司</strong> （ 2017年6月 ~ 至今）</h5></blockquote>
+<ul>
+<li>[ ]  <strong>辈出诚聘</strong>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://pin.beichoo.com" target="_blank" rel="external">项目地址：http://pin.beichoo.com</a></li>
+</ul>
+<ul>
+<li><strong>简介</strong>：辈出诚聘是面向企业HR人群在线招聘的平台，主打被动求职，用语音电话技术激活求职者从而实现企业和人才之间的匹配。 </li>
+<li><p><strong>职责</strong>：辈出诚聘后端对接产品运营需求，API文档撰写</p>
+</li>
+<li><p><strong>技术点</strong>:</p>
+<ol>
+<li>爬虫：51job，智联，拉钩的简历，职位爬取，并格式化参数入搜索库</li>
+<li>基于阿里云opensearch，对接算法团队实现简历搜索推荐</li>
+<li>基于科大语音打造自动化电话语音机器人来实现人才的意愿确认</li>
+<li>简历文本上传，解析</li>
+</ol>
+</li>
+</ul>
+<blockquote>
+<h5 id="浙江聚家网络科技有限公司-（-2016年11月-2017年6月）"><a href="#浙江聚家网络科技有限公司-（-2016年11月-2017年6月）" class="headerlink" title="浙江聚家网络科技有限公司 （ 2016年11月 ~ 2017年6月）"></a><strong>浙江聚家网络科技有限公司</strong> （ 2016年11月 ~ 2017年6月）</h5></blockquote>
+<ul>
+<li>[ ]  <strong>好生活项目</strong>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://t.cn/RS5A0c5" target="_blank" rel="external">下载地址：http://t.cn/RS5A0c5</a></li>
+</ul>
+<ul>
+<li><strong>简介</strong>：好生活是一个以金华国贸景澜大饭店为试点提供酒店周围3KM的高质量O2O服务的项目。 </li>
+<li><strong>职责</strong>：Android端负责人 技术架构及功能实现 </li>
+<li><strong>技术点</strong>:<ol>
+<li>MVP 模式重构项目,结合网络层对 base 类封装及优化</li>
+<li>对项目进行功能升级及常用页面的性能优化、版本适配</li>
+<li>引入 bugly 热修复(tinker)及 walle 快速生成渠道包</li>
+<li>App的签名,混淆,打包,加固,上线市场</li>
+</ol>
+</li>
+</ul>
+<blockquote>
+<h5 id="合伙创业项目-（-2016年9月-2016年12月）"><a href="#合伙创业项目-（-2016年9月-2016年12月）" class="headerlink" title="合伙创业项目   （ 2016年9月 ~ 2016年12月）"></a><strong>合伙创业项目</strong>   （ 2016年9月 ~ 2016年12月）</h5></blockquote>
+<ul>
+<li>[ ]  <strong>易舍居</strong>  <del><a href="http://www.ysheju.com/" target="_blank" rel="external">http://www.ysheju.com/</a></del> 已凉</li>
+</ul>
+<ul>
+<li><strong>简介</strong>：易舍居是一个专业做闲置二手家居的平台， 专注于对生活沉淀下的闲置家居物品进行筛选后进行交易、售卖。</li>
+<li><p><strong>职责</strong>：Android端开发/竞品分析/商户合作/软件推广</p>
+</li>
+<li><p><strong>努力过的事情及成果</strong>:</p>
+<ol>
+<li>负责易舍居项目的Android客户端的全部开发及推广上线（超100个免费渠道的上线推广）</li>
+<li>负责上海松江地区线下二手家具市场的调研及合作洽谈</li>
+<li>产品被猎云网、铅笔道推广报道</li>
+</ol>
+</li>
+</ul>
+<h2 id="自我描述"><a href="#自我描述" class="headerlink" title="自我描述"></a>自我描述</h2><ul>
+<li>具备独立开发Python后端、Android端的能力,有爬虫及小程序的项目经验。</li>
+<li>24小时科学上网，Google深度依赖者，有很强的主动学习意识。</li>
+<li>每周五会和小伙伴code review并对代码做出相应改善，有时候会和小伙伴输出一些经验技术分享。</li>
+<li>会定期输出技术博客，热爱技术，希望通过技术去帮助别人。<br><center> 感谢您花时间阅读我的简历，期待能有机会和您共事。</center></li>
+</ul>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> resume </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Ansible的简单使用]]></title>
       <url>/2018/04/11/Ansible%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/</url>
       <content type="html"><![CDATA[<center> Ansible的简单使用 </center>
