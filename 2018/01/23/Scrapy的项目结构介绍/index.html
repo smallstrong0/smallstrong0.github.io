@@ -71,7 +71,7 @@
     <meta name="apple-mobile-web-app-title" content="smallstrong&#39;s blog">
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://www.smallstrong.wang">
+    <meta property="og:url" content="http://www.smallstrong.site">
     <meta property="og:type" content="blog">
     <meta property="og:title" content="Scrapy的项目结构介绍 | smallstrong&#39;s blog">
     <meta property="og:image" content="/img/favicon.png" />
@@ -88,11 +88,11 @@
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="http://www.smallstrong.wang" />
+    <meta name="twitter:url" content="http://www.smallstrong.site" />
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://www.smallstrong.wang/2018/01/23/Scrapy的项目结构介绍/index.html" />
+        <link rel="canonical" href="http://www.smallstrong.site/2018/01/23/Scrapy的项目结构介绍/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -119,13 +119,13 @@
         "description": "学无止境"
     },
     "headline": "Scrapy的项目结构介绍",
-    "url": "http://www.smallstrong.wang/2018/01/23/Scrapy的项目结构介绍/index.html",
+    "url": "http://www.smallstrong.site/2018/01/23/Scrapy的项目结构介绍/index.html",
     "datePublished": "1月 23, 2018",
     "dateModified": "1月 31, 2018",
     "description": "",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "http://www.smallstrong.wang"
+        "@id": "http://www.smallstrong.site"
     }
 }
 </script>
@@ -411,7 +411,7 @@
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
     <li class="mdl-menu__item">在其它设备中阅读本文章</li>
     
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC0klEQVR42u3aUXLDIAwFwNz/0u0B0thPgqQElq9MWhstnalGEo+fI9cDGxsbGxsbGxsbe0n2I17PT12/54+NL9/8/Pl693LM2NjY2Fuzb/71xxu/AlzD8n2HYsbGxsY+gN1jvPpp/mz1CKoxY2NjY2NXk1DCy3+n+n5sbGxs7LzdkxQq1weXRLJQAsPGxsZenp2XAfnA4Pqd+SDhn3tp2NjY2Muz82Jgnc8fnW9jY2NjL8yurpF2/8jhJknrJnJsbGzsTdnVVn5SVCQFRnKUyY6FOLGxsbEPYOchVlfeKkqGBz08NjY29jns63Crbfr8iHvIwh8MGxsbe1N2NRnkVyF7CbJ3HElJg42NjX0Ou9f6zxtA+e7J90ODXmxsbOzt2LPKid6RzU2N0XwbGxsbezt2Hno1/eQlx3i6emPexsbGxl6SPZIYqo2nXksobxvdxICNjY29KTtJOSNJa/zZ6nuwsbGxT2b3klaenD4zSJ7QS8PGxsb+QvasjXNer1DJU1qUwLCxsbG3Y/faQ3kLqVoCVRNtuRTBxsbG3oidvG4kIfXSTx5VdNkIGxsbe2t28tLx8W0yuC20+4sDYGxsbOy92dVU0Usw+YXOqEk0684pNjY29pezk42rI9V8JUko4WFjY2Nj5+PVvA1UuExTvLjTK0iwsbGx92bnoScHlLSceiPkkVEBNjY29t7s5Ju8SZSMfqvg3qVPbGxs7DPZc8uGJLhZ1y6xsbGxsZNXVIuWKvIxsG4iwcbGxt6UPWs0Wx3QvqPIKTSVsLGxsTdiV9NDtVnfayfNKm+wsbGxz2FXk9ZIWPngoVrq3CiwsbGxD2DnhUHv2d61m1mtJWxsbGzs5HJMDqgeVm8sgY2NjY093qzvXcoZQU64soONjY39tewkoHcUIXl6yxtP2NjY2Kexe82apPBIADlyJFliY2Nj78o+Z2FjY2NjY2NjY2Mvs34BhCuFyH9dSFsAAAAASUVORK5CYII=">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAACzUlEQVR42u3aUVLrMAwF0O5/07wFMKT3yi4vOCdfTJs4OmYGYUmvr0deL2xsbGxsbGxsbOxbsl/x9dNTuz75/vn3Ny7FjI2NjX00+82f/iDQ63Bz6vX6s5ixsbGxn8PO08n1CkkSigINNrdIgdjY2NjYASDfsvwebGxsbOy97Jb0ibdgY2NjY28o0JTHhqSIn3zy32pp2NjY2Ldnt8Hd4edf7W9jY2Nj35i9crVFn+vtbt9SR4uNjY19KHulrDO7Jx/6mY3v/HgnNjY29tHsvEzTNmiTBJZj2lFObGxs7Kex2+J+C24HOvMUuKGWho2Njf1n2W1SaYtEs0bvLJI3T2FjY2Mfym5TUXJ4mI3j5CWqfFOwsbGxn8NOivVt6SdZoU1O+ZrY2NjYz2G3h5DZGE3eHpgVm6JvsbGxsY9mt4M4LaZdYTaUU4zsYGNjYx/H/kRjoGXvWucjRxFsbGzsG7Pb40TbJJgly3bEc1hLw8bGxj6C3QaxEuLsgJEPAL0pV2FjY2Mfyt6bctpjxnqToEiu2NjY2Eez89H2tn07G51fH+XExsbGfjK7fdlKapkNCQ3bw9jY2NiHstvCTV42mt2TX9tmTrGxsbGPYA9bp0FKS9LkyluKER9sbGzsQ9mzQPPkMQt3ZRCzOIFhY2NjH8Eu/pVfSC15qms3Nz8yYWNjY5/KXgk6bxW0K+TpMPllYGNjY5/NnrVsNwSxfNTJWxfY2NjYZ7OTZkCbWtqn1tlRoQobGxv7UPbKoEx+FNl7T7sd2NjY2Gezh6X2NnkEzYY2UbXbhI2NjX02e2UgZtY2yAtV+TZhY2NjY+9tr7ZDObMBoCJlYmNjY2OPWgiz9DNrRb9ZARsbGxv78p6VA8NKk6CIDRsbG/sB7FlRae+gT7spmyeVsLGxsf8sO2/0JqmoBbTJrE2W2NjY2Gezn3NhY2NjY2NjY2Nj3+b6BzdXUyWN/wykAAAAAElFTkSuQmCC">
     
 </ul>
     
@@ -568,8 +568,8 @@
 
 <script type="text/javascript">
     var disqus_config = function () {
-        this.page.url = 'http://www.smallstrong.wang/2018/01/23/Scrapy的项目结构介绍/';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = 'http://www.smallstrong.wang/2018/01/23/Scrapy的项目结构介绍/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = 'http://www.smallstrong.site/2018/01/23/Scrapy的项目结构介绍/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://www.smallstrong.site/2018/01/23/Scrapy的项目结构介绍/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
 </script>
 
@@ -699,7 +699,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2018/04/">四月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">三月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">五月 2017<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">四月 2017<span class="sidebar_archives-count">16</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/01/">一月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/12/">十二月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/11/">十一月 2016<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/10/">十月 2016<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/09/">九月 2016<span class="sidebar_archives-count">3</span></a>
+                <a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">四月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">三月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">五月 2017<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">四月 2017<span class="sidebar_archives-count">16</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/01/">一月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/12/">十二月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/11/">十一月 2016<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/10/">十月 2016<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/09/">九月 2016<span class="sidebar_archives-count">3</span></a>
             </ul>
         </li>
         
@@ -717,7 +717,7 @@
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/Android/">Android<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/categories/docker/">docker<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/服务器/">服务器<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/科学上网/">科学上网<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/算法/">算法<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/蓝鲸计划/">蓝鲸计划<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/设计模式/">设计模式<span class="sidebar_archives-count">25</span></a></li><li><a class="sidebar_archives-link" href="/categories/运营/">运营<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/categories/Android/">Android<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/categories/docker/">docker<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/数据库/">数据库<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/服务器/">服务器<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/科学上网/">科学上网<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/算法/">算法<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/蓝鲸计划/">蓝鲸计划<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/设计模式/">设计模式<span class="sidebar_archives-count">25</span></a></li><li><a class="sidebar_archives-link" href="/categories/运营/">运营<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -741,7 +741,7 @@
         <li>
             <a href="/archives">
                 文章总数
-                <span class="sidebar-badge">53</span>
+                <span class="sidebar-badge">54</span>
             </a>
         </li>
         

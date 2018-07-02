@@ -4,9 +4,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://www.smallstrong.wang/"/>
-  <updated>2018-04-11T03:24:48.829Z</updated>
-  <id>http://www.smallstrong.wang/</id>
+  <link href="http://www.smallstrong.site/"/>
+  <updated>2018-07-02T12:05:19.248Z</updated>
+  <id>http://www.smallstrong.site/</id>
   
   <author>
     <name>Small Strong</name>
@@ -16,9 +16,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>【Redis】Mac上redis安装启动及数据可视化</title>
+    <link href="http://www.smallstrong.site/2018/07/02/%E3%80%90Redis%E3%80%91Mac%E4%B8%8Aredis%E5%AE%89%E8%A3%85%E5%90%AF%E5%8A%A8%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/"/>
+    <id>http://www.smallstrong.site/2018/07/02/【Redis】Mac上redis安装启动及数据可视化/</id>
+    <published>2018-07-02T12:00:59.000Z</published>
+    <updated>2018-07-02T12:05:19.248Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="使用Homebrew安装redis"><a href="#使用Homebrew安装redis" class="headerlink" title="使用Homebrew安装redis"></a>使用Homebrew安装redis</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">brew install redis</div><div class="line">## 启动redis服务端</div><div class="line">redis-server /usr/local/etc/redis.conf  （redis.conf是Redis的配置文件）</div><div class="line">## 进入redis客户端</div><div class="line">redis-cli</div></pre></td></tr></table></figure>
+<h2 id="可视化工具rdm下载"><a href="#可视化工具rdm下载" class="headerlink" title="可视化工具rdm下载"></a>可视化工具rdm下载</h2><p><a href="https://www.smallstrong.site/resources/rdm.app.zip">https://www.smallstrong.site/resources/rdm.app.zip</a></p>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="https://blog.csdn.net/pingpangbing0902/article/details/47104545" target="_blank" rel="external">https://blog.csdn.net/pingpangbing0902/article/details/47104545</a></p>
+<p><a href="http://doc.redisfans.com/" target="_blank" rel="external">http://doc.redisfans.com/</a></p>
+<p><a href="https://www.jb51.net/article/56448.htm" target="_blank" rel="external">https://www.jb51.net/article/56448.htm</a></p>
+<p><strong>redis.conf 配置详解：</strong><a href="https://blog.csdn.net/ithomer/article/details/9232891" target="_blank" rel="external">https://blog.csdn.net/ithomer/article/details/9232891</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;使用Homebrew安装redis&quot;&gt;&lt;a href=&quot;#使用Homebrew安装redis&quot; class=&quot;headerlink&quot; title=&quot;使用Homebrew安装redis&quot;&gt;&lt;/a&gt;使用Homebrew安装redis&lt;/h2&gt;&lt;figure class
+    
+    </summary>
+    
+      <category term="数据库" scheme="http://www.smallstrong.site/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="redis" scheme="http://www.smallstrong.site/tags/redis/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Ansible的简单使用</title>
-    <link href="http://www.smallstrong.wang/2018/04/11/Ansible%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/"/>
-    <id>http://www.smallstrong.wang/2018/04/11/Ansible的简单使用/</id>
+    <link href="http://www.smallstrong.site/2018/04/11/Ansible%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/"/>
+    <id>http://www.smallstrong.site/2018/04/11/Ansible的简单使用/</id>
     <published>2018-04-11T03:16:36.000Z</published>
     <updated>2018-04-11T03:24:48.829Z</updated>
     
@@ -63,14 +91,14 @@
     </summary>
     
     
-      <category term="devops" scheme="http://www.smallstrong.wang/tags/devops/"/>
+      <category term="devops" scheme="http://www.smallstrong.site/tags/devops/"/>
     
   </entry>
   
   <entry>
     <title>Docker 指令学习.md</title>
-    <link href="http://www.smallstrong.wang/2018/03/28/Docker-%E6%8C%87%E4%BB%A4%E5%AD%A6%E4%B9%A0/"/>
-    <id>http://www.smallstrong.wang/2018/03/28/Docker-指令学习/</id>
+    <link href="http://www.smallstrong.site/2018/03/28/Docker-%E6%8C%87%E4%BB%A4%E5%AD%A6%E4%B9%A0/"/>
+    <id>http://www.smallstrong.site/2018/03/28/Docker-指令学习/</id>
     <published>2018-03-28T15:16:36.000Z</published>
     <updated>2018-03-28T15:22:54.219Z</updated>
     
@@ -153,15 +181,15 @@
     
     </summary>
     
-      <category term="docker" scheme="http://www.smallstrong.wang/categories/docker/"/>
+      <category term="docker" scheme="http://www.smallstrong.site/categories/docker/"/>
     
     
   </entry>
   
   <entry>
     <title>加密货币与区块链</title>
-    <link href="http://www.smallstrong.wang/2018/03/13/%E5%8A%A0%E5%AF%86%E8%B4%A7%E5%B8%81%E4%B8%8E%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    <id>http://www.smallstrong.wang/2018/03/13/加密货币与区块链/</id>
+    <link href="http://www.smallstrong.site/2018/03/13/%E5%8A%A0%E5%AF%86%E8%B4%A7%E5%B8%81%E4%B8%8E%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    <id>http://www.smallstrong.site/2018/03/13/加密货币与区块链/</id>
     <published>2018-03-13T14:31:15.000Z</published>
     <updated>2018-03-13T14:31:15.947Z</updated>
     
@@ -174,8 +202,8 @@
   
   <entry>
     <title>Scrapy的项目结构介绍</title>
-    <link href="http://www.smallstrong.wang/2018/01/23/Scrapy%E7%9A%84%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84%E4%BB%8B%E7%BB%8D/"/>
-    <id>http://www.smallstrong.wang/2018/01/23/Scrapy的项目结构介绍/</id>
+    <link href="http://www.smallstrong.site/2018/01/23/Scrapy%E7%9A%84%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84%E4%BB%8B%E7%BB%8D/"/>
+    <id>http://www.smallstrong.site/2018/01/23/Scrapy的项目结构介绍/</id>
     <published>2018-01-23T05:39:47.000Z</published>
     <updated>2018-01-31T07:11:07.970Z</updated>
     
@@ -218,14 +246,14 @@
     </summary>
     
     
-      <category term="爬虫" scheme="http://www.smallstrong.wang/tags/%E7%88%AC%E8%99%AB/"/>
+      <category term="爬虫" scheme="http://www.smallstrong.site/tags/%E7%88%AC%E8%99%AB/"/>
     
   </entry>
   
   <entry>
     <title>Scrapy的安装</title>
-    <link href="http://www.smallstrong.wang/2018/01/22/Scrapy%E7%9A%84%E5%AE%89%E8%A3%85/"/>
-    <id>http://www.smallstrong.wang/2018/01/22/Scrapy的安装/</id>
+    <link href="http://www.smallstrong.site/2018/01/22/Scrapy%E7%9A%84%E5%AE%89%E8%A3%85/"/>
+    <id>http://www.smallstrong.site/2018/01/22/Scrapy的安装/</id>
     <published>2018-01-22T03:31:53.000Z</published>
     <updated>2018-01-22T06:07:48.459Z</updated>
     
@@ -251,14 +279,14 @@
     </summary>
     
     
-      <category term="爬虫" scheme="http://www.smallstrong.wang/tags/%E7%88%AC%E8%99%AB/"/>
+      <category term="爬虫" scheme="http://www.smallstrong.site/tags/%E7%88%AC%E8%99%AB/"/>
     
   </entry>
   
   <entry>
     <title>我对docker的浅薄理解</title>
-    <link href="http://www.smallstrong.wang/2017/10/25/%E6%88%91%E5%AF%B9docker%E7%9A%84%E6%B5%85%E8%96%84%E7%90%86%E8%A7%A3/"/>
-    <id>http://www.smallstrong.wang/2017/10/25/我对docker的浅薄理解/</id>
+    <link href="http://www.smallstrong.site/2017/10/25/%E6%88%91%E5%AF%B9docker%E7%9A%84%E6%B5%85%E8%96%84%E7%90%86%E8%A7%A3/"/>
+    <id>http://www.smallstrong.site/2017/10/25/我对docker的浅薄理解/</id>
     <published>2017-10-25T06:37:44.000Z</published>
     <updated>2017-10-25T06:44:04.000Z</updated>
     
@@ -315,15 +343,15 @@
     
     </summary>
     
-      <category term="蓝鲸计划" scheme="http://www.smallstrong.wang/categories/%E8%93%9D%E9%B2%B8%E8%AE%A1%E5%88%92/"/>
+      <category term="蓝鲸计划" scheme="http://www.smallstrong.site/categories/%E8%93%9D%E9%B2%B8%E8%AE%A1%E5%88%92/"/>
     
     
   </entry>
   
   <entry>
     <title>nginx+uWSGI+supervisor+flask项目部署</title>
-    <link href="http://www.smallstrong.wang/2017/10/24/nginx-uWSGI-supervisor-flask%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/"/>
-    <id>http://www.smallstrong.wang/2017/10/24/nginx-uWSGI-supervisor-flask项目部署/</id>
+    <link href="http://www.smallstrong.site/2017/10/24/nginx-uWSGI-supervisor-flask%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/"/>
+    <id>http://www.smallstrong.site/2017/10/24/nginx-uWSGI-supervisor-flask项目部署/</id>
     <published>2017-10-24T01:08:22.000Z</published>
     <updated>2017-10-25T06:44:07.000Z</updated>
     
@@ -365,15 +393,15 @@
     
     </summary>
     
-      <category term="蓝鲸计划" scheme="http://www.smallstrong.wang/categories/%E8%93%9D%E9%B2%B8%E8%AE%A1%E5%88%92/"/>
+      <category term="蓝鲸计划" scheme="http://www.smallstrong.site/categories/%E8%93%9D%E9%B2%B8%E8%AE%A1%E5%88%92/"/>
     
     
   </entry>
   
   <entry>
     <title>ssh方式登录服务器</title>
-    <link href="http://www.smallstrong.wang/2017/10/12/ssh%E6%96%B9%E5%BC%8F%E7%99%BB%E5%BD%95%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
-    <id>http://www.smallstrong.wang/2017/10/12/ssh方式登录服务器/</id>
+    <link href="http://www.smallstrong.site/2017/10/12/ssh%E6%96%B9%E5%BC%8F%E7%99%BB%E5%BD%95%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    <id>http://www.smallstrong.site/2017/10/12/ssh方式登录服务器/</id>
     <published>2017-10-12T01:32:38.000Z</published>
     <updated>2017-10-14T04:41:19.000Z</updated>
     
@@ -405,15 +433,15 @@
     
     </summary>
     
-      <category term="蓝鲸计划" scheme="http://www.smallstrong.wang/categories/%E8%93%9D%E9%B2%B8%E8%AE%A1%E5%88%92/"/>
+      <category term="蓝鲸计划" scheme="http://www.smallstrong.site/categories/%E8%93%9D%E9%B2%B8%E8%AE%A1%E5%88%92/"/>
     
     
   </entry>
   
   <entry>
     <title>揭秘一行代码完成千台服务器自动升级部署</title>
-    <link href="http://www.smallstrong.wang/2017/09/21/%E6%8F%AD%E7%A7%98%E4%B8%80%E8%A1%8C%E4%BB%A3%E7%A0%81%E5%AE%8C%E6%88%90%E5%8D%83%E5%8F%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%87%AA%E5%8A%A8%E5%8D%87%E7%BA%A7%E9%83%A8%E7%BD%B2/"/>
-    <id>http://www.smallstrong.wang/2017/09/21/揭秘一行代码完成千台服务器自动升级部署/</id>
+    <link href="http://www.smallstrong.site/2017/09/21/%E6%8F%AD%E7%A7%98%E4%B8%80%E8%A1%8C%E4%BB%A3%E7%A0%81%E5%AE%8C%E6%88%90%E5%8D%83%E5%8F%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%87%AA%E5%8A%A8%E5%8D%87%E7%BA%A7%E9%83%A8%E7%BD%B2/"/>
+    <id>http://www.smallstrong.site/2017/09/21/揭秘一行代码完成千台服务器自动升级部署/</id>
     <published>2017-09-21T02:36:33.000Z</published>
     <updated>2017-09-21T07:32:42.000Z</updated>
     
@@ -438,15 +466,15 @@
     
     </summary>
     
-      <category term="服务器" scheme="http://www.smallstrong.wang/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+      <category term="服务器" scheme="http://www.smallstrong.site/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     
     
   </entry>
   
   <entry>
     <title>python 时间处理类积累</title>
-    <link href="http://www.smallstrong.wang/2017/09/11/python-%E6%97%B6%E9%97%B4%E5%A4%84%E7%90%86%E7%B1%BB%E7%A7%AF%E7%B4%AF/"/>
-    <id>http://www.smallstrong.wang/2017/09/11/python-时间处理类积累/</id>
+    <link href="http://www.smallstrong.site/2017/09/11/python-%E6%97%B6%E9%97%B4%E5%A4%84%E7%90%86%E7%B1%BB%E7%A7%AF%E7%B4%AF/"/>
+    <id>http://www.smallstrong.site/2017/09/11/python-时间处理类积累/</id>
     <published>2017-09-11T01:10:59.000Z</published>
     <updated>2017-09-11T01:16:28.000Z</updated>
     
@@ -465,14 +493,14 @@
     </summary>
     
     
-      <category term="python" scheme="http://www.smallstrong.wang/tags/python/"/>
+      <category term="python" scheme="http://www.smallstrong.site/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>Mac上用Jenkins自动化打包Android应用</title>
-    <link href="http://www.smallstrong.wang/2017/08/03/Mac%E4%B8%8A%E7%94%A8Jenkins%E8%87%AA%E5%8A%A8%E5%8C%96%E6%89%93%E5%8C%85Android%E5%BA%94%E7%94%A8/"/>
-    <id>http://www.smallstrong.wang/2017/08/03/Mac上用Jenkins自动化打包Android应用/</id>
+    <link href="http://www.smallstrong.site/2017/08/03/Mac%E4%B8%8A%E7%94%A8Jenkins%E8%87%AA%E5%8A%A8%E5%8C%96%E6%89%93%E5%8C%85Android%E5%BA%94%E7%94%A8/"/>
+    <id>http://www.smallstrong.site/2017/08/03/Mac上用Jenkins自动化打包Android应用/</id>
     <published>2017-08-03T01:12:16.000Z</published>
     <updated>2017-08-03T01:14:29.000Z</updated>
     
@@ -506,15 +534,15 @@
     
     </summary>
     
-      <category term="Android" scheme="http://www.smallstrong.wang/categories/Android/"/>
+      <category term="Android" scheme="http://www.smallstrong.site/categories/Android/"/>
     
     
   </entry>
   
   <entry>
     <title>Shadowsocks 全端翻墙</title>
-    <link href="http://www.smallstrong.wang/2017/07/23/Shadowsocks-%E5%85%A8%E7%AB%AF%E7%BF%BB%E5%A2%99/"/>
-    <id>http://www.smallstrong.wang/2017/07/23/Shadowsocks-全端翻墙/</id>
+    <link href="http://www.smallstrong.site/2017/07/23/Shadowsocks-%E5%85%A8%E7%AB%AF%E7%BF%BB%E5%A2%99/"/>
+    <id>http://www.smallstrong.site/2017/07/23/Shadowsocks-全端翻墙/</id>
     <published>2017-07-23T13:48:28.000Z</published>
     <updated>2017-10-24T01:16:23.000Z</updated>
     
@@ -549,15 +577,15 @@
     
     </summary>
     
-      <category term="科学上网" scheme="http://www.smallstrong.wang/categories/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/"/>
+      <category term="科学上网" scheme="http://www.smallstrong.site/categories/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/"/>
     
     
   </entry>
   
   <entry>
     <title>在google cloud 上搭建Jenkins持续集成实现Android应用的自动打包</title>
-    <link href="http://www.smallstrong.wang/2017/07/23/%E5%9C%A8google-cloud-%E4%B8%8A%E6%90%AD%E5%BB%BAJenkins%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E5%AE%9E%E7%8E%B0Android%E5%BA%94%E7%94%A8%E7%9A%84%E8%87%AA%E5%8A%A8%E6%89%93%E5%8C%85/"/>
-    <id>http://www.smallstrong.wang/2017/07/23/在google-cloud-上搭建Jenkins持续集成实现Android应用的自动打包/</id>
+    <link href="http://www.smallstrong.site/2017/07/23/%E5%9C%A8google-cloud-%E4%B8%8A%E6%90%AD%E5%BB%BAJenkins%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E5%AE%9E%E7%8E%B0Android%E5%BA%94%E7%94%A8%E7%9A%84%E8%87%AA%E5%8A%A8%E6%89%93%E5%8C%85/"/>
+    <id>http://www.smallstrong.site/2017/07/23/在google-cloud-上搭建Jenkins持续集成实现Android应用的自动打包/</id>
     <published>2017-07-23T07:06:42.000Z</published>
     <updated>2017-08-03T01:14:28.000Z</updated>
     
@@ -598,15 +626,15 @@
     
     </summary>
     
-      <category term="Android" scheme="http://www.smallstrong.wang/categories/Android/"/>
+      <category term="Android" scheme="http://www.smallstrong.site/categories/Android/"/>
     
     
   </entry>
   
   <entry>
     <title>设计模式之访问者模式</title>
-    <link href="http://www.smallstrong.wang/2017/05/16/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E8%AE%BF%E9%97%AE%E8%80%85%E6%A8%A1%E5%BC%8F/"/>
-    <id>http://www.smallstrong.wang/2017/05/16/设计模式之访问者模式/</id>
+    <link href="http://www.smallstrong.site/2017/05/16/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E8%AE%BF%E9%97%AE%E8%80%85%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://www.smallstrong.site/2017/05/16/设计模式之访问者模式/</id>
     <published>2017-05-16T06:27:55.000Z</published>
     <updated>2017-05-16T07:58:48.000Z</updated>
     
@@ -726,15 +754,15 @@
     
     </summary>
     
-      <category term="设计模式" scheme="http://www.smallstrong.wang/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+      <category term="设计模式" scheme="http://www.smallstrong.site/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
     
   </entry>
   
   <entry>
     <title>设计模式之模板方法模式</title>
-    <link href="http://www.smallstrong.wang/2017/05/12/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/"/>
-    <id>http://www.smallstrong.wang/2017/05/12/设计模式之模板方法模式/</id>
+    <link href="http://www.smallstrong.site/2017/05/12/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://www.smallstrong.site/2017/05/12/设计模式之模板方法模式/</id>
     <published>2017-05-12T07:31:51.000Z</published>
     <updated>2017-05-12T10:00:30.000Z</updated>
     
@@ -830,15 +858,15 @@
     
     </summary>
     
-      <category term="设计模式" scheme="http://www.smallstrong.wang/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+      <category term="设计模式" scheme="http://www.smallstrong.site/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
     
   </entry>
   
   <entry>
     <title>设计模式之状态模式</title>
-    <link href="http://www.smallstrong.wang/2017/05/11/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%8A%B6%E6%80%81%E6%A8%A1%E5%BC%8F/"/>
-    <id>http://www.smallstrong.wang/2017/05/11/设计模式之状态模式/</id>
+    <link href="http://www.smallstrong.site/2017/05/11/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%8A%B6%E6%80%81%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://www.smallstrong.site/2017/05/11/设计模式之状态模式/</id>
     <published>2017-05-11T07:16:11.000Z</published>
     <updated>2017-05-11T07:31:55.000Z</updated>
     
@@ -909,15 +937,15 @@
     
     </summary>
     
-      <category term="设计模式" scheme="http://www.smallstrong.wang/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+      <category term="设计模式" scheme="http://www.smallstrong.site/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
     
   </entry>
   
   <entry>
     <title>设计模式之观察者模式</title>
-    <link href="http://www.smallstrong.wang/2017/05/10/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/"/>
-    <id>http://www.smallstrong.wang/2017/05/10/设计模式之观察者模式/</id>
+    <link href="http://www.smallstrong.site/2017/05/10/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://www.smallstrong.site/2017/05/10/设计模式之观察者模式/</id>
     <published>2017-05-10T06:20:14.000Z</published>
     <updated>2017-05-10T08:36:27.000Z</updated>
     
@@ -993,15 +1021,15 @@
     
     </summary>
     
-      <category term="设计模式" scheme="http://www.smallstrong.wang/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+      <category term="设计模式" scheme="http://www.smallstrong.site/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
     
   </entry>
   
   <entry>
     <title>设计模式之备忘录模式</title>
-    <link href="http://www.smallstrong.wang/2017/05/09/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%A4%87%E5%BF%98%E5%BD%95%E6%A8%A1%E5%BC%8F/"/>
-    <id>http://www.smallstrong.wang/2017/05/09/设计模式之备忘录模式/</id>
+    <link href="http://www.smallstrong.site/2017/05/09/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%A4%87%E5%BF%98%E5%BD%95%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://www.smallstrong.site/2017/05/09/设计模式之备忘录模式/</id>
     <published>2017-05-09T02:14:43.000Z</published>
     <updated>2017-05-09T07:14:32.000Z</updated>
     
@@ -1117,15 +1145,15 @@
     
     </summary>
     
-      <category term="设计模式" scheme="http://www.smallstrong.wang/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+      <category term="设计模式" scheme="http://www.smallstrong.site/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
     
   </entry>
   
   <entry>
     <title>设计模式之中介者模式</title>
-    <link href="http://www.smallstrong.wang/2017/05/08/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E4%B8%AD%E4%BB%8B%E8%80%85%E6%A8%A1%E5%BC%8F/"/>
-    <id>http://www.smallstrong.wang/2017/05/08/设计模式之中介者模式/</id>
+    <link href="http://www.smallstrong.site/2017/05/08/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E4%B8%AD%E4%BB%8B%E8%80%85%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://www.smallstrong.site/2017/05/08/设计模式之中介者模式/</id>
     <published>2017-05-08T06:22:44.000Z</published>
     <updated>2017-05-08T07:11:09.000Z</updated>
     
@@ -1250,108 +1278,7 @@
     
     </summary>
     
-      <category term="设计模式" scheme="http://www.smallstrong.wang/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>设计模式之迭代器模式</title>
-    <link href="http://www.smallstrong.wang/2017/05/04/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E8%BF%AD%E4%BB%A3%E5%99%A8%E6%A8%A1%E5%BC%8F/"/>
-    <id>http://www.smallstrong.wang/2017/05/04/设计模式之迭代器模式/</id>
-    <published>2017-05-04T05:58:22.000Z</published>
-    <updated>2017-05-04T07:18:32.000Z</updated>
-    
-    <content type="html"><![CDATA[<center>设计模式之迭代器模式</center>
-
-<blockquote>
-<p>迭代器模式</p>
-</blockquote>
-<p><img src="http://upload-images.jianshu.io/upload_images/1321838-456a5db7d266ead1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="迭代器UML.png"></p>
-<pre><code>public  interface Iterator&lt;T&gt;{
-    boolean hasNext();
-    T next();
-}
-</code></pre><blockquote>
-<p>迭代器接口    </p>
-</blockquote>
-<pre><code>public class ConcreteIterator&lt;T&gt; implements Iterator&lt;T&gt; {
-    private List&lt;T&gt; list = new ArrayList&lt;T&gt;();
-    private int cursor = 0;
-
-    public ConcreteIterator(List&lt;T&gt; list){
-        this.list = list;
-    }
-
-    public boolean hasNext(){
-        return cursor != list.size();
-    }
-
-    public T next(){
-        T obj = null;
-        if(this.next()){
-            obj = this.list.get(cursor++);
-        }
-        return obj;
-    }
-}
-</code></pre><blockquote>
-<p>具体迭代器类    </p>
-</blockquote>
-<pre><code>public interface Aggregate&lt;T&gt;{
-    void add(T obj);
-    void remove(T obj);
-    Iterator&lt;T&gt; iterator();
-}
-</code></pre><blockquote>
-<p>容器接口</p>
-</blockquote>
-<pre><code>public class     ConcreteAggregate&lt;T&gt; implements Aggregate&lt;T&gt;{
-    private List&lt;T&gt; list = new ArrayList&lt;&gt;();
-    public void add(T obj){
-        list.add(obj);
-    }
-    public void remove(T obj){
-        list.remove(obj);
-    }
-    public Iterator&lt;T&gt; iterator(){
-        return new ConcreteIterator&lt;T&gt;(list);
-    }
-}
-</code></pre><blockquote>
-<p>具体容器类    </p>
-</blockquote>
-<pre><code>public class Client{
-    public static void main(String args[]){
-        Aggregate&lt;String&gt; data = new ConcreteAggregate&lt;&gt;();
-        data.add(&quot;1&quot;);
-        data.add(&quot;2&quot;);
-        data.add(&quot;3&quot;);
-        data.add(&quot;4&quot;);
-        Iterator&lt;String&gt; i = data.iterator();
-        whihe(i.hasNext()){
-            System.out.print(i.next());
-        }
-    }
-}
-</code></pre><blockquote>
-<p>客户端</p>
-</blockquote>
-<h3 id="个人理解"><a href="#个人理解" class="headerlink" title="个人理解"></a>个人理解</h3><p>在java中的集合是迭代器模式的最好体现。在Android中数据库查询所用到的Cursor，用query方法查询数据库会返回一个Cursor游标，用它来遍历数据。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;center&gt;设计模式之迭代器模式&lt;/center&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;迭代器模式&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1321838-456a
-    
-    </summary>
-    
-      <category term="设计模式" scheme="http://www.smallstrong.wang/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+      <category term="设计模式" scheme="http://www.smallstrong.site/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
     
   </entry>

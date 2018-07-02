@@ -3,6 +3,32 @@
   
     
     <entry>
+      <title><![CDATA[【Redis】Mac上redis安装启动及数据可视化]]></title>
+      <url>/2018/07/02/%E3%80%90Redis%E3%80%91Mac%E4%B8%8Aredis%E5%AE%89%E8%A3%85%E5%90%AF%E5%8A%A8%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/</url>
+      <content type="html"><![CDATA[<h2 id="使用Homebrew安装redis"><a href="#使用Homebrew安装redis" class="headerlink" title="使用Homebrew安装redis"></a>使用Homebrew安装redis</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">brew install redis</div><div class="line">## 启动redis服务端</div><div class="line">redis-server /usr/local/etc/redis.conf  （redis.conf是Redis的配置文件）</div><div class="line">## 进入redis客户端</div><div class="line">redis-cli</div></pre></td></tr></table></figure>
+<h2 id="可视化工具rdm下载"><a href="#可视化工具rdm下载" class="headerlink" title="可视化工具rdm下载"></a>可视化工具rdm下载</h2><p><a href="https://www.smallstrong.site/resources/rdm.app.zip">https://www.smallstrong.site/resources/rdm.app.zip</a></p>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="https://blog.csdn.net/pingpangbing0902/article/details/47104545" target="_blank" rel="external">https://blog.csdn.net/pingpangbing0902/article/details/47104545</a></p>
+<p><a href="http://doc.redisfans.com/" target="_blank" rel="external">http://doc.redisfans.com/</a></p>
+<p><a href="https://www.jb51.net/article/56448.htm" target="_blank" rel="external">https://www.jb51.net/article/56448.htm</a></p>
+<p><strong>redis.conf 配置详解：</strong><a href="https://blog.csdn.net/ithomer/article/details/9232891" target="_blank" rel="external">https://blog.csdn.net/ithomer/article/details/9232891</a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> 数据库 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> redis </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Ansible的简单使用]]></title>
       <url>/2018/04/11/Ansible%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/</url>
       <content type="html"><![CDATA[<center> Ansible的简单使用 </center>
