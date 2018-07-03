@@ -3,6 +3,42 @@
   
     
     <entry>
+      <title><![CDATA[【Redis】redis支持的几种数据类型及命令介绍]]></title>
+      <url>/2018/07/03/%E3%80%90Redis%E3%80%91redis%E6%94%AF%E6%8C%81%E7%9A%84%E5%87%A0%E7%A7%8D%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%8F%8A%E5%91%BD%E4%BB%A4%E4%BB%8B%E7%BB%8D/</url>
+      <content type="html"><![CDATA[<h3 id="Redis支持五种数据类型："><a href="#Redis支持五种数据类型：" class="headerlink" title="Redis支持五种数据类型："></a>Redis支持五种数据类型：</h3><ol>
+<li>String（字符串）</li>
+<li>Hash（哈希）</li>
+<li>Lists（列表）</li>
+<li>Sets（集合）</li>
+<li>Sorted sets(有序集合)</li>
+</ol>
+<h4 id="String（字符串）"><a href="#String（字符串）" class="headerlink" title="String（字符串）"></a>String（字符串）</h4><p><a href="https://www.jb51.net/article/65241.htm" target="_blank" rel="external">https://www.jb51.net/article/65241.htm</a></p>
+<h4 id="Lists（列表）"><a href="#Lists（列表）" class="headerlink" title="Lists（列表）"></a>Lists（列表）</h4><p><a href="https://www.jb51.net/article/65246.htm" target="_blank" rel="external">https://www.jb51.net/article/65246.htm</a></p>
+<h4 id="Hash（哈希）"><a href="#Hash（哈希）" class="headerlink" title="Hash（哈希）"></a>Hash（哈希）</h4><p><a href="https://www.jb51.net/article/65250.htm" target="_blank" rel="external">https://www.jb51.net/article/65250.htm</a></p>
+<h4 id="Sets（集合）"><a href="#Sets（集合）" class="headerlink" title="Sets（集合）"></a>Sets（集合）</h4><p><a href="https://www.jb51.net/article/65252.htm" target="_blank" rel="external">https://www.jb51.net/article/65252.htm</a></p>
+<h4 id="Sorted-sets-有序集合"><a href="#Sorted-sets-有序集合" class="headerlink" title="Sorted sets(有序集合)"></a>Sorted sets(有序集合)</h4><p><a href="https://www.jb51.net/article/65253.htm" target="_blank" rel="external">https://www.jb51.net/article/65253.htm</a></p>
+<h4 id="redis命令"><a href="#redis命令" class="headerlink" title="redis命令"></a>redis命令</h4><p><a href="https://redis.io/commands" target="_blank" rel="external">https://redis.io/commands</a></p>
+<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><blockquote>
+<p>以上所有链接</p>
+</blockquote>
+]]></content>
+      
+        <categories>
+            
+            <category> 数据库 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> redis </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[【Redis】Mac上redis安装启动及数据可视化]]></title>
       <url>/2018/07/02/%E3%80%90Redis%E3%80%91Mac%E4%B8%8Aredis%E5%AE%89%E8%A3%85%E5%90%AF%E5%8A%A8%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/</url>
       <content type="html"><![CDATA[<h2 id="使用Homebrew安装redis"><a href="#使用Homebrew安装redis" class="headerlink" title="使用Homebrew安装redis"></a>使用Homebrew安装redis</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">brew install redis</div><div class="line">## 启动redis服务端</div><div class="line">redis-server /usr/local/etc/redis.conf  （redis.conf是Redis的配置文件）</div><div class="line">## 进入redis客户端</div><div class="line">redis-cli</div></pre></td></tr></table></figure>

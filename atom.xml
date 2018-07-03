@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.smallstrong.site/"/>
-  <updated>2018-07-02T12:05:19.248Z</updated>
+  <updated>2018-07-03T02:43:01.581Z</updated>
   <id>http://www.smallstrong.site/</id>
   
   <author>
@@ -14,6 +14,45 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【Redis】redis支持的几种数据类型及命令介绍</title>
+    <link href="http://www.smallstrong.site/2018/07/03/%E3%80%90Redis%E3%80%91redis%E6%94%AF%E6%8C%81%E7%9A%84%E5%87%A0%E7%A7%8D%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%8F%8A%E5%91%BD%E4%BB%A4%E4%BB%8B%E7%BB%8D/"/>
+    <id>http://www.smallstrong.site/2018/07/03/【Redis】redis支持的几种数据类型及命令介绍/</id>
+    <published>2018-07-03T02:41:59.000Z</published>
+    <updated>2018-07-03T02:43:01.581Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Redis支持五种数据类型："><a href="#Redis支持五种数据类型：" class="headerlink" title="Redis支持五种数据类型："></a>Redis支持五种数据类型：</h3><ol>
+<li>String（字符串）</li>
+<li>Hash（哈希）</li>
+<li>Lists（列表）</li>
+<li>Sets（集合）</li>
+<li>Sorted sets(有序集合)</li>
+</ol>
+<h4 id="String（字符串）"><a href="#String（字符串）" class="headerlink" title="String（字符串）"></a>String（字符串）</h4><p><a href="https://www.jb51.net/article/65241.htm" target="_blank" rel="external">https://www.jb51.net/article/65241.htm</a></p>
+<h4 id="Lists（列表）"><a href="#Lists（列表）" class="headerlink" title="Lists（列表）"></a>Lists（列表）</h4><p><a href="https://www.jb51.net/article/65246.htm" target="_blank" rel="external">https://www.jb51.net/article/65246.htm</a></p>
+<h4 id="Hash（哈希）"><a href="#Hash（哈希）" class="headerlink" title="Hash（哈希）"></a>Hash（哈希）</h4><p><a href="https://www.jb51.net/article/65250.htm" target="_blank" rel="external">https://www.jb51.net/article/65250.htm</a></p>
+<h4 id="Sets（集合）"><a href="#Sets（集合）" class="headerlink" title="Sets（集合）"></a>Sets（集合）</h4><p><a href="https://www.jb51.net/article/65252.htm" target="_blank" rel="external">https://www.jb51.net/article/65252.htm</a></p>
+<h4 id="Sorted-sets-有序集合"><a href="#Sorted-sets-有序集合" class="headerlink" title="Sorted sets(有序集合)"></a>Sorted sets(有序集合)</h4><p><a href="https://www.jb51.net/article/65253.htm" target="_blank" rel="external">https://www.jb51.net/article/65253.htm</a></p>
+<h4 id="redis命令"><a href="#redis命令" class="headerlink" title="redis命令"></a>redis命令</h4><p><a href="https://redis.io/commands" target="_blank" rel="external">https://redis.io/commands</a></p>
+<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><blockquote>
+<p>以上所有链接</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;Redis支持五种数据类型：&quot;&gt;&lt;a href=&quot;#Redis支持五种数据类型：&quot; class=&quot;headerlink&quot; title=&quot;Redis支持五种数据类型：&quot;&gt;&lt;/a&gt;Redis支持五种数据类型：&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;String（字符串）&lt;/li&gt;
+    
+    </summary>
+    
+      <category term="数据库" scheme="http://www.smallstrong.site/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="redis" scheme="http://www.smallstrong.site/tags/redis/"/>
+    
+  </entry>
   
   <entry>
     <title>【Redis】Mac上redis安装启动及数据可视化</title>
@@ -1142,139 +1181,6 @@
 &lt;p&gt;备忘录模式&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1321838-ac
-    
-    </summary>
-    
-      <category term="设计模式" scheme="http://www.smallstrong.site/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>设计模式之中介者模式</title>
-    <link href="http://www.smallstrong.site/2017/05/08/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E4%B8%AD%E4%BB%8B%E8%80%85%E6%A8%A1%E5%BC%8F/"/>
-    <id>http://www.smallstrong.site/2017/05/08/设计模式之中介者模式/</id>
-    <published>2017-05-08T06:22:44.000Z</published>
-    <updated>2017-05-08T07:11:09.000Z</updated>
-    
-    <content type="html"><![CDATA[<center>设计模式之中介者模式</center>
-
-
-<blockquote>
-<p>中介者模式，最近因为某种原因（穷）,导致要买二手车挂指标。正好拿来当中介者模式的例子。</p>
-</blockquote>
-<p><img src="http://upload-images.jianshu.io/upload_images/1321838-2f5f359c9ef29729.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="中介者模式UML.png"></p>
-<pre><code>abstract class Mediator{
-    protected BuyCarPeople buyer;
-    protected SoldCarPeople solder;
-
-    public abstract void work();
-
-    public void setBuyCarPeople(BuyCarPeople buyer){
-        this.buyer = buyer;
-    }
-
-    public void setSoldCarPeople(SoldCarPeople solder){
-        this.solder = solder;
-    }
-}
-</code></pre><blockquote>
-<p>抽象中介者，抽象方法work是中介的职责</p>
-</blockquote>
-<pre><code>class GuaZiMediator extends Mediator{
-    public void work(){
-        getCarInfo();
-        getMoneyFromBuyer();
-        //中间抽层
-        giveMoneyForSolder();
-        giveCarForBuyer();
-    }
-
-    private void getCarInfo(）{
-        solder.actionToMediator();
-    }
-
-    private void getMoneyFromBuyer(){
-        buyer.actionToMediator();
-    }
-
-    private void giveMoneyForSolder(){
-        solder.actionFromMediator();
-    }
-
-    private void giveCarForBuyer(){
-        buyer.actionFromMediator();
-    }
-}
-</code></pre><blockquote>
-<p>具体的中介者，在买卖二手车这件事情之中，完全对接买卖双发，中间干点羞羞的事情</p>
-</blockquote>
-<pre><code>abstract class People{
-    protected Mediator mediator;
-    public People(Mediator mediator){
-        this.mediator = mediator;
-    }
-    abstract void actionToMediator();
-    abstract void actionFromMediator();
-}
-</code></pre><blockquote>
-<p>抽象买二手车的买卖双方</p>
-</blockquote>
-<pre><code>class BuyCarPeople extends People{
-    public BuyCarPeople(Mediator mediator){
-        super(mediator);
-    }
-
-    public void actionToMediator(){
-        // 把钱给中介
-    }
-
-    public void actionFromMediator(){
-        //中介给我车
-    }
-}
-</code></pre><blockquote>
-<p>买车人    </p>
-</blockquote>
-<pre><code>class SoldCarPeople extends People{
-    public SoldCarPeople(Mediator mediator){
-        super(mediator);
-    }
-
-    public void actionToMediator(){
-        //把车给中介 帮忙卖
-    }
-
-    public void actionFromMediator(){
-        //中介把卖车钱给我
-    }
-}
-</code></pre><blockquote>
-<p>卖车人</p>
-</blockquote>
-<pre><code>public class Client{
-    Mediator mediator = new GuaZiMediator();
-    SolderCarPeople solder = new SolderCarPeople(mediator);
-    BuyCarPeople buyer = new BuyCarPeople(mediator);
-    mediator.setBuyCarPeople(buyer);
-    mediator.setSoldCarPeople(solder);
-    mediator.work();//中介帮忙买卖车
-}
-</code></pre><blockquote>
-<p>客户端    </p>
-</blockquote>
-<h4 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h4><p>当两个或者更多的对象之间要相互调用，互相持有是很麻烦的事情。引入中介者模式，中介者类会联系各方，所有的方法需求都通过中介者转达。中介者持有所有各个对象完成交互。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;center&gt;设计模式之中介者模式&lt;/center&gt;
-
-
-&lt;blockquote&gt;
-&lt;p&gt;中介者模式，最近因为某种原因（穷）,导致要买二手车挂指标。正好拿来当中介者模式的例子。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&quot;http://upload-image
     
     </summary>
     
