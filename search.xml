@@ -3,6 +3,50 @@
   
     
     <entry>
+      <title><![CDATA[【Redis】redis过期及逐出策略]]></title>
+      <url>/2018/07/03/%E3%80%90Redis%E3%80%91redis%E8%BF%87%E6%9C%9F%E5%8F%8A%E9%80%90%E5%87%BA%E7%AD%96%E7%95%A5/</url>
+      <content type="html"><![CDATA[<h3 id="过期key设置"><a href="#过期key设置" class="headerlink" title="过期key设置"></a>过期key设置</h3><ol>
+<li>set key value EX 60 （在set的时候设置过期时间）</li>
+<li>EX key 60 (已经存在的key设置过期时间)</li>
+<li>ttl (查看key过期时间)</li>
+</ol>
+<h3 id="过期key清理策略"><a href="#过期key清理策略" class="headerlink" title="过期key清理策略"></a>过期key清理策略</h3><ol>
+<li>访问时判断key是否过期，过期则清除</li>
+<li>CPU空闲时候,定期serveCron任务中，逐步删除过期key</li>
+<li>每次事件循环的时候，逐出部分过期key</li>
+</ol>
+<h3 id="数据逐出时机"><a href="#数据逐出时机" class="headerlink" title="数据逐出时机"></a>数据逐出时机</h3><ol>
+<li>volatile-lru 设置过期时间的最近最少用</li>
+<li>volatile-ttl 设置过期时间的最近要过期的</li>
+<li>volatile-random 设置过期时间的随机的</li>
+<li>allkeys-lru 所有keylru</li>
+<li>allkeys-random 所有key随机</li>
+<li>no-enviction 爆出oom</li>
+</ol>
+<h3 id="实践"><a href="#实践" class="headerlink" title="实践"></a>实践</h3><ol>
+<li>不要放垃圾数据，定期清理</li>
+<li>尽量设置过期时间</li>
+<li>单个key不要过大</li>
+<li>逻辑db，每个业务划分，帮助排查和清理</li>
+</ol>
+]]></content>
+      
+        <categories>
+            
+            <category> 数据库 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> redis </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[【Redis】redis支持的几种数据类型及命令介绍]]></title>
       <url>/2018/07/03/%E3%80%90Redis%E3%80%91redis%E6%94%AF%E6%8C%81%E7%9A%84%E5%87%A0%E7%A7%8D%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%8F%8A%E5%91%BD%E4%BB%A4%E4%BB%8B%E7%BB%8D/</url>
       <content type="html"><![CDATA[<h3 id="Redis支持五种数据类型："><a href="#Redis支持五种数据类型：" class="headerlink" title="Redis支持五种数据类型："></a>Redis支持五种数据类型：</h3><ol>

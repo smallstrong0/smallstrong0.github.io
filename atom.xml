@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.smallstrong.site/"/>
-  <updated>2018-07-03T02:43:01.581Z</updated>
+  <updated>2018-07-03T02:48:19.082Z</updated>
   <id>http://www.smallstrong.site/</id>
   
   <author>
@@ -14,6 +14,54 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【Redis】redis过期及逐出策略</title>
+    <link href="http://www.smallstrong.site/2018/07/03/%E3%80%90Redis%E3%80%91redis%E8%BF%87%E6%9C%9F%E5%8F%8A%E9%80%90%E5%87%BA%E7%AD%96%E7%95%A5/"/>
+    <id>http://www.smallstrong.site/2018/07/03/【Redis】redis过期及逐出策略/</id>
+    <published>2018-07-03T02:47:36.000Z</published>
+    <updated>2018-07-03T02:48:19.082Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="过期key设置"><a href="#过期key设置" class="headerlink" title="过期key设置"></a>过期key设置</h3><ol>
+<li>set key value EX 60 （在set的时候设置过期时间）</li>
+<li>EX key 60 (已经存在的key设置过期时间)</li>
+<li>ttl (查看key过期时间)</li>
+</ol>
+<h3 id="过期key清理策略"><a href="#过期key清理策略" class="headerlink" title="过期key清理策略"></a>过期key清理策略</h3><ol>
+<li>访问时判断key是否过期，过期则清除</li>
+<li>CPU空闲时候,定期serveCron任务中，逐步删除过期key</li>
+<li>每次事件循环的时候，逐出部分过期key</li>
+</ol>
+<h3 id="数据逐出时机"><a href="#数据逐出时机" class="headerlink" title="数据逐出时机"></a>数据逐出时机</h3><ol>
+<li>volatile-lru 设置过期时间的最近最少用</li>
+<li>volatile-ttl 设置过期时间的最近要过期的</li>
+<li>volatile-random 设置过期时间的随机的</li>
+<li>allkeys-lru 所有keylru</li>
+<li>allkeys-random 所有key随机</li>
+<li>no-enviction 爆出oom</li>
+</ol>
+<h3 id="实践"><a href="#实践" class="headerlink" title="实践"></a>实践</h3><ol>
+<li>不要放垃圾数据，定期清理</li>
+<li>尽量设置过期时间</li>
+<li>单个key不要过大</li>
+<li>逻辑db，每个业务划分，帮助排查和清理</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;过期key设置&quot;&gt;&lt;a href=&quot;#过期key设置&quot; class=&quot;headerlink&quot; title=&quot;过期key设置&quot;&gt;&lt;/a&gt;过期key设置&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;set key value EX 60 （在set的时候设置过期时间）&lt;/li&gt;
+&lt;li
+    
+    </summary>
+    
+      <category term="数据库" scheme="http://www.smallstrong.site/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="redis" scheme="http://www.smallstrong.site/tags/redis/"/>
+    
+  </entry>
   
   <entry>
     <title>【Redis】redis支持的几种数据类型及命令介绍</title>
@@ -1057,130 +1105,6 @@
 &lt;p&gt;观察者模式&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1321838-c031
-    
-    </summary>
-    
-      <category term="设计模式" scheme="http://www.smallstrong.site/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>设计模式之备忘录模式</title>
-    <link href="http://www.smallstrong.site/2017/05/09/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%A4%87%E5%BF%98%E5%BD%95%E6%A8%A1%E5%BC%8F/"/>
-    <id>http://www.smallstrong.site/2017/05/09/设计模式之备忘录模式/</id>
-    <published>2017-05-09T02:14:43.000Z</published>
-    <updated>2017-05-09T07:14:32.000Z</updated>
-    
-    <content type="html"><![CDATA[<center>设计模式之备忘录模式</center>
-
-
-
-<blockquote>
-<p>备忘录模式</p>
-</blockquote>
-<p><img src="http://upload-images.jianshu.io/upload_images/1321838-ac5dddfc229f6593.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="备忘录模式UML.png"></p>
-<pre><code>class Originator{
-    private int stateA = 0;
-    private int stateB = 0;
-    private int stateC = 0;
-
-    public Memoto createMemoto(){
-        Memoto memoto = new Memoto();
-        memoto.setStateA(stateA);
-        memoto.setStateB(stateB);
-        memoto.setStateC(stateC);
-    }
-
-    public void restore(Memoto memoto){
-        this.stateA = memoto.getStateA();
-        this.stateB = memoto.getStateB();
-        this.stateC = memoto.getStateC();
-    }
-
-    public void change(){
-        stateA = 1;
-        stateB = 2;
-        stateC = 3;
-    }
-
-    public void showData(){
-        System.out.println(stateA+&quot;==&quot;+stateB+&quot;==&quot;+stateC);
-    }
-
-}
-</code></pre><blockquote>
-<p>原始类</p>
-</blockquote>
-<pre><code>class Memoto{
-    private int stateA;
-    private int stateB;
-    private int stateC;
-
-    public int getStateA(){
-        return this.stateA;
-    }
-    public int getStateB(){
-        return this.stateB;
-    }
-    public int getStateC(){
-        return this.stateC;
-    }
-    public void setStateA(int a){
-        this.stateA = a;
-    }
-    public void setStateB(int b){
-        this.stateB = b;
-    }
-    public void setStateC(int c){
-        this.stateC = c;
-    }
-}    
-</code></pre><blockquote>
-<p>数据bean类</p>
-</blockquote>
-<pre><code>class Caretaker{
-    Memoto memoto;
-    public Memoto restoreMemoto(){
-        return this.memoto;//恢复数据
-    }
-
-    public void storeMemoto(Memoto memoto){
-        this.memoto = memoto;
-    }
-}
-</code></pre><blockquote>
-<p>备忘录对象，管理Memoto对象</p>
-</blockquote>
-<pre><code>class Cliten{
-    public static void main(String args[]){
-        Originator originator = new Originator();
-        Caretaker caretaker = new Caretaker();
-        originator.showData();//原始数据为 0 0 0 
-        originator.change();//改变之后为 1 2 3
-        caretaker.storeMemoto(originator.createMemoto());//存储状态
-        //模拟下次登录之后 重新开始
-        Originator originatorNew = new Originator();    
-        originatorNew.restore(caretaker.restoreMemoto());
-        originatorNew.showData();//数据为 1 2 3
-    }
-}
-</code></pre><blockquote>
-<p>客户端模拟备忘录模式。当需要保存状态的时候将状态存入Caretaker即可。Caretaker这里只是保存最后一次变化状态，可以扩展需求做的更丰富一些。</p>
-</blockquote>
-<h4 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h4><p>例子比较简单，仅仅只是备忘录模式的原型。一句话概括就是备忘录类会记住应该记住的状态，而存储与恢复状态在原始类中调用。<br>备忘录模式在Android源码里面例子，当界面退居后台或者由于内存不足被干翻，在这之前会调用Activity中onSaveInstanceState方法保存状态。当界面再次出现在界面上时在onRestoreInstanceState方法中获取之前保存的状态。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;center&gt;设计模式之备忘录模式&lt;/center&gt;
-
-
-
-&lt;blockquote&gt;
-&lt;p&gt;备忘录模式&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1321838-ac
     
     </summary>
     
