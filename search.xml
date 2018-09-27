@@ -33,7 +33,7 @@
       
         <categories>
             
-            <category> 数据库 </category>
+            <category> 数据库&amp;缓存 </category>
             
         </categories>
         
@@ -71,7 +71,7 @@
       
         <categories>
             
-            <category> 数据库 </category>
+            <category> 数据库&amp;缓存 </category>
             
         </categories>
         
@@ -97,7 +97,7 @@
       
         <categories>
             
-            <category> 数据库 </category>
+            <category> 数据库&amp;缓存 </category>
             
         </categories>
         
@@ -145,6 +145,12 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ansible-playbook fanfan.yml</div></pre></td></tr></table></figure>
 <h4 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h4><h5 id="ansible其实还有很多想象空间，这里我只是简单的做了一个代码部署，期待更多的骚操作。"><a href="#ansible其实还有很多想象空间，这里我只是简单的做了一个代码部署，期待更多的骚操作。" class="headerlink" title="ansible其实还有很多想象空间，这里我只是简单的做了一个代码部署，期待更多的骚操作。"></a>ansible其实还有很多想象空间，这里我只是简单的做了一个代码部署，期待更多的骚操作。</h5>]]></content>
       
+        <categories>
+            
+            <category> Devops </category>
+            
+        </categories>
+        
         
         <tags>
             
@@ -230,18 +236,10 @@
       
         <categories>
             
-            <category> docker </category>
+            <category> Devops </category>
             
         </categories>
         
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[加密货币与区块链]]></title>
-      <url>/2018/03/13/%E5%8A%A0%E5%AF%86%E8%B4%A7%E5%B8%81%E4%B8%8E%E5%8C%BA%E5%9D%97%E9%93%BE/</url>
-      <content type="html"></content>
-      
         
     </entry>
     
@@ -278,6 +276,12 @@
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>本文主要介绍了scrapy项目的几个基本文件的职责，下面文章会用一个例子来实际应用。</p>
 ]]></content>
       
+        <categories>
+            
+            <category> 爬虫 </category>
+            
+        </categories>
+        
         
         <tags>
             
@@ -302,6 +306,12 @@
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>简单介绍了scrapy的环境安装，接下来会介绍scrapy项目的总体架构和原理，并会伴随一个项目来实践。</p>
 ]]></content>
       
+        <categories>
+            
+            <category> 爬虫 </category>
+            
+        </categories>
+        
         
         <tags>
             
@@ -313,7 +323,7 @@
     
     <entry>
       <title><![CDATA[我对docker的浅薄理解]]></title>
-      <url>/2017/10/25/%E6%88%91%E5%AF%B9docker%E7%9A%84%E6%B5%85%E8%96%84%E7%90%86%E8%A7%A3/</url>
+      <url>/2017/10/25/%E3%80%90Devops%E3%80%91%E6%88%91%E5%AF%B9docker%E7%9A%84%E6%B5%85%E8%96%84%E7%90%86%E8%A7%A3/</url>
       <content type="html"><![CDATA[<center>我对docker的浅薄理解</center>
 
 
@@ -360,7 +370,7 @@
       
         <categories>
             
-            <category> 蓝鲸计划 </category>
+            <category> Devops </category>
             
         </categories>
         
@@ -401,7 +411,7 @@
       
         <categories>
             
-            <category> 蓝鲸计划 </category>
+            <category> Devops </category>
             
         </categories>
         
@@ -433,7 +443,7 @@
       
         <categories>
             
-            <category> 蓝鲸计划 </category>
+            <category> Devops </category>
             
         </categories>
         
@@ -441,8 +451,8 @@
     </entry>
     
     <entry>
-      <title><![CDATA[揭秘一行代码完成千台服务器自动升级部署]]></title>
-      <url>/2017/09/21/%E6%8F%AD%E7%A7%98%E4%B8%80%E8%A1%8C%E4%BB%A3%E7%A0%81%E5%AE%8C%E6%88%90%E5%8D%83%E5%8F%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%87%AA%E5%8A%A8%E5%8D%87%E7%BA%A7%E9%83%A8%E7%BD%B2/</url>
+      <title><![CDATA[浅谈服务器自动升级部署]]></title>
+      <url>/2017/09/21/%E3%80%90Devops%E3%80%91%E6%B5%85%E8%B0%88%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%87%AA%E5%8A%A8%E5%8D%87%E7%BA%A7%E9%83%A8%E7%BD%B2/</url>
       <content type="html"><![CDATA[<center>揭秘一行代码完成千台服务器自动升级部署</center>
 
 
@@ -456,7 +466,7 @@
       
         <categories>
             
-            <category> 服务器 </category>
+            <category> Devops </category>
             
         </categories>
         
@@ -507,7 +517,7 @@
       
         <categories>
             
-            <category> Android </category>
+            <category> Devops </category>
             
         </categories>
         
@@ -552,7 +562,7 @@
     
     <entry>
       <title><![CDATA[在google cloud 上搭建Jenkins持续集成实现Android应用的自动打包]]></title>
-      <url>/2017/07/23/%E5%9C%A8google-cloud-%E4%B8%8A%E6%90%AD%E5%BB%BAJenkins%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E5%AE%9E%E7%8E%B0Android%E5%BA%94%E7%94%A8%E7%9A%84%E8%87%AA%E5%8A%A8%E6%89%93%E5%8C%85/</url>
+      <url>/2017/07/23/%E3%80%90Devops%E3%80%91%E5%9C%A8google-cloud-%E4%B8%8A%E6%90%AD%E5%BB%BAJenkins%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E5%AE%9E%E7%8E%B0Android%E5%BA%94%E7%94%A8%E7%9A%84%E8%87%AA%E5%8A%A8%E6%89%93%E5%8C%85/</url>
       <content type="html"><![CDATA[<center>服务器 Jenkins 持续集成 之Android自动化打包发包</center>
 
 <blockquote>
@@ -582,7 +592,7 @@
       
         <categories>
             
-            <category> Android </category>
+            <category> Devops </category>
             
         </categories>
         
@@ -1712,7 +1722,7 @@ class BCommand implements Command{
     
     <entry>
       <title><![CDATA[记一次项目引入bugly热修复（基于微信tinker）与接入walle多渠道打包共存的方式]]></title>
-      <url>/2017/04/26/%E8%AE%B0%E4%B8%80%E6%AC%A1%E9%A1%B9%E7%9B%AE%E5%BC%95%E5%85%A5bugly%E7%83%AD%E4%BF%AE%E5%A4%8D%EF%BC%88%E5%9F%BA%E4%BA%8E%E5%BE%AE%E4%BF%A1tinker%EF%BC%89%E4%B8%8E%E6%8E%A5%E5%85%A5walle%E5%A4%9A%E6%B8%A0%E9%81%93%E6%89%93%E5%8C%85%E5%85%B1%E5%AD%98%E7%9A%84%E6%96%B9%E5%BC%8F/</url>
+      <url>/2017/04/26/%E3%80%90Android%E3%80%91%E8%AE%B0%E4%B8%80%E6%AC%A1%E9%A1%B9%E7%9B%AE%E5%BC%95%E5%85%A5bugly%E7%83%AD%E4%BF%AE%E5%A4%8D%EF%BC%88%E5%9F%BA%E4%BA%8E%E5%BE%AE%E4%BF%A1tinker%EF%BC%89%E4%B8%8E%E6%8E%A5%E5%85%A5walle%E5%A4%9A%E6%B8%A0%E9%81%93%E6%89%93%E5%8C%85%E5%85%B1%E5%AD%98%E7%9A%84%E6%96%B9%E5%BC%8F/</url>
       <content type="html"><![CDATA[<h3 id="记一次项目引入bugly热修复（基于微信tinker）与接入walle多渠道打包共存的方式"><a href="#记一次项目引入bugly热修复（基于微信tinker）与接入walle多渠道打包共存的方式" class="headerlink" title="记一次项目引入bugly热修复（基于微信tinker）与接入walle多渠道打包共存的方式"></a>记一次项目引入bugly热修复（基于微信tinker）与接入walle多渠道打包共存的方式</h3><blockquote>
 <p><a href="https://bugly.qq.com/docs/user-guide/instruction-manual-android-hotfix/?v=20170207114801" target="_blank" rel="external">bugly官方热更新指南</a></p>
 <p><a href="https://bugly.qq.com/docs/user-guide/instruction-manual-android-hotfix-demo/?v=20170207114801" target="_blank" rel="external">bugly官方接入使用详解</a></p>
@@ -1748,6 +1758,12 @@ class BCommand implements Command{
 </ol>
 ]]></content>
       
+        <categories>
+            
+            <category> Android </category>
+            
+        </categories>
+        
         
     </entry>
     
@@ -2893,7 +2909,7 @@ class BCommand implements Command{
     
     <entry>
       <title><![CDATA[项目freeline接入]]></title>
-      <url>/2017/01/07/%E9%A1%B9%E7%9B%AEfreeline%E6%8E%A5%E5%85%A5/</url>
+      <url>/2017/01/07/%E3%80%90Android%E3%80%91%E9%A1%B9%E7%9B%AEfreeline%E6%8E%A5%E5%85%A5/</url>
       <content type="html"><![CDATA[<center>记录引入freeline遇到的一些小问题</center>
 
 <blockquote>
@@ -2914,6 +2930,12 @@ class BCommand implements Command{
 </blockquote>
 ]]></content>
       
+        <categories>
+            
+            <category> Android </category>
+            
+        </categories>
+        
         
         <tags>
             
@@ -3143,7 +3165,7 @@ if(message.direct() == Direct.SEND){
     
     <entry>
       <title><![CDATA[那些你可能不知道的app推广渠道]]></title>
-      <url>/2016/11/23/%E9%82%A3%E4%BA%9B%E4%BD%A0%E5%8F%AF%E8%83%BD%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84app%E6%8E%A8%E5%B9%BF%E6%B8%A0%E9%81%93/</url>
+      <url>/2016/11/23/%E3%80%90Android%E3%80%91%E9%82%A3%E4%BA%9B%E4%BD%A0%E5%8F%AF%E8%83%BD%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84app%E6%8E%A8%E5%B9%BF%E6%B8%A0%E9%81%93/</url>
       <content type="html"><![CDATA[<center>android app 推广渠道真心多到你想不到</center>
 
 <h1 id="记录一次Android版本上线各大渠道"><a href="#记录一次Android版本上线各大渠道" class="headerlink" title="记录一次Android版本上线各大渠道"></a>记录一次Android版本上线各大渠道</h1><blockquote>
@@ -3190,7 +3212,7 @@ if(message.direct() == Direct.SEND){
       
         <categories>
             
-            <category> 运营 </category>
+            <category> Android </category>
             
         </categories>
         
@@ -3199,7 +3221,7 @@ if(message.direct() == Direct.SEND){
     
     <entry>
       <title><![CDATA[ 一个Textview控件里包含不同样式的字体]]></title>
-      <url>/2016/11/18/%E4%B8%80%E4%B8%AATextview%E6%8E%A7%E4%BB%B6%E9%87%8C%E5%8C%85%E5%90%AB%E4%B8%8D%E5%90%8C%E6%A0%B7%E5%BC%8F%E7%9A%84%E5%AD%97%E4%BD%93/</url>
+      <url>/2016/11/18/%E3%80%90Android%E3%80%91%E4%B8%80%E4%B8%AATextview%E6%8E%A7%E4%BB%B6%E9%87%8C%E5%8C%85%E5%90%AB%E4%B8%8D%E5%90%8C%E6%A0%B7%E5%BC%8F%E7%9A%84%E5%AD%97%E4%BD%93/</url>
       <content type="html"><![CDATA[<center>Textview小技巧</center>
 
 <blockquote>
@@ -3256,6 +3278,12 @@ if(message.direct() == Direct.SEND){
 </ol>
 ]]></content>
       
+        <categories>
+            
+            <category> 操作系统 </category>
+            
+        </categories>
+        
         
         <tags>
             
@@ -3267,7 +3295,7 @@ if(message.direct() == Direct.SEND){
     
     <entry>
       <title><![CDATA[排序]]></title>
-      <url>/2016/10/13/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E9%9B%86%E9%94%A6/</url>
+      <url>/2016/10/13/%E3%80%90%E7%AE%97%E6%B3%95%E3%80%91%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E9%9B%86%E9%94%A6/</url>
       <content type="html"><![CDATA[<p><center>8大经典排序</center><br><a id="more"></a></p>
 <h1 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h1><blockquote>
 <p>一共n个数排序就需要大循环n-1次，每大循环一次就是为了让这一次最大的数滚到序列最后。例如第二次大循环的时候，是为了让第一个数 到 倒数第二个数之间的这么多数里面的 最大数 滚到倒数第二个坑位里面，下面依次类推。</p>
@@ -3694,6 +3722,12 @@ def sort(a, radix=10):
 <p>在下就是死在第三部么有加，简直欲仙欲死。由此我抽空去了解了一下Android的类加载机制，然后又顺势了解了热部署。还算是赚到了不少哈哈！这波不亏~</p>
 ]]></content>
       
+        <categories>
+            
+            <category> Android </category>
+            
+        </categories>
+        
         
         <tags>
             

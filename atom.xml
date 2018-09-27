@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.smallstrong.site/"/>
-  <updated>2018-07-03T02:48:19.082Z</updated>
+  <updated>2018-09-27T01:15:13.427Z</updated>
   <id>http://www.smallstrong.site/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://www.smallstrong.site/2018/07/03/%E3%80%90Redis%E3%80%91redis%E8%BF%87%E6%9C%9F%E5%8F%8A%E9%80%90%E5%87%BA%E7%AD%96%E7%95%A5/"/>
     <id>http://www.smallstrong.site/2018/07/03/【Redis】redis过期及逐出策略/</id>
     <published>2018-07-03T02:47:36.000Z</published>
-    <updated>2018-07-03T02:48:19.082Z</updated>
+    <updated>2018-09-27T01:15:13.427Z</updated>
     
     <content type="html"><![CDATA[<h3 id="过期key设置"><a href="#过期key设置" class="headerlink" title="过期key设置"></a>过期key设置</h3><ol>
 <li>set key value EX 60 （在set的时候设置过期时间）</li>
@@ -56,7 +56,7 @@
     
     </summary>
     
-      <category term="数据库" scheme="http://www.smallstrong.site/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库&amp;缓存" scheme="http://www.smallstrong.site/categories/%E6%95%B0%E6%8D%AE%E5%BA%93-%E7%BC%93%E5%AD%98/"/>
     
     
       <category term="redis" scheme="http://www.smallstrong.site/tags/redis/"/>
@@ -68,7 +68,7 @@
     <link href="http://www.smallstrong.site/2018/07/03/%E3%80%90Redis%E3%80%91redis%E6%94%AF%E6%8C%81%E7%9A%84%E5%87%A0%E7%A7%8D%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%8F%8A%E5%91%BD%E4%BB%A4%E4%BB%8B%E7%BB%8D/"/>
     <id>http://www.smallstrong.site/2018/07/03/【Redis】redis支持的几种数据类型及命令介绍/</id>
     <published>2018-07-03T02:41:59.000Z</published>
-    <updated>2018-07-04T07:24:17.252Z</updated>
+    <updated>2018-09-27T01:15:19.018Z</updated>
     
     <content type="html"><![CDATA[<h3 id="Redis支的数据类型："><a href="#Redis支的数据类型：" class="headerlink" title="Redis支的数据类型："></a>Redis支的数据类型：</h3><ol>
 <li>String（字符串）</li>
@@ -98,7 +98,7 @@
     
     </summary>
     
-      <category term="数据库" scheme="http://www.smallstrong.site/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库&amp;缓存" scheme="http://www.smallstrong.site/categories/%E6%95%B0%E6%8D%AE%E5%BA%93-%E7%BC%93%E5%AD%98/"/>
     
     
       <category term="redis" scheme="http://www.smallstrong.site/tags/redis/"/>
@@ -110,7 +110,7 @@
     <link href="http://www.smallstrong.site/2018/07/02/%E3%80%90Redis%E3%80%91Mac%E4%B8%8Aredis%E5%AE%89%E8%A3%85%E5%90%AF%E5%8A%A8%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/"/>
     <id>http://www.smallstrong.site/2018/07/02/【Redis】Mac上redis安装启动及数据可视化/</id>
     <published>2018-07-02T12:00:59.000Z</published>
-    <updated>2018-07-02T12:05:19.248Z</updated>
+    <updated>2018-09-27T01:14:42.180Z</updated>
     
     <content type="html"><![CDATA[<h2 id="使用Homebrew安装redis"><a href="#使用Homebrew安装redis" class="headerlink" title="使用Homebrew安装redis"></a>使用Homebrew安装redis</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">brew install redis</div><div class="line">## 启动redis服务端</div><div class="line">redis-server /usr/local/etc/redis.conf  （redis.conf是Redis的配置文件）</div><div class="line">## 进入redis客户端</div><div class="line">redis-cli</div></pre></td></tr></table></figure>
 <h2 id="可视化工具rdm下载"><a href="#可视化工具rdm下载" class="headerlink" title="可视化工具rdm下载"></a>可视化工具rdm下载</h2><p><a href="https://www.smallstrong.site/resources/rdm.app.zip">https://www.smallstrong.site/resources/rdm.app.zip</a></p>
@@ -126,7 +126,7 @@
     
     </summary>
     
-      <category term="数据库" scheme="http://www.smallstrong.site/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库&amp;缓存" scheme="http://www.smallstrong.site/categories/%E6%95%B0%E6%8D%AE%E5%BA%93-%E7%BC%93%E5%AD%98/"/>
     
     
       <category term="redis" scheme="http://www.smallstrong.site/tags/redis/"/>
@@ -138,7 +138,7 @@
     <link href="http://www.smallstrong.site/2018/04/11/Ansible%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/"/>
     <id>http://www.smallstrong.site/2018/04/11/Ansible的简单使用/</id>
     <published>2018-04-11T03:16:36.000Z</published>
-    <updated>2018-04-11T03:24:48.829Z</updated>
+    <updated>2018-09-27T01:45:52.707Z</updated>
     
     <content type="html"><![CDATA[<center> Ansible的简单使用 </center>
 
@@ -180,6 +180,8 @@
     
     </summary>
     
+      <category term="Devops" scheme="http://www.smallstrong.site/categories/Devops/"/>
+    
     
       <category term="devops" scheme="http://www.smallstrong.site/tags/devops/"/>
     
@@ -190,7 +192,7 @@
     <link href="http://www.smallstrong.site/2018/03/28/Docker-%E6%8C%87%E4%BB%A4%E5%AD%A6%E4%B9%A0/"/>
     <id>http://www.smallstrong.site/2018/03/28/Docker-指令学习/</id>
     <published>2018-03-28T15:16:36.000Z</published>
-    <updated>2018-03-28T15:22:54.219Z</updated>
+    <updated>2018-09-27T01:46:03.859Z</updated>
     
     <content type="html"><![CDATA[<center>Docker 指令学习</center>
 
@@ -271,21 +273,7 @@
     
     </summary>
     
-      <category term="docker" scheme="http://www.smallstrong.site/categories/docker/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>加密货币与区块链</title>
-    <link href="http://www.smallstrong.site/2018/03/13/%E5%8A%A0%E5%AF%86%E8%B4%A7%E5%B8%81%E4%B8%8E%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    <id>http://www.smallstrong.site/2018/03/13/加密货币与区块链/</id>
-    <published>2018-03-13T14:31:15.000Z</published>
-    <updated>2018-03-13T14:31:15.947Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
+      <category term="Devops" scheme="http://www.smallstrong.site/categories/Devops/"/>
     
     
   </entry>
@@ -295,7 +283,7 @@
     <link href="http://www.smallstrong.site/2018/01/23/Scrapy%E7%9A%84%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84%E4%BB%8B%E7%BB%8D/"/>
     <id>http://www.smallstrong.site/2018/01/23/Scrapy的项目结构介绍/</id>
     <published>2018-01-23T05:39:47.000Z</published>
-    <updated>2018-01-31T07:11:07.970Z</updated>
+    <updated>2018-09-27T17:32:26.812Z</updated>
     
     <content type="html"><![CDATA[<center> Scrapy的项目结构介绍 </center>
 
@@ -335,6 +323,8 @@
     
     </summary>
     
+      <category term="爬虫" scheme="http://www.smallstrong.site/categories/%E7%88%AC%E8%99%AB/"/>
+    
     
       <category term="爬虫" scheme="http://www.smallstrong.site/tags/%E7%88%AC%E8%99%AB/"/>
     
@@ -345,7 +335,7 @@
     <link href="http://www.smallstrong.site/2018/01/22/Scrapy%E7%9A%84%E5%AE%89%E8%A3%85/"/>
     <id>http://www.smallstrong.site/2018/01/22/Scrapy的安装/</id>
     <published>2018-01-22T03:31:53.000Z</published>
-    <updated>2018-01-22T06:07:48.459Z</updated>
+    <updated>2018-09-27T17:31:54.125Z</updated>
     
     <content type="html"><![CDATA[<center> Scrapy的安装 </center>
 
@@ -368,6 +358,8 @@
     
     </summary>
     
+      <category term="爬虫" scheme="http://www.smallstrong.site/categories/%E7%88%AC%E8%99%AB/"/>
+    
     
       <category term="爬虫" scheme="http://www.smallstrong.site/tags/%E7%88%AC%E8%99%AB/"/>
     
@@ -375,10 +367,10 @@
   
   <entry>
     <title>我对docker的浅薄理解</title>
-    <link href="http://www.smallstrong.site/2017/10/25/%E6%88%91%E5%AF%B9docker%E7%9A%84%E6%B5%85%E8%96%84%E7%90%86%E8%A7%A3/"/>
-    <id>http://www.smallstrong.site/2017/10/25/我对docker的浅薄理解/</id>
+    <link href="http://www.smallstrong.site/2017/10/25/%E3%80%90Devops%E3%80%91%E6%88%91%E5%AF%B9docker%E7%9A%84%E6%B5%85%E8%96%84%E7%90%86%E8%A7%A3/"/>
+    <id>http://www.smallstrong.site/2017/10/25/【Devops】我对docker的浅薄理解/</id>
     <published>2017-10-25T06:37:44.000Z</published>
-    <updated>2017-10-25T06:44:04.000Z</updated>
+    <updated>2018-09-27T01:19:54.089Z</updated>
     
     <content type="html"><![CDATA[<center>我对docker的浅薄理解</center>
 
@@ -433,7 +425,7 @@
     
     </summary>
     
-      <category term="蓝鲸计划" scheme="http://www.smallstrong.site/categories/%E8%93%9D%E9%B2%B8%E8%AE%A1%E5%88%92/"/>
+      <category term="Devops" scheme="http://www.smallstrong.site/categories/Devops/"/>
     
     
   </entry>
@@ -443,7 +435,7 @@
     <link href="http://www.smallstrong.site/2017/10/24/nginx-uWSGI-supervisor-flask%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/"/>
     <id>http://www.smallstrong.site/2017/10/24/nginx-uWSGI-supervisor-flask项目部署/</id>
     <published>2017-10-24T01:08:22.000Z</published>
-    <updated>2017-10-25T06:44:07.000Z</updated>
+    <updated>2018-09-27T17:31:08.127Z</updated>
     
     <content type="html"><![CDATA[<center>nginx+uWSGI+supervisor+flask项目部署</center>
 
@@ -483,7 +475,7 @@
     
     </summary>
     
-      <category term="蓝鲸计划" scheme="http://www.smallstrong.site/categories/%E8%93%9D%E9%B2%B8%E8%AE%A1%E5%88%92/"/>
+      <category term="Devops" scheme="http://www.smallstrong.site/categories/Devops/"/>
     
     
   </entry>
@@ -493,7 +485,7 @@
     <link href="http://www.smallstrong.site/2017/10/12/ssh%E6%96%B9%E5%BC%8F%E7%99%BB%E5%BD%95%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     <id>http://www.smallstrong.site/2017/10/12/ssh方式登录服务器/</id>
     <published>2017-10-12T01:32:38.000Z</published>
-    <updated>2017-10-14T04:41:19.000Z</updated>
+    <updated>2018-09-27T17:32:57.020Z</updated>
     
     <content type="html"><![CDATA[<center>ssh方式登录获取服务器shell窗口</center>
 
@@ -523,17 +515,17 @@
     
     </summary>
     
-      <category term="蓝鲸计划" scheme="http://www.smallstrong.site/categories/%E8%93%9D%E9%B2%B8%E8%AE%A1%E5%88%92/"/>
+      <category term="Devops" scheme="http://www.smallstrong.site/categories/Devops/"/>
     
     
   </entry>
   
   <entry>
-    <title>揭秘一行代码完成千台服务器自动升级部署</title>
-    <link href="http://www.smallstrong.site/2017/09/21/%E6%8F%AD%E7%A7%98%E4%B8%80%E8%A1%8C%E4%BB%A3%E7%A0%81%E5%AE%8C%E6%88%90%E5%8D%83%E5%8F%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%87%AA%E5%8A%A8%E5%8D%87%E7%BA%A7%E9%83%A8%E7%BD%B2/"/>
-    <id>http://www.smallstrong.site/2017/09/21/揭秘一行代码完成千台服务器自动升级部署/</id>
+    <title>浅谈服务器自动升级部署</title>
+    <link href="http://www.smallstrong.site/2017/09/21/%E3%80%90Devops%E3%80%91%E6%B5%85%E8%B0%88%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%87%AA%E5%8A%A8%E5%8D%87%E7%BA%A7%E9%83%A8%E7%BD%B2/"/>
+    <id>http://www.smallstrong.site/2017/09/21/【Devops】浅谈服务器自动升级部署/</id>
     <published>2017-09-21T02:36:33.000Z</published>
-    <updated>2017-09-21T07:32:42.000Z</updated>
+    <updated>2018-09-27T01:18:03.012Z</updated>
     
     <content type="html"><![CDATA[<center>揭秘一行代码完成千台服务器自动升级部署</center>
 
@@ -556,7 +548,7 @@
     
     </summary>
     
-      <category term="服务器" scheme="http://www.smallstrong.site/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+      <category term="Devops" scheme="http://www.smallstrong.site/categories/Devops/"/>
     
     
   </entry>
@@ -592,7 +584,7 @@
     <link href="http://www.smallstrong.site/2017/08/03/Mac%E4%B8%8A%E7%94%A8Jenkins%E8%87%AA%E5%8A%A8%E5%8C%96%E6%89%93%E5%8C%85Android%E5%BA%94%E7%94%A8/"/>
     <id>http://www.smallstrong.site/2017/08/03/Mac上用Jenkins自动化打包Android应用/</id>
     <published>2017-08-03T01:12:16.000Z</published>
-    <updated>2017-08-03T01:14:29.000Z</updated>
+    <updated>2018-09-27T01:47:14.910Z</updated>
     
     <content type="html"><![CDATA[<center> Mac下 Jenkins 持续集成 之Android自动化打包发包</center>
 
@@ -624,7 +616,7 @@
     
     </summary>
     
-      <category term="Android" scheme="http://www.smallstrong.site/categories/Android/"/>
+      <category term="Devops" scheme="http://www.smallstrong.site/categories/Devops/"/>
     
     
   </entry>
@@ -634,7 +626,7 @@
     <link href="http://www.smallstrong.site/2017/07/23/Shadowsocks-%E5%85%A8%E7%AB%AF%E7%BF%BB%E5%A2%99/"/>
     <id>http://www.smallstrong.site/2017/07/23/Shadowsocks-全端翻墙/</id>
     <published>2017-07-23T13:48:28.000Z</published>
-    <updated>2017-10-24T01:16:23.000Z</updated>
+    <updated>2018-09-27T17:35:08.834Z</updated>
     
     <content type="html"><![CDATA[<p><center>Shadowsocks 全端翻墙</center></p>
 <h3 id="开篇先来点逼格的。"><a href="#开篇先来点逼格的。" class="headerlink" title="开篇先来点逼格的。"></a>开篇先来点逼格的。</h3><blockquote>
@@ -674,10 +666,10 @@
   
   <entry>
     <title>在google cloud 上搭建Jenkins持续集成实现Android应用的自动打包</title>
-    <link href="http://www.smallstrong.site/2017/07/23/%E5%9C%A8google-cloud-%E4%B8%8A%E6%90%AD%E5%BB%BAJenkins%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E5%AE%9E%E7%8E%B0Android%E5%BA%94%E7%94%A8%E7%9A%84%E8%87%AA%E5%8A%A8%E6%89%93%E5%8C%85/"/>
-    <id>http://www.smallstrong.site/2017/07/23/在google-cloud-上搭建Jenkins持续集成实现Android应用的自动打包/</id>
+    <link href="http://www.smallstrong.site/2017/07/23/%E3%80%90Devops%E3%80%91%E5%9C%A8google-cloud-%E4%B8%8A%E6%90%AD%E5%BB%BAJenkins%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E5%AE%9E%E7%8E%B0Android%E5%BA%94%E7%94%A8%E7%9A%84%E8%87%AA%E5%8A%A8%E6%89%93%E5%8C%85/"/>
+    <id>http://www.smallstrong.site/2017/07/23/【Devops】在google-cloud-上搭建Jenkins持续集成实现Android应用的自动打包/</id>
     <published>2017-07-23T07:06:42.000Z</published>
-    <updated>2017-08-03T01:14:28.000Z</updated>
+    <updated>2018-09-27T01:44:38.886Z</updated>
     
     <content type="html"><![CDATA[<center>服务器 Jenkins 持续集成 之Android自动化打包发包</center>
 
@@ -716,7 +708,7 @@
     
     </summary>
     
-      <category term="Android" scheme="http://www.smallstrong.site/categories/Android/"/>
+      <category term="Devops" scheme="http://www.smallstrong.site/categories/Devops/"/>
     
     
   </entry>
@@ -1108,6 +1100,130 @@
 &lt;p&gt;观察者模式&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1321838-c031
+    
+    </summary>
+    
+      <category term="设计模式" scheme="http://www.smallstrong.site/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>设计模式之备忘录模式</title>
+    <link href="http://www.smallstrong.site/2017/05/09/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%A4%87%E5%BF%98%E5%BD%95%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://www.smallstrong.site/2017/05/09/设计模式之备忘录模式/</id>
+    <published>2017-05-09T02:14:43.000Z</published>
+    <updated>2017-05-09T07:14:32.000Z</updated>
+    
+    <content type="html"><![CDATA[<center>设计模式之备忘录模式</center>
+
+
+
+<blockquote>
+<p>备忘录模式</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/1321838-ac5dddfc229f6593.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="备忘录模式UML.png"></p>
+<pre><code>class Originator{
+    private int stateA = 0;
+    private int stateB = 0;
+    private int stateC = 0;
+
+    public Memoto createMemoto(){
+        Memoto memoto = new Memoto();
+        memoto.setStateA(stateA);
+        memoto.setStateB(stateB);
+        memoto.setStateC(stateC);
+    }
+
+    public void restore(Memoto memoto){
+        this.stateA = memoto.getStateA();
+        this.stateB = memoto.getStateB();
+        this.stateC = memoto.getStateC();
+    }
+
+    public void change(){
+        stateA = 1;
+        stateB = 2;
+        stateC = 3;
+    }
+
+    public void showData(){
+        System.out.println(stateA+&quot;==&quot;+stateB+&quot;==&quot;+stateC);
+    }
+
+}
+</code></pre><blockquote>
+<p>原始类</p>
+</blockquote>
+<pre><code>class Memoto{
+    private int stateA;
+    private int stateB;
+    private int stateC;
+
+    public int getStateA(){
+        return this.stateA;
+    }
+    public int getStateB(){
+        return this.stateB;
+    }
+    public int getStateC(){
+        return this.stateC;
+    }
+    public void setStateA(int a){
+        this.stateA = a;
+    }
+    public void setStateB(int b){
+        this.stateB = b;
+    }
+    public void setStateC(int c){
+        this.stateC = c;
+    }
+}    
+</code></pre><blockquote>
+<p>数据bean类</p>
+</blockquote>
+<pre><code>class Caretaker{
+    Memoto memoto;
+    public Memoto restoreMemoto(){
+        return this.memoto;//恢复数据
+    }
+
+    public void storeMemoto(Memoto memoto){
+        this.memoto = memoto;
+    }
+}
+</code></pre><blockquote>
+<p>备忘录对象，管理Memoto对象</p>
+</blockquote>
+<pre><code>class Cliten{
+    public static void main(String args[]){
+        Originator originator = new Originator();
+        Caretaker caretaker = new Caretaker();
+        originator.showData();//原始数据为 0 0 0 
+        originator.change();//改变之后为 1 2 3
+        caretaker.storeMemoto(originator.createMemoto());//存储状态
+        //模拟下次登录之后 重新开始
+        Originator originatorNew = new Originator();    
+        originatorNew.restore(caretaker.restoreMemoto());
+        originatorNew.showData();//数据为 1 2 3
+    }
+}
+</code></pre><blockquote>
+<p>客户端模拟备忘录模式。当需要保存状态的时候将状态存入Caretaker即可。Caretaker这里只是保存最后一次变化状态，可以扩展需求做的更丰富一些。</p>
+</blockquote>
+<h4 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h4><p>例子比较简单，仅仅只是备忘录模式的原型。一句话概括就是备忘录类会记住应该记住的状态，而存储与恢复状态在原始类中调用。<br>备忘录模式在Android源码里面例子，当界面退居后台或者由于内存不足被干翻，在这之前会调用Activity中onSaveInstanceState方法保存状态。当界面再次出现在界面上时在onRestoreInstanceState方法中获取之前保存的状态。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;center&gt;设计模式之备忘录模式&lt;/center&gt;
+
+
+
+&lt;blockquote&gt;
+&lt;p&gt;备忘录模式&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1321838-ac
     
     </summary>
     

@@ -14,7 +14,7 @@
     
     <title>
         
-            分类: 服务器 | 
+            在google cloud 上搭建Jenkins持续集成实现Android应用的自动打包 | 
         
         smallstrong&#39;s blog
     </title>
@@ -73,15 +73,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://www.smallstrong.site">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="分类: 服务器 | smallstrong&#39;s blog">
+    <meta property="og:title" content="在google cloud 上搭建Jenkins持续集成实现Android应用的自动打包 | smallstrong&#39;s blog">
     <meta property="og:image" content="/img/favicon.png" />
     <meta property="og:description" content="">
     
 
     
+        <meta property="article:published_time" content="7月 23, 2017" />
+        <meta property="article:modified_time" content="9月 27, 2018" />
+    
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="分类: 服务器 | smallstrong&#39;s blog">
+    <meta name="twitter:title" content="在google cloud 上搭建Jenkins持续集成实现Android应用的自动打包 | smallstrong&#39;s blog">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -89,13 +92,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://www.smallstrong.site/categories/服务器/index.html" />
+        <link rel="canonical" href="http://www.smallstrong.site/2017/07/23/【Devops】在google-cloud-上搭建Jenkins持续集成实现Android应用的自动打包/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "smallstrong&#39;s blog",
+        "logo": "/img/favicon.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Small Strong",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/favicon.png"
+        },
+        "description": "学无止境"
+    },
+    "headline": "在google cloud 上搭建Jenkins持续集成实现Android应用的自动打包",
+    "url": "http://www.smallstrong.site/2017/07/23/【Devops】在google-cloud-上搭建Jenkins持续集成实现Android应用的自动打包/index.html",
+    "datePublished": "7月 23, 2017",
+    "dateModified": "9月 27, 2018",
+    "description": "",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://www.smallstrong.site"
+    }
+}
+</script>
 
 
     
@@ -281,99 +314,318 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
     
-        
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#准备工作"><span class="post-toc-number">1.</span> <span class="post-toc-text">准备工作</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#我掉进的一些深坑"><span class="post-toc-number">2.</span> <span class="post-toc-text">我掉进的一些深坑</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一些我参考的链接-希望对你也有帮助"><span class="post-toc-number">3.</span> <span class="post-toc-text">一些我参考的链接 希望对你也有帮助</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#写到最后"><span class="post-toc-number">4.</span> <span class="post-toc-text">写到最后</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#打包记录"><span class="post-toc-number">5.</span> <span class="post-toc-text">打包记录</span></a></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" data-original="/images/service_publish.png">
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(/images/jenkins.png)">
+    
+            <p class="article-headline-p">
+                在google cloud 上搭建Jenkins持续集成实现Android应用的自动打包
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/ava.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Small Strong</strong>
+        <span>7月 23, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAT4AAAE+CAAAAAAxUyPsAAAE1ElEQVR42u3aUXLTQBAEUN//0nAAsOmeGccBnr5SIkirJ6ro7dHjh2NxPBDgw4cPnwMfPnz4HPjw/SV8j/h49vu/ucHL879e7fXfyq+QXPP1s7x+dnz48OHDh++KL1l0/vuvoXOC1+c3NLNnx4cPHz58+G758tvM/vvPr5mfyc8nsSlaJz58+PDhw/eFfPsgkl8tBx1GEHz48OHDh+/b8+0r+/2QIKdJ1oAPHz58+PB9ii//L78NBPnYO6/sN7X+x2Yd+PDhw4cP36Jk/zd+/sD3ffjw4cOH7z/ma4/98HsWLPKQ0dYNtQA+fPjw4cO34LsdWrdBoQ0Qbfme/1yUEfjw4cOHD9+CL6+wZ6EkDyKbT81mY/g2SOHDhw8fPnxXfFc3S+JIO1yfBan3VRX48OHDhw/fFV9yobwKH37+FX/QlryeTTFRVAb48OHDhw9f+YHa6617G1DyoJCHpPbVbj6t+0OswYcPHz58+BZ8+WO0H4S19LPSP1/J5h8HPnz48OHDd8XXbrzzrX57zX0EaYcEw8CEDx8+fPjwLfjyAXP+eJuReRI+9mPvpMofjsnx4cOHDx++cs/bDtHbOiA/n7+kPJps1oMPHz58+PBd8bVb8WTz30aH5Gg3/7MCYviVAT58+PDhw7co6zel9sG2vBwbbCr+vJ7Ahw8fPnz4rvhmF9qUCHkNsVlbUvTXZ/Dhw4cPH74FXzsIzx+sjSbJGmYV/Kbo/0NwwYcPHz58+I748kiR/2lbNORlxOZ38sCEDx8+fPjwXfG1A+a8dk+Kgzwk7de2uS8+fPjw4cO355tBXFUDs3ttRuN5tCpmHfjw4cOHD99oz9sCzbbus0/HkjpgU8cnrxkfPnz48OH7Gr58u55/QNaGpHw8fzWKeHpffPjw4cOHb8H3OD3ypbRFQEIwiz7HZT0+fPjw4cMX7Hnzo32YFih/4Jay/hDtWcTBhw8fPnz4jviSsXS7/c4L9PZRc/pZrYAPHz58+PC9m28fBWZwbUBpyfIz0SvBhw8fPnz4FnwJVr7EzVa8rS3yV5U/43BMjg8fPnz48MV8+VZ5NoTOI0u+httX2A7L8eHDhw8fvg3f7eh6ExHaamCDOys48OHDhw8fvlu+2eL2m/m2pr8tAupnx4cPHz58+I748uFxO+SevYCcOw867fCgzn348OHDhw9fMOfNN8wJ1iwWXNUW+XhgWHzgw4cPHz58a74kNOSxox1O59BJfbBnwocPHz58+N7HdzA2HtXxyctr404ehjaU+PDhw4cP34avrc5n8aV9Jfk127AyC1j48OHDhw/fO/j2D7MZqCcD8teP16585oAPHz58+PBt+Dbl9QZ9UzFsosns5eHDhw8fPnxXfO3RFu5trMlrguT6m1EBPnz48OHD9w6+doScf1g2G1G3lXodO+JAc/CVAT58+PDhw/eEr63m86K85UsqiVmF8cbggg8fPnz48I34ZsttK4a2fJ/xzYb0UWmCDx8+fPjwfSFfO3Kejahnw4P8vrNxOz58+PDhw/cpvv0Au92u5+tpR+9JnMKHDx8+fPjewZeU9e2wPFl6XkZcRZ9NYMKHDx8+fPj2fJsP1NqgMItB+3FCgjUck+PDhw8fPnwxn6MeDyDAhw8fPgc+fPjwOfDh+77HT4ywllQsnpX3AAAAAElFTkSuQmCC">
+    
+</ul>
     
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/09/21/揭秘一行代码完成千台服务器自动升级部署/">揭秘一行代码完成千台服务器自动升级部署</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
         
-            揭秘一行代码完成千台服务器自动升级部署
+    </ul>
+    
 
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+    <!-- Leancloud Views -->
+        <a class="post_share-link" href="#">
+            <li class="mdl-menu__item">
+                <span id="/2017/07/23/【Devops】在google-cloud-上搭建Jenkins持续集成实现Android应用的自动打包/" class="leancloud-views_num" data-flag-title="在google cloud 上搭建Jenkins持续集成实现Android应用的自动打包">
+     &nbsp;浏览量
+</span>
 
+            </li>
+        </a>
+    
 
+    
         
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/09/21/揭秘一行代码完成千台服务器自动升级部署/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/ava.png" width="44px" height="44px" alt="Small Strong's avatar">
-            </div>
-            <div>
-                <strong>Small Strong</strong>
-                <span>9月 21, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/服务器/">服务器</a>
-            </span>
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
 
-            
+    <!-- Share Weibo -->
+    
 
-            
+    <!-- Share Twitter -->
+    
 
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
 </div>
 
-            
-            
-        
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <center>服务器 Jenkins 持续集成 之Android自动化打包发包</center>
+
+<blockquote>
+<p>本篇单纯为了做记录，最基本条件就是你需要全程翻墙，而且你需要一台配置不是最低的VPS。</p>
+<p>偶然间在小伙伴的桌上看到了一本APP研发录，兴起就花了一下午看了一下。书里讲的东西都非常切合实际开发情景。当读到第八章自动打包的时候，觉得这个事情可以搞一波。</p>
+<p>对比实际开发中，当提测时候经常遇到ui 测试找你说这个bug啥啥的，有些其实已经修复了只是没有更新包。碰巧那会儿你正(<del>和妹子聊得开心</del>）认真工作。看着旁边测试妹子还站着呢，你怎忍心？没办法，停下来，花个N分钟只是为了装个包。。。只是为了装个包。。。只是为了装个包？那还需要我亲自动手，服务器来做不就行了。</p>
+</blockquote>
+<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><ol>
+<li>一台VPS服务器（由于Android用gradle打包的过程是一个十分吃系统资源的活，公司的应用配置在双核 13g内存的情况下打包完成是4分钟）</li>
+<li>Google cloud有由Bitnami提供的一套包含Jenkins 及一些其必要的插件包括，及其他必要环境的方案。我在下面会贴图。（你可以理解使用这套方案，你这台VPS会默认安装Debian操作系统，里面已经拥有了Jenkins的一些必要环境已经插件，而且这台Debian系统的VPS，已经预装了Java环境，gradle环境，以及git环境）</li>
+<li>上面两步一句话概括就是你在一台VPS上有了个Jenkins的CI系统，默认80端口就能访问。那接下来的任务就是我们要这台Debian系统的服务器拥有打包Android应用功能的环境。前面说到Java环境已经有了，gradle环境已经有了，要实现版本控制的git环境已经有了，那就还缺Android sdk环境了。想到，我们SDK只需要提供编译打包的功能，所以只需要下载SDK tools即可。命令行官网自行下载，方法自己去找（偷偷告诉你，Google自家云服务器下载这个tools速度惊人）</li>
+<li>当准备好所有Android打包需要的环境之后，在Jenkins创建项目，配置好相应环境的目录。这些网上很多，不过我相信每个人遇到的问题都会有所不同，我在文章最后会说说我掉进的一些深坑。配置好环境之后，我是每隔两分钟检查git库是否有更新有更新就打包，最后我会将生成好的debug包上传至fir进行分发。测试和UI同学直接扫码下载安装。解放双手值得拥有。</li>
+</ol>
+<h3 id="我掉进的一些深坑"><a href="#我掉进的一些深坑" class="headerlink" title="我掉进的一些深坑"></a>我掉进的一些深坑</h3><ol>
+<li>由于对Linux系统的不熟悉，加上用ssh远程登录操作服务器真的很卡。这第一个坑就是，用户权限导致了我服务器配置的正确的ssh，然而我公司的git服务器压根儿连不上。当时真的把我搞懵逼了。解决方案是创建一个Jenkins用户，修改你创建的Jenkins项目的目录权限。这里你要掌握Debian系统下自由切换root及其他用户。</li>
+<li>在填写构建项目的时候，一定选择Use Gradle Wrapper，Make gradlew executable要勾上Force GRADLE_USER_HOME to use workspace    也勾上。这样他会自己去下载gradle。</li>
+<li>VPS配置不能低，双核10g内存我觉得是底配。不然编译打包过程出个gradle need more memory之类的服务器就躺了。</li>
+<li>另外一些，包括Android编译时候需要统一license，Android SDK的路径是写在local.properties里面的。路径写正确了。还有各种环境配置的目录基本都在/opt/bitnami/下面。部分Jenkins插件也需要安装。反正缺啥补啥，看报错定位，用Google来解决问题，遇到问题先不慌，已经有这么多人搞好了，说明那种掉下去爬不上的天坑肯定是没有的，你也可以的。</li>
+</ol>
+<h3 id="一些我参考的链接-希望对你也有帮助"><a href="#一些我参考的链接-希望对你也有帮助" class="headerlink" title="一些我参考的链接 希望对你也有帮助"></a>一些我参考的链接 希望对你也有帮助</h3><p><a href="http://www.vogella.com/tutorials/JenkinsAndroid/article.html#android_jenkinsbuild_installation" target="_blank" rel="external">http://www.vogella.com/tutorials/JenkinsAndroid/article.html#android_jenkinsbuild_installation</a></p>
+<p><a href="http://jaycechant.info/2017/Android-sdk-on-Linux-for-Jenkins-etc/" target="_blank" rel="external">http://jaycechant.info/2017/Android-sdk-on-Linux-for-Jenkins-etc/</a></p>
+<p><a href="https://stackoverflow.com/questions/39760172/you-have-not-accepted-the-license-agreements-of-the-following-sdk-components" target="_blank" rel="external">https://stackoverflow.com/questions/39760172/you-have-not-accepted-the-license-agreements-of-the-following-sdk-components</a></p>
+<h3 id="写到最后"><a href="#写到最后" class="headerlink" title="写到最后"></a>写到最后</h3><p>这本是运维该干的事情，但是你既然已经有了一颗(<del>装逼</del>)瞎折腾的心就别半途而废。我在我mac本 已经 公司的win本上在本地都事先成功打包过自己github上的一些小demo。都成功了，但是换了Debian系统的服务器还是会遇到各种层出不穷的问题，关键就是不放弃。我算算在第一次成功打出包之前我至少有50次失败的经历。</p>
+<p>这个打包服务已经正常稳定的工作两星期了，的确方便了不少。至少省下来和女票正常交流的时间哈哈。如果你遇到任何这方面的问题，欢迎留言交流。</p>
+<h3 id="打包记录"><a href="#打包记录" class="headerlink" title="打包记录"></a>打包记录</h3><p><img src="http://upload-images.jianshu.io/upload_images/1321838-5e952fcca9a44753.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="屏幕快照 2017-07-23 下午4.30.07.png"></p>
+
     
 
     
+</div>
 
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
 
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
+                
 
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
-    $('.post_thumbnail-random').addClass('lazy');
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
 
-        locatePost = locatePost.next();
-    }
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #757575;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load"> 
+    <button class="disqus_click_btn">阅读评论（disqus 评论需要科学上网 可参考本站Shadowsocks-全端翻墙文章）</button>
+</div>
+
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://www.smallstrong.site/2017/07/23/【Devops】在google-cloud-上搭建Jenkins持续集成实现Android应用的自动打包/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://www.smallstrong.site/2017/07/23/【Devops】在google-cloud-上搭建Jenkins持续集成实现Android应用的自动打包/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
 </script>
 
-    
+<script type="text/ls-javascript" id="disqus-lazy-load-script">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//www-smallstrong-wang.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+  	
+
 </div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2017/07/23/Shadowsocks-全端翻墙/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/05/16/设计模式之访问者模式/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
@@ -442,12 +694,12 @@
                 
                     <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
                 
-                分类
+                程序员的自我修养
                 <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/Android/">Android<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/categories/docker/">docker<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/数据库/">数据库<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/服务器/">服务器<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/科学上网/">科学上网<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/算法/">算法<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/蓝鲸计划/">蓝鲸计划<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/设计模式/">设计模式<span class="sidebar_archives-count">25</span></a></li><li><a class="sidebar_archives-link" href="/categories/运营/">运营<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/categories/Android/">Android<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/categories/Devops/">Devops<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/categories/操作系统/">操作系统<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/数据库-缓存/">数据库&缓存<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/爬虫/">爬虫<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/科学上网/">科学上网<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/算法/">算法<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/设计模式/">设计模式<span class="sidebar_archives-count">25</span></a>
             </ul>
         </li>
         
@@ -470,8 +722,8 @@
     
         <li>
             <a href="/archives">
-                文章总数
-                <span class="sidebar-badge">56</span>
+                搬砖次数
+                <span class="sidebar-badge">55</span>
             </a>
         </li>
         

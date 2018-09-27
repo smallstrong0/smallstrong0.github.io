@@ -14,7 +14,7 @@
     
     <title>
         
-             一个Textview控件里包含不同样式的字体 | 
+            记一次项目引入bugly热修复（基于微信tinker）与接入walle多渠道打包共存的方式 | 
         
         smallstrong&#39;s blog
     </title>
@@ -44,7 +44,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Small Strong">
     <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content="smallstrong,tips">
+    <meta name="keywords" content="smallstrong">
 
     <!-- Site Verification -->
     <meta name="google-site-verification" content="googleeb8a0c05bf01c617.html" />
@@ -73,18 +73,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://www.smallstrong.site">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content=" 一个Textview控件里包含不同样式的字体 | smallstrong&#39;s blog">
+    <meta property="og:title" content="记一次项目引入bugly热修复（基于微信tinker）与接入walle多渠道打包共存的方式 | smallstrong&#39;s blog">
     <meta property="og:image" content="/img/favicon.png" />
     <meta property="og:description" content="">
-    <meta property="og:article:tag" content="tips"> 
+    
 
     
-        <meta property="article:published_time" content="11月 18, 2016" />
-        <meta property="article:modified_time" content="11月 18, 2016" />
+        <meta property="article:published_time" content="4月 26, 2017" />
+        <meta property="article:modified_time" content="9月 27, 2018" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content=" 一个Textview控件里包含不同样式的字体 | smallstrong&#39;s blog">
+    <meta name="twitter:title" content="记一次项目引入bugly热修复（基于微信tinker）与接入walle多渠道打包共存的方式 | smallstrong&#39;s blog">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -92,7 +92,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://www.smallstrong.site/2016/11/18/一个Textview控件里包含不同样式的字体/index.html" />
+        <link rel="canonical" href="http://www.smallstrong.site/2017/04/26/【Android】记一次项目引入bugly热修复（基于微信tinker）与接入walle多渠道打包共存的方式/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -118,10 +118,10 @@
         },
         "description": "学无止境"
     },
-    "headline": " 一个Textview控件里包含不同样式的字体",
-    "url": "http://www.smallstrong.site/2016/11/18/一个Textview控件里包含不同样式的字体/index.html",
-    "datePublished": "11月 18, 2016",
-    "dateModified": "11月 18, 2016",
+    "headline": "记一次项目引入bugly热修复（基于微信tinker）与接入walle多渠道打包共存的方式",
+    "url": "http://www.smallstrong.site/2017/04/26/【Android】记一次项目引入bugly热修复（基于微信tinker）与接入walle多渠道打包共存的方式/index.html",
+    "datePublished": "4月 26, 2017",
+    "dateModified": "9月 27, 2018",
     "description": "",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -341,7 +341,7 @@
 
     
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#记一次项目引入bugly热修复（基于微信tinker）与接入walle多渠道打包共存的方式"><span class="post-toc-number">1.</span> <span class="post-toc-text">记一次项目引入bugly热修复（基于微信tinker）与接入walle多渠道打包共存的方式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#写在最前面"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">写在最前面</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#首先先将bugly升级包中的Tinker引入"><span class="post-toc-number">2.</span> <span class="post-toc-text">首先先将bugly升级包中的Tinker引入</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#新建tinker-support-gradle做gradle拆分"><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">新建tinker-support.gradle做gradle拆分</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#接下来将walle多渠道打包接入"><span class="post-toc-number">3.</span> <span class="post-toc-text">接下来将walle多渠道打包接入</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#两者结合"><span class="post-toc-number">4.</span> <span class="post-toc-text">两者结合</span></a></li></ol>
         <!--
         <li class="mdl-menu__item">
             Some Action
@@ -379,7 +379,7 @@
         
     
             <p class="article-headline-p">
-                 一个Textview控件里包含不同样式的字体
+                记一次项目引入bugly热修复（基于微信tinker）与接入walle多渠道打包共存的方式
             </p>
         </div>
 
@@ -398,7 +398,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Small Strong</strong>
-        <span>11月 18, 2016</span>
+        <span>4月 26, 2017</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -420,7 +420,7 @@
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
     <li class="mdl-menu__item">在其它设备中阅读本文章</li>
     
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQ4AAAEOCAAAAABd2qZ5AAADiElEQVR42u3aS44iMRAFwL7/pWe2LY2g38u0a2gpvEIUVNnBIsnP1x/r2/pCgAMHDhw4cODAgQPHB3N8xevVt14+5u23vl999fr9nV/dpz4LDhw4cOC4wJE8Ptlcy5GgJxCbs+DAgQMHjnsceSBsQ12CkkO/339+Fhw4cODA8WkcyaaT9GwWkt8HWhw4cODA8bs4cog2DUtSMhw4cODA8Vs48jQpP0z++bwQ2Qbyi7VSHDhw4MCxHmj4/NePznfgwIEDB45/ONqVFAd/SJmCllUb1FcnwoEDBw4cRznyQJWg7At5dWlvtH8cOHDgwPEMRz5kcKpQOAvPs58EBw4cOHA8z9FuetO+yo80G48rQj4OHDhw4DjKkR+s3VYedPMRiuR4+QAEDhw4cOB4hmOTdM0SrRnl+30WZDhw4MCB4wLHZkN5SrYfg5gNXvywZxw4cODAcZSjHSyow1gZVmejEu3CgQMHDhxPcpza+h6xHdprd4sDBw4cOJ7kaFOvfDCiPV5bcFwVB3HgwIEDxyGOIiyVR8qLj5vjtT8JDhw4cOC4x5E/PmkFnUrz2lGG2bAdDhw4cOC4wdGW29qULwmQ+WhCHvKLEQ0cOHDgwHGUox2ASw62D5x76BwdBw4cOHCc5chvlGC1pbokwM9aX8WdceDAgQPHNY52mCBv7eSgs4ZTXo6s5ztw4MCBA8dRjk0ZMS/5teMObZI5bDvhwIEDB44Fx6w4eOMweatpVpTEgQMHDhzPc+RjbcMBgkPfOtUMw4EDBw4c9zjahs3+eJvRh1lox4EDBw4ctzlmDZuz4wV54ypP/IoSJw4cOHDguMAxS59asvZqe+D8HRw4cODAcY9j1kbal+3yNHLWcEpaVjhw4MCB4x5HEt6SsLpJ5NoBhTx414EWBw4cOHAc4shXUoA7VfKb/VSrLhwOHDhw4DjKkYfe/GoepPN07lQTCwcOHDhwnOWYhdjZSEFbBDxFXBQHceDAgQPHmuNAoFpsMU/5Zq+H/ztw4MCBA8eaow2u+SPzwYJTn2/TQhw4cODAcY9j39ppr24StvzPwTDQ4sCBAweOBznaMYioSBeH7U2CVww04MCBAweO/8rRpl5tqyl5Sl4QxIEDBw4cz3AkYXITGvM759BtgocDBw4cOJ7haAttbQKWXE2GJDZjdlfmO3DgwIEDxz8cFg4cOHDgwIEDBw4cOD5s/QWbyT6ndIsoHQAAAABJRU5ErkJggg==">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAVYAAAFWCAAAAAAXxOpfAAAFhElEQVR42u3aQXLbQAwEQP//0841VY7kGYBytHTvSUWREtnLwxSAj0/rBesDAVasWC2sWLFaWLFitbAexfoRr6/nPzry9/Hkqq/X/uOm13eSnDkzwYoVK1asWE9nTR4pChkPHqClST4/v7Zl2ptgxYoVK1asp7Mmt/v8/CSctVv18DHKaPUcfWOCFStWrFix/h7WdgNmZY7nx/NfSJ7iqjCHFStWrFix/h7WJL60oElo25d7NluIFStWrFix3ps1KXO0gxTtt21sygPTPuS9sJeFFStWrFix/lfWfePkfp8vGMTEihUrVqxY3571FWtWLmkDVt5QmRVi6qfGihUrVqxYD2RtmyvttfkjtSHvFYMd3xRTNr0srFixYsWK9e1Z28bDbHChDTo53+a/WlysWLFixYr1Tqx5o+X5Vcm3bXzJf3k4QFm2ZIqAhRUrVqxYsb49axsj2nbLLAC1xZp92NoHTaxYsWLFivV01ryZkZdIZsFoNpwxw82Jv7lDrFixYsWK9VjWthWRf9uWP1qI/SBFW1jBihUrVqxY78raDivkhZX9EOcmCM4GRvMtx4oVK1asWM9lTcYv2iZEHqoS7lk8Sooy+etSByysWLFixYr1KNacY99caYNXO0LRjlrOxjexYsWKFSvWO7G2IxRtuWQfy64auJzxReUnrFixYsWK9XDWYbOhDFKz4s5wJCJ+XTYvBFasWLFixXou66zZMBuDmBVx2iZKG8jy4FgELKxYsWLFivUo1mS4oQ1JV4Wn/KpZcKxLKo/uGStWrFixYr0Ra9uQyMsZbdsmH5ho7yEJYRcHLKxYsWLFivUtWduSStsCaUch84LLZvxi30DCihUrVqxY78HaxqbNNiQDDbPGT9uMaUMkVqxYsWLFelfW17VV2iGJ/SBIe7ylH061YMWKFStWrG/Jem0LpB2qmLV28s+bIk7b5sGKFStWrFjvwZoHmrZYMwtDeYFmfw+rthNWrFixYsV6IGs9ZBC3K64qYSSss/ZJ8qIMAxZWrFixYsV6IGuOMmt+5AWa/QDHLA7mr1cxfoEVK1asWLEewto+zL7hMQtVbRmo3ZL2N7FixYoVK9Y7sbYllYSyHdHYB6x8U/OCC1asWLFixXpX1qT1kqDPSjCzQDPbvKR5MxzswIoVK1asWI9l3YSh/MhsG1qs/T1cnFuxYsWKFSvWo1hnYxP5CEUStmaFlaRwM9vICwIWVqxYsWLF+pas7R+3hYz2nH3Aygc12lfhm//CihUrVqxYD2fNmxB5EJkR5xt/VVOnLRhhxYoVK1asd2K9qoTR3lYedPL/fY6Y/0L7wmHFihUrVqwnss5KGG0Iy89pyy5tqSUnzjcbK1asWLFiPZe1LXZ8LtZmkGLW1Nm0jpIjWLFixYoV651Y22bDLL7k7ZOrhidaxPwZsWLFihUr1tNZN9EqjyD78s1saKONXLMzsWLFihUr1nNZ94WVWVhpKVvEYbmkbMlgxYoVK1as92DdFy/yILUZuJzxzUZD6s3GihUrVqxYD2RtQ1Xb/JgNZCRb0t7PtQ0erFixYsWK9U6sP9l6SQYjZiGsjYZtoBz2srBixYoVK9ajWBP0JHbsQ9KsrZIPbeQvTTTwgRUrVqxYsR7IOos1bekkb360ZY62xDNrHUXNJ6xYsWLFivVY1k1rJCm1tKWT2YZdNfwxbEdhxYoVK1ash7O2oSppzyRRZhhogm/bu2q5sWLFihUrVqxtMWWzMQlxi9V+ixUrVqxYsf5m1vbm8lJFO/aRF4M2BZpirAQrVqxYsWI9nDVvurQFkc1VPxmYZg0hrFixYsWK9XTWdkgiKaZsHj5v2OSDF+0oSXIcK1asWLFiPZ3VumphxYoVq4UVK1YLK1asFta3X38A6Ce3OxGjlVIAAAAASUVORK5CYII=">
     
 </ul>
     
@@ -433,7 +433,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/tips/">tips</a>
+        
     </ul>
     
 
@@ -447,7 +447,7 @@
     <!-- Leancloud Views -->
         <a class="post_share-link" href="#">
             <li class="mdl-menu__item">
-                <span id="/2016/11/18/一个Textview控件里包含不同样式的字体/" class="leancloud-views_num" data-flag-title=" 一个Textview控件里包含不同样式的字体">
+                <span id="/2017/04/26/【Android】记一次项目引入bugly热修复（基于微信tinker）与接入walle多渠道打包共存的方式/" class="leancloud-views_num" data-flag-title="记一次项目引入bugly热修复（基于微信tinker）与接入walle多渠道打包共存的方式">
      &nbsp;浏览量
 </span>
 
@@ -497,32 +497,40 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <center>Textview小技巧</center>
-
-<blockquote>
-<p>一个textview表示价格的时候，¥符号要小一些，好吧，就按照下面这代码搞就行了。</p>
+        <h3 id="记一次项目引入bugly热修复（基于微信tinker）与接入walle多渠道打包共存的方式"><a href="#记一次项目引入bugly热修复（基于微信tinker）与接入walle多渠道打包共存的方式" class="headerlink" title="记一次项目引入bugly热修复（基于微信tinker）与接入walle多渠道打包共存的方式"></a>记一次项目引入bugly热修复（基于微信tinker）与接入walle多渠道打包共存的方式</h3><blockquote>
+<p><a href="https://bugly.qq.com/docs/user-guide/instruction-manual-android-hotfix/?v=20170207114801" target="_blank" rel="external">bugly官方热更新指南</a></p>
+<p><a href="https://bugly.qq.com/docs/user-guide/instruction-manual-android-hotfix-demo/?v=20170207114801" target="_blank" rel="external">bugly官方接入使用详解</a></p>
+<p><a href="https://github.com/Meituan-Dianping/walle" target="_blank" rel="external">walle github地址</a></p>
+<p><a href="http://tech.meituan.com/android-apk-v2-signature-scheme.html" target="_blank" rel="external">walle 原理</a></p>
 </blockquote>
-<pre><code>String text = new String(&quot;￥&quot; + &quot;2000&quot;);
-           Log.i(&quot;cdscvdscdscsd&quot;, text);
-           SpannableString spannableString = new SpannableString(text);
-           int size = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 11, getResources()
-                   .getDisplayMetrics());
+<h4 id="写在最前面"><a href="#写在最前面" class="headerlink" title="写在最前面"></a>写在最前面</h4><ol>
+<li>bugly热更新基于微信开源的热修复框架tinker，bugly集成了tinker，并将自家的崩溃日志SDK一起集成进了升级SDK中，bugly提供了热更新管理后台。</li>
+<li>bugly提供的多渠道打包方式基于原始的productFlavors方式，会在最终dex中产生不同渠道的差异，因此会产生N多不同tinkId，因此对应tinkId打出补丁包的话也会产生N多。因此换用美团walle打包方式，在签名阶段将渠道信息写入。</li>
+</ol>
+<h3 id="首先先将bugly升级包中的Tinker引入"><a href="#首先先将bugly升级包中的Tinker引入" class="headerlink" title="首先先将bugly升级包中的Tinker引入"></a>首先先将bugly升级包中的Tinker引入</h3><ol>
+<li>app目录下添加 apply from: ‘tinker-support.gradle’ 将tinker的gradle进行分拆</li>
+<li>依赖他们家升级包  compile ‘com.tencent.bugly:crashreport_upgrade:latest.release’</li>
+</ol>
+<blockquote>
+<p>贴出代码，下面这些就已经可以了，我个人遇到的一些问题列举一下。</p>
+</blockquote>
+<ol>
+<li>def appName = “app-0210-15-36-17” 这引号里面的是你要去修复的生成版本时间文件夹（发版时候保存好，弄丢很刺激哦）</li>
+<li>要生成补丁包的时候一定要更换 tinkerId = “joojia_tinker_patch”</li>
+</ol>
+<h5 id="新建tinker-support-gradle做gradle拆分"><a href="#新建tinker-support-gradle做gradle拆分" class="headerlink" title="新建tinker-support.gradle做gradle拆分"></a>新建tinker-support.gradle做gradle拆分</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">apply plugin: &apos;com.tencent.bugly.tinker-support&apos;</div><div class="line"></div><div class="line">def bakPath = file(&quot;$&#123;buildDir&#125;/bakApk/&quot;)</div><div class="line">//当你生成基准包的时候，请替换下面这行</div><div class="line">//这行在打出补丁包的时候会制定你/build/bakApk目录下的apk文件，进行对比。</div><div class="line">def appName = &quot;app-0210-15-36-17&quot;</div><div class="line"></div><div class="line">/**</div><div class="line"> * 对于插件各参数的详细解析请参考</div><div class="line"> */</div><div class="line">tinkerSupport &#123;</div><div class="line"></div><div class="line">    // 开启tinker-support插件，默认值true</div><div class="line">    enable = true</div><div class="line"></div><div class="line">    // 指定归档目录，默认值当前module的子目录tinker</div><div class="line">    autoBackupApkDir = &quot;$&#123;bakPath&#125;&quot;</div><div class="line"></div><div class="line">    // 是否启用覆盖tinkerPatch配置功能，默认值false</div><div class="line">    // 开启后tinkerPatch配置不生效，即无需添加tinkerPatch</div><div class="line">    overrideTinkerPatchConfiguration = true</div><div class="line"></div><div class="line">    // 编译补丁包时，必需指定基线版本的apk，默认值为空</div><div class="line">    // 如果为空，则表示不是进行补丁包的编译</div><div class="line">    // @&#123;link tinkerPatch.oldApk &#125;</div><div class="line">    baseApk =  &quot;$&#123;bakPath&#125;/$&#123;appName&#125;/app-release.apk&quot;</div><div class="line"></div><div class="line">    // 对应tinker插件applyMapping</div><div class="line">    baseApkProguardMapping = &quot;$&#123;bakPath&#125;/$&#123;appName&#125;/app-release-mapping.txt&quot;</div><div class="line"></div><div class="line">    // 对应tinker插件applyResourceMapping</div><div class="line">    baseApkResourceMapping = &quot;$&#123;bakPath&#125;/$&#123;appName&#125;/app-release-R.txt&quot;</div><div class="line">//这个id在生成基准包和生成patch时候都要修改</div><div class="line">    tinkerId = &quot;joojia_tinker_patch&quot;</div><div class="line"></div><div class="line">    //构建多渠道打包时候使用</div><div class="line">    buildAllFlavorsDir = &quot;$&#123;bakPath&#125;/$&#123;appName&#125;&quot;</div><div class="line"></div><div class="line">    // 是否开启代理Application，设置之后无须改造Application，默认为false</div><div class="line">    enableProxyApplication = true</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="接下来将walle多渠道打包接入"><a href="#接下来将walle多渠道打包接入" class="headerlink" title="接下来将walle多渠道打包接入"></a>接下来将walle多渠道打包接入</h3><ol>
+<li>app目录下gradle添加 apply plugin: ‘walle’，依赖插件 classpath ‘com.meituan.android.walle:plugin:1.0.4’</li>
+<li>依赖包 compile ‘com.meituan.android.walle:library:1.0.4’</li>
+<li>添加channel文件在app目录下，里面写你的渠道号</li>
+<li>app目录下gradle加段代码</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">walle &#123;</div><div class="line">    // 指定渠道包的输出路径</div><div class="line">    apkOutputFolder = new File(&quot;$&#123;project.buildDir&#125;/outputs/channels&quot;);</div><div class="line">    // 定制渠道包的APK的文件名称</div><div class="line">    apkFileNameFormat = &apos;$&#123;appName&#125;-$&#123;packageName&#125;-$&#123;channel&#125;-$&#123;buildType&#125;-v$&#123;versionName&#125;-$&#123;versionCode&#125;-$&#123;buildTime&#125;.apk&apos;;</div><div class="line">    // 配置渠道文件列表，也可以通过channelList来配置</div><div class="line">    channelFile = &quot;./channel&quot;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="两者结合"><a href="#两者结合" class="headerlink" title="两者结合"></a>两者结合</h3><ol>
+<li>首先 ./gradlew clean assembleRelease -PchannelFile=app/channel 会在BakApk先生成一个基准包，在output/channels目录下生成所有渠道包(千万注意你channel的目录)</li>
+<li>./gradlew buildTinkerPatchRelease 生成一个补丁包基于上面那个基准包来生成即可，之后去bugly平台下发即可。</li>
+</ol>
 
-           spannableString.setSpan(new AbsoluteSizeSpan(size), 0, 1, Spanned
-                   .SPAN_EXCLUSIVE_EXCLUSIVE);//设置字体大小
-           spannableString.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.green)), 0, 1,
-                   Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);//设置字体颜色
-
-           int size2 = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 16, getResources
-                   ().getDisplayMetrics());
-
-           spannableString.setSpan(new AbsoluteSizeSpan(size2), text.length() - 1, text.length(),
-                   Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);//设置字体大小
-           spannableString.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.green)), text.length
-                   () - 1, text.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);//设置字体颜色
-
-                   tv_title_name.setText(spannableString);
-</code></pre>
     
 
     
@@ -574,8 +582,8 @@
 
 <script type="text/javascript">
     var disqus_config = function () {
-        this.page.url = 'http://www.smallstrong.site/2016/11/18/一个Textview控件里包含不同样式的字体/';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = 'http://www.smallstrong.site/2016/11/18/一个Textview控件里包含不同样式的字体/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = 'http://www.smallstrong.site/2017/04/26/【Android】记一次项目引入bugly热修复（基于微信tinker）与接入walle多渠道打包共存的方式/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://www.smallstrong.site/2017/04/26/【Android】记一次项目引入bugly热修复（基于微信tinker）与接入walle多渠道打包共存的方式/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
 </script>
 
@@ -608,7 +616,7 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2016/11/23/那些你可能不知道的app推广渠道/" id="post_nav-newer" class="prev-content">
+        <a href="/2017/04/27/设计模式之策略模式/" id="post_nav-newer" class="prev-content">
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                 <i class="material-icons">arrow_back</i>
             </button>
@@ -622,7 +630,7 @@
 
     <!-- Next Nav -->
     
-        <a href="/2016/10/31/mac-合并分区的时候失败，你可以尝试下这个/" id="post_nav-older" class="next-content">
+        <a href="/2017/04/26/设计模式之代理模式/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
@@ -703,12 +711,12 @@
                 
                     <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
                 
-                分类
+                程序员的自我修养
                 <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/Android/">Android<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/categories/docker/">docker<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/数据库/">数据库<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/服务器/">服务器<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/科学上网/">科学上网<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/算法/">算法<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/蓝鲸计划/">蓝鲸计划<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/设计模式/">设计模式<span class="sidebar_archives-count">25</span></a></li><li><a class="sidebar_archives-link" href="/categories/运营/">运营<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/categories/Android/">Android<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/categories/Devops/">Devops<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/categories/操作系统/">操作系统<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/数据库-缓存/">数据库&缓存<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/爬虫/">爬虫<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/科学上网/">科学上网<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/算法/">算法<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/设计模式/">设计模式<span class="sidebar_archives-count">25</span></a>
             </ul>
         </li>
         
@@ -731,8 +739,8 @@
     
         <li>
             <a href="/archives">
-                文章总数
-                <span class="sidebar-badge">56</span>
+                搬砖次数
+                <span class="sidebar-badge">55</span>
             </a>
         </li>
         
