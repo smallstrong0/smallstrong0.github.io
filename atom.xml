@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.smallstrong.site/"/>
-  <updated>2018-09-27T01:15:13.427Z</updated>
+  <updated>2018-11-01T09:18:37.542Z</updated>
   <id>http://www.smallstrong.site/</id>
   
   <author>
@@ -14,6 +14,44 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【Mysql】mysql tips</title>
+    <link href="http://www.smallstrong.site/2018/10/01/%E3%80%90Mysql%E3%80%91mysql-tips/"/>
+    <id>http://www.smallstrong.site/2018/10/01/【Mysql】mysql-tips/</id>
+    <published>2018-10-01T09:15:59.000Z</published>
+    <updated>2018-11-01T09:18:37.542Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="数据库表结构"><a href="#数据库表结构" class="headerlink" title="数据库表结构"></a>数据库表结构</h2><ol>
+<li>选取合适的字段属性，原则是够用就行，能用数字做映射的尽量用数字。</li>
+<li>尽量将字段设置为NOT NULL,NULL 会参与字段比较，影响效率。</li>
+<li>最好为每张表加个自增id，UNSIGNED INT类型</li>
+<li>存储引擎根据业务来选型</li>
+</ol>
+<h2 id="SQL和索引"><a href="#SQL和索引" class="headerlink" title="SQL和索引"></a>SQL和索引</h2><ol>
+<li>insert语句时，同一客户端插入很多行，应该尽量使用多个值表一次性插入</li>
+<li>使用JOIN来替代子查询（不需要在内存中创建临时表来）</li>
+<li>为那些join 相同字段、WHERE查询、ORDERBY排序字段建立索引，在建有索引的字段上尽量不要使用函数操作，使用like和通配符时会有性能代价。当数据量较大,查询字段较多,查询方式较为复杂时候就该建立搜索库来解决问题。</li>
+<li>明确知道只有一条返回时候用上 limit 1</li>
+<li>limit做分页的时候想办法知道offset，然后拿后面确定的数据个数</li>
+<li>select要哪些字段取哪些字段，select * 这种不图一时爽</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;数据库表结构&quot;&gt;&lt;a href=&quot;#数据库表结构&quot; class=&quot;headerlink&quot; title=&quot;数据库表结构&quot;&gt;&lt;/a&gt;数据库表结构&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;选取合适的字段属性，原则是够用就行，能用数字做映射的尽量用数字。&lt;/li&gt;
+&lt;li&gt;尽量将字段设
+    
+    </summary>
+    
+      <category term="数据库&amp;缓存" scheme="http://www.smallstrong.site/categories/%E6%95%B0%E6%8D%AE%E5%BA%93-%E7%BC%93%E5%AD%98/"/>
+    
+    
+      <category term="mysql" scheme="http://www.smallstrong.site/tags/mysql/"/>
+    
+  </entry>
   
   <entry>
     <title>【Redis】redis过期及逐出策略</title>
@@ -1100,130 +1138,6 @@
 &lt;p&gt;观察者模式&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1321838-c031
-    
-    </summary>
-    
-      <category term="设计模式" scheme="http://www.smallstrong.site/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>设计模式之备忘录模式</title>
-    <link href="http://www.smallstrong.site/2017/05/09/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%A4%87%E5%BF%98%E5%BD%95%E6%A8%A1%E5%BC%8F/"/>
-    <id>http://www.smallstrong.site/2017/05/09/设计模式之备忘录模式/</id>
-    <published>2017-05-09T02:14:43.000Z</published>
-    <updated>2017-05-09T07:14:32.000Z</updated>
-    
-    <content type="html"><![CDATA[<center>设计模式之备忘录模式</center>
-
-
-
-<blockquote>
-<p>备忘录模式</p>
-</blockquote>
-<p><img src="http://upload-images.jianshu.io/upload_images/1321838-ac5dddfc229f6593.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="备忘录模式UML.png"></p>
-<pre><code>class Originator{
-    private int stateA = 0;
-    private int stateB = 0;
-    private int stateC = 0;
-
-    public Memoto createMemoto(){
-        Memoto memoto = new Memoto();
-        memoto.setStateA(stateA);
-        memoto.setStateB(stateB);
-        memoto.setStateC(stateC);
-    }
-
-    public void restore(Memoto memoto){
-        this.stateA = memoto.getStateA();
-        this.stateB = memoto.getStateB();
-        this.stateC = memoto.getStateC();
-    }
-
-    public void change(){
-        stateA = 1;
-        stateB = 2;
-        stateC = 3;
-    }
-
-    public void showData(){
-        System.out.println(stateA+&quot;==&quot;+stateB+&quot;==&quot;+stateC);
-    }
-
-}
-</code></pre><blockquote>
-<p>原始类</p>
-</blockquote>
-<pre><code>class Memoto{
-    private int stateA;
-    private int stateB;
-    private int stateC;
-
-    public int getStateA(){
-        return this.stateA;
-    }
-    public int getStateB(){
-        return this.stateB;
-    }
-    public int getStateC(){
-        return this.stateC;
-    }
-    public void setStateA(int a){
-        this.stateA = a;
-    }
-    public void setStateB(int b){
-        this.stateB = b;
-    }
-    public void setStateC(int c){
-        this.stateC = c;
-    }
-}    
-</code></pre><blockquote>
-<p>数据bean类</p>
-</blockquote>
-<pre><code>class Caretaker{
-    Memoto memoto;
-    public Memoto restoreMemoto(){
-        return this.memoto;//恢复数据
-    }
-
-    public void storeMemoto(Memoto memoto){
-        this.memoto = memoto;
-    }
-}
-</code></pre><blockquote>
-<p>备忘录对象，管理Memoto对象</p>
-</blockquote>
-<pre><code>class Cliten{
-    public static void main(String args[]){
-        Originator originator = new Originator();
-        Caretaker caretaker = new Caretaker();
-        originator.showData();//原始数据为 0 0 0 
-        originator.change();//改变之后为 1 2 3
-        caretaker.storeMemoto(originator.createMemoto());//存储状态
-        //模拟下次登录之后 重新开始
-        Originator originatorNew = new Originator();    
-        originatorNew.restore(caretaker.restoreMemoto());
-        originatorNew.showData();//数据为 1 2 3
-    }
-}
-</code></pre><blockquote>
-<p>客户端模拟备忘录模式。当需要保存状态的时候将状态存入Caretaker即可。Caretaker这里只是保存最后一次变化状态，可以扩展需求做的更丰富一些。</p>
-</blockquote>
-<h4 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h4><p>例子比较简单，仅仅只是备忘录模式的原型。一句话概括就是备忘录类会记住应该记住的状态，而存储与恢复状态在原始类中调用。<br>备忘录模式在Android源码里面例子，当界面退居后台或者由于内存不足被干翻，在这之前会调用Activity中onSaveInstanceState方法保存状态。当界面再次出现在界面上时在onRestoreInstanceState方法中获取之前保存的状态。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;center&gt;设计模式之备忘录模式&lt;/center&gt;
-
-
-
-&lt;blockquote&gt;
-&lt;p&gt;备忘录模式&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1321838-ac
     
     </summary>
     

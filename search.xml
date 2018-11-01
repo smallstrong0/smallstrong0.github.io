@@ -3,6 +3,40 @@
   
     
     <entry>
+      <title><![CDATA[【Mysql】mysql tips]]></title>
+      <url>/2018/10/01/%E3%80%90Mysql%E3%80%91mysql-tips/</url>
+      <content type="html"><![CDATA[<h2 id="数据库表结构"><a href="#数据库表结构" class="headerlink" title="数据库表结构"></a>数据库表结构</h2><ol>
+<li>选取合适的字段属性，原则是够用就行，能用数字做映射的尽量用数字。</li>
+<li>尽量将字段设置为NOT NULL,NULL 会参与字段比较，影响效率。</li>
+<li>最好为每张表加个自增id，UNSIGNED INT类型</li>
+<li>存储引擎根据业务来选型</li>
+</ol>
+<h2 id="SQL和索引"><a href="#SQL和索引" class="headerlink" title="SQL和索引"></a>SQL和索引</h2><ol>
+<li>insert语句时，同一客户端插入很多行，应该尽量使用多个值表一次性插入</li>
+<li>使用JOIN来替代子查询（不需要在内存中创建临时表来）</li>
+<li>为那些join 相同字段、WHERE查询、ORDERBY排序字段建立索引，在建有索引的字段上尽量不要使用函数操作，使用like和通配符时会有性能代价。当数据量较大,查询字段较多,查询方式较为复杂时候就该建立搜索库来解决问题。</li>
+<li>明确知道只有一条返回时候用上 limit 1</li>
+<li>limit做分页的时候想办法知道offset，然后拿后面确定的数据个数</li>
+<li>select要哪些字段取哪些字段，select * 这种不图一时爽</li>
+</ol>
+]]></content>
+      
+        <categories>
+            
+            <category> 数据库&amp;缓存 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> mysql </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[【Redis】redis过期及逐出策略]]></title>
       <url>/2018/07/03/%E3%80%90Redis%E3%80%91redis%E8%BF%87%E6%9C%9F%E5%8F%8A%E9%80%90%E5%87%BA%E7%AD%96%E7%95%A5/</url>
       <content type="html"><![CDATA[<h3 id="过期key设置"><a href="#过期key设置" class="headerlink" title="过期key设置"></a>过期key设置</h3><ol>
