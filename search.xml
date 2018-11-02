@@ -3,6 +3,40 @@
   
     
     <entry>
+      <title><![CDATA[【网络基础】tcp]]></title>
+      <url>/2018/10/03/%E3%80%90%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E3%80%91tcp/</url>
+      <content type="html"><![CDATA[<h2 id="关于TCP协议的三次握手和四次挥手"><a href="#关于TCP协议的三次握手和四次挥手" class="headerlink" title="关于TCP协议的三次握手和四次挥手"></a>关于TCP协议的三次握手和四次挥手</h2><blockquote>
+<p>tcp位于网络七层的传输层，就是这协议传数据用的。理解TCP协议的三次握手和四次挥手抓住一点，全双工！三次握手连接时候要满足两端都具有收发能力，四次挥手断开连接时要确保两端都明白对方不发了，记住是两端。</p>
+</blockquote>
+<h4 id="三次握手-（确保两端收发没问题即可建立连接）"><a href="#三次握手-（确保两端收发没问题即可建立连接）" class="headerlink" title="三次握手 （确保两端收发没问题即可建立连接）"></a>三次握手 （确保两端收发没问题即可建立连接）</h4><ol>
+<li>Client -&gt; Service：听得到吗？ (Service收到及证明了Service具有接受能力)</li>
+<li>Service -&gt; Client: 听得到！(Client收到及证明了Client发出去的消息Service收到了，那么Client的发送能力被证明，Client还收到Service的回复证明Client端自己明白了自己收发都没有问题)</li>
+<li>Client -&gt; Service：OK! （Service收到Client反馈收到及证明自己上一步发出去的信息被Client确认了说明自己的发送能力没问题，那么就证明了Service收发都没有问题）</li>
+</ol>
+<h4 id="四次挥手-（确保两端都没有数据要传递了）"><a href="#四次挥手-（确保两端都没有数据要传递了）" class="headerlink" title="四次挥手 （确保两端都没有数据要传递了）"></a>四次挥手 （确保两端都没有数据要传递了）</h4><ol>
+<li>Client -&gt; Service 我数据传完了，我这边断掉了奥 </li>
+<li>Service -&gt; Client 好的，你断掉吧  （到这一步客户端传输内容中断）</li>
+<li>Service -&gt; Client 我这边数据也传完了，我也要断了奥 </li>
+<li>Client -&gt; Service 好的，你断掉吧  （到这一步服务端传输内容中断）</li>
+</ol>
+]]></content>
+      
+        <categories>
+            
+            <category> 网络基础 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> net </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[【网络基础】dns]]></title>
       <url>/2018/10/02/%E3%80%90%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E3%80%91dns/</url>
       <content type="html"><![CDATA[<h2 id="dns解析过程"><a href="#dns解析过程" class="headerlink" title="dns解析过程"></a>dns解析过程</h2><ol>

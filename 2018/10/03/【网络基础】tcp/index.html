@@ -14,7 +14,7 @@
     
     <title>
         
-            设计模式之责任链模式 | 
+            【网络基础】tcp | 
         
         smallstrong&#39;s blog
     </title>
@@ -44,7 +44,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Small Strong">
     <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content="smallstrong">
+    <meta name="keywords" content="smallstrong,net">
 
     <!-- Site Verification -->
     <meta name="google-site-verification" content="googleeb8a0c05bf01c617.html" />
@@ -73,18 +73,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://www.smallstrong.site">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="设计模式之责任链模式 | smallstrong&#39;s blog">
+    <meta property="og:title" content="【网络基础】tcp | smallstrong&#39;s blog">
     <meta property="og:image" content="/img/favicon.png" />
     <meta property="og:description" content="">
-    
+    <meta property="og:article:tag" content="net"> 
 
     
-        <meta property="article:published_time" content="4月 28, 2017" />
-        <meta property="article:modified_time" content="4月 28, 2017" />
+        <meta property="article:published_time" content="10月 03, 2018" />
+        <meta property="article:modified_time" content="11月 02, 2018" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="设计模式之责任链模式 | smallstrong&#39;s blog">
+    <meta name="twitter:title" content="【网络基础】tcp | smallstrong&#39;s blog">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -92,7 +92,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://www.smallstrong.site/2017/04/28/设计模式之责任链模式/index.html" />
+        <link rel="canonical" href="http://www.smallstrong.site/2018/10/03/【网络基础】tcp/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -118,10 +118,10 @@
         },
         "description": "学无止境"
     },
-    "headline": "设计模式之责任链模式",
-    "url": "http://www.smallstrong.site/2017/04/28/设计模式之责任链模式/index.html",
-    "datePublished": "4月 28, 2017",
-    "dateModified": "4月 28, 2017",
+    "headline": "【网络基础】tcp",
+    "url": "http://www.smallstrong.site/2018/10/03/【网络基础】tcp/index.html",
+    "datePublished": "10月 03, 2018",
+    "dateModified": "11月 02, 2018",
     "description": "",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -341,7 +341,7 @@
 
     
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#个人总结"><span class="post-toc-number">1.</span> <span class="post-toc-text">个人总结</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#关于TCP协议的三次握手和四次挥手"><span class="post-toc-number">1.</span> <span class="post-toc-text">关于TCP协议的三次握手和四次挥手</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#三次握手-（确保两端收发没问题即可建立连接）"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">三次握手 （确保两端收发没问题即可建立连接）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#四次挥手-（确保两端都没有数据要传递了）"><span class="post-toc-number">1.0.2.</span> <span class="post-toc-text">四次挥手 （确保两端都没有数据要传递了）</span></a></li></ol></li></ol></li></ol>
         <!--
         <li class="mdl-menu__item">
             Some Action
@@ -366,20 +366,11 @@
                 
     <!-- Paradox Post Header -->
     
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-            <script type="text/ls-javascript" id="post-thumbnail-script">
-    var randomNum = Math.floor(Math.random() * 19 + 1);
-
-    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
-    $('.post_thumbnail-random').addClass('lazy');
-</script>
-
-        
+        <!-- Custom Thumbnail -->
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(/images/tcp)">
     
             <p class="article-headline-p">
-                设计模式之责任链模式
+                【网络基础】tcp
             </p>
         </div>
 
@@ -398,7 +389,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Small Strong</strong>
-        <span>4月 28, 2017</span>
+        <span>10月 03, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -420,7 +411,7 @@
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
     <li class="mdl-menu__item">在其它设备中阅读本文章</li>
     
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC10lEQVR42u3aW44iMRAEwLn/pXcPMMJkunpXYEd/jaBxO4w0RT1+/lx5/WBjY2NjY2NjY2N/JPsnvn5/Kl/n1T35Zx/YMzY2NvbR7Df/+pfI9VaSdZJ3H9gzNjY29gXsdYBZ35Pg20C1PuJ8z9jY2NjYr+5ZB6E8vE0CITY2Njb2HjtJJ9oVJoeLjY2NjZ0XaHLM3nYnxaZ/WEvDxsbG/nh23jT9nL//a38bGxsb+4PZ9Qhj8KO/TXVyzGPDl9jY2NgHsfcasW2ZaVJgWh990TDGxsbGPpS9Xi4v2eT3zBsPbWMAGxsb+2x2Hq6Sd+ehKEfW+8HGxsa+jD1JMJ565eEkBxsbG/sCdnsce83XHL8eynysv42NjY395ey2qNQmKnlykgSnvMH8cC0NGxsb+0vYySMnsLxJMB+1xMbGxr6HnScbbdF/L12ZNCSwsbGxb2bnpZy8lL/XGNgLTlGqg42NjX0oe73pSVBpU4g2NOavYGNjY5/NbodvcvA8XOVJyAP9bWxsbOyvZe8lFeuyUR4aW2oSIF+ug42NjX00e1I8ystPLa8NV2++MGxsbOxD2e3oTF5gagPkXlqSBF1sbGzsG9h7JaHJGM0k+UmOHhsbG/sedr6hdhQy2kpZMGrTFWxsbOwb2PMiUZLA5IM4yfBQHnqxsbGxb2O3haQ2Pdgb30yO6YH2ADY2NvZx7Ba8d0zz9Yugi42NjX0Ne6/c3zaA96h7oRcbGxsbO0lRkqRib3CnbRhgY2Nj38Zur7adkI8EJQfRhkxsbGzsG9jzgZiE1B5i+8QopcHGxsY+mp0HrXpQJg5d89TljQIbGxv7AvZeCWmSxuQFrPbCxsbGxs5/+udN37bl0I4TvUlmsLGxsbHjdKIdvkmOqU2csLGxse9k7zV314/cGwNKgmX99WBjY2MfzW4ThsnYTbJCm3JE62NjY2Mfyr7nwsbGxsbGxsbGxv6Y6y+obs2AfSrZowAAAABJRU5ErkJggg==">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAACyklEQVR42u3a0W7CMAwF0P7/T2+vkzbGtR1QSU6eEJQ2J5N2iZ3r68hxYWNjY2NjY2NjY9+SfcXj5/W/Xyfv9O726Fv5nLGxsbFPYD/51x9cM0c++lZvPtjY2NhnspPQSh5/FUcegZM5Y2NjY2Mn4RE9Po6ofD7Y2NjY2D12AlgLw8bGxsaeF5WqAVaNrnyr89ZaGjY2Nvbt2fNG7/tf36K/jY2NjX0Ddm8L0WsA51Ocb3X+uBs2Njb2puzk535yCLK3tai2E0YNY2xsbOyt2TnmFY3eZPOzoBSFjY2NvTW7twT5dqUaXdWGRHQlNjY29gHsFz4yPnCffJoEJDY2NvY57PxG1QW6WiNvM5QXERsbG/sAdg/f+zRfxDzknvyRsLGxsTdlJz/082t60Zi3nKsBiY2NjX0Ce1LimSzHqsZwoQmNjY2NfQA7n1YeHtX4mbQfnkQpNjY29gHsvGSfT6gwrVb4FbY02NjY2FuzVxX3e6X8/NN8ztjY2NjnsKubisk1+Xd726FCgGFjY2Nvx66Wlv6/Qx421RL/JMywsbGx92ZXC/G90tKkfTtZdGxsbOy92UmBPm/EVifX2+pUN1HY2NjYe7OrBxmrjYF84XpLmZeWsLGxsfdm55uBnNTbflTLTKMAw8bGxt6IHZXXi5uTPPAm0VVYIGxsbOxN2Xnk5FPMQzFpPFQbz9jY2NjYeWlpUjx6eQkp74pgY2Njfzh73l7NI21SQsrbus2iEjY2NvbHsqtjEjmTElUegQu2ItjY2Ngfxb7iMW/NzgtJo6IVNjY29tbsSWmpCkiKU9UAS9rV2NjY2CewVxWVkmjJ358Uv7CxsbGxE1J+gCaBrWoJYGNjY2P3wmnOmxzQKbcHsLGxsbdjV4tK8/jpHf2pNgawsbGxT2D3ppUczcmnmBebmoeEsLGxsTdlnzOwsbGxsbGxsbGxbzO+AVzMhylFmb/rAAAAAElFTkSuQmCC">
     
 </ul>
     
@@ -433,7 +424,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        
+        <a class="post_tag-link" href="/tags/net/">net</a>
     </ul>
     
 
@@ -447,7 +438,7 @@
     <!-- Leancloud Views -->
         <a class="post_share-link" href="#">
             <li class="mdl-menu__item">
-                <span id="/2017/04/28/设计模式之责任链模式/" class="leancloud-views_num" data-flag-title="设计模式之责任链模式">
+                <span id="/2018/10/03/【网络基础】tcp/" class="leancloud-views_num" data-flag-title="【网络基础】tcp">
      &nbsp;浏览量
 </span>
 
@@ -497,100 +488,20 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <center>设计模式之责任链模式</center>
-
-
-<blockquote>
-<p>责任链模式</p>
+        <h2 id="关于TCP协议的三次握手和四次挥手"><a href="#关于TCP协议的三次握手和四次挥手" class="headerlink" title="关于TCP协议的三次握手和四次挥手"></a>关于TCP协议的三次握手和四次挥手</h2><blockquote>
+<p>tcp位于网络七层的传输层，就是这协议传数据用的。理解TCP协议的三次握手和四次挥手抓住一点，全双工！三次握手连接时候要满足两端都具有收发能力，四次挥手断开连接时要确保两端都明白对方不发了，记住是两端。</p>
 </blockquote>
-<p><img src="http://upload-images.jianshu.io/upload_images/1321838-8ac226dddb839fd1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="责任链模式UML.png"></p>
-<pre><code>abstract class Department{
-    protected Department mDepartment;
-
-    public void setDepartment(Department department){
-        this.mDepartment = department;
-    }
-
-    public abstract void makeChoice(Things s);
-}
-</code></pre><blockquote>
-<p>抽象部门，成员变量指定上级部门，定义处理事情的方法</p>
-</blockquote>
-<pre><code>class Municipal extends Department{
-    public void makeChoice(Things s){
-        if(s.level &lt;= 1){
-            Log.i(&quot;smallstrong&quot;,&quot;市级部门&quot;+s.thing);
-        }else{
-            this.mDepartment.makeChoice(s);//报告上级
-        }
-    }
-}
-</code></pre><blockquote>
-<p>市级部门</p>
-</blockquote>
-<pre><code>class Provincial extends Department{
-    public void makeChoice(Things s){
-        if(s.level &lt;= 2){
-            Log.i(&quot;smallstrong&quot;,&quot;省级部门&quot;+s.thing);
-        }else{
-            this.mDepartment.makeChoice(s);//报告上级
-        }
-    }
-}
-</code></pre><blockquote>
-<p>省级部门</p>
-</blockquote>
-<pre><code>class Country extends Department{
-    public void makeChoice(Things s){
-        if(s.level &gt; 0){
-            Log.i(&quot;smallstrong&quot;,&quot;国家级部门&quot;+s.thing);
-        }else{
-            //this.mDepartment.makeChoice(s);//报告上级
-        }
-    }
-}    
-</code></pre><blockquote>
-<p>国家级部门    </p>
-</blockquote>
-<pre><code>class Things{
-    private static final int level;//1  市级范围  2 省级范围 3 国家级范围
-    private static final String thing;
-
-    public Things(int level ,String thing){
-        this.level = level;
-        this.thing = thing;
-    }
-}
-</code></pre><blockquote>
-<p>具体事情与等级    </p>
-</blockquote>
-<pre><code>class Client{
-    public static void main(String args[]){
-        Department mMunicipal,mProvincial,mCountry;
-        mMunicipal = new Municipal();
-        mProvincial = new Provincial();
-        mCountry = new Country();
-        mMunicipal.setDepartment(mProvincial);
-        mProvincial.setDepartment(mCountry);
-
-        Things thing = new Things(1,&quot;李达康冲击GDP&quot;);
-        mMunicipal.makeChoice(thing);    
-
-        Things thing = new Things(2,&quot;沙瑞金书记召开省部级会议&quot;);
-        mMunicipal.makeChoice(thing);    
-
-        Things thing = new Things(3,&quot;赵立春老书记被罢免&quot;);
-        mMunicipal.makeChoice(thing);    
-    }
-}
-</code></pre><blockquote>
-<p>客户端，先要构造一个责任顺序。</p>
-</blockquote>
-<p>log如下</p>
-<p>[市级部门李达康冲击GDP]</p>
-<p>[沙瑞金书记召开省部级会议]</p>
-<p>[赵立春老书记被罢免]</p>
-<h3 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h3><p>责任链模式适用于多个对象都可以处理一个事情，对象可以根据情况处理或者丢给一个级别的对象处理。客户端要代码实现一个责任顺序。Android中view事件的分发已经有序广播的传递都采用了这种模式（相似）。</p>
+<h4 id="三次握手-（确保两端收发没问题即可建立连接）"><a href="#三次握手-（确保两端收发没问题即可建立连接）" class="headerlink" title="三次握手 （确保两端收发没问题即可建立连接）"></a>三次握手 （确保两端收发没问题即可建立连接）</h4><ol>
+<li>Client -&gt; Service：听得到吗？ (Service收到及证明了Service具有接受能力)</li>
+<li>Service -&gt; Client: 听得到！(Client收到及证明了Client发出去的消息Service收到了，那么Client的发送能力被证明，Client还收到Service的回复证明Client端自己明白了自己收发都没有问题)</li>
+<li>Client -&gt; Service：OK! （Service收到Client反馈收到及证明自己上一步发出去的信息被Client确认了说明自己的发送能力没问题，那么就证明了Service收发都没有问题）</li>
+</ol>
+<h4 id="四次挥手-（确保两端都没有数据要传递了）"><a href="#四次挥手-（确保两端都没有数据要传递了）" class="headerlink" title="四次挥手 （确保两端都没有数据要传递了）"></a>四次挥手 （确保两端都没有数据要传递了）</h4><ol>
+<li>Client -&gt; Service 我数据传完了，我这边断掉了奥 </li>
+<li>Service -&gt; Client 好的，你断掉吧  （到这一步客户端传输内容中断）</li>
+<li>Service -&gt; Client 我这边数据也传完了，我也要断了奥 </li>
+<li>Client -&gt; Service 好的，你断掉吧  （到这一步服务端传输内容中断）</li>
+</ol>
 
     
 
@@ -643,8 +554,8 @@
 
 <script type="text/javascript">
     var disqus_config = function () {
-        this.page.url = 'http://www.smallstrong.site/2017/04/28/设计模式之责任链模式/';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = 'http://www.smallstrong.site/2017/04/28/设计模式之责任链模式/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = 'http://www.smallstrong.site/2018/10/03/【网络基础】tcp/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://www.smallstrong.site/2018/10/03/【网络基础】tcp/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
 </script>
 
@@ -677,21 +588,13 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2017/05/02/设计模式之命令模式/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2017/04/27/设计模式之策略模式/" id="post_nav-older" class="next-content">
+        <a href="/2018/10/02/【网络基础】dns/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">

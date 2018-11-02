@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.smallstrong.site/"/>
-  <updated>2018-11-02T03:34:07.149Z</updated>
+  <updated>2018-11-02T08:50:52.081Z</updated>
   <id>http://www.smallstrong.site/</id>
   
   <author>
@@ -14,6 +14,43 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【网络基础】tcp</title>
+    <link href="http://www.smallstrong.site/2018/10/03/%E3%80%90%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E3%80%91tcp/"/>
+    <id>http://www.smallstrong.site/2018/10/03/【网络基础】tcp/</id>
+    <published>2018-10-03T02:12:15.000Z</published>
+    <updated>2018-11-02T08:50:52.081Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="关于TCP协议的三次握手和四次挥手"><a href="#关于TCP协议的三次握手和四次挥手" class="headerlink" title="关于TCP协议的三次握手和四次挥手"></a>关于TCP协议的三次握手和四次挥手</h2><blockquote>
+<p>tcp位于网络七层的传输层，就是这协议传数据用的。理解TCP协议的三次握手和四次挥手抓住一点，全双工！三次握手连接时候要满足两端都具有收发能力，四次挥手断开连接时要确保两端都明白对方不发了，记住是两端。</p>
+</blockquote>
+<h4 id="三次握手-（确保两端收发没问题即可建立连接）"><a href="#三次握手-（确保两端收发没问题即可建立连接）" class="headerlink" title="三次握手 （确保两端收发没问题即可建立连接）"></a>三次握手 （确保两端收发没问题即可建立连接）</h4><ol>
+<li>Client -&gt; Service：听得到吗？ (Service收到及证明了Service具有接受能力)</li>
+<li>Service -&gt; Client: 听得到！(Client收到及证明了Client发出去的消息Service收到了，那么Client的发送能力被证明，Client还收到Service的回复证明Client端自己明白了自己收发都没有问题)</li>
+<li>Client -&gt; Service：OK! （Service收到Client反馈收到及证明自己上一步发出去的信息被Client确认了说明自己的发送能力没问题，那么就证明了Service收发都没有问题）</li>
+</ol>
+<h4 id="四次挥手-（确保两端都没有数据要传递了）"><a href="#四次挥手-（确保两端都没有数据要传递了）" class="headerlink" title="四次挥手 （确保两端都没有数据要传递了）"></a>四次挥手 （确保两端都没有数据要传递了）</h4><ol>
+<li>Client -&gt; Service 我数据传完了，我这边断掉了奥 </li>
+<li>Service -&gt; Client 好的，你断掉吧  （到这一步客户端传输内容中断）</li>
+<li>Service -&gt; Client 我这边数据也传完了，我也要断了奥 </li>
+<li>Client -&gt; Service 好的，你断掉吧  （到这一步服务端传输内容中断）</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;关于TCP协议的三次握手和四次挥手&quot;&gt;&lt;a href=&quot;#关于TCP协议的三次握手和四次挥手&quot; class=&quot;headerlink&quot; title=&quot;关于TCP协议的三次握手和四次挥手&quot;&gt;&lt;/a&gt;关于TCP协议的三次握手和四次挥手&lt;/h2&gt;&lt;blockquote&gt;
+
+    
+    </summary>
+    
+      <category term="网络基础" scheme="http://www.smallstrong.site/categories/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="net" scheme="http://www.smallstrong.site/tags/net/"/>
+    
+  </entry>
   
   <entry>
     <title>【网络基础】dns</title>
@@ -1005,85 +1042,6 @@
 &lt;p&gt;模板方法模式&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1321838-e
-    
-    </summary>
-    
-      <category term="设计模式" scheme="http://www.smallstrong.site/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>设计模式之状态模式</title>
-    <link href="http://www.smallstrong.site/2017/05/11/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%8A%B6%E6%80%81%E6%A8%A1%E5%BC%8F/"/>
-    <id>http://www.smallstrong.site/2017/05/11/设计模式之状态模式/</id>
-    <published>2017-05-11T07:16:11.000Z</published>
-    <updated>2017-05-11T07:31:55.000Z</updated>
-    
-    <content type="html"><![CDATA[<center>设计模式之状态模式</center>
-
-
-<blockquote>
-<p>状态模式</p>
-</blockquote>
-<p><img src="http://upload-images.jianshu.io/upload_images/1321838-e29eb69db5ab30ed.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="状态模式UML.png">    </p>
-<pre><code>interface TransformersState{
-    void skill();//变形金刚不同状态下有不同技能
-}
-</code></pre><blockquote>
-<p>汽车人接口    </p>
-</blockquote>
-<pre><code>class CarTransformersState implements TransformersState{
-    public void skill(){
-        // 汽车状态，技能就是压马路吧
-    }
-}
-</code></pre><blockquote>
-<p>变形金刚的汽车型状态</p>
-</blockquote>
-<pre><code>class FightingTransformersState implements TransformersState{
-    public void skill(){
-        // 战斗状态，技能反正不是压马路，就假设为射击技能吧
-    }
-}
-</code></pre><blockquote>
-<p>变形金刚的战斗型状态</p>
-</blockquote>
-<pre><code>class Context{
-    TransformersState mTransformersState;
-    public void setState(TransformersState mTransformersState){
-    this.mTransformersState = mTransformersState;
-    }
-    public void skill(){
-        mTransformersState.skill();
-    }
-}
-</code></pre><blockquote>
-<p>用来管理切换状态的类</p>
-</blockquote>
-<pre><code>class Client{
-    public static void main(String[] args){
-        Context context = new Context();
-        context.setState(new FightingTransformersState());//切到战斗模式
-        context.skill();//战斗状态下的技能
-        context.setState(new CarTransformersState());//切到跑车模式
-        context.skill();//跑车状态下的技能
-    }
-}    
-</code></pre><blockquote>
-<p>客户端</p>
-</blockquote>
-<h4 id="状态模式的场景一个对象的具体行为取决于这个对象内部的状态，这些状态可以被抽象出来单独为类。这种模式一定程度上会解决if-else多层判断的问题。状态及某种状态的具体实现可以被抽出去成类，层次会比较清晰，不过类会增多"><a href="#状态模式的场景一个对象的具体行为取决于这个对象内部的状态，这些状态可以被抽象出来单独为类。这种模式一定程度上会解决if-else多层判断的问题。状态及某种状态的具体实现可以被抽出去成类，层次会比较清晰，不过类会增多" class="headerlink" title="状态模式的场景一个对象的具体行为取决于这个对象内部的状态，这些状态可以被抽象出来单独为类。这种模式一定程度上会解决if-else多层判断的问题。状态及某种状态的具体实现可以被抽出去成类，层次会比较清晰，不过类会增多"></a>状态模式的场景一个对象的具体行为取决于这个对象内部的状态，这些状态可以被抽象出来单独为类。这种模式一定程度上会解决if-else多层判断的问题。状态及某种状态的具体实现可以被抽出去成类，层次会比较清晰，不过类会增多</h4>]]></content>
-    
-    <summary type="html">
-    
-      &lt;center&gt;设计模式之状态模式&lt;/center&gt;
-
-
-&lt;blockquote&gt;
-&lt;p&gt;状态模式&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1321838-e29eb
     
     </summary>
     
