@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.smallstrong.site/"/>
-  <updated>2018-11-02T08:50:52.081Z</updated>
+  <updated>2018-11-02T08:53:40.771Z</updated>
   <id>http://www.smallstrong.site/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://www.smallstrong.site/2018/10/03/%E3%80%90%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E3%80%91tcp/"/>
     <id>http://www.smallstrong.site/2018/10/03/【网络基础】tcp/</id>
     <published>2018-10-03T02:12:15.000Z</published>
-    <updated>2018-11-02T08:50:52.081Z</updated>
+    <updated>2018-11-02T08:53:40.771Z</updated>
     
     <content type="html"><![CDATA[<h2 id="关于TCP协议的三次握手和四次挥手"><a href="#关于TCP协议的三次握手和四次挥手" class="headerlink" title="关于TCP协议的三次握手和四次挥手"></a>关于TCP协议的三次握手和四次挥手</h2><blockquote>
 <p>tcp位于网络七层的传输层，就是这协议传数据用的。理解TCP协议的三次握手和四次挥手抓住一点，全双工！三次握手连接时候要满足两端都具有收发能力，四次挥手断开连接时要确保两端都明白对方不发了，记住是两端。</p>
