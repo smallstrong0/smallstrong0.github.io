@@ -3,6 +3,33 @@
   
     
     <entry>
+      <title><![CDATA[【网络基础】dns]]></title>
+      <url>/2018/10/02/%E3%80%90%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E3%80%91dns/</url>
+      <content type="html"><![CDATA[<h2 id="dns解析过程"><a href="#dns解析过程" class="headerlink" title="dns解析过程"></a>dns解析过程</h2><ol>
+<li>浏览器缓存 例如Chrome浏览器会首先搜索浏览器自身的DNS缓存（可以使用 chrome://net-internals/#dns 来进行查看）</li>
+<li>操作系统自身的DNS缓存，hosts文件</li>
+<li>路由器缓存找</li>
+<li>本地DNS服务器（运营商提供或者自己修改指定例如8.8.8.8是Google的dns服务器地址）</li>
+<li>本地DNS会把请求发至13台根DNS，根DNS服务器收到请求后会返回负责这个域名(.net)的服务器的一个IP，本地DNS服务器使用该IP信息联系负责.net域的这台服务器。这台负责.net域的服务器收到请求后，如果自己无法解析，会返回.net域的下一级DNS服务器地址(blog.csdn.net)给本地DNS服务器。以此类推，直至找到。递归找</li>
+</ol>
+]]></content>
+      
+        <categories>
+            
+            <category> 网络基础 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> net </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[【Mysql】mysql tips]]></title>
       <url>/2018/10/01/%E3%80%90Mysql%E3%80%91mysql-tips/</url>
       <content type="html"><![CDATA[<h2 id="数据库表结构"><a href="#数据库表结构" class="headerlink" title="数据库表结构"></a>数据库表结构</h2><ol>

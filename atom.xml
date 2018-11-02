@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.smallstrong.site/"/>
-  <updated>2018-11-01T09:18:37.542Z</updated>
+  <updated>2018-11-02T03:34:07.149Z</updated>
   <id>http://www.smallstrong.site/</id>
   
   <author>
@@ -14,6 +14,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【网络基础】dns</title>
+    <link href="http://www.smallstrong.site/2018/10/02/%E3%80%90%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E3%80%91dns/"/>
+    <id>http://www.smallstrong.site/2018/10/02/【网络基础】dns/</id>
+    <published>2018-10-02T03:32:15.000Z</published>
+    <updated>2018-11-02T03:34:07.149Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="dns解析过程"><a href="#dns解析过程" class="headerlink" title="dns解析过程"></a>dns解析过程</h2><ol>
+<li>浏览器缓存 例如Chrome浏览器会首先搜索浏览器自身的DNS缓存（可以使用 chrome://net-internals/#dns 来进行查看）</li>
+<li>操作系统自身的DNS缓存，hosts文件</li>
+<li>路由器缓存找</li>
+<li>本地DNS服务器（运营商提供或者自己修改指定例如8.8.8.8是Google的dns服务器地址）</li>
+<li>本地DNS会把请求发至13台根DNS，根DNS服务器收到请求后会返回负责这个域名(.net)的服务器的一个IP，本地DNS服务器使用该IP信息联系负责.net域的这台服务器。这台负责.net域的服务器收到请求后，如果自己无法解析，会返回.net域的下一级DNS服务器地址(blog.csdn.net)给本地DNS服务器。以此类推，直至找到。递归找</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;dns解析过程&quot;&gt;&lt;a href=&quot;#dns解析过程&quot; class=&quot;headerlink&quot; title=&quot;dns解析过程&quot;&gt;&lt;/a&gt;dns解析过程&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;浏览器缓存 例如Chrome浏览器会首先搜索浏览器自身的DNS缓存（可以使用 chrom
+    
+    </summary>
+    
+      <category term="网络基础" scheme="http://www.smallstrong.site/categories/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="net" scheme="http://www.smallstrong.site/tags/net/"/>
+    
+  </entry>
   
   <entry>
     <title>【Mysql】mysql tips</title>
@@ -1054,90 +1084,6 @@
 &lt;p&gt;状态模式&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1321838-e29eb
-    
-    </summary>
-    
-      <category term="设计模式" scheme="http://www.smallstrong.site/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>设计模式之观察者模式</title>
-    <link href="http://www.smallstrong.site/2017/05/10/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/"/>
-    <id>http://www.smallstrong.site/2017/05/10/设计模式之观察者模式/</id>
-    <published>2017-05-10T06:20:14.000Z</published>
-    <updated>2017-05-10T08:36:27.000Z</updated>
-    
-    <content type="html"><![CDATA[<center>设计模式之观察者模式</center>
-
-<blockquote>
-<p>观察者模式</p>
-</blockquote>
-<p><img src="http://upload-images.jianshu.io/upload_images/1321838-c0313263af1576f5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="观察者模式UML.png"></p>
-<pre><code>abstract class Subject{
-    protected ArrayList&lt;Observer&gt; list = new ArrayList&lt;&gt;();
-    void notift();
-    void addObserver(Observer observer);
-    void removeObserver(Observer observer);
-}
-</code></pre><blockquote>
-<p>抽象观察对象    </p>
-</blockquote>
-<pre><code>class ConcreteSubject extends Subject{
-    public void notify(){
-        for(int i = 0;i &lt; list.size();i++){
-            list.get(i).update(&quot;坐骑：秋名山神车---五菱宏光&quot;);    
-        }
-    }
-
-    public addObserver(Observer observer){
-        list.add(observer);
-    }
-
-    public removeObserver(Observer observer){
-        list.remove(observer);
-    }
-}
-</code></pre><blockquote>
-<p>具体观察对象        </p>
-</blockquote>
-<pre><code>interface Observer{
-    void update(String str);
-}
-</code></pre><blockquote>
-<p>抽象观察者</p>
-</blockquote>
-<pre><code>class ConcreteObserver implements Observer{
-    public void update(String str){
-        System.out.println(str);
-    }
-}    
-</code></pre><blockquote>
-<p>观察者</p>
-</blockquote>
-<pre><code>class Client{
-    public static void main(String[] args){
-        Subject mSubject = new ConcreteSubject();
-        mSubject.add(new ConcreteObserver());
-        mSubject.add(new ConcreteObserver());
-        mSubject.add(new ConcreteObserver());
-        mSubject.notify();
-    }
-}    
-</code></pre><blockquote>
-<p>客户端</p>
-</blockquote>
-<h4 id="本例很简单的说明了观察者模式，被观察对象发生变化时通知订阅该对象的观察者们作出相应改变。在Java的API中就内涵了这些，平时写的接口回调也是类似。Android中事件总线，广播等等都用到这这种模式。"><a href="#本例很简单的说明了观察者模式，被观察对象发生变化时通知订阅该对象的观察者们作出相应改变。在Java的API中就内涵了这些，平时写的接口回调也是类似。Android中事件总线，广播等等都用到这这种模式。" class="headerlink" title="本例很简单的说明了观察者模式，被观察对象发生变化时通知订阅该对象的观察者们作出相应改变。在Java的API中就内涵了这些，平时写的接口回调也是类似。Android中事件总线，广播等等都用到这这种模式。"></a>本例很简单的说明了观察者模式，被观察对象发生变化时通知订阅该对象的观察者们作出相应改变。在Java的API中就内涵了这些，平时写的接口回调也是类似。Android中事件总线，广播等等都用到这这种模式。</h4>]]></content>
-    
-    <summary type="html">
-    
-      &lt;center&gt;设计模式之观察者模式&lt;/center&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;观察者模式&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1321838-c031
     
     </summary>
     
