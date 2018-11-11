@@ -14,7 +14,7 @@
     
     <title>
         
-            设计模式之组合模式 | 
+            【Linux】nphup &amp; 输出日志 | 
         
         smallstrong&#39;s blog
     </title>
@@ -44,7 +44,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Small Strong">
     <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content="smallstrong">
+    <meta name="keywords" content="smallstrong,Linux">
 
     <!-- Site Verification -->
     <meta name="google-site-verification" content="googleeb8a0c05bf01c617.html" />
@@ -73,18 +73,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://www.smallstrong.site">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="设计模式之组合模式 | smallstrong&#39;s blog">
+    <meta property="og:title" content="【Linux】nphup &amp; 输出日志 | smallstrong&#39;s blog">
     <meta property="og:image" content="/img/favicon.png" />
     <meta property="og:description" content="">
-    
+    <meta property="og:article:tag" content="Linux"> 
 
     
-        <meta property="article:published_time" content="4月 26, 2017" />
-        <meta property="article:modified_time" content="4月 26, 2017" />
+        <meta property="article:published_time" content="11月 11, 2018" />
+        <meta property="article:modified_time" content="11月 11, 2018" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="设计模式之组合模式 | smallstrong&#39;s blog">
+    <meta name="twitter:title" content="【Linux】nphup &amp; 输出日志 | smallstrong&#39;s blog">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -92,7 +92,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://www.smallstrong.site/2017/04/26/设计模式之组合模式/index.html" />
+        <link rel="canonical" href="http://www.smallstrong.site/2018/11/11/【Linux】nphup-输出日志/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -118,10 +118,10 @@
         },
         "description": "学无止境"
     },
-    "headline": "设计模式之组合模式",
-    "url": "http://www.smallstrong.site/2017/04/26/设计模式之组合模式/index.html",
-    "datePublished": "4月 26, 2017",
-    "dateModified": "4月 26, 2017",
+    "headline": "【Linux】nphup & 输出日志",
+    "url": "http://www.smallstrong.site/2018/11/11/【Linux】nphup-输出日志/index.html",
+    "datePublished": "11月 11, 2018",
+    "dateModified": "11月 11, 2018",
     "description": "",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -341,7 +341,7 @@
 
     
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#优点"><span class="post-toc-number">1.</span> <span class="post-toc-text">优点</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#缺点"><span class="post-toc-number">2.</span> <span class="post-toc-text">缺点</span></a></li></ol>
+        
         <!--
         <li class="mdl-menu__item">
             Some Action
@@ -366,20 +366,11 @@
                 
     <!-- Paradox Post Header -->
     
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-            <script type="text/ls-javascript" id="post-thumbnail-script">
-    var randomNum = Math.floor(Math.random() * 19 + 1);
-
-    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
-    $('.post_thumbnail-random').addClass('lazy');
-</script>
-
-        
+        <!-- Custom Thumbnail -->
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(/images/linux_nohup.png)">
     
             <p class="article-headline-p">
-                设计模式之组合模式
+                【Linux】nphup & 输出日志
             </p>
         </div>
 
@@ -398,7 +389,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Small Strong</strong>
-        <span>4月 26, 2017</span>
+        <span>11月 11, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -420,7 +411,7 @@
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
     <li class="mdl-menu__item">在其它设备中阅读本文章</li>
     
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC2ElEQVR42u3bS27cMBAFwLn/peNtgAHk99iaREMWV4ZASyxu2v3x68+R64WNjY2NjY2NjY39SPYrXu/7/34Sffht5+Q9+ZmxsbGxT2BPjnt9HddPki+uXTQ2Njb2mezroJUEnuQ6kudt2IvOjI2NjY0dhKXrZCAPY0k6hI2NjY09Z8+D0OSisbGxsbHXCjTz5kH+xesQ+E9radjY2NiPZ7eN3if8/B/629jY2NiPZLdrUmy6fj4f5fnl5NjY2NibsvMPJyWk+c481akLW9jY2NjHsPNSThJm8lDUphZ5OQkbGxv7HHYyZDMZ0Lkr+OWtCGxsbOwz2WuAteDXDuusXRA2Njb23uy8uJ8PUE5WkmYsBktsbGzsTdltwT0ZqWnbwG0ilF8ENjY29gnsPIy11GTEZy2NWWsnYGNjY+/KbotK+WBN29DNk6K2UIWNjY29Nzt/RcLOi/t56WptxKdoD2BjY2N/OXvesm2P2GLaxAYbGxv7NPY85chL9nkhqb3iUXsAGxsb+8vZk0CVJydtWvKJkhY2Njb2ruz81fNm7Rp73hLGxsbG3pv9icQjKSHlbdo8sC2mItjY2NhbsO9qvrZhadI8vmH4EhsbG3sj9ucCWFJUSoYvk5bw4sgONjY29pezr0tFbck+v6DooHEQjfZgY2Njb8puB27Wjj5vFa+NBGFjY2OfwF5roObJw1pBqg1Xi3EbGxsbe1P2XYlBHqjWwO3lYmNjY+/Kbv/0vyvIJb/VFqTqrgg2Njb2Fux2tUlIAs735C0KbGxs7HPY7SBjW5Rvg1x+3XVoxMbGxt6a3R53rayfX8S9KQo2Njb2OewkaOWFofnoTzvQc9t/D2BjY2NvzW6bvvN0oh33rFMRbGxs7IPZ8yeTQNWmTNjY2NgnsNui0jzI5UnL9aVEp8XGxsbemt0WevLRnLodO0h76vYANjY29hbscxY2NjY2NjY2Njb2Y9YPbrtoOoJM0UoAAAAASUVORK5CYII=">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC20lEQVR42u3aO3LkMAwFwLn/pe10E8nvgbJLS7Yi14wloZlg8Pl8HXl9sLGxsbGxsbGxsV/J/sTX1V3/fhK9/vbe9u1FzNjY2Nhbs5NAVxhXz8m/XY8ZGxsb+wT2VQKYMdojS/5zFjM2NjY2dvLK/JlXz0/KCWxsbGzsp9hJoydPRfnxYWNjY2OvN5Xuj2DWGHqq2fSLvTRsbGzs17Pzoel7/v7T+TY2Njb2i9ntlazprIebN5iKyLGxsbE3ZT/Vpl8/rHYNqD0abGxs7HPYeXJKVnCScO8HD22z6TJybGxs7K3Z98hkJDBLePmYtn170UvDxsbG3ojdDgaGqzPlck+7PPTYoBcbGxv7v2XnCSY/rHzJ8p7UvgsbGxv7BPbKoDcJMU9a+RPa4QQ2Njb2meyiWbO8XpMPdFfGDNjY2Nh7s6Pb4tfk+GFRUY40sLGxsfdmt0XCZ+GaDQzyguSHYQM2Njb2puykJMibOLOiIgo6jufyc2xsbOxN2fnP+rbkyFPjbMDwWCmCjY2NvRG7bQa1g4Q8xPb4ooSHjY2NvSm7TSQrZcl6SssLm6gCw8bGxt6OHf2gL0fCefOovatdxMTGxsY+h90eQdvWX29mJWlsuKmEjY2NvRH72bIkOdC8dMkPBRsbG/sEdptC2mXKJE0+NTz+4V5sbGzsrdnrS5D5Ac1aUW0KxMbGxj6NPXvoypHdJ63ZaKFoKmFjY2MfwE5CaQNqBwCzplVdgWFjY2NvxE4+WV+pXG9m5cUPNjY29gns9prx2nHC+sAgmm9jY2Njb8GepYRZWHmzaT2JYmNjY5/GTpLWrLXUHl9eIOXHhI2NjX0OO/lZ/+zoNylgZu0kbGxsbOx8gaZNQu3BJbH9UQLDxsbG3o7dLuLM7l15AjY2NvZp7KSpNAPPlnhmxcmv9NKwsbGxX89uHzcbKiSpKC9U6uIEGxsbe1P2ORc2NjY2NjY2Njb2a65vgLYLbQu1Ei8AAAAASUVORK5CYII=">
     
 </ul>
     
@@ -433,7 +424,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        
+        <a class="post_tag-link" href="/tags/Linux/">Linux</a>
     </ul>
     
 
@@ -447,7 +438,7 @@
     <!-- Leancloud Views -->
         <a class="post_share-link" href="#">
             <li class="mdl-menu__item">
-                <span id="/2017/04/26/设计模式之组合模式/" class="leancloud-views_num" data-flag-title="设计模式之组合模式">
+                <span id="/2018/11/11/【Linux】nphup-输出日志/" class="leancloud-views_num" data-flag-title="【Linux】nphup &amp; 输出日志">
      &nbsp;浏览量
 </span>
 
@@ -497,87 +488,9 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <center>设计模式之组合模式</center>
-
-
-<blockquote>
-<p>组合模式</p>
+        <blockquote>
+<p>挂起进程<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">file_location = &apos;&apos;</div><div class="line">log_location = &apos;&apos;</div><div class="line">err_location = &apos;&apos;</div><div class="line">cmd = &apos;nohup python &#123;&#125; 1&gt;&gt; &#123;&#125; 2&gt;&gt; &#123;&#125; &amp;&apos;.format(file_location,log_location,err_location)</div><div class="line">print os.system(cmd)</div><div class="line"></div><div class="line">nohup python excel_resume_in.py 1&gt;&gt; id428.log 2&gt;&gt; id428.err &amp;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">结论</div><div class="line"></div><div class="line">使用&amp;后台运行程序：</div><div class="line"></div><div class="line">结果会输出到终端</div><div class="line"></div><div class="line">使用Ctrl + C发送SIGINT信号，程序免疫</div><div class="line"></div><div class="line">关闭session发送SIGHUP信号，程序关闭</div><div class="line"></div><div class="line"> </div><div class="line"></div><div class="line">使用nohup运行程序：</div><div class="line"></div><div class="line">结果默认会输出到nohup.out</div><div class="line"></div><div class="line">使用Ctrl + C发送SIGINT信号，程序关闭</div><div class="line"></div><div class="line">关闭session发送SIGHUP信号，程序免疫</div><div class="line"></div><div class="line"> </div><div class="line"></div><div class="line">平日线上经常使用nohup和&amp;配合来启动程序：</div><div class="line"></div><div class="line">同时免疫SIGINT和SIGHUP信号</div></pre></td></tr></table></figure></p>
 </blockquote>
-<p><img src="http://upload-images.jianshu.io/upload_images/1321838-4a6090174d9636a4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="组合UML.png"></p>
-<pre><code>interface View{
-    void getBackground();
-}
-</code></pre><blockquote>
-<p>View顶层接口，随便搞个获取背景方法，不要在意没有返回值哈哈</p>
-</blockquote>
-<pre><code>class TextView implements View{
-    public TextView(){
-        //迷人的无参构造方法
-    }
-    public void getBackground(){
-
-    }
-}    
-</code></pre><blockquote>
-<p>文字类，实现View接口。</p>
-</blockquote>
-<pre><code>class ImageView implements View{
-    public ImageView(){
-        //我也是个无参构造函数
-    }
-    public void getBackground(){
-
-    }
-}    
-</code></pre><blockquote>
-<p>图片类，实现View接口</p>
-</blockquote>
-<pre><code>class ViewGroup implements View{
-    private List&lt;View&gt; viewList = new ArrayList&lt;View&gt;();
-    public void addView(View view){
-        viewList.add(view);
-    }
-
-    public void deleteView(View view){
-        viewList.remove(view);
-    }
-
-    public void getBackground(){
-        for(View view : viewList){
-            view.getBackground();
-        }
-    }
-}    
-</code></pre><blockquote>
-<p>ViewGroup类    ，容器构件</p>
-</blockquote>
-<pre><code>class Client{
-    public static void main(String[] args){
-        View viewGroup,textView,imageView;
-        textView = new TextView();
-        imageView = new ImageView();
-        viewGroup = new ViewGroup();
-        viewGroup.add(textView);
-        viewGroup.add(imageView);
-        viewGroup.getBackground();
-    }
-}
-</code></pre><blockquote>
-<p>客户端类</p>
-</blockquote>
-<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ol>
-<li><p>组合模式可以清楚地定义分层次的复杂对象，表示对象的全部或部分层次，它让客户端忽 略了层次的差异，方便对整个层次结构进行控制。</p>
-</li>
-<li><p>客户端可以一致地使用一个组合结构或其中单个对象，不必关心处理的是单个对象还是整 个组合结构，简化了客户端代码。</p>
-</li>
-<li><p>在组合模式中增加新的容器构件和叶子构件都很方便，无须对现有类库进行任何修改，符 合“开闭原则”。</p>
-</li>
-<li><p>组合模式为树形结构的面向对象实现提供了一种灵活的解决方案，通过叶子对象和容器对 象的递归组合，可以形成复杂的树形结构，但对树形结构的控制却非常简单。</p>
-</li>
-</ol>
-<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><ol>
-<li>在增加新构件时很难对容器中的构件类型进行限制。有时候我们希望一个容器中只能有某些<br>特定类型的对象，例如在某个文件夹中只能包含文本文件，使用组合模式时，不能依赖类型<br>系统来施加这些约束，因为它们都来自于相同的抽象层，在这种情况下，必须通过在运行时<br>进行类型检查来实现，这个实现过程较为复杂。</li>
-</ol>
 
     
 
@@ -630,8 +543,8 @@
 
 <script type="text/javascript">
     var disqus_config = function () {
-        this.page.url = 'http://www.smallstrong.site/2017/04/26/设计模式之组合模式/';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = 'http://www.smallstrong.site/2017/04/26/设计模式之组合模式/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = 'http://www.smallstrong.site/2018/11/11/【Linux】nphup-输出日志/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://www.smallstrong.site/2018/11/11/【Linux】nphup-输出日志/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
 </script>
 
@@ -664,21 +577,13 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2017/04/26/设计模式之装饰者模式/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2017/04/26/设计模式之桥接模式/" id="post_nav-older" class="next-content">
+        <a href="/2018/11/11/【Linux】脚本管理进程/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">

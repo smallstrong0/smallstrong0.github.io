@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.smallstrong.site/"/>
-  <updated>2018-11-11T10:45:15.306Z</updated>
+  <updated>2018-11-11T10:49:38.335Z</updated>
   <id>http://www.smallstrong.site/</id>
   
   <author>
@@ -14,6 +14,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【Linux】nphup &amp; 输出日志</title>
+    <link href="http://www.smallstrong.site/2018/11/11/%E3%80%90Linux%E3%80%91nphup-%E8%BE%93%E5%87%BA%E6%97%A5%E5%BF%97/"/>
+    <id>http://www.smallstrong.site/2018/11/11/【Linux】nphup-输出日志/</id>
+    <published>2018-11-11T10:47:58.000Z</published>
+    <updated>2018-11-11T10:49:38.335Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>挂起进程<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">file_location = &apos;&apos;</div><div class="line">log_location = &apos;&apos;</div><div class="line">err_location = &apos;&apos;</div><div class="line">cmd = &apos;nohup python &#123;&#125; 1&gt;&gt; &#123;&#125; 2&gt;&gt; &#123;&#125; &amp;&apos;.format(file_location,log_location,err_location)</div><div class="line">print os.system(cmd)</div><div class="line"></div><div class="line">nohup python excel_resume_in.py 1&gt;&gt; id428.log 2&gt;&gt; id428.err &amp;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">结论</div><div class="line"></div><div class="line">使用&amp;后台运行程序：</div><div class="line"></div><div class="line">结果会输出到终端</div><div class="line"></div><div class="line">使用Ctrl + C发送SIGINT信号，程序免疫</div><div class="line"></div><div class="line">关闭session发送SIGHUP信号，程序关闭</div><div class="line"></div><div class="line"> </div><div class="line"></div><div class="line">使用nohup运行程序：</div><div class="line"></div><div class="line">结果默认会输出到nohup.out</div><div class="line"></div><div class="line">使用Ctrl + C发送SIGINT信号，程序关闭</div><div class="line"></div><div class="line">关闭session发送SIGHUP信号，程序免疫</div><div class="line"></div><div class="line"> </div><div class="line"></div><div class="line">平日线上经常使用nohup和&amp;配合来启动程序：</div><div class="line"></div><div class="line">同时免疫SIGINT和SIGHUP信号</div></pre></td></tr></table></figure></p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;挂起进程&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://www.smallstrong.site/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="http://www.smallstrong.site/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>【Linux】 脚本管理进程</title>
@@ -837,134 +863,6 @@
     </summary>
     
       <category term="Devops" scheme="http://www.smallstrong.site/categories/Devops/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>设计模式之访问者模式</title>
-    <link href="http://www.smallstrong.site/2017/05/16/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E8%AE%BF%E9%97%AE%E8%80%85%E6%A8%A1%E5%BC%8F/"/>
-    <id>http://www.smallstrong.site/2017/05/16/设计模式之访问者模式/</id>
-    <published>2017-05-16T06:27:55.000Z</published>
-    <updated>2017-05-16T07:58:48.000Z</updated>
-    
-    <content type="html"><![CDATA[<center>设计模式之访问者模式</center>
-
-<blockquote>
-<p>访问者模式<br>例子以公司招聘查看简历为背景</p>
-</blockquote>
-<p><img src="http://upload-images.jianshu.io/upload_images/1321838-b864a2960f721b4e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="访问者模式UML.png"></p>
-<pre><code>interface Visitor{
-    void visitClerical(Clerical clerical);//查看文员简历
-    void visitCoder(Coder coder);//查看程序员简历
-}     
-</code></pre><blockquote>
-<p>访问者接口，分别对ElementA与ElementB进行访问</p>
-</blockquote>
-<pre><code>class HRVisitor{
-    public void visitClerical(Clerical clerical){
-        //HR关注文员简历XXXXX
-    }
-
-    public void visitCoder(Coder coder){
-        //HR看码农简历，看经验看学校
-    }
-}
-</code></pre><blockquote>
-<p>HR访问者</p>
-</blockquote>
-<pre><code>class CTOVisitor{
-    public void visitClerical(Clerical clerical){
-        //CTO不关心文员简历，可是是空实现
-    }
-
-    public void visitCoder(Coder coder){
-        //CTO看码农简历，看项目 看技能
-    }
-}
-</code></pre><blockquote>
-<p>CTO访问者</p>
-</blockquote>
-<pre><code>abstract class JobSeeker{
-    public String name;
-    public String school;
-    public String skill;
-
-    public JobSeeker(String name ,String school ,String skill){
-        this.name = name;
-        this.school = school;
-        this.skill = skill;
-    }
-
-    public abstract void accept(Visitor visitor);
-}
-</code></pre><blockquote>
-<p>抽象求职者类    </p>
-</blockquote>
-<pre><code>class Clerical extends JobSeeker{
-    public Clerical(String name ,String school ,String skill){
-        super(name , school , skill);
-    }
-    public void accept(Visitor visitor){
-        visitor.visitClerical(this);
-    }
-}
-</code></pre><blockquote>
-<p>文员求职者    </p>
-</blockquote>
-<pre><code>class Coder extends JobSeeker{
-    public Coder(String name ,String school ,String skill){
-        super(name , school , skill);
-    }
-    public void accept(Visitor visitor){
-        visitor.visitCoder(this);
-    }
-}
-</code></pre><blockquote>
-<p>码农求职者</p>
-</blockquote>
-<pre><code>public class JobStructure{
-    List&lt;JobSeeker&gt; list = new ArrayList&lt;&gt;();
-
-    public void seeResume(Visitor visitor){
-        for(JobSeeker jobSeeker : list){
-            jobSeeker.accept(visitor);
-        }
-    }
-
-    public void addJobSeeker(JobSeeker jobSeeker){
-        list.add(jobSeeker);
-    }
-}    
-</code></pre><blockquote>
-<p>查阅简历类</p>
-</blockquote>
-<pre><code>class CLient{
-    public static void main(String[] args){
-        JobStructure jobStructure = new JobStructure();
-        jobStructure.addJobSeeker(new Coder(&quot;小强&quot;,&quot;清华&quot;,&quot;Android&quot;));
-        jobStructure.addJobSeeker(new Coder(&quot;小民&quot;,&quot;北大&quot;,&quot;Word&quot;));
-        jobStructure.seeResume(new CTOVisitor());
-        jobStructure.seeResume(new HRVisitor());
-    }
-}    
-</code></pre><blockquote>
-<p>客户端类，收集简历，CTO查看简历，HR查看简历</p>
-</blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;center&gt;设计模式之访问者模式&lt;/center&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;访问者模式&lt;br&gt;例子以公司招聘查看简历为背景&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_i
-    
-    </summary>
-    
-      <category term="设计模式" scheme="http://www.smallstrong.site/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
     
   </entry>
