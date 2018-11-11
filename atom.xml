@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.smallstrong.site/"/>
-  <updated>2018-11-02T08:53:40.771Z</updated>
+  <updated>2018-11-11T10:45:15.306Z</updated>
   <id>http://www.smallstrong.site/</id>
   
   <author>
@@ -14,6 +14,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【Linux】 脚本管理进程</title>
+    <link href="http://www.smallstrong.site/2018/11/11/%E3%80%90Linux%E3%80%91%E8%84%9A%E6%9C%AC%E7%AE%A1%E7%90%86%E8%BF%9B%E7%A8%8B/"/>
+    <id>http://www.smallstrong.site/2018/11/11/【Linux】脚本管理进程/</id>
+    <published>2018-11-11T10:40:26.000Z</published>
+    <updated>2018-11-11T10:45:15.306Z</updated>
+    
+    <content type="html"><![CDATA[<p>/etc/init.d目录添加 uwsgi_blog文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div></pre></td><td class="code"><pre><div class="line">#! /bin/sh</div><div class="line"># chkconfig: 2345 55 25</div><div class="line"># Description: Startup script for uwsgi webserver on Debian. Place in /etc/init.d and</div><div class="line"># run &apos;update-rc.d -f uwsgi defaults&apos;, or use the appropriate command on your</div><div class="line"># distro. For CentOS/Redhat run: &apos;chkconfig --add uwsgi&apos;</div><div class="line"></div><div class="line">### BEGIN INIT INFO</div><div class="line"># Provides:              uwsgi_blog</div><div class="line"># Required-Start:        $all</div><div class="line"># Required-Stop:          $all</div><div class="line"># Default-Start:          2 3 4 5</div><div class="line"># Default-Stop:         0 1 6</div><div class="line"># Short-Description: starts the uwsgi web server</div><div class="line"># Description:           starts uwsgi using start-stop-daemon</div><div class="line">### END INIT INFO</div><div class="line"></div><div class="line">PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin</div><div class="line">DESC=&quot;uwsgi_blog daemon&quot;</div><div class="line">NAME=uwsgi_blog</div><div class="line">DAEMON=/usr/bin/uwsgi</div><div class="line">CONFIGFILE=/home/small/api/$NAME.ini</div><div class="line">PIDFILE=/var/run/$NAME.pid                                                                                                                         </div><div class="line">SCRIPTNAME=/etc/init.d/$NAME                                                                                                                       </div><div class="line">set -e                                                                                                                           </div><div class="line">[ -x &quot;$DAEMON&quot; ] || exit 0                                                                                     </div><div class="line">do_start() &#123;         </div><div class="line"></div><div class="line">   $DAEMON $CONFIGFILE || echo -n &quot;uwsgi_blog already running&quot; </div><div class="line">   </div><div class="line">&#125;                                                                                                                                                  </div><div class="line">do_stop() &#123;                                                                                                                                        </div><div class="line">   $DAEMON --stop $PIDFILE || echo -n &quot;uwsgi_blog not running&quot;                                                                                          </div><div class="line">   rm -f $PIDFILE                                                                                                                                  </div><div class="line">   echo &quot;$DAEMON STOPED.&quot;                                                                                                                          </div><div class="line">&#125;                                                                                                                                                  </div><div class="line">                                                                        </div><div class="line">do_reload() &#123;                                                                                                                                      </div><div class="line">   $DAEMON --reload $PIDFILE || echo -n &quot;uwsgi_blog can&apos;t reload&quot;                                                                                       </div><div class="line">&#125;                                                                                                                                                  </div><div class="line">                                                                                                                                                   </div><div class="line">do_status() &#123;                                                                                                                                      </div><div class="line">   ps aux|grep $DAEMON                                                                                                                             </div><div class="line">&#125;                                                                       </div><div class="line"></div><div class="line">case &quot;$1&quot; in                                                                                                                                       </div><div class="line"> status)                                                                                                                                           </div><div class="line">   echo -en &quot;Status $NAME: \n&quot;                                                                                                                     </div><div class="line">   do_status</div><div class="line"> ;;</div><div class="line"> start)</div><div class="line">   echo -en &quot;Starting $NAME: \n&quot;</div><div class="line">   do_start</div><div class="line"> ;;</div><div class="line"> stop)</div><div class="line">   echo -en &quot;Stopping $NAME: \n&quot;</div><div class="line">   do_stop</div><div class="line"> ;;</div><div class="line"> reload|graceful)</div><div class="line">   echo -en &quot;Reloading $NAME: \n&quot;</div><div class="line">   do_reload</div><div class="line"> ;;</div><div class="line"> *)</div><div class="line">   echo &quot;Usage: $SCRIPTNAME &#123;start|stop|reload&#125;&quot; &gt;&amp;2</div><div class="line">   exit 3</div><div class="line"> ;;</div><div class="line">esac</div><div class="line"></div><div class="line">exit 0</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo chkconfig --add uwsgi_blog</div><div class="line">sudo chkconfig uwsgi_blog on</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;/etc/init.d目录添加 uwsgi_blog文件&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;l
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://www.smallstrong.site/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="http://www.smallstrong.site/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>【网络基础】tcp</title>
@@ -938,110 +961,6 @@
 &lt;p&gt;访问者模式&lt;br&gt;例子以公司招聘查看简历为背景&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_i
-    
-    </summary>
-    
-      <category term="设计模式" scheme="http://www.smallstrong.site/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>设计模式之模板方法模式</title>
-    <link href="http://www.smallstrong.site/2017/05/12/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/"/>
-    <id>http://www.smallstrong.site/2017/05/12/设计模式之模板方法模式/</id>
-    <published>2017-05-12T07:31:51.000Z</published>
-    <updated>2017-05-12T10:00:30.000Z</updated>
-    
-    <content type="html"><![CDATA[<center>设计模式之模板方法模式</center>
-
-
-<blockquote>
-<p>模板方法模式</p>
-</blockquote>
-<p><img src="http://upload-images.jianshu.io/upload_images/1321838-e3500c32024cfc9b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="模板方法UML.png"></p>
-<pre><code>abstract class AbsTemplate{
-    protected void stepOne(){
-        //步骤一
-    }
-    protected void stepTwo(){
-        //步骤二
-    }
-    protected void stepThree(){
-        //步骤三
-    }
-    public void run(){
-        stepOne();
-        stepTwo();
-        stepThree();
-    }
-}
-</code></pre><blockquote>
-<p>抽象模板，定义三个必要步骤和一个实现事情的功能方法</p>
-</blockquote>
-<pre><code>class TemplateA extends AbsTemplate{
-    protected void stepOne(){
-        super.stepOne();
-        //步骤一
-        //添加一些这个实现类想添加的逻辑
-    }
-    protected void stepTwo(){
-        super.stepTwo();
-        //步骤二
-        //添加一些这个实现类想添加的逻辑
-    }
-    protected void stepThree(){
-        super.stepThree();
-        //步骤三
-        //添加一些这个实现类想添加的逻辑
-    }
-}    
-</code></pre><blockquote>
-<p>实现类A，在实现步骤的具体方法中实现A特有的逻辑</p>
-</blockquote>
-<pre><code>class TemplateB extends AbsTemplate{
-    protected void stepOne(){
-        super.stepOne();
-        //步骤一
-        //添加一些这个实现类想添加的逻辑
-    }
-    protected void stepTwo(){
-        super.stepTwo();
-        //步骤二
-        //添加一些这个实现类想添加的逻辑
-    }
-    protected void stepThree(){
-        super.stepThree();
-        //步骤三
-        //添加一些这个实现类想添加的逻辑
-    }
-}    
-</code></pre><blockquote>
-<p>实现B，在实现步骤的具体方法中实现B特有的逻辑</p>
-</blockquote>
-<pre><code>class Client{
-    pblic static void main(String[] args){
-        AbsTemplate template = new TemplateA();
-        template.run();//A 搞事
-        template = new TemplateB();
-        template.run();//B 搞事
-    }
-}
-</code></pre><blockquote>
-<p>客户端</p>
-</blockquote>
-<h3 id="个人想法"><a href="#个人想法" class="headerlink" title="个人想法"></a>个人想法</h3><p>模板模式的适用场景是一套固定的流程，但是流程中具体的实现或许会有差异。可以把共同逻辑抽到抽象父类中实现，在子类中实现个性化的代码。    </p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;center&gt;设计模式之模板方法模式&lt;/center&gt;
-
-
-&lt;blockquote&gt;
-&lt;p&gt;模板方法模式&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1321838-e
     
     </summary>
     
